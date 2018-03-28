@@ -139,5 +139,21 @@ public class DAO {
 		this.disconnection();
 		// write the code here DONT FORGET TO DISCONNECT AFTER CREATING THE ACCOUNT
 	}
+    
+    	public String prixcours(String nomentreprise) {
+		this.connection();
+		try {
+			String sql = "SELECT prix from 'cours de la bourse' WHERE (entreprise=?)";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, nomentreprise);
+			ResultSet resultset=preparedStatement.executeQuery();
+			String monprix=resultset.getString("prix");
+			this.disconnection();
+			return monprix;
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		return "erreur" ;
+	}
 	
 }
