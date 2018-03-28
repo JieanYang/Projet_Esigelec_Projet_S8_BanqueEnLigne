@@ -5098,30 +5098,6 @@
 										},
 										{
 											"_type": "ERDColumnView",
-											"_id": "AAAAAAFiZ/EyGEzxs2A=",
-											"_parent": {
-												"$ref": "AAAAAAFiZ+3nh0y9TQU="
-											},
-											"model": {
-												"$ref": "AAAAAAFiZ/EyAkzu5DQ="
-											},
-											"visible": true,
-											"enabled": true,
-											"lineColor": "#000000",
-											"fillColor": "#ffffff",
-											"fontColor": "#000000",
-											"font": "Arial;13;0",
-											"showShadow": true,
-											"containerChangeable": false,
-											"containerExtending": false,
-											"left": 37,
-											"top": 160,
-											"width": 218.6689453125,
-											"height": 13,
-											"autoResize": false
-										},
-										{
-											"_type": "ERDColumnView",
 											"_id": "AAAAAAFiZ/Gpskz6rTM=",
 											"_parent": {
 												"$ref": "AAAAAAFiZ+3nh0y9TQU="
@@ -5139,7 +5115,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 37,
-											"top": 175,
+											"top": 160,
 											"width": 218.6689453125,
 											"height": 13,
 											"autoResize": false
@@ -5163,7 +5139,103 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 37,
+											"top": 175,
+											"width": 218.6689453125,
+											"height": 13,
+											"autoResize": false
+										},
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAFiZ/EyGEzxs2A=",
+											"_parent": {
+												"$ref": "AAAAAAFiZ+3nh0y9TQU="
+											},
+											"model": {
+												"$ref": "AAAAAAFiZ/EyAkzu5DQ="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 37,
 											"top": 190,
+											"width": 218.6689453125,
+											"height": 13,
+											"autoResize": false
+										},
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAFibNMPBdmS5pw=",
+											"_parent": {
+												"$ref": "AAAAAAFiZ+3nh0y9TQU="
+											},
+											"model": {
+												"$ref": "AAAAAAFibNMO6dmP2RU="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 37,
+											"top": 205,
+											"width": 218.6689453125,
+											"height": 13,
+											"autoResize": false
+										},
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAFibNNWE9mcYQM=",
+											"_parent": {
+												"$ref": "AAAAAAFiZ+3nh0y9TQU="
+											},
+											"model": {
+												"$ref": "AAAAAAFibNNV8tmZbik="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 37,
+											"top": 220,
+											"width": 218.6689453125,
+											"height": 13,
+											"autoResize": false
+										},
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAFibNKiiNmKx7I=",
+											"_parent": {
+												"$ref": "AAAAAAFiZ+3nh0y9TQU="
+											},
+											"model": {
+												"$ref": "AAAAAAFibNKiZNmHOsU="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 37,
+											"top": 235,
 											"width": 218.6689453125,
 											"height": 13,
 											"autoResize": false
@@ -5181,7 +5253,7 @@
 									"left": 32,
 									"top": 95,
 									"width": 228.6689453125,
-									"height": 113,
+									"height": 158,
 									"autoResize": false
 								}
 							],
@@ -5197,7 +5269,7 @@
 							"left": 32,
 							"top": 72,
 							"width": 228.6689453125,
-							"height": 151,
+							"height": 181,
 							"autoResize": false,
 							"nameLabel": {
 								"$ref": "AAAAAAFiZ+3nh0y89mg="
@@ -6017,7 +6089,7 @@
 									"height": 13,
 									"autoResize": false,
 									"underline": false,
-									"text": "Cours de la bourse",
+									"text": "Cours_de_la_bourse",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5,
 									"wordWrap": false
@@ -6377,7 +6449,7 @@
 									"height": 13,
 									"autoResize": false,
 									"underline": false,
-									"text": "Services de la banque",
+									"text": "Services_de_la_banque",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5,
 									"wordWrap": false
@@ -6552,7 +6624,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 157,
-									"top": 260,
+									"top": 275,
 									"width": 12.2890625,
 									"height": 13,
 									"autoResize": false,
@@ -6583,7 +6655,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 161,
-									"top": 241,
+									"top": 271,
 									"width": 7.22998046875,
 									"height": 13,
 									"autoResize": false,
@@ -6648,7 +6720,7 @@
 								"$ref": "AAAAAAFiZ+3nh0y7VLM="
 							},
 							"lineStyle": 2,
-							"points": "149:222;149:312",
+							"points": "149:252;149:312",
 							"nameLabel": {
 								"$ref": "AAAAAAFiaAScm06eukU="
 							},
@@ -6894,20 +6966,6 @@
 						},
 						{
 							"_type": "ERDColumn",
-							"_id": "AAAAAAFiZ/EyAkzu5DQ=",
-							"_parent": {
-								"$ref": "AAAAAAFiZ+3nh0y5sNc="
-							},
-							"name": "numphone",
-							"type": "INTEGER",
-							"length": "30",
-							"primaryKey": false,
-							"foreignKey": false,
-							"nullable": false,
-							"unique": false
-						},
-						{
-							"_type": "ERDColumn",
 							"_id": "AAAAAAFiZ/GpnEz3AZE=",
 							"_parent": {
 								"$ref": "AAAAAAFiZ+3nh0y5sNc="
@@ -6929,6 +6987,62 @@
 							"name": "adresse",
 							"type": "VARCHAR",
 							"length": "50",
+							"primaryKey": false,
+							"foreignKey": false,
+							"nullable": false,
+							"unique": false
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAFiZ/EyAkzu5DQ=",
+							"_parent": {
+								"$ref": "AAAAAAFiZ+3nh0y5sNc="
+							},
+							"name": "telephone",
+							"type": "INTEGER",
+							"length": "30",
+							"primaryKey": false,
+							"foreignKey": false,
+							"nullable": false,
+							"unique": false
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAFibNMO6dmP2RU=",
+							"_parent": {
+								"$ref": "AAAAAAFiZ+3nh0y5sNc="
+							},
+							"name": "ville",
+							"type": "VARCHAR",
+							"length": "15",
+							"primaryKey": false,
+							"foreignKey": false,
+							"nullable": false,
+							"unique": false
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAFibNNV8tmZbik=",
+							"_parent": {
+								"$ref": "AAAAAAFiZ+3nh0y5sNc="
+							},
+							"name": "pays",
+							"type": "VARCHAR",
+							"length": "15",
+							"primaryKey": false,
+							"foreignKey": false,
+							"nullable": false,
+							"unique": false
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAFibNKiZNmHOsU=",
+							"_parent": {
+								"$ref": "AAAAAAFiZ+3nh0y5sNc="
+							},
+							"name": "dateNaissance",
+							"type": "DATE",
+							"length": 0,
 							"primaryKey": false,
 							"foreignKey": false,
 							"nullable": false,
@@ -7346,7 +7460,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFiZ+pgDUrmjCM="
 					},
-					"name": "Cours de la bourse",
+					"name": "Cours_de_la_bourse",
 					"columns": [
 						{
 							"_type": "ERDColumn",
@@ -7478,7 +7592,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFiZ+pgDUrmjCM="
 					},
-					"name": "Services de la banque",
+					"name": "Services_de_la_banque",
 					"columns": [
 						{
 							"_type": "ERDColumn",
