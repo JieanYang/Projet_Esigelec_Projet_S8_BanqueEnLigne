@@ -18,6 +18,7 @@ CREATE TABLE `User` (
     `telephone` INTEGER(30) NOT NULL,
     `ville` VARCHAR(15) NOT NULL,
     `pays` VARCHAR(15) NOT NULL,
+    `password` VARCHAR(30) NOT NULL,
     `dateNaissance` DATE NOT NULL,
     PRIMARY KEY (`id_user`)
 );
