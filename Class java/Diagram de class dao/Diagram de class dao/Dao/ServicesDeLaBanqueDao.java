@@ -1,32 +1,32 @@
-package Model;
+package Dao;
 
 import java.util.*;
 
 /**
  * 
  */
-public class UserDao {
+public class ServicesDeLaBanqueDao {
 
     /**
      * Default constructor
      */
-    public UserDao() {
+    public ServicesDeLaBanqueDao() {
     }
 
     /**
-     * @param user 
+     * @param service 
      * @return
      */
-    public User addUser(User user) {
+    public ServicesDeLaBanque addServiceDeLaBanque(ServicesDeLaBanque service) {
         // TODO implement here
         return null;
     }
 
     /**
-     * @param user 
+     * @param service 
      * @return
      */
-    public User updateUser(User user) {
+    public ServicesDeLaBanque updateServiceDeLaBanque(ServicesDeLaBanque service) {
         // TODO implement here
         return null;
     }
@@ -35,7 +35,7 @@ public class UserDao {
      * @param id 
      * @return
      */
-    public User getUser(int id) {
+    public ServicesDeLaBanque getServiceDeLaBanque(int id) {
         // TODO implement here
         return null;
     }
@@ -43,16 +43,16 @@ public class UserDao {
     /**
      * @return
      */
-    public List<User> getListUser() {
+    public List<ServicesDeLaBanque> getListServiceDeLaBanque() {
         // TODO implement here
         return null;
     }
 
     /**
-     * @param user 
+     * @param service 
      * @return
      */
-    public User deleteUser(User user) {
+    public ServicesDeLaBanque deleteServiceDeLaBanque(ServicesDeLaBanque service) {
         // TODO implement here
         return null;
     }

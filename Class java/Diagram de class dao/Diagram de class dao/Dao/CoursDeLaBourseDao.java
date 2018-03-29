@@ -1,23 +1,23 @@
-package Model;
+package Dao;
 
 import java.util.*;
 
 /**
  * 
  */
-public class Cours_de_la_bourse {
+public class CoursDeLaBourseDao {
 
     /**
      * Default constructor
      */
-    public Cours_de_la_bourse() {
+    public CoursDeLaBourseDao() {
     }
 
     /**
      * @param action 
      * @return
      */
-    public Cours_de_la_bourse addCoursDeLaBourse(Cours_de_la_bourse action) {
+    public CoursDeLaBourse addCoursDeLaBourse(CoursDeLaBourse action) {
         // TODO implement here
         return null;
     }
@@ -26,7 +26,7 @@ public class Cours_de_la_bourse {
      * @param action 
      * @return
      */
-    public Cours_de_la_bourse updateCoursDeLaBourse(Cours_de_la_bourse action) {
+    public CoursDeLaBourse updateCoursDeLaBourse(CoursDeLaBourse action) {
         // TODO implement here
         return null;
     }
@@ -35,7 +35,7 @@ public class Cours_de_la_bourse {
      * @param id 
      * @return
      */
-    public Cours_de_la_bourse getCoursDeLaBourse(int id) {
+    public CoursDeLaBourse getCoursDeLaBourse(int id) {
         // TODO implement here
         return null;
     }
@@ -43,7 +43,7 @@ public class Cours_de_la_bourse {
     /**
      * @return
      */
-    public List<Cours_de_la_bourse> getListCoursDeLaBourse() {
+    public List<CoursDeLaBourse> getListCoursDeLaBourse() {
         // TODO implement here
         return null;
     }
@@ -52,7 +52,7 @@ public class Cours_de_la_bourse {
      * @param action 
      * @return
      */
-    public Cours_de_la_bourse deleteCoursDeLaBourse(Cours_de_la_bourse action) {
+    public CoursDeLaBourse deleteCoursDeLaBourse(CoursDeLaBourse action) {
         // TODO implement here
         return null;
     }

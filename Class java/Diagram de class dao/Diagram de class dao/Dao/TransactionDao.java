@@ -1,32 +1,32 @@
-package Model;
+package Dao;
 
 import java.util.*;
 
 /**
  * 
  */
-public class CompteDao {
+public class TransactionDao {
 
     /**
      * Default constructor
      */
-    public CompteDao() {
+    public TransactionDao() {
     }
 
     /**
-     * @param compte 
+     * @param transaction 
      * @return
      */
-    public Compte addCompte(Compte compte) {
+    public Transaction addTransaction(Transaction transaction) {
         // TODO implement here
         return null;
     }
 
     /**
-     * @param compte 
+     * @param transaction 
      * @return
      */
-    public Compte updateCompte(Compte compte) {
+    public Transaction updateTransaction(Transaction transaction) {
         // TODO implement here
         return null;
     }
@@ -35,7 +35,7 @@ public class CompteDao {
      * @param id 
      * @return
      */
-    public Compte getCompte(int id) {
+    public Transaction getTransaction(int id) {
         // TODO implement here
         return null;
     }
@@ -43,16 +43,16 @@ public class CompteDao {
     /**
      * @return
      */
-    public List<Compte> getListCompte() {
+    public List<Transaction> getListTransaction() {
         // TODO implement here
         return null;
     }
 
     /**
-     * @param compte 
+     * @param transaction 
      * @return
      */
-    public Compte deleteCompte(Compte compte) {
+    public Transaction deleteTransaction(Transaction transaction) {
         // TODO implement here
         return null;
     }

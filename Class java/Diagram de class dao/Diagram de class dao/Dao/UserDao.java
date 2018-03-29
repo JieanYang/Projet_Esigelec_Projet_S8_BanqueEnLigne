@@ -1,32 +1,32 @@
-package Model;
+package Dao;
 
 import java.util.*;
 
 /**
  * 
  */
-public class ActualiteDao {
+public class UserDao {
 
     /**
      * Default constructor
      */
-    public ActualiteDao() {
+    public UserDao() {
     }
 
     /**
-     * @param actualite 
+     * @param user 
      * @return
      */
-    public Actualite addActualite(Actualite actualite) {
+    public User addUser(User user) {
         // TODO implement here
         return null;
     }
 
     /**
-     * @param actualite 
+     * @param user 
      * @return
      */
-    public Actualite updateActualite(Actualite actualite) {
+    public User updateUser(User user) {
         // TODO implement here
         return null;
     }
@@ -35,7 +35,7 @@ public class ActualiteDao {
      * @param id 
      * @return
      */
-    public Actualite getActualite(int id) {
+    public User getUser(int id) {
         // TODO implement here
         return null;
     }
@@ -43,16 +43,16 @@ public class ActualiteDao {
     /**
      * @return
      */
-    public List<Actualite> getListActualite() {
+    public List<User> getListUser() {
         // TODO implement here
         return null;
     }
 
     /**
-     * @param actualite 
+     * @param user 
      * @return
      */
-    public Actualite deleteActualite(Actualite actualite) {
+    public User deleteUser(User user) {
         // TODO implement here
         return null;
     }

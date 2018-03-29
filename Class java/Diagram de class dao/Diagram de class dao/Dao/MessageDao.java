@@ -1,32 +1,32 @@
-package Model;
+package Dao;
 
 import java.util.*;
 
 /**
  * 
  */
-public class Transaction {
+public class MessageDao {
 
     /**
      * Default constructor
      */
-    public Transaction() {
+    public MessageDao() {
     }
 
     /**
-     * @param transaction 
+     * @param message 
      * @return
      */
-    public Transaction addTransaction(Transaction transaction) {
+    public Message addMessage(Message message) {
         // TODO implement here
         return null;
     }
 
     /**
-     * @param transaction 
+     * @param message 
      * @return
      */
-    public Transaction updateTransaction(Transaction transaction) {
+    public Message updateMessage(Message message) {
         // TODO implement here
         return null;
     }
@@ -35,7 +35,7 @@ public class Transaction {
      * @param id 
      * @return
      */
-    public Transaction getTransaction(int id) {
+    public Message getMessage(int id) {
         // TODO implement here
         return null;
     }
@@ -43,16 +43,16 @@ public class Transaction {
     /**
      * @return
      */
-    public List<Transaction> getListTransaction() {
+    public List<Message> getListMessage() {
         // TODO implement here
         return null;
     }
 
     /**
-     * @param transaction 
+     * @param message 
      * @return
      */
-    public Transaction deleteTransaction(Transaction transaction) {
+    public Message deleteMessage(Message message) {
         // TODO implement here
         return null;
     }

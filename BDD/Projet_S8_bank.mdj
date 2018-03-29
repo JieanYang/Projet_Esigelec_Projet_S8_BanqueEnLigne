@@ -5135,7 +5135,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Services_de_la_banque",
+											"text": "ServicesDeLaBanque",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -5541,7 +5541,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Cours_de_la_bourse",
+											"text": "CoursDeLaBourse",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -7044,7 +7044,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFicdfoZdVNzUg="
 							},
-							"name": "Services_de_la_banque",
+							"name": "ServicesDeLaBanque",
 							"visibility": "public",
 							"attributes": [
 								{
@@ -7131,7 +7131,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFicdfoZdVNzUg="
 							},
-							"name": "Cours_de_la_bourse",
+							"name": "CoursDeLaBourse",
 							"visibility": "public",
 							"attributes": [
 								{
@@ -7389,7 +7389,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Model",
+											"text": "Dao",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -7590,7 +7590,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Dao)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -7995,11 +7995,11 @@
 											"containerExtending": false,
 											"left": 582,
 											"top": 708,
-											"width": 467.94287109375,
+											"width": 473.68115234375,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Cours_de_la_bourse",
+											"text": "CoursDeLaBourseDao",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -8025,7 +8025,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Dao)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -8067,7 +8067,7 @@
 									"containerExtending": false,
 									"left": 577,
 									"top": 701,
-									"width": 477.94287109375,
+									"width": 483.68115234375,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -8103,7 +8103,7 @@
 									"containerExtending": false,
 									"left": 577,
 									"top": 726,
-									"width": 477.94287109375,
+									"width": 483.68115234375,
 									"height": 10,
 									"autoResize": false
 								},
@@ -8137,11 +8137,11 @@
 											"containerExtending": false,
 											"left": 582,
 											"top": 741,
-											"width": 467.94287109375,
+											"width": 473.68115234375,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+addCoursDeLaBourse(action: Cours_de_la_bourse): Cours_de_la_bourse",
+											"text": "+addCoursDeLaBourse(action: CoursDeLaBourse): CoursDeLaBourse",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -8166,11 +8166,11 @@
 											"containerExtending": false,
 											"left": 582,
 											"top": 756,
-											"width": 467.94287109375,
+											"width": 473.68115234375,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+updateCoursDeLaBourse(action: Cours_de_la_bourse): Cours_de_la_bourse",
+											"text": "+updateCoursDeLaBourse(action: CoursDeLaBourse): CoursDeLaBourse",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -8195,11 +8195,11 @@
 											"containerExtending": false,
 											"left": 582,
 											"top": 771,
-											"width": 467.94287109375,
+											"width": 473.68115234375,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+getCoursDeLaBourse(id: int): Cours_de_la_bourse",
+											"text": "+getCoursDeLaBourse(id: int): CoursDeLaBourse",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -8224,11 +8224,11 @@
 											"containerExtending": false,
 											"left": 582,
 											"top": 786,
-											"width": 467.94287109375,
+											"width": 473.68115234375,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+getListCoursDeLaBourse(): List<Cours_de_la_bourse>",
+											"text": "+getListCoursDeLaBourse(): List<CoursDeLaBourse>",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -8253,11 +8253,11 @@
 											"containerExtending": false,
 											"left": 582,
 											"top": 801,
-											"width": 467.94287109375,
+											"width": 473.68115234375,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+deleteCoursDeLaBourse(action: Cours_de_la_bourse): Cours_de_la_bourse",
+											"text": "+deleteCoursDeLaBourse(action: CoursDeLaBourse): CoursDeLaBourse",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -8274,7 +8274,7 @@
 									"containerExtending": false,
 									"left": 577,
 									"top": 736,
-									"width": 477.94287109375,
+									"width": 483.68115234375,
 									"height": 83,
 									"autoResize": false
 								},
@@ -8341,7 +8341,7 @@
 							"containerExtending": false,
 							"left": 577,
 							"top": 701,
-							"width": 477.94287109375,
+							"width": 483.68115234375,
 							"height": 118,
 							"autoResize": false,
 							"stereotypeDisplay": "label",
@@ -8433,11 +8433,11 @@
 											"containerExtending": false,
 											"left": 558,
 											"top": 180,
-											"width": 378.9931640625,
+											"width": 385.505859375,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Transaction",
+											"text": "TransactionDao",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -8463,7 +8463,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Dao)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -8505,7 +8505,7 @@
 									"containerExtending": false,
 									"left": 553,
 									"top": 173,
-									"width": 388.9931640625,
+									"width": 395.505859375,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -8541,7 +8541,7 @@
 									"containerExtending": false,
 									"left": 553,
 									"top": 198,
-									"width": 388.9931640625,
+									"width": 395.505859375,
 									"height": 10,
 									"autoResize": false
 								},
@@ -8575,7 +8575,7 @@
 											"containerExtending": false,
 											"left": 558,
 											"top": 213,
-											"width": 378.9931640625,
+											"width": 385.505859375,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
@@ -8604,7 +8604,7 @@
 											"containerExtending": false,
 											"left": 558,
 											"top": 228,
-											"width": 378.9931640625,
+											"width": 385.505859375,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
@@ -8633,7 +8633,7 @@
 											"containerExtending": false,
 											"left": 558,
 											"top": 243,
-											"width": 378.9931640625,
+											"width": 385.505859375,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
@@ -8662,7 +8662,7 @@
 											"containerExtending": false,
 											"left": 558,
 											"top": 258,
-											"width": 378.9931640625,
+											"width": 385.505859375,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
@@ -8691,7 +8691,7 @@
 											"containerExtending": false,
 											"left": 558,
 											"top": 273,
-											"width": 378.9931640625,
+											"width": 385.505859375,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
@@ -8712,7 +8712,7 @@
 									"containerExtending": false,
 									"left": 553,
 									"top": 208,
-									"width": 388.9931640625,
+									"width": 395.505859375,
 									"height": 83,
 									"autoResize": false
 								},
@@ -8779,7 +8779,7 @@
 							"containerExtending": false,
 							"left": 553,
 							"top": 173,
-							"width": 388.9931640625,
+							"width": 395.505859375,
 							"height": 118,
 							"autoResize": false,
 							"stereotypeDisplay": "label",
@@ -8901,7 +8901,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Dao)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -9339,7 +9339,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Dao)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -9751,7 +9751,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Services_de_la_banqueDao",
+											"text": "ServicesDeLaBanqueDao",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -9777,7 +9777,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Dao)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -9893,7 +9893,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+addServiceDeLaBanque(service: Services_de_la_banque): Services_de_la_banque",
+											"text": "+addServiceDeLaBanque(service: ServicesDeLaBanque): ServicesDeLaBanque",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -9922,7 +9922,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+updateServiceDeLaBanque(service: Services_de_la_banque): Services_de_la_banque",
+											"text": "+updateServiceDeLaBanque(service: ServicesDeLaBanque): ServicesDeLaBanque",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -9951,7 +9951,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+getServiceDeLaBanque(id: int): Services_de_la_banque",
+											"text": "+getServiceDeLaBanque(id: int): ServicesDeLaBanque",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -9980,7 +9980,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+getListServiceDeLaBanque(): List<Services_de_la_banque>",
+											"text": "+getListServiceDeLaBanque(): List<ServicesDeLaBanque>",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -10009,7 +10009,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+deleteServiceDeLaBanque(service: Services_de_la_banque): Services_de_la_banque",
+											"text": "+deleteServiceDeLaBanque(service: ServicesDeLaBanque): ServicesDeLaBanque",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -10215,7 +10215,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Model)",
+											"text": "(from Dao)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -10569,7 +10569,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFicMsSpZB4Qt8="
 					},
-					"name": "Model",
+					"name": "Dao",
 					"ownedElements": [
 						{
 							"_type": "UMLClass",
@@ -10577,7 +10577,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFiceD4ONYjdpQ="
 							},
-							"name": "Cours_de_la_bourse",
+							"name": "CoursDeLaBourseDao",
 							"visibility": "public",
 							"operations": [
 								{
@@ -10602,7 +10602,7 @@
 											"isStatic": false,
 											"isLeaf": false,
 											"type": {
-												"$ref": "AAAAAAFicfNv29iOgdw="
+												"$ref": "AAAAAAFicTJbIJMNTsk="
 											},
 											"isReadOnly": false,
 											"isOrdered": false,
@@ -10619,7 +10619,7 @@
 											"isStatic": false,
 											"isLeaf": false,
 											"type": {
-												"$ref": "AAAAAAFicfNv29iOgdw="
+												"$ref": "AAAAAAFicTJbIJMNTsk="
 											},
 											"isReadOnly": false,
 											"isOrdered": false,
@@ -10653,7 +10653,7 @@
 											"isStatic": false,
 											"isLeaf": false,
 											"type": {
-												"$ref": "AAAAAAFicfNv29iOgdw="
+												"$ref": "AAAAAAFicTJbIJMNTsk="
 											},
 											"isReadOnly": false,
 											"isOrdered": false,
@@ -10670,7 +10670,7 @@
 											"isStatic": false,
 											"isLeaf": false,
 											"type": {
-												"$ref": "AAAAAAFicfNv29iOgdw="
+												"$ref": "AAAAAAFicTJbIJMNTsk="
 											},
 											"isReadOnly": false,
 											"isOrdered": false,
@@ -10719,7 +10719,7 @@
 											"isStatic": false,
 											"isLeaf": false,
 											"type": {
-												"$ref": "AAAAAAFicfNv29iOgdw="
+												"$ref": "AAAAAAFicTJbIJMNTsk="
 											},
 											"isReadOnly": false,
 											"isOrdered": false,
@@ -10751,7 +10751,7 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": "List<Cours_de_la_bourse>",
+											"type": "List<CoursDeLaBourse>",
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -10784,7 +10784,7 @@
 											"isStatic": false,
 											"isLeaf": false,
 											"type": {
-												"$ref": "AAAAAAFicfNv29iOgdw="
+												"$ref": "AAAAAAFicTJbIJMNTsk="
 											},
 											"isReadOnly": false,
 											"isOrdered": false,
@@ -10801,7 +10801,7 @@
 											"isStatic": false,
 											"isLeaf": false,
 											"type": {
-												"$ref": "AAAAAAFicfNv29iOgdw="
+												"$ref": "AAAAAAFicTJbIJMNTsk="
 											},
 											"isReadOnly": false,
 											"isOrdered": false,
@@ -10825,7 +10825,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFiceD4ONYjdpQ="
 							},
-							"name": "Transaction",
+							"name": "TransactionDao",
 							"visibility": "public",
 							"operations": [
 								{
@@ -10850,7 +10850,7 @@
 											"isStatic": false,
 											"isLeaf": false,
 											"type": {
-												"$ref": "AAAAAAFicfNbldg8cRY="
+												"$ref": "AAAAAAFicTGjSpJp13Y="
 											},
 											"isReadOnly": false,
 											"isOrdered": false,
@@ -10867,7 +10867,7 @@
 											"isStatic": false,
 											"isLeaf": false,
 											"type": {
-												"$ref": "AAAAAAFicfNbldg8cRY="
+												"$ref": "AAAAAAFicTGjSpJp13Y="
 											},
 											"isReadOnly": false,
 											"isOrdered": false,
@@ -10901,7 +10901,7 @@
 											"isStatic": false,
 											"isLeaf": false,
 											"type": {
-												"$ref": "AAAAAAFicfNbldg8cRY="
+												"$ref": "AAAAAAFicTGjSpJp13Y="
 											},
 											"isReadOnly": false,
 											"isOrdered": false,
@@ -10918,7 +10918,7 @@
 											"isStatic": false,
 											"isLeaf": false,
 											"type": {
-												"$ref": "AAAAAAFicfNbldg8cRY="
+												"$ref": "AAAAAAFicTGjSpJp13Y="
 											},
 											"isReadOnly": false,
 											"isOrdered": false,
@@ -10967,7 +10967,7 @@
 											"isStatic": false,
 											"isLeaf": false,
 											"type": {
-												"$ref": "AAAAAAFicfNbldg8cRY="
+												"$ref": "AAAAAAFicTGjSpJp13Y="
 											},
 											"isReadOnly": false,
 											"isOrdered": false,
@@ -11032,7 +11032,7 @@
 											"isStatic": false,
 											"isLeaf": false,
 											"type": {
-												"$ref": "AAAAAAFicfNbldg8cRY="
+												"$ref": "AAAAAAFicTGjSpJp13Y="
 											},
 											"isReadOnly": false,
 											"isOrdered": false,
@@ -11049,7 +11049,7 @@
 											"isStatic": false,
 											"isLeaf": false,
 											"type": {
-												"$ref": "AAAAAAFicfNbldg8cRY="
+												"$ref": "AAAAAAFicTGjSpJp13Y="
 											},
 											"isReadOnly": false,
 											"isOrdered": false,
@@ -11569,7 +11569,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFiceD4ONYjdpQ="
 							},
-							"name": "Services_de_la_banqueDao",
+							"name": "ServicesDeLaBanqueDao",
 							"visibility": "public",
 							"operations": [
 								{
@@ -11743,7 +11743,7 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": "List<Services_de_la_banque>",
+											"type": "List<ServicesDeLaBanque>",
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,

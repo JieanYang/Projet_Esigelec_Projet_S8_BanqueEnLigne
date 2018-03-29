@@ -5,23 +5,23 @@ import java.util.*;
 /**
  * 
  */
-public class Cours_de_la_bourse {
+public class ServicesDeLaBanque {
 
     /**
      * Default constructor
      */
-    public Cours_de_la_bourse() {
+    public ServicesDeLaBanque() {
     }
 
     /**
      * 
      */
-    private int id_entreprise;
+    private int id_service;
 
     /**
      * 
      */
-    private String entreprise;
+    private String nom_service;
 
     /**
      * 
@@ -31,6 +31,6 @@ public class Cours_de_la_bourse {
     /**
      * 
      */
-    public Date date;
+    private String description;
 
 }
