@@ -48,7 +48,7 @@ CREATE TABLE `Transaction` (
 CREATE TABLE `Message` (
     `id_message` INTEGER NOT NULL,
     `nom` VARCHAR(15) NOT NULL,
-    `prenon` VARCHAR(15) NOT NULL,
+    `prenom` VARCHAR(15) NOT NULL,
     `numphone` INTEGER(30) NOT NULL,
     `email` VARCHAR(30) NOT NULL,
     `problem` TEXT NOT NULL,
