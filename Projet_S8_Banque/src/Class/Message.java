@@ -9,7 +9,15 @@ public class Message {
     /**
      * Default constructor
      */
-    public Message() {
+    public Message(int id, String nom, String prenom, int numphone, String email, String problem, String reponse, Date date) {
+    	this.id_message = id;
+    	this.nom = nom;
+    	this.prenom = prenom;
+    	this.numphone = numphone;
+    	this.email = email;
+    	this.problem = problem;
+    	this.reponse = reponse;
+    	this.date = date;
     }
 
     public int getId_message() {
