@@ -8,16 +8,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class recupprix
+ * Servlet implementation class S_Index
  */
-@WebServlet("/Recupprix")
-public class Recupprix extends HttpServlet {
+@WebServlet("/S_Index")
+public class S_Index extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public Recupprix() {
+    public S_Index() {
+        super();
         // TODO Auto-generated constructor stub
     }
 

@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class creerCompte
  */
-@WebServlet("/creerCompte")
-public class creerCompte extends HttpServlet {
+@WebServlet("/CreerCompte")
+public class CreerCompte extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	DAO monDAO= new DAO();
@@ -22,7 +22,7 @@ public class creerCompte extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public creerCompte() {
+    public CreerCompte() {
         super();
         // TODO Auto-generated constructor stub
     }
