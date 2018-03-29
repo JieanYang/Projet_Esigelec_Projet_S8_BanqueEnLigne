@@ -35,45 +35,55 @@
 <br/>
      
 
-  <form action="creerCompte" method="POST">
+  <form action="CreerCompte" method="post">
+  
+  	
+  	    <div class="form-group ">
+	      <label for="inputState">Je veux ouvrir :</label>
+	      <select name="compte" id="inputState" class="form-control">
+	        <option selected>Compte Bancaire</option>
+	        <option>Livret A</option>
+	        <option>compte titre</option>
+	      </select>
+	    </div>
 	  <div class="form-row">
 	    <div class="form-group col-md-6">
 	      <label for="inputName4">Nom </label>
-	      <input type="text" class="form-control" name="nom" id="inputName4" placeholder="Serais">
+	      <input type="text" class="form-control" name="nom" id="inputName4" placeholder="Serais" required>
 	    </div>
 	    
 	    <div class="form-group col-md-6">
 	      <label for="inputName4">Prénom </label>
-	      <input type="text" class="form-control" name="prenom" id="inputName4" placeholder="Sebastien">
+	      <input type="text" class="form-control" name="prenom" id="inputName4" placeholder="Sebastien" required>
 	    </div>
 	    
 	    <div class="form-group col-md-6">
 	      <label for="inputName4">Tel : </label>
-	      <input type="text" class="form-control" name="telephone" id="inputName4" placeholder="0769458855">
+	      <input type="text" class="form-control" name="telephone" id="inputName4" placeholder="0769458855" required>
 	    </div>
 	    
 	  </div>
 	  <div class="form-group">
 	    <label for="inputAddress">Date de Naissance : </label>
-	    <input type="date" class="form-control" name="date" id="inputdate" placeholder="10/10/1990">
+	    <input type="text" class="form-control" name="date" id="inputdate" placeholder="10/10/1990" required>
 	  </div>
 	  
 	  <div class="form-group">
 	    <label for="inputAddress">Adresse</label>
-	    <input type="text" class="form-control" name="adresse" id="inputAddress" placeholder="1 rue jean mermoz">
+	    <input type="text" class="form-control" name="adresse" id="inputAddress" placeholder="1 rue jean mermoz" required>
 	  </div>
 	  <div class="form-group">
 	    <label for="inputAddress2">Adresse mail</label>
-	    <input type="text" class="form-control" name="email" id="inputAddress2" placeholder="sebastien@esigelec.fr">
+	    <input type="text" class="form-control" name="email" id="inputAddress2" placeholder="sebastien@esigelec.fr" required>
 	  </div>
 	  <div class="form-row">
 	    <div class="form-group col-md-6">
 	      <label for="inputCity">Ville</label>
-	      <input type="text" class="form-control" id="inputCity">
+	      <input type="text" name="ville" class="form-control" id="inputCity" required>
 	    </div>
 	    <div class="form-group col-md-4">
 	      <label for="inputState">Pays</label>
-	      <select id="inputState" class="form-control">
+	      <select id="inputState" name="pays" class="form-control">
 	        <option selected>France</option>
 	        <option>Allemagne</option>
 	        <option>Suisse</option>

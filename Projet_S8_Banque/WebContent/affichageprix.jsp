@@ -40,11 +40,11 @@
 <br/>
 
 
-        <form action="recupprix">
+        <form action="Recupprix">
   <div class="form-group">
    <center><label><center> Nom de l'entreprise </center></label>
     <select name = "entreprise" id = "entreprise">
-    <option value = "sopra"> Sopra </option>
+    <option value = "Sopra"> Sopra </option>
     <option value = "hermes"> Hermes </option>
     <option value = "cgg"> Cgg </option>
     <option value = "Axa"> axa </option>

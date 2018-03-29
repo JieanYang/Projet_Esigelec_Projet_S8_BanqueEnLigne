@@ -35,7 +35,7 @@ public class DAO {
 	/**
 	 * Setup connection parameters to the database
 	 */
-	private String url = "jdbc:mysql://localhost/projet_s8_banque?useSSL=false"; // add '?useSSL=false' to disable
+	private String url = "jdbc:mysql://localhost/banque?useSSL=false"; // add '?useSSL=false' to disable
 																					// Warning message
 	private String username = "root";
 	private String password = "";
@@ -158,20 +158,23 @@ public class DAO {
 		// write the code here DONT FORGET TO DISCONNECT AFTER CREATING THE ACCOUNT
 	}
     
-    	public String prixcours(String nomentreprise) {
+	public int prixcours(String nomentreprise) {
 		this.connection();
 		try {
-			String sql = "SELECT prix from 'cours de la bourse' WHERE (entreprise=?)";
+			int monprix=0;
+			String sql = "SELECT prix from cours_de_la_bourse WHERE (entreprise=?)";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, nomentreprise);
 			ResultSet resultset=preparedStatement.executeQuery();
-			String monprix=resultset.getString("prix");
+			if (resultset.next()) {
+			monprix=resultset.getInt("prix");
+			}
 			this.disconnection();
 			return monprix;
 		} catch (SQLException e1) {
 			e1.printStackTrace();
+					return 0 ;
 		}
-		return "erreur" ;
 	}
 	
 }

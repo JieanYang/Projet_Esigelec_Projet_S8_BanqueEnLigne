@@ -39,12 +39,12 @@
 	  <div class="form-row">
 	    <div class="form-group col-md-6">
 	      <label for="inputName4">Nom </label>
-	      <input type="text" class="form-control" name="nom" id="inputName4" placeholder="Serais">
+	      <input type="text" class="form-control" name="nom" id="inputName4" placeholder="Serais" required>
 	    </div>
 	    
 	    <div class="form-group col-md-6">
 	      <label for="inputName4">Prénom </label>
-	      <input type="text" class="form-control" name="prenom" id="inputName4" placeholder="Sebastien">
+	      <input type="text" class="form-control" name="prenom" id="inputName4" placeholder="Sebastien" required>
 	    </div>
 	    
 	  </div>
@@ -52,12 +52,18 @@
 	  
 	  <div class="form-group">
 	    <label for="inputAddress">Adresse</label>
-	    <input type="text" class="form-control" name="adresse" id="inputAddress" placeholder="1 rue jean mermoz">
+	    <input type="text" class="form-control" name="adresse" id="inputAddress" placeholder="1 rue jean mermoz" required>
 	  </div>
 	  <div class="form-group">
 	    <label for="inputAddress2">Adresse mail</label>
-	    <input type="text" class="form-control" name="email" id="inputAddress2" placeholder="sebastien@esigelec.fr">
+	    <input type="text" class="form-control" name="email" id="inputAddress2" placeholder="sebastien@esigelec.fr" required>
 	  </div>
+	  
+	    <div class="form-group col-md-6">
+	      <label for="inputName4">Votre message : </label>
+	      <textarea type="text" class="form-control" name="zoneTexte" cols="10" id="inputName4" placeholder="Entrez votre message"></textarea>
+	    </div>
+	  
 	  
 	  <button type="submit" class="btn btn-primary">Envoyer</button>
 </form>
