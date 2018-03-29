@@ -19,18 +19,18 @@ public class CoursDeLaBourseDao {
      * @param action 
      * @return
      */
-    public CoursDeLaBourse addCoursDeLaBourse(CoursDeLaBourse action) {
+    public int addCoursDeLaBourse(CoursDeLaBourse action) {
         // TODO implement here
-        return null;
+        return 0;
     }
 
     /**
      * @param action 
      * @return
      */
-    public CoursDeLaBourse updateCoursDeLaBourse(CoursDeLaBourse action) {
+    public int updateCoursDeLaBourse(CoursDeLaBourse action) {
         // TODO implement here
-        return null;
+        return 0;
     }
 
     /**
@@ -54,9 +54,9 @@ public class CoursDeLaBourseDao {
      * @param action 
      * @return
      */
-    public CoursDeLaBourse deleteCoursDeLaBourse(CoursDeLaBourse action) {
+    public int deleteCoursDeLaBourse(CoursDeLaBourse action) {
         // TODO implement here
-        return null;
+        return 0;
     }
 
 }

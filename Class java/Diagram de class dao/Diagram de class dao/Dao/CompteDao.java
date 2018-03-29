@@ -17,18 +17,18 @@ public class CompteDao {
      * @param compte 
      * @return
      */
-    public Compte addCompte(Compte compte) {
+    public int addCompte(Compte compte) {
         // TODO implement here
-        return null;
+        return 0;
     }
 
     /**
      * @param compte 
      * @return
      */
-    public Compte updateCompte(Compte compte) {
+    public int updateCompte(Compte compte) {
         // TODO implement here
-        return null;
+        return 0;
     }
 
     /**
@@ -52,9 +52,9 @@ public class CompteDao {
      * @param compte 
      * @return
      */
-    public Compte deleteCompte(Compte compte) {
+    public int deleteCompte(Compte compte) {
         // TODO implement here
-        return null;
+        return 0;
     }
 
 }

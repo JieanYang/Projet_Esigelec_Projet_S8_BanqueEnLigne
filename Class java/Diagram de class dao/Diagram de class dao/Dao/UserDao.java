@@ -17,18 +17,18 @@ public class UserDao {
      * @param user 
      * @return
      */
-    public User addUser(User user) {
+    public int addUser(User user) {
         // TODO implement here
-        return null;
+        return 0;
     }
 
     /**
      * @param user 
      * @return
      */
-    public User updateUser(User user) {
+    public int updateUser(User user) {
         // TODO implement here
-        return null;
+        return 0;
     }
 
     /**
@@ -52,9 +52,9 @@ public class UserDao {
      * @param user 
      * @return
      */
-    public User deleteUser(User user) {
+    public int deleteUser(User user) {
         // TODO implement here
-        return null;
+        return 0;
     }
 
 }
