@@ -20,7 +20,7 @@ public class Services_de_la_banque {
     /**
      * 
      */
-    private void nom_service"String;
+    private String nom_service;
 
     /**
      * 

@@ -50,7 +50,7 @@ public class User {
     /**
      * 
      */
-    private Stirng ville;
+    private String ville;
 
     /**
      * 
@@ -60,7 +60,7 @@ public class User {
     /**
      * 
      */
-    private Sring password;
+    private String password;
 
     /**
      * 
