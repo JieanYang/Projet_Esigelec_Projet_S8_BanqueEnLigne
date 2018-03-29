@@ -28,12 +28,12 @@ public class Message {
 		this.nom = nom;
 	}
 
-	public String getPrenon() {
-		return prenon;
+	public String getPrenom() {
+		return prenom;
 	}
 
-	public void setPrenon(String prenon) {
-		this.prenon = prenon;
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
 
 	public int getNumphone() {
@@ -89,7 +89,7 @@ public class Message {
     /**
      * 
      */
-    private String prenon;
+    private String prenom;
 
     /**
      * 

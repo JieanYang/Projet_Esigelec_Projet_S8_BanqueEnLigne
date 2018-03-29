@@ -26,7 +26,7 @@ public class Message {
     /**
      * 
      */
-    private String prenon;
+    private String prenom;
 
     /**
      * 
