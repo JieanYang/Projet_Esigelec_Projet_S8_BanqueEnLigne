@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +15,7 @@
 
 <title>Accueil</title>
 </head>
-<body>
+<body class="container backC">
 	<!-- top navigation -->
 	<div class="topnav" id="myTopnav">
 		<a href="#home" class="active">Accueil</a> <a href="#news">News</a> <a
@@ -26,25 +24,88 @@
 	</div>
 	<!-- header -->
 	<div class="header">
-		<a href="#default" class="logo">CompanyLogo</a>
+		<a href="#default" class="logo">OnlineBank</a>
 		<div class="header-right">
-			<a class="btn active" name="espaceClient" href="Login">Espace Client</a>
+			<a class="btn active" name="espaceClient"
+				onclick="document.getElementById('id01').style.display='block'"
+				style="width: auto;">Espace Client</a>
 			<!--<a class="active" href="#home">Home</a>
                 <a href="#contact">Contact</a>
                 <a href="#about">About</a>-->
 		</div>
 	</div>
 
-	<div class="col-container contourNews">
+
+	<!--login form-->
+	<div id="id01" class="modal">
+
+		<form class="modal-content animate" action="Login" method="post">
+			<div class="imgcontainer">
+				<span onclick="document.getElementById('id01').style.display='none'"
+					class="close" title="Close Modal">&times;</span>
+				<!--<img src="img_avatar2.png" alt="Avatar" class="avatar">-->
+			</div>
+
+			<div class="container">
+				<label for="username"><b>Identifiant/Email</b></label> <input
+					type="text" placeholder="Entrez votre Identifiant ou Email"
+					name="username" required> <label for="psw"><b>Mot
+						de passe</b></label> <input type="password"
+					placeholder="Entrez votre Mot de passe" name="password" required>
+
+				<button type="submit">Connexion</button>
+				<!--<label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>-->
+			</div>
+
+			<div class="container" style="background-color: #f1f1f1">
+				<button type="button"
+					onclick="document.getElementById('id01').style.display='none'"
+					class="cancelbtn">Annuler</button>
+				<!--<span class="psw">Forgot <a href="#">password?</a></span>-->
+			</div>
+		</form>
+	</div>
+
+
+	<div class="row justify-content-around espace">
+		<div class="card" style="width: 19rem;">
+			<img class="card-img-top" src="Image/livretA.jpg"
+				alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title">Ouvrir un Compte Livret A</h5>
+				<p class="card-text">Un texte ici ?</p>
+				<a href="#" class="btn btn-primary">Ouvrir un compte</a>
+			</div>
+		</div>
+
+		<div class="card" style="width: 19rem;">
+			<img class="card-img-top" src="Image/compteCourant.jpg"
+				alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title">Ouvrir un compte courant</h5>
+				<p class="card-text">Un texte ici ?</p>
+				<a href="#" class="btn btn-primary">Ouvrir un compte</a>
+			</div>
+		</div>
+
+
+		<div class="card" style="width: 19rem;">
+			<img class="card-img-top" src="Image/compteTitre.jpg"
+				alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title">Ouvrir un compte titre</h5>
+				<p class="card-text">Un texte ici ?</p>
+				<a href="#" class="btn btn-primary">Ouvrir un compte</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- <div class="col-container contourNews">
 		<div class="col bordure">
 			<h4>Colonne</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-				do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-				enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-				ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-				reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-				pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-				culpa qui officia deserunt mollit anim id est laborum.</p>
+			
 		</div>
 
 		<div class="col bordure">
@@ -52,12 +113,16 @@
 			<p>Some other text..</p>
 			<p>Some other text..</p>
 		</div>
-	</div>
+	</div> -->
 
-	<div class="footer">
-		<p>Footer</p>
-	</div>
-	
+	<!--Footer-->
+	<footer class="footer">
+		<div class="container">
+			<span class="colorr">Place sticky footer content here.</span>
+		</div>
+	</footer>
+	<!--/.Footer-->
+
 	<script src="css_script/scripts_index.js"></script>
 </body>
 </html>

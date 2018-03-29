@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/S_Index")
 public class S_Index extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	DAO aDAO = new DAO();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -34,8 +36,31 @@ public class S_Index extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		
+		if(aDAO.login(username, password)) {
+			response.getWriter().write("<!DOCTYPE html>\r\n" + 
+					"<html>\r\n" + 
+					"	<head>\r\n" + 
+					"		<title>Page Title</title>\r\n" + 
+					"	</head>\r\n" + 
+					"	<body>\r\n" + 
+					"		<h1>You are logged in</h1>\r\n" + 
+					"	</body>\r\n" + 
+					"</html>");
+			//response.sendRedirect("HelloWorldMultiLanguage.jsp");
+		}else {
+			response.getWriter().write("<!DOCTYPE html>\r\n" + 
+					"<html>\r\n" + 
+					"	<head>\r\n" + 
+					"		<title>Page Title</title>\r\n" + 
+					"	</head>\r\n" + 
+					"	<body>\r\n" + 
+					"		<h1>FORBIDDEN</h1>\r\n" + 
+					"	</body>\r\n" + 
+					"</html>");
+		}
 	}
 
 }

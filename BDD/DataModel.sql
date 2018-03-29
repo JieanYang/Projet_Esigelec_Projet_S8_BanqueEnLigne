@@ -28,7 +28,7 @@ CREATE TABLE `Compte` (
     `id_user` INTEGER NOT NULL,
     `categorie_compte` VARCHAR(15) NOT NULL,
     `etat` VARCHAR(15) NOT NULL,
-    `solde` BIGINT NOT NULL,
+    `solde` FLOAT NOT NULL,
     `date_create` DATE NOT NULL,
     `date_delete` DATE NOT NULL,
     PRIMARY KEY (`id_compte`)
@@ -40,7 +40,7 @@ CREATE TABLE `Transaction` (
     `id_compte_emetteur` INTEGER NOT NULL,
     `id_compte_recepteur` INTEGER NOT NULL,
     `date` DATE NOT NULL,
-    `Somme` BIGINT NOT NULL,
+    `somme` FLOAT NOT NULL,
     `description` TEXT NOT NULL,
     PRIMARY KEY (`id_transaction`)
 );
@@ -60,7 +60,7 @@ CREATE TABLE `Message` (
 CREATE TABLE `Cours_de_la_bourse` (
     `id_entreprise` INTEGER NOT NULL,
     `entreprise` VARCHAR(15) NOT NULL,
-    `prix` INTEGER NOT NULL,
+    `prix` FLOAT NOT NULL,
     `date` DATE NOT NULL,
     PRIMARY KEY (`id_entreprise`)
 );
@@ -76,7 +76,7 @@ CREATE TABLE `Actualite` (
 CREATE TABLE `Services_de_la_banque` (
     `id_service` INTEGER NOT NULL,
     `nom_service` VARCHAR(15) NOT NULL,
-    `prix` INTEGER NOT NULL,
+    `prix` FLOAT NOT NULL,
     `description` TEXT NOT NULL,
     PRIMARY KEY (`id_service`)
 );
