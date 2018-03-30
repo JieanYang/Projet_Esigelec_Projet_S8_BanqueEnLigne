@@ -3,7 +3,9 @@ import java.sql.Timestamp;
 import java.util.*;
 
 /**
- * 
+ * It doesn't have methods setId_message() and setProblem()
+ * The reason for setProblem() is that Problem in the Class doesn't change after enter
+ * In the BDD, field Problem is unique
  */
 public class Message {
 
