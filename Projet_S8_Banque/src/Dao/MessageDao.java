@@ -1,6 +1,7 @@
 package Dao;
 
 import java.util.*;
+import java.util.Date;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -8,6 +9,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+
 
 import Class.Message;
 
@@ -85,24 +88,44 @@ public class MessageDao {
      * @param message 
      * @return
      */
-    public int addMessage(Message message) {
-        int retour = 0;
+    public Message addMessage(Message message) {
+        Message retour = null;
+        int success = 0;
     	this.connection();
         
     	try {
-        	String sql ="INSERT INTO Message(nom, prenon, numphone, email, problem, reponse, date) "
+        	String sql ="INSERT INTO Message(nom, prenom, numphone, email, problem, reponse, date) "
         			+ "VALUES (?, ?, ?, ?, ?, ?, ?)";
         	ps = connection.prepareStatement(sql);
         	ps.setString(1, message.getNom());
         	ps.setString(2, message.getPrenom());
-        	ps.setInt(3, message.getNumphone());
+        	ps.setString(3, message.getNumphone());
         	ps.setString(4, message.getEmail());
         	ps.setString(5, message.getProblem());
         	ps.setString(6, message.getReponse());
-        	Date date = new Date();
-        	ps.setDate(7, (java.sql.Date) date); // create a date ?????
+        	Date utildate = new Date();         
+        	Timestamp sqldate = new Timestamp(utildate.getTime());   
+        	ps.setTimestamp(7, sqldate);  
+        	/*java.util.Date utilDate1 = new java.util.Date();
+        	SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss");
+        	java.util.Date utilDate = new java.util.Date();
+        	java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());*/
+        	    	
+        	success = ps.executeUpdate(); // if everything work, return int 1
         	
-        	retour = ps.executeUpdate(); // if everything good work, retourn integer 1
+        	if (success == 1) {
+        		sql = "SELECT id_message FROM Message WHERE problem=?";
+        		ps = connection.prepareStatement(sql);
+        		ps.setString(1, message.getProblem());
+        		rs = ps.executeQuery();
+        		
+        		if(rs.next()) {
+        			int id_message = rs.getInt("id_message");
+        			retour = this.getMessage(id_message);
+        		}
+        	}else if (success == 0) {
+        		retour = null;
+        	}
         	
         } catch (Exception e) {
 			e.printStackTrace();
@@ -117,8 +140,9 @@ public class MessageDao {
      * @param message 
      * @return
      */
-    public int updateMessage(Message message) {
-    	int retour = 0;
+    public Message updateMessage(Message message) {
+    	Message retour = null;
+    	int success = 0;
     	this.connection();
         
     	try {
@@ -126,13 +150,19 @@ public class MessageDao {
         	ps = connection.prepareStatement(sql);
         	ps.setString(1, message.getNom());
         	ps.setString(2, message.getPrenom());
-        	ps.setInt(3, message.getNumphone());
+        	ps.setString(3, message.getNumphone());
         	ps.setString(4, message.getEmail());
         	ps.setString(5, message.getProblem());
         	ps.setString(6, message.getReponse());
         	ps.setInt(7, message.getId_message());
         	
-        	retour = ps.executeUpdate(); // if everything good work, retourn integer 1
+        	success = ps.executeUpdate(); // if everything good work, retourn integer 1
+        	
+        	if (success == 1 ) {
+        		retour = this.getMessage(message.getId_message());
+        	} else if(success == 0) {
+        		retour = null;
+        	}
         	
         } catch (Exception e) {
 			e.printStackTrace();
@@ -165,8 +195,8 @@ public class MessageDao {
         	// passe a la premiere (et unique) ligne retournee
         	if (rs.next()) {
         		retour = new Message(rs.getInt("id_message"), rs.getString("nom"), rs.getString("prenom"),
-        				rs.getInt("numphone"), rs.getString("email"), rs.getString("problem"),
-        				rs.getString("reponse"), rs.getDate("date"));
+        				rs.getString("numphone"), rs.getString("email"), rs.getString("problem"),
+        				rs.getString("reponse"), rs.getTimestamp("date"));
         	}
         	
         } catch (Exception e) {
@@ -198,8 +228,8 @@ public class MessageDao {
         	// passe a la premiere (et unique) ligne retournee
         	while(rs.next()) {
         		retour.add(new Message(rs.getInt("id_message"), rs.getString("nom"), rs.getString("prenom"),
-        				rs.getInt("numphone"), rs.getString("email"), rs.getString("problem"),
-        				rs.getString("reponse"), rs.getDate("date")));
+        				rs.getString("numphone"), rs.getString("email"), rs.getString("problem"),
+        				rs.getString("reponse"), rs.getTimestamp("date")));
         	}
         	
         } catch (Exception e) {
