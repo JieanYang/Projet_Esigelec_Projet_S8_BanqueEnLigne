@@ -46,7 +46,7 @@ public class User {
     /**
      * 
      */
-    private int telephone;
+    private String telephone;
 
     /**
      * 

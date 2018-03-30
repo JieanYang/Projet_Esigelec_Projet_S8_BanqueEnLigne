@@ -648,7 +648,7 @@
 									"containerExtending": false,
 									"left": 480,
 									"top": 77,
-									"width": 271.28076171875,
+									"width": 283.55078125,
 									"height": 13,
 									"autoResize": false,
 									"underline": false,
@@ -687,7 +687,7 @@
 											"containerExtending": false,
 											"left": 485,
 											"top": 100,
-											"width": 261.28076171875,
+											"width": 273.55078125,
 											"height": 13,
 											"autoResize": false
 										},
@@ -711,7 +711,7 @@
 											"containerExtending": false,
 											"left": 485,
 											"top": 115,
-											"width": 261.28076171875,
+											"width": 273.55078125,
 											"height": 13,
 											"autoResize": false
 										},
@@ -735,7 +735,7 @@
 											"containerExtending": false,
 											"left": 485,
 											"top": 130,
-											"width": 261.28076171875,
+											"width": 273.55078125,
 											"height": 13,
 											"autoResize": false
 										},
@@ -759,7 +759,7 @@
 											"containerExtending": false,
 											"left": 485,
 											"top": 145,
-											"width": 261.28076171875,
+											"width": 273.55078125,
 											"height": 13,
 											"autoResize": false
 										},
@@ -783,7 +783,7 @@
 											"containerExtending": false,
 											"left": 485,
 											"top": 160,
-											"width": 261.28076171875,
+											"width": 273.55078125,
 											"height": 13,
 											"autoResize": false
 										},
@@ -807,7 +807,7 @@
 											"containerExtending": false,
 											"left": 485,
 											"top": 175,
-											"width": 261.28076171875,
+											"width": 273.55078125,
 											"height": 13,
 											"autoResize": false
 										},
@@ -831,7 +831,7 @@
 											"containerExtending": false,
 											"left": 485,
 											"top": 190,
-											"width": 261.28076171875,
+											"width": 273.55078125,
 											"height": 13,
 											"autoResize": false
 										}
@@ -847,7 +847,7 @@
 									"containerExtending": false,
 									"left": 480,
 									"top": 95,
-									"width": 271.28076171875,
+									"width": 283.55078125,
 									"height": 113,
 									"autoResize": false
 								}
@@ -863,7 +863,7 @@
 							"containerExtending": false,
 							"left": 480,
 							"top": 72,
-							"width": 271.28076171875,
+							"width": 283.55078125,
 							"height": 136,
 							"autoResize": false,
 							"nameLabel": {
@@ -1180,7 +1180,7 @@
 									"height": 13,
 									"autoResize": false,
 									"underline": false,
-									"text": "Cours_de_la_bourse",
+									"text": "CoursDeLaBourse",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5,
 									"wordWrap": false
@@ -1540,7 +1540,7 @@
 									"height": 13,
 									"autoResize": false,
 									"underline": false,
-									"text": "Services_de_la_banque",
+									"text": "ServicesDeLaBanque",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5,
 									"wordWrap": false
@@ -2067,7 +2067,7 @@
 							"primaryKey": false,
 							"foreignKey": false,
 							"nullable": false,
-							"unique": false
+							"unique": true
 						},
 						{
 							"_type": "ERDColumn",
@@ -2080,7 +2080,7 @@
 							"length": "50",
 							"primaryKey": false,
 							"foreignKey": false,
-							"nullable": false,
+							"nullable": true,
 							"unique": false
 						},
 						{
@@ -2090,11 +2090,11 @@
 								"$ref": "AAAAAAFiZ+3nh0y5sNc="
 							},
 							"name": "telephone",
-							"type": "INTEGER",
+							"type": "VARCHAR",
 							"length": "30",
 							"primaryKey": false,
 							"foreignKey": false,
-							"nullable": false,
+							"nullable": true,
 							"unique": false
 						},
 						{
@@ -2108,7 +2108,7 @@
 							"length": "15",
 							"primaryKey": false,
 							"foreignKey": false,
-							"nullable": false,
+							"nullable": true,
 							"unique": false
 						},
 						{
@@ -2122,7 +2122,7 @@
 							"length": "15",
 							"primaryKey": false,
 							"foreignKey": false,
-							"nullable": false,
+							"nullable": true,
 							"unique": false
 						},
 						{
@@ -2150,7 +2150,7 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": false,
-							"nullable": false,
+							"nullable": true,
 							"unique": false
 						}
 					]
@@ -2254,6 +2254,9 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
+							"referenceTo": {
+								"$ref": "AAAAAAFiZ+7ryEzGIns="
+							},
 							"nullable": false,
 							"unique": false
 						},
@@ -2376,7 +2379,10 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
-							"nullable": false,
+							"referenceTo": {
+								"$ref": "AAAAAAFiZ/LOG00oW1k="
+							},
+							"nullable": true,
 							"unique": false
 						},
 						{
@@ -2390,7 +2396,10 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": true,
-							"nullable": false,
+							"referenceTo": {
+								"$ref": "AAAAAAFiZ/LOG00oW1k="
+							},
+							"nullable": true,
 							"unique": false
 						},
 						{
@@ -2494,7 +2503,7 @@
 								"$ref": "AAAAAAFiZ/vtS023yx8="
 							},
 							"name": "numphone",
-							"type": "INTEGER",
+							"type": "VARCHAR",
 							"length": "30",
 							"primaryKey": false,
 							"foreignKey": false,
@@ -2522,12 +2531,12 @@
 								"$ref": "AAAAAAFiZ/vtS023yx8="
 							},
 							"name": "problem",
-							"type": "TEXT",
-							"length": 0,
+							"type": "VARCHAR",
+							"length": "300",
 							"primaryKey": false,
 							"foreignKey": false,
 							"nullable": false,
-							"unique": false
+							"unique": true
 						},
 						{
 							"_type": "ERDColumn",
@@ -2550,7 +2559,7 @@
 								"$ref": "AAAAAAFiZ/vtS023yx8="
 							},
 							"name": "date",
-							"type": "DATE",
+							"type": "DATETIME",
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": false,
@@ -2565,7 +2574,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFiZ+pgDUrmjCM="
 					},
-					"name": "Cours_de_la_bourse",
+					"name": "CoursDeLaBourse",
 					"columns": [
 						{
 							"_type": "ERDColumn",
@@ -2697,7 +2706,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFiZ+pgDUrmjCM="
 					},
-					"name": "Services_de_la_banque",
+					"name": "ServicesDeLaBanque",
 					"columns": [
 						{
 							"_type": "ERDColumn",
@@ -3310,7 +3319,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-telephone: int",
+											"text": "-telephone: String",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -4818,7 +4827,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-numphone: int",
+											"text": "-numphone: String",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -4934,7 +4943,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-date: Date",
+											"text": "-date: Timestamp",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -6511,7 +6520,7 @@
 									"visibility": "private",
 									"isStatic": false,
 									"isLeaf": false,
-									"type": "int",
+									"type": "String",
 									"isReadOnly": false,
 									"isOrdered": false,
 									"isUnique": false,
@@ -6952,7 +6961,7 @@
 									"visibility": "private",
 									"isStatic": false,
 									"isLeaf": false,
-									"type": "int",
+									"type": "String",
 									"isReadOnly": false,
 									"isOrdered": false,
 									"isUnique": false,
@@ -7024,7 +7033,7 @@
 									"visibility": "private",
 									"isStatic": false,
 									"isLeaf": false,
-									"type": "Date",
+									"type": "Timestamp",
 									"isReadOnly": false,
 									"isOrdered": false,
 									"isUnique": false,
@@ -7706,7 +7715,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+addUser(user: User): int",
+											"text": "+addUser(user: User): User",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -7735,7 +7744,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+updateUser(user: User): int",
+											"text": "+updateUser(user: User): User",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -8141,7 +8150,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+addCoursDeLaBourse(action: CoursDeLaBourse): int",
+											"text": "+addCoursDeLaBourse(action: CoursDeLaBourse): CoursDeLaBourse",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -8170,7 +8179,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+updateCoursDeLaBourse(action: CoursDeLaBourse): int",
+											"text": "+updateCoursDeLaBourse(action: CoursDeLaBourse): CoursDeLaBourse",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -8579,7 +8588,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+addTransaction(transaction: Transaction): int",
+											"text": "+addTransaction(transaction: Transaction): Transaction",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -8608,7 +8617,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+updateTransaction(transaction: Transaction): int",
+											"text": "+updateTransaction(transaction: Transaction): Transaction",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -8871,7 +8880,7 @@
 											"containerExtending": false,
 											"left": 254,
 											"top": 324,
-											"width": 250.39599609375,
+											"width": 255.42333984375,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
@@ -8943,7 +8952,7 @@
 									"containerExtending": false,
 									"left": 249,
 									"top": 317,
-									"width": 260.39599609375,
+									"width": 265.42333984375,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -8979,7 +8988,7 @@
 									"containerExtending": false,
 									"left": 249,
 									"top": 342,
-									"width": 260.39599609375,
+									"width": 265.42333984375,
 									"height": 10,
 									"autoResize": false
 								},
@@ -9013,11 +9022,11 @@
 											"containerExtending": false,
 											"left": 254,
 											"top": 357,
-											"width": 250.39599609375,
+											"width": 255.42333984375,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+addCompte(compte: Compte): int",
+											"text": "+addCompte(compte: Compte): Compte",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -9042,11 +9051,11 @@
 											"containerExtending": false,
 											"left": 254,
 											"top": 372,
-											"width": 250.39599609375,
+											"width": 255.42333984375,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+updateCompte(compte: Compte): int",
+											"text": "+updateCompte(compte: Compte): Compte",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -9071,7 +9080,7 @@
 											"containerExtending": false,
 											"left": 254,
 											"top": 387,
-											"width": 250.39599609375,
+											"width": 255.42333984375,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
@@ -9100,7 +9109,7 @@
 											"containerExtending": false,
 											"left": 254,
 											"top": 402,
-											"width": 250.39599609375,
+											"width": 255.42333984375,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
@@ -9129,7 +9138,7 @@
 											"containerExtending": false,
 											"left": 254,
 											"top": 417,
-											"width": 250.39599609375,
+											"width": 255.42333984375,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
@@ -9150,7 +9159,7 @@
 									"containerExtending": false,
 									"left": 249,
 									"top": 352,
-									"width": 260.39599609375,
+									"width": 265.42333984375,
 									"height": 83,
 									"autoResize": false
 								},
@@ -9217,7 +9226,7 @@
 							"containerExtending": false,
 							"left": 249,
 							"top": 317,
-							"width": 260.39599609375,
+							"width": 265.42333984375,
 							"height": 118,
 							"autoResize": false,
 							"stereotypeDisplay": "label",
@@ -9455,7 +9464,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+addMessage(message: Message): int",
+											"text": "+addMessage(message: Message): Message",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -9484,7 +9493,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+updateMessage(message: Message): int",
+											"text": "+updateMessage(message: Message): Message",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -9893,7 +9902,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+addServiceDeLaBanque(service: ServicesDeLaBanque): int",
+											"text": "+addServiceDeLaBanque(service: ServicesDeLaBanque): ServiceDeLaBanque",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -9922,7 +9931,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+updateServiceDeLaBanque(service: ServicesDeLaBanque): int",
+											"text": "+updateServiceDeLaBanque(service: ServicesDeLaBanque): ServiceDeLaBanque",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -10331,7 +10340,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+addActualite(actualite: Actualite): int",
+											"text": "+addActualite(actualite: Actualite): Actualite",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -10360,7 +10369,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+updateActualite(actualite: Actualite): int",
+											"text": "+updateActualite(actualite: Actualite): Actualite",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -10618,7 +10627,9 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": "int",
+											"type": {
+												"$ref": "AAAAAAFicTJbIJMNTsk="
+											},
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -10667,7 +10678,9 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": "int",
+											"type": {
+												"$ref": "AAAAAAFicTJbIJMNTsk="
+											},
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -10860,7 +10873,9 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": "int",
+											"type": {
+												"$ref": "AAAAAAFicTGjSpJp13Y="
+											},
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -10909,7 +10924,9 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": "int",
+											"type": {
+												"$ref": "AAAAAAFicTGjSpJp13Y="
+											},
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -11102,7 +11119,9 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": "int",
+											"type": {
+												"$ref": "AAAAAAFicTHLIZKSBd8="
+											},
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -11151,7 +11170,9 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": "int",
+											"type": {
+												"$ref": "AAAAAAFicTHLIZKSBd8="
+											},
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -11344,7 +11365,9 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": "int",
+											"type": {
+												"$ref": "AAAAAAFicTHdA5K74rI="
+											},
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -11393,7 +11416,9 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": "int",
+											"type": {
+												"$ref": "AAAAAAFicTHdA5K74rI="
+											},
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -11586,7 +11611,7 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": "int",
+											"type": "ServiceDeLaBanque",
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -11635,7 +11660,7 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": "int",
+											"type": "ServiceDeLaBanque",
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -11828,7 +11853,9 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": "int",
+											"type": {
+												"$ref": "AAAAAAFicPd99pFFTLY="
+											},
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -11877,7 +11904,9 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": "int",
+											"type": {
+												"$ref": "AAAAAAFicPd99pFFTLY="
+											},
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -12070,7 +12099,9 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": "int",
+											"type": {
+												"$ref": "AAAAAAFicTFDOJI9+jw="
+											},
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
@@ -12119,7 +12150,9 @@
 											"visibility": "public",
 											"isStatic": false,
 											"isLeaf": false,
-											"type": "int",
+											"type": {
+												"$ref": "AAAAAAFicTFDOJI9+jw="
+											},
 											"isReadOnly": false,
 											"isOrdered": false,
 											"isUnique": false,
