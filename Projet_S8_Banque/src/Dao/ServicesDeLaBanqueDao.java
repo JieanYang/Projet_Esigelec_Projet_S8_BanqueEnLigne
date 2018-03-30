@@ -19,18 +19,18 @@ public class ServicesDeLaBanqueDao {
      * @param service 
      * @return
      */
-    public int addServiceDeLaBanque(ServicesDeLaBanque service) {
+    public ServicesDeLaBanque addServiceDeLaBanque(ServicesDeLaBanque service) {
         // TODO implement here
-        return 0;
+        return null;
     }
 
     /**
      * @param service 
      * @return
      */
-    public int updateServiceDeLaBanque(ServicesDeLaBanque service) {
+    public ServicesDeLaBanque updateServiceDeLaBanque(ServicesDeLaBanque service) {
         // TODO implement here
-        return 0;
+        return null;
     }
 
     /**

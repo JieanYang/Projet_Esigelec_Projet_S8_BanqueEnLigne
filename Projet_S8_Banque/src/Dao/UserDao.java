@@ -19,18 +19,18 @@ public class UserDao {
      * @param user 
      * @return
      */
-    public int addUser(User user) {
+    public User addUser(User user) {
         // TODO implement here
-        return 0;
+        return null;
     }
 
     /**
      * @param user 
      * @return
      */
-    public int updateUser(User user) {
+    public User updateUser(User user) {
         // TODO implement here
-        return 0;
+        return null;
     }
 
     /**
