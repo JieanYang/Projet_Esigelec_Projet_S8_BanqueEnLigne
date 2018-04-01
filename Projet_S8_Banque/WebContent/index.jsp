@@ -1,3 +1,5 @@
+<%@ page pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,24 +18,8 @@
 <title>Accueil</title>
 </head>
 <body class="container backC">
-	<!-- top navigation -->
-	<div class="topnav" id="myTopnav">
-		<a href="#home" class="active">Accueil</a> <a href="#news">News</a> <a
-			href="#bourse">Bourse</a> <a href="javascript:void(0);" class="icon"
-			onclick="myFunction()">&#9776;</a>
-	</div>
-	<!-- header -->
-	<div class="header">
-		<a href="#default" class="logo">OnlineBank</a>
-		<div class="header-right">
-			<a class="btn active" name="espaceClient"
-				onclick="document.getElementById('id01').style.display='block'"
-				style="width: auto;">Espace Client</a>
-			<!--<a class="active" href="#home">Home</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">About</a>-->
-		</div>
-	</div>
+	<!-- head.html -->
+	<%@ include file="head.html" %>
 
 
 	<!--login form-->
