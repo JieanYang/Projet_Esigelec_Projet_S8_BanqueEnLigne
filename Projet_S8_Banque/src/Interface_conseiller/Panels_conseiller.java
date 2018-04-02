@@ -26,7 +26,7 @@ public class Panels_conseiller {
 	protected JLabel textField_prenom;
 	protected JLabel textField_numphone;
 	protected JLabel textField_email;
-	protected JLabel textField_problem;
+	protected JTextArea textField_problem;
 	protected static JTextArea textField_response;
 	protected JLabel textField_date;
 
@@ -155,9 +155,12 @@ public class Panels_conseiller {
 		textField_prenom = new JLabel();
 		textField_numphone = new JLabel();
 		textField_email = new JLabel();
-		textField_problem = new JLabel();
+		textField_problem = new JTextArea(5, 30);
+		textField_problem.setLineWrap(true);
+		textField_problem.setEditable(false);
 		textField_response = new JTextArea(10,30);
 		textField_response.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		textField_response.setLineWrap(true);
 		textField_date = new JLabel();
 		
 
@@ -245,12 +248,12 @@ public class Panels_conseiller {
 		layout.setConstraints(textField_email,layoutConstraints);
 		this.setConstraints(1,3,5,1,1,0,10,layoutConstraints);
 		layout.setConstraints(textField_problem,layoutConstraints);
-		this.setConstraints(0,5,5,1,0,0,10,layoutConstraints);
+		this.setConstraints(0,5,5,2,1,1,10,layoutConstraints);
 		layout.setConstraints(textField_response,layoutConstraints);
 
-		this.setConstraints(1,6,1,1,0,0,10,layoutConstraints);
+		this.setConstraints(1,8,1,1,0,0,10,layoutConstraints);
 		layout.setConstraints(button_response,layoutConstraints);
-		this.setConstraints(4,6,1,1,0,0,10,layoutConstraints);
+		this.setConstraints(4,8,1,1,0,0,10,layoutConstraints);
 		layout.setConstraints(button_No,layoutConstraints);
 
 	}

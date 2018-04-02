@@ -236,7 +236,7 @@ public class MessageDao {
     	this.connection();
         
     	try {
-        	String sql ="SELECT * FROM Message";
+        	String sql ="SELECT * FROM Message ORDER BY date DESC";
         	ps = connection.prepareStatement(sql);
         	
         	/**
