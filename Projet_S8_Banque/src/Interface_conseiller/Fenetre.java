@@ -18,7 +18,7 @@ public class Fenetre extends JFrame{
 	}
 	
 	public void init() {
-		this.setTitle("List of Message");
+
 	}
 	
 	public void setPanel(JPanel p) {
