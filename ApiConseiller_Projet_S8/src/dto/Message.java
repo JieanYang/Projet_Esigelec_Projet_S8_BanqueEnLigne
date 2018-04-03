@@ -1,6 +1,5 @@
-package Class;
+package dto;
 import java.sql.Timestamp;
-import java.util.*;
 
 /**
  * It doesn't have methods setId_message() and setProblem()
@@ -8,12 +7,18 @@ import java.util.*;
  * In the BDD, field Problem is unique
  */
 public class Message {
+	
+    private int id_message;
+    private String nom;
+    private String prenom;
+    private String numphone;
+    private String email;
+    private String problem;
+    private String reponse;
+    private Timestamp date;
 
-    /**
-     * Default constructor
-     */
-    public Message(int id, String nom, String prenom, String numphone, String email, String problem, String reponse, Timestamp date) {
-    	this.id_message = id;
+    public Message(int id_message, String nom, String prenom, String numphone, String email, String problem, String reponse, Timestamp date) {
+    	this.id_message = id_message;
     	this.nom = nom;
     	this.prenom = prenom;
     	this.numphone = numphone;
@@ -22,10 +27,6 @@ public class Message {
     	this.reponse = reponse;
     	this.date = date;
     }
-
-    public Message() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public int getId_message() {
 		return id_message;
@@ -83,45 +84,5 @@ public class Message {
 	public void setDate(Timestamp date) {
 		this.date = date;
 	}
-
-	/**
-     * 
-     */
-    private int id_message;
-
-    /**
-     * 
-     */
-    private String nom;
-
-    /**
-     * 
-     */
-    private String prenom;
-
-    /**
-     * 
-     */
-    private String numphone;
-
-    /**
-     * 
-     */
-    private String email;
-
-    /**
-     * 
-     */
-    private String problem;
-
-    /**
-     * 
-     */
-    private String reponse;
-
-    /**
-     * 
-     */
-    private Timestamp date;
 
 }
