@@ -91,6 +91,7 @@
 	    </div>
 	    
 	  </div>
+	  
 	  <div class="form-group">
 	    <div class="form-check">
 	      <input class="form-check-input" type="checkbox" id="gridCheck">
@@ -99,6 +100,7 @@
 	      </label>
 	    </div>
 	  </div>
+	  
 	  <button type="submit" class="btn btn-primary">Envoyer</button>
 </form>
 
