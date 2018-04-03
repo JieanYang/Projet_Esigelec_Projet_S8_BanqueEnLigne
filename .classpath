@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre-9.0.4">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="ApiConseiller_Projet_S8/src"/>
+	<classpathentry kind="src" path="Class java/Diagram de class dao/Diagram de class dao"/>
+	<classpathentry kind="src" path="Class java/Diagram de class/Diagram de class"/>
+	<classpathentry kind="src" path="Projet_S8_Banque/src"/>
+	<classpathentry kind="lib" path="Projet_S8_Banque/WebContent/WEB-INF/lib/mysql-connector-java-5.1.45-bin.jar"/>
+	<classpathentry kind="lib" path="Projet_S8_Banque/WebContent/WEB-INF/lib/servlet-api.jar"/>
+	<classpathentry kind="output" path="ApiConseiller_Projet_S8/bin"/>
+</classpath>
