@@ -1,24 +1,36 @@
 package Class;
+import java.sql.Timestamp;
 import java.util.*;
 
 /**
- * 
+ * It doesn't have methods setId_message() and setProblem()
+ * The reason for setProblem() is that Problem in the Class doesn't change after enter
+ * In the BDD, field Problem is unique
  */
 public class Message {
 
     /**
      * Default constructor
      */
-    public Message() {
+    public Message(int id, String nom, String prenom, String numphone, String email, String problem, String reponse, Timestamp date) {
+    	this.id_message = id;
+    	this.nom = nom;
+    	this.prenom = prenom;
+    	this.numphone = numphone;
+    	this.email = email;
+    	this.problem = problem;
+    	this.reponse = reponse;
+    	this.date = date;
     }
 
-    public int getId_message() {
+    public Message() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getId_message() {
 		return id_message;
 	}
 
-	public void setId_message(int id_message) {
-		this.id_message = id_message;
-	}
 
 	public String getNom() {
 		return nom;
@@ -28,19 +40,19 @@ public class Message {
 		this.nom = nom;
 	}
 
-	public String getPrenon() {
-		return prenon;
+	public String getPrenom() {
+		return prenom;
 	}
 
-	public void setPrenon(String prenon) {
-		this.prenon = prenon;
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
 
-	public int getNumphone() {
+	public String getNumphone() {
 		return numphone;
 	}
 
-	public void setNumphone(int numphone) {
+	public void setNumphone(String numphone) {
 		this.numphone = numphone;
 	}
 
@@ -56,10 +68,6 @@ public class Message {
 		return problem;
 	}
 
-	public void setProblem(String problem) {
-		this.problem = problem;
-	}
-
 	public String getReponse() {
 		return reponse;
 	}
@@ -68,11 +76,11 @@ public class Message {
 		this.reponse = reponse;
 	}
 
-	public Date getDate() {
+	public Timestamp getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(Timestamp date) {
 		this.date = date;
 	}
 
@@ -89,12 +97,12 @@ public class Message {
     /**
      * 
      */
-    private String prenon;
+    private String prenom;
 
     /**
      * 
      */
-    private int numphone;
+    private String numphone;
 
     /**
      * 
@@ -114,6 +122,6 @@ public class Message {
     /**
      * 
      */
-    private Date date;
+    private Timestamp date;
 
 }

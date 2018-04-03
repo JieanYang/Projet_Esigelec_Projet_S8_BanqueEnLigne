@@ -1,10 +1,17 @@
 package Class;
+
 import java.util.*;
 
 /**
  * 
  */
-public class Cours_de_la_bourse {
+public class CoursDeLaBourse {
+
+    /**
+     * Default constructor
+     */
+    public CoursDeLaBourse() {
+    }
 
     public int getId_entreprise() {
 		return id_entreprise;
@@ -39,12 +46,6 @@ public class Cours_de_la_bourse {
 	}
 
 	/**
-     * Default constructor
-     */
-    public Cours_de_la_bourse() {
-    }
-
-    /**
      * 
      */
     private int id_entreprise;

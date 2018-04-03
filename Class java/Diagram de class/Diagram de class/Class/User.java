@@ -1,3 +1,4 @@
+package Class;
 
 import java.util.*;
 
@@ -45,7 +46,7 @@ public class User {
     /**
      * 
      */
-    private int telephone;
+    private String telephone;
 
     /**
      * 

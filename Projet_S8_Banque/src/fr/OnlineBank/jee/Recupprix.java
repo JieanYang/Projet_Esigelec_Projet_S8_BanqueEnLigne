@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/Recupprix")
 public class Recupprix extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	DAO objectdao = new DAO();
     /**
      * Default constructor. 
      */
@@ -25,8 +25,8 @@ public class Recupprix extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String entreprise=request.getParameter("entreprise");
+		response.getWriter().write(Integer.toString(objectdao.prixcours(entreprise)));	
 	}
 
 	/**

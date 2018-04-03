@@ -1,35 +1,36 @@
+package Class;
 
 import java.util.*;
 
 /**
  * 
  */
-public class Cours_de_la_bourse {
+public class Actualite {
 
     /**
      * Default constructor
      */
-    public Cours_de_la_bourse() {
+    public Actualite() {
     }
 
     /**
      * 
      */
-    private int id_entreprise;
+    private int id_actualite;
 
     /**
      * 
      */
-    private String entreprise;
+    private Date date;
 
     /**
      * 
      */
-    private float prix;
+    private String title;
 
     /**
      * 
      */
-    public Date date;
+    private String text;
 
 }

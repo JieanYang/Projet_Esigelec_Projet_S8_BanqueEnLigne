@@ -1,16 +1,11 @@
 package Class;
+
 import java.util.*;
 
 /**
  * 
  */
-public class Services_de_la_banque {
-
-    /**
-     * Default constructor
-     */
-    public Services_de_la_banque() {
-    }
+public class ServicesDeLaBanque {
 
     public int getId_service() {
 		return id_service;
@@ -45,6 +40,12 @@ public class Services_de_la_banque {
 	}
 
 	/**
+     * Default constructor
+     */
+    public ServicesDeLaBanque() {
+    }
+
+    /**
      * 
      */
     private int id_service;

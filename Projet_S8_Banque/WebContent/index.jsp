@@ -1,3 +1,5 @@
+<%@ page pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,26 +22,10 @@
 <title>Accueil</title>
 </head>
 <body class="container backC">
-	<!-- top navigation -->
-	<div class="topnav" id="myTopnav">
-		<a href="#home" class="active">Accueil</a> <a href="#news">News</a> <a
-			href="#bourse">Bourse</a>
-			
-			<!-- lien vers la page creeCompte grace au bouton contacter_nous --> 
-			<a href="pageContact.jsp">Contactez nous</a><a href="javascript:void(0);" class="icon"
-			onclick="myFunction()">&#9776;</a>
-	</div>
-	<!-- header -->
-	<div class="header">
-		<a href="#default" class="logo">OnlineBank</a>
-		<div class="header-right">
-		<!-- redirige sur la page loing.jsp -->
-			<a class="btn active" href="login.jsp">Espace Client</a>
-			<!--<a class="active" href="#home">Home</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">About</a>-->
-		</div>
-	</div>
+
+	<!-- head.html -->
+	<%@ include file="head.html" %>
+
 
 
 	<!--login form-->

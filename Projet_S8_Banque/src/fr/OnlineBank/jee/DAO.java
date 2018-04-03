@@ -35,7 +35,9 @@ public class DAO {
 	/**
 	 * Setup connection parameters to the database
 	 */
-	private String url = "jdbc:mysql://127.0.0.1/test"; // add '?useSSL=false' to disable
+
+
+	private String url = "jdbc:mysql://localhost/banque?useSSL=false"; // add '?useSSL=false' to disable
 																					// Warning message
 	private String username = "root";
 	private String password = "";
@@ -130,7 +132,7 @@ public class DAO {
 	/**
 	 * Create a new Bank Account
 	 */
-	public boolean creerCompteBancaire(String nom, String prenom,String telephone, String email ,String adresse, String date, String ville ,String pays) {
+	public boolean creerCompteBancaire(String nom, String prenom,int telephone, String email ,String adresse, String date, String ville ,String pays) {
 		this.connection();
 		// write the code here DONT FORGET TO DISCONNECT AFTER CREATING THE ACCOUNT
 		try {
@@ -140,7 +142,7 @@ public class DAO {
 			preparedStatement.setString(2, prenom);
 			preparedStatement.setString(3, email);
 			preparedStatement.setString(4, adresse);
-			preparedStatement.setString(5, telephone);
+			preparedStatement.setInt(5, telephone);
 			preparedStatement.setString(6, date);
 			preparedStatement.setString(7, ville);
 			preparedStatement.setString(8, pays);
@@ -165,20 +167,23 @@ public class DAO {
 		// write the code here DONT FORGET TO DISCONNECT AFTER CREATING THE ACCOUNT
 	}
     
-    	public String prixcours(String nomentreprise) {
+	public int prixcours(String nomentreprise) {
 		this.connection();
 		try {
-			String sql = "SELECT prix from 'cours de la bourse' WHERE (entreprise=?)";
+			int monprix=0;
+			String sql = "SELECT prix from cours_de_la_bourse WHERE (entreprise=?)";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, nomentreprise);
 			ResultSet resultset=preparedStatement.executeQuery();
-			String monprix=resultset.getString("prix");
+			if (resultset.next()) {
+			monprix=resultset.getInt("prix");
+			}
 			this.disconnection();
 			return monprix;
 		} catch (SQLException e1) {
 			e1.printStackTrace();
+					return 0 ;
 		}
-		return "erreur" ;
 	}
 	
 }

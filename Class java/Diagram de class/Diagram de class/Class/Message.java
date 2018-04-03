@@ -1,3 +1,4 @@
+package Class;
 
 import java.util.*;
 
@@ -25,12 +26,12 @@ public class Message {
     /**
      * 
      */
-    private String prenon;
+    private String prenom;
 
     /**
      * 
      */
-    private int numphone;
+    private String numphone;
 
     /**
      * 
@@ -50,6 +51,6 @@ public class Message {
     /**
      * 
      */
-    private Date date;
+    private Timestamp date;
 
 }
