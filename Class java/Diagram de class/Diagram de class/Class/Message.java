@@ -31,7 +31,7 @@ public class Message {
     /**
      * 
      */
-    private int numphone;
+    private String numphone;
 
     /**
      * 
@@ -51,6 +51,6 @@ public class Message {
     /**
      * 
      */
-    private Date date;
+    private Timestamp date;
 
 }

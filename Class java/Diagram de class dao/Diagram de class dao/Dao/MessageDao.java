@@ -17,18 +17,18 @@ public class MessageDao {
      * @param message 
      * @return
      */
-    public int addMessage(Message message) {
+    public Message addMessage(Message message) {
         // TODO implement here
-        return 0;
+        return null;
     }
 
     /**
      * @param message 
      * @return
      */
-    public int updateMessage(Message message) {
+    public Message updateMessage(Message message) {
         // TODO implement here
-        return 0;
+        return null;
     }
 
     /**

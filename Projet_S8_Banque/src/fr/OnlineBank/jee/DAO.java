@@ -123,7 +123,7 @@ public class DAO {
 	/**
 	 * Create a new Bank Account
 	 */
-	public boolean creerCompteBancaire(String nom, String prenom,String telephone, String email ,String adresse, String date, String ville ,String pays) {
+	public boolean creerCompteBancaire(String nom, String prenom,int telephone, String email ,String adresse, String date, String ville ,String pays) {
 		this.connection();
 		// write the code here DONT FORGET TO DISCONNECT AFTER CREATING THE ACCOUNT
 		try {
@@ -133,7 +133,7 @@ public class DAO {
 			preparedStatement.setString(2, prenom);
 			preparedStatement.setString(3, email);
 			preparedStatement.setString(4, adresse);
-			preparedStatement.setString(5, telephone);
+			preparedStatement.setInt(5, telephone);
 			preparedStatement.setString(6, date);
 			preparedStatement.setString(7, ville);
 			preparedStatement.setString(8, pays);

@@ -17,18 +17,18 @@ public class ActualiteDao {
      * @param actualite 
      * @return
      */
-    public int addActualite(Actualite actualite) {
+    public Actualite addActualite(Actualite actualite) {
         // TODO implement here
-        return 0;
+        return null;
     }
 
     /**
      * @param actualite 
      * @return
      */
-    public int updateActualite(Actualite actualite) {
+    public Actualite updateActualite(Actualite actualite) {
         // TODO implement here
-        return 0;
+        return null;
     }
 
     /**

@@ -17,18 +17,18 @@ public class CoursDeLaBourseDao {
      * @param action 
      * @return
      */
-    public int addCoursDeLaBourse(CoursDeLaBourse action) {
+    public CoursDeLaBourse addCoursDeLaBourse(CoursDeLaBourse action) {
         // TODO implement here
-        return 0;
+        return null;
     }
 
     /**
      * @param action 
      * @return
      */
-    public int updateCoursDeLaBourse(CoursDeLaBourse action) {
+    public CoursDeLaBourse updateCoursDeLaBourse(CoursDeLaBourse action) {
         // TODO implement here
-        return 0;
+        return null;
     }
 
     /**

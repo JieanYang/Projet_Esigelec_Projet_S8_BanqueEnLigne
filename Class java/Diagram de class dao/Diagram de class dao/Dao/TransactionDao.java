@@ -17,18 +17,18 @@ public class TransactionDao {
      * @param transaction 
      * @return
      */
-    public int addTransaction(Transaction transaction) {
+    public Transaction addTransaction(Transaction transaction) {
         // TODO implement here
-        return 0;
+        return null;
     }
 
     /**
      * @param transaction 
      * @return
      */
-    public int updateTransaction(Transaction transaction) {
+    public Transaction updateTransaction(Transaction transaction) {
         // TODO implement here
-        return 0;
+        return null;
     }
 
     /**
