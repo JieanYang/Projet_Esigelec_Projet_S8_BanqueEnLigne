@@ -11,7 +11,7 @@ public class Login {
 
 	private static LoginFrame loginUI;
 	private static UserDao userDAO;
-	protected static Component frame;
+	private static Component frame;
 
 	public static void checkCredentials(String email, String password) {
 		if (email.equals("") || password.equals("")) {
