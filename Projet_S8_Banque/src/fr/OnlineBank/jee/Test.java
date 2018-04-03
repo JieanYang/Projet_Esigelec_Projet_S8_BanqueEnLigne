@@ -82,7 +82,7 @@ public class Test {
 		bar(retour3);
 		// delete the reponse
 		retour3.setReponse(null);
-		messageDao.updateMessage(retour3);
+		retour3 = messageDao.updateMessage(retour3);
 		bar (retour3);
 		System.out.print("finish test 4");
 
