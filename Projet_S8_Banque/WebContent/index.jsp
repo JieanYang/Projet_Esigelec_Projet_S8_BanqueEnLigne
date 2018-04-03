@@ -12,6 +12,10 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="css_script/form.css">
 
 <title>Accueil</title>
 </head>
@@ -19,16 +23,18 @@
 	<!-- top navigation -->
 	<div class="topnav" id="myTopnav">
 		<a href="#home" class="active">Accueil</a> <a href="#news">News</a> <a
-			href="#bourse">Bourse</a> <a href="javascript:void(0);" class="icon"
+			href="#bourse">Bourse</a>
+			
+			<!-- lien vers la page creeCompte grace au bouton contacter_nous --> 
+			<a href="pageContact.jsp">Contactez nous</a><a href="javascript:void(0);" class="icon"
 			onclick="myFunction()">&#9776;</a>
 	</div>
 	<!-- header -->
 	<div class="header">
 		<a href="#default" class="logo">OnlineBank</a>
 		<div class="header-right">
-			<a class="btn active" name="espaceClient"
-				onclick="document.getElementById('id01').style.display='block'"
-				style="width: auto;">Espace Client</a>
+		<!-- redirige sur la page loing.jsp -->
+			<a class="btn active" href="login.jsp">Espace Client</a>
 			<!--<a class="active" href="#home">Home</a>
                 <a href="#contact">Contact</a>
                 <a href="#about">About</a>-->
@@ -37,14 +43,79 @@
 
 
 	<!--login form-->
+	
 	<div id="id01" class="modal">
-
-		<form class="modal-content animate" action="Login" method="post">
+		
+		
+		<!-- *********************************************************************************************************** -->
+		<!--  <div class="container">
+		<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+		<div class="form-body">
+		    <ul class="nav nav-tabs final-login">
+		        <li class="active"><a data-toggle="tab" href="#sectionA">Sign In</a></li>
+		        <li><a data-toggle="tab" href="#sectionB">Join us!</a></li>
+		    </ul>
+		    <div class="tab-content">
+		        <div id="sectionA" class="tab-pane fade in active">
+			        <div class="innter-form">
+			            <form class="sa-innate-form" method="post">
+				            <label>Email Address</label>
+				            <input type="text" name="username">
+				            <label>Password</label>
+				            <input type="password" name="password">
+				            <button type="submit">Sign In</button>
+				            <a href="">Forgot Password?</a>
+			            </form>
+			         </div>
+		            <div class="social-login">
+		            <p>- - - - - - - - - - - - - Sign In With - - - - - - - - - - - - - </p>
+		    		<ul>
+		            <li><a href=""><i class="fa fa-facebook"></i> Facebook</a></li>
+		            <li><a href=""><i class="fa fa-google-plus"></i> Google+</a></li>
+		            <li><a href=""><i class="fa fa-twitter"></i> Twitter</a></li>
+		            </ul>
+		            </div>
+		            <div class="clearfix"></div>
+		        </div>
+		        <div id="sectionB" class="tab-pane fade">
+					<div class="innter-form">
+		            <form class="sa-innate-form" method="post">
+		            <label>Name</label>
+		            <input type="text" name="username">
+		            <label>Email Address</label>
+		            <input type="text" name="username">
+		            <label>Password</label>
+		            <input type="password" name="password">
+		            <button type="submit">Join now</button>
+		            <p>By clicking Join now, you agree to hifriends's User Agreement, Privacy Policy, and Cookie Policy.</p>
+		            </form>
+		            </div>
+		            <div class="social-login">
+		            <p>- - - - - - - - - - - - - Register With - - - - - - - - - - - - - </p>
+					<ul>
+		            <li><a href=""><i class="fa fa-facebook"></i> Facebook</a></li>
+		            <li><a href=""><i class="fa fa-google-plus"></i> Google+</a></li>
+		            <li><a href=""><i class="fa fa-twitter"></i> Twitter</a></li>
+		            </ul>
+		            </div>
+		        </div>
+		    </div>
+		    </div>
+		    </div>
+		    </div>
+		    </div>
+				
+		
+		
+		
+		
+		<!--  <form class="modal-content animate" action="Login" method="post">
 			<div class="imgcontainer">
 				<span onclick="document.getElementById('id01').style.display='none'"
 					class="close" title="Close Modal">&times;</span>
 				<!--<img src="img_avatar2.png" alt="Avatar" class="avatar">-->
-			</div>
+			<!--  </div>
 
 			<div class="container">
 				<label for="username"><b>Identifiant/Email</b></label> <input
@@ -57,15 +128,15 @@
 				<!--<label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>-->
-			</div>
+			<!-- </div>
 
 			<div class="container" style="background-color: #f1f1f1">
 				<button type="button"
 					onclick="document.getElementById('id01').style.display='none'"
 					class="cancelbtn">Annuler</button>
 				<!--<span class="psw">Forgot <a href="#">password?</a></span>-->
-			</div>
-		</form>
+			<!-- </div>
+		</form>-->
 	</div>
 
 

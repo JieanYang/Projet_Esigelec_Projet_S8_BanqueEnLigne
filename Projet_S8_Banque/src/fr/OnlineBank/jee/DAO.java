@@ -35,7 +35,7 @@ public class DAO {
 	/**
 	 * Setup connection parameters to the database
 	 */
-	private String url = "jdbc:mysql://localhost/projet_s8_banque?useSSL=false"; // add '?useSSL=false' to disable
+	private String url = "jdbc:mysql://127.0.0.1/test"; // add '?useSSL=false' to disable
 																					// Warning message
 	private String username = "root";
 	private String password = "";
@@ -47,7 +47,9 @@ public class DAO {
 	public void connection() {
 		try {
 			connection = DriverManager.getConnection(url, username, password);
+			System.out.println("Connexion effective");
 		} catch (SQLException e) {
+			System.out.println("Connexion non effective");
 			e.printStackTrace();
 		}
 	}
@@ -103,14 +105,19 @@ public class DAO {
 	/**
 	 * Create a new user
 	 */
-	public boolean addUser(String username, String email, String password) {
+	public boolean addUser(String firstname, String lastname, String email, String password) {
 		this.connection();
 		try {
-			String sql = "INSERT INTO user (`name`, `password`, `email`) VALUES (?, ?, ?)";
+			String sql = "INSERT INTO user (`nom`, `prenom` ,`email`, `password`) VALUES (?, ?, ?, ?)";
+			
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(1, username);
-			preparedStatement.setString(2, password);
-			preparedStatement.setString(3, email);
+			
+			preparedStatement.setString(1, firstname);
+			preparedStatement.setString(2, lastname);
+		    preparedStatement.setString(3, email);
+			preparedStatement.setString(4, password);
+			
+			//System.out.println("requete "+sql);
 			preparedStatement.executeUpdate();
 			this.disconnection();
 			return true;
@@ -127,7 +134,7 @@ public class DAO {
 		this.connection();
 		// write the code here DONT FORGET TO DISCONNECT AFTER CREATING THE ACCOUNT
 		try {
-			String sql = "INSERT INTO User (`nom`, `prenom`, `email`, `adresse`, `telephone`, `date`, `ville`, `pays`) VALUES (?, ?, ?,?, ?, ?,?,?)";
+			String sql = "INSERT INTO User (`nom`, `prenom`, `email`, `adresse`, `telephone`, `date`, `ville`, `pays`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, nom);
 			preparedStatement.setString(2, prenom);
