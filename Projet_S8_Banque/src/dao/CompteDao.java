@@ -98,7 +98,7 @@ public class CompteDao {
                     + "VALUES (?, ?, ?, ?, ?, ?)";
             ps = connection.prepareStatement(sql);
             ps.setInt(1, compte.getId_user());
-            ps.setString(2, compte.getCategorie_compte());
+            ps.setString(2, "xxxx");
             ps.setString(3, compte.getEtat());
             ps.setFloat(4, compte.getSolde());
             
@@ -122,17 +122,20 @@ public class CompteDao {
              */
             if (success == 1) {
                 
-                sql = "SELECT id_compte FROM Compte WHERE categorie_compte=? AND id_user=?";
+                sql = "SELECT id_compte FROM Compte WHERE categorie_compte='xxxx' AND id_user=?";
                 ps = connection.prepareStatement(sql);
-                ps.setString(1, compte.getCategorie_compte());
-                ps.setInt(2, compte.getId_user());
+//                ps.setString(1, compte.getCategorie_compte());
+                ps.setInt(1, compte.getId_user());
 //              ps.setString(3, date.toString());
                 
                 rs = ps.executeQuery();
 
                 if(rs.next()) {
                     int id_compte = rs.getInt("id_compte");
-                    retour = this.getCompte(id_compte); 
+                    retour = this.getCompte(id_compte);
+                    // retour avec categorie_compte = 'xxxx', reset categorie_compte
+                    retour.setCategorie_compte(compte.getCategorie_compte());
+                    retour = this.updateCompte(retour);
                 }
             }else if (success == 0) {
                 retour = null;

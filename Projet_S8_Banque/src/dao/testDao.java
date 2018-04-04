@@ -54,7 +54,7 @@ public class testDao {
     	CompteDao compteDao = new CompteDao();
     	Compte compte = new Compte();
 		compte = new Compte(50, 1, "aaF","aaa",(float) 12.20,null, null);
-//		compte = compteDao.addCompte(compte);
+		compte = compteDao.addCompte(compte);
 		
 //    	compte = compteDao.getCompte(50);
 //    	compte.setCategorie_compte("conseiller");
@@ -69,7 +69,7 @@ public class testDao {
 //		list = compteDao.getListCompte();
 //		for(int i=0;i<list.size();i++)
 //			print(list.get(i));
-		compteDao.deleteCompte(compte);
+//		compteDao.deleteCompte(compte);
 		print(compte);
     	
 		
