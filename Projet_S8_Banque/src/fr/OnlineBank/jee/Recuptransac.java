@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Class.Compte;
 import dao.CompteDao;
 import dao.TransactionDao;
 
@@ -19,8 +20,7 @@ import dao.TransactionDao;
 public class Recuptransac extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	TransactionDao transaction= new TransactionDao();
-	CompteDao compteDao = new CompteDao();
+	CompteDao compte = new CompteDao();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -41,36 +41,24 @@ public class Recuptransac extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		/*String type = request.getParameter("type");
-		int emetteur = Integer.parseInt(request.getParameter("emetteur") );
-		int beneficiaire= Integer.parseInt(request.getParameter("beneficiaire"));
 		
-		Date date = request.getParameter("date");
-		Float somme = request.getParameter("somme");
-		String description = request.getParameter("description");
-
+		int emetteur=Integer.parseInt(request.getParameter("emetteur"));
+		int beneficiaire=Integer.parseInt(request.getParameter("beneficiaire"));
+		int somme=Integer.parseInt(request.getParameter("somme"));
 		
-		TransactionDao.addTransaction(type, emetteur, beneficiaire, date, somme, description);
-		
-		SommeDao.emet(emetteur);
-		SommeDao.benef(beneficiaire);*/
-		
-		
-		compte= CompteaDao.getcompte();
-		Compte.getcompte(emetteur);
-		solde= compte.getsolde();
+		Compte compteemetteur = compte.getCompte(emetteur);
+		float solde = compteemetteur.getSolde();
 		solde= solde-somme;
-		compte.setsolde(solde);
-		CompteDao.update(compte);
+		compteemetteur.setSolde(solde);
+		CompteDao.updateCompte(compteemetteur); //demande a etre en static
 		
-		Compte.getcompte(beneficiaire);
-		solde2= compte.getsolde();
+		Compte comptebenef = compte.getCompte(beneficiaire);
+		float solde2= comptebenef.getSolde();
 		solde2= solde+somme;
-		compte.setsolde(solde2);
-		CompteDao.update(compte);
+		comptebenef.setSolde(solde2);
+		CompteDao.updateCompte(comptebenef);
 		
-		compte= CompteaDao.getcompte();
+		compte= CompteaDao.getcompte(); //a quoi ca sert ?
 		
 	}
 }
