@@ -90,6 +90,13 @@
 	      </select>
 	    </div>
 	    
+	    <div class="form-group">
+                            <label  for="fichier">Ajouter Fichier : (de Type PDF)</label>
+                            <input class="form-control col-sm-8" type="hidden" name="MAX_FILE_SIZE" value="30720" />
+                            <input class="form-control col-sm-8 " id="fichier" type="file" name="fichier" />
+                            
+        </div>
+	    
 	  </div>
 	  
 	  <div class="form-group">
