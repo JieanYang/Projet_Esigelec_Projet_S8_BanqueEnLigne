@@ -39,7 +39,8 @@ CREATE TABLE `Transaction` (
     `categorie_transaction` VARCHAR(15) NOT NULL,
     `id_compte_emetteur` INTEGER,
     `id_compte_recepteur` INTEGER,
-    `date` DATE NOT NULL,
+    `date_transaction` DATETIME NOT NULL,
+    `date_create` DATETIME NOT NULL,
     `somme` FLOAT NOT NULL,
     `description` TEXT NOT NULL,
     PRIMARY KEY (`id_transaction`)
