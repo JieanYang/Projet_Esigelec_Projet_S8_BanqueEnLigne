@@ -74,7 +74,8 @@
 	  </div>
 	  <div class="form-group">
 	    <label for="inputAddress2">Adresse mail</label>
-	    <input type="text" class="form-control" name="email" id="inputAddress2" placeholder="sebastien@esigelec.fr" required>
+	    <input type="text" class="form-control" name="email" id="inputAddress2" placeholder="sebastien@esigelec.fr"  required />
+	    
 	  </div>
 	  <div class="form-row">
 	    <div class="form-group col-md-6">
