@@ -12,7 +12,7 @@ CREATE TABLE `User` (
     `id_user` INTEGER NOT NULL AUTO_INCREMENT,
     `categorie_user` VARCHAR(15) NOT NULL,
     `nom` VARCHAR(15) NOT NULL,
-    `prenon` VARCHAR(15) NOT NULL,
+    `prenom` VARCHAR(15) NOT NULL,
     `email` VARCHAR(30) NOT NULL UNIQUE,
     `adresse` VARCHAR(50),
     `telephone` VARCHAR(30),
