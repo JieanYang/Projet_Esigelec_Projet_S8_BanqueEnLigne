@@ -1,7 +1,7 @@
 package fr.OnlineBank.jee;
 
 import Class.Message;
-import Dao.MessageDao;
+import dao.MessageDao;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
