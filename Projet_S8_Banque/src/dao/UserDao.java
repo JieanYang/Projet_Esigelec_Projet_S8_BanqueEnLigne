@@ -1,34 +1,34 @@
-package Dao;
+package dao;
 
 import java.util.*;
 
-import Class.Actualite;
+import Class.User;
 
 /**
  * 
  */
-public class ActualiteDao {
+public class UserDao {
 
     /**
      * Default constructor
      */
-    public ActualiteDao() {
+    public UserDao() {
     }
 
     /**
-     * @param actualite 
+     * @param user 
      * @return
      */
-    public Actualite addActualite(Actualite actualite) {
+    public User addUser(User user) {
         // TODO implement here
         return null;
     }
 
     /**
-     * @param actualite 
+     * @param user 
      * @return
      */
-    public Actualite updateActualite(Actualite actualite) {
+    public User updateUser(User user) {
         // TODO implement here
         return null;
     }
@@ -37,7 +37,7 @@ public class ActualiteDao {
      * @param id 
      * @return
      */
-    public Actualite getActualite(int id) {
+    public User getUser(int id) {
         // TODO implement here
         return null;
     }
@@ -45,16 +45,16 @@ public class ActualiteDao {
     /**
      * @return
      */
-    public List<Actualite> getListActualite() {
+    public List<User> getListUser() {
         // TODO implement here
         return null;
     }
 
     /**
-     * @param actualite 
+     * @param user 
      * @return
      */
-    public int deleteActualite(Actualite actualite) {
+    public int deleteUser(User user) {
         // TODO implement here
         return 0;
     }

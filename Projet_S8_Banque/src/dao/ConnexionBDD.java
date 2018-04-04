@@ -1,7 +1,8 @@
-package Dao;
+package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class ConnexionBDD {
@@ -37,12 +38,13 @@ public class ConnexionBDD {
 	/**
 	 * Connecting to database
 	 */
-	public void connection() {
+	public Connection connection() {
 		try {
 			connection = DriverManager.getConnection(url, username, password);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return connection;
 	}
 
 	/**
@@ -55,6 +57,7 @@ public class ConnexionBDD {
 			e.printStackTrace();
 		}
 	}
+
 	
 	
 	

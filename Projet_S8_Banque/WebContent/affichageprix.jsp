@@ -44,10 +44,10 @@
   <div class="form-group">
    <center><label><center> Nom de l'entreprise </center></label>
     <select name = "entreprise" id = "entreprise">
-    <option value = "Sopra"> Sopra </option>
+    <option value = "sopra"> Sopra </option>
     <option value = "hermes"> Hermes </option>
     <option value = "cgg"> Cgg </option>
-    <option value = "Axa"> axa </option>
+    <option value = "axa"> Axa </option>
     </select>
     <align left><button type="submit" class="btn btn-primary">Valider</button></align>
     

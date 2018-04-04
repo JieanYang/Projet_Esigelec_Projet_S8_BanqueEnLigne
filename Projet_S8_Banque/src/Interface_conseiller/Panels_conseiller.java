@@ -8,7 +8,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import Class.Message;
-import Dao.MessageDao;
+import dao.MessageDao;
 
 public class Panels_conseiller {
 	protected Fenetre fenetre;

@@ -1,4 +1,4 @@
-package Dao;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,7 +13,6 @@ import Class.CoursDeLaBourse;
  */
 public class CoursDeLaBourseDao {
 
-	private Connection connection;
 	ConnexionBDD accesBDD = new ConnexionBDD();
 	
     /**
@@ -53,8 +52,8 @@ public class CoursDeLaBourseDao {
 		accesBDD.connection();
 		try {
 			int monprix=0;
-			String sql = "SELECT prix from cours_de_la_bourse WHERE (entreprise=?)";
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			String sql = "SELECT prix from coursdelabourse WHERE (entreprise=?)";
+			PreparedStatement preparedStatement = accesBDD.connection().prepareStatement(sql);
 			preparedStatement.setString(1, nomentreprise);
 			ResultSet resultset=preparedStatement.executeQuery();
 			if (resultset.next()) {
