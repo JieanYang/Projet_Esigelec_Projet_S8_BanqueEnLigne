@@ -11,48 +11,26 @@ public class User {
      */
     public User() {
     }
-
-    /**
-     * 
-     */
-    private int id_user;
-
-    /**
-     * 
-     */
-    private String categorie_user;
-
-    /**
-     * 
-     */
-    private String nom;
-
-    /**
-     * 
-     */
-    private String prenom;
-
-    /**
-     * 
-     */
-    private String email;
-
-    /**
-     * 
-     */
-    private String adresse;
-
-    /**
-     * 
-     */
-    private int telephone;
-
-    public int getId_user() {
-		return id_user;
+    
+    public User(int id_user, String categorie_user, String nom, String prenom, String email, String adresse,
+			String telephone, String ville, String pays, String password, Date dateNaissance) {
+		super();
+		this.id_user = id_user;
+		this.categorie_user = categorie_user;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.adresse = adresse;
+		this.telephone = telephone;
+		this.ville = ville;
+		this.pays = pays;
+		this.password = password;
+		this.dateNaissance = dateNaissance;
 	}
 
-	public void setId_user(int id_user) {
-		this.id_user = id_user;
+
+	public int getId_user() {
+		return id_user;
 	}
 
 	public String getCategorie_user() {
@@ -95,11 +73,11 @@ public class User {
 		this.adresse = adresse;
 	}
 
-	public int getTelephone() {
+	public String getTelephone() {
 		return telephone;
 	}
 
-	public void setTelephone(int telephone) {
+	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
 
@@ -134,6 +112,41 @@ public class User {
 	public void setDateNaissance(Date dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
+    
+    /**
+     * 
+     */
+    private int id_user;
+
+    /**
+     * 
+     */
+    private String categorie_user;
+
+    /**
+     * 
+     */
+    private String nom;
+
+    /**
+     * 
+     */
+    private String prenom;
+
+    /**
+     * 
+     */
+    private String email;
+
+    /**
+     * 
+     */
+    private String adresse;
+
+    /**
+     * 
+     */
+    private String telephone;
 
 	/**
      * 
