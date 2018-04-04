@@ -9,20 +9,21 @@ import java.util.List;
 
 import javax.swing.*;
 
-import Class.Compte;
-import dao.CompteDao;
+import Class.Transaction;
+import dao.TransactionDao;
 
 public class testDao {
 	
-	public static void print(Compte compte) {
+	public static void print(Transaction transaction) {
 		System.out.println();
-		System.out.println(compte.getId_compte());
-		System.out.println(compte.getId_user());
-		System.out.println(compte.getCategorie_compte());
-		System.out.println(compte.getEtat());
-		System.out.println(compte.getSolde());
-		System.out.println(compte.getDate_create());
-		System.out.println(compte.getDate_delete());
+		System.out.println(transaction.getId_transaction());
+		System.out.println(transaction.getCategorie_transaction());
+		System.out.println(transaction.getId_compte_emetteur());
+		System.out.println(transaction.getId_compte_recepteur());
+		System.out.println(transaction.getDate_transaction());
+		System.out.println(transaction.getDate_create());
+		System.out.println(transaction.getSomme());
+		System.out.println(transaction.getDescription());
 	}
 	
 	public static void main(String[] args) {
@@ -47,30 +48,33 @@ public class testDao {
 //		System.out.println(date);
 		
 		
-		long millis=System.currentTimeMillis();  
-    	java.sql.Date date=new java.sql.Date(millis); 
-    	System.out.println(date.toString());
 		
-    	CompteDao compteDao = new CompteDao();
-    	Compte compte = new Compte();
-		compte = new Compte(50, 1, "aaF","aaa",(float) 12.20,null, null);
-		compte = compteDao.addCompte(compte);
+		Date utildate = new Date();         
+    	Timestamp sqldate = new Timestamp(utildate.getTime()); 
+
 		
-//    	compte = compteDao.getCompte(50);
-//    	compte.setCategorie_compte("conseiller");
-//    	compte.setEtat("cold");
-//    	compte.setSolde(compte.getSolde()-20);
-//    	compte.setDate_delete(date);
+    	TransactionDao transactionDao = new TransactionDao();
+    	Transaction transaction = new Transaction();
+		transaction = new Transaction(7, "Cash", 47, 48, sqldate,null,(float) 34.4, "nothing is good");
+
+//		transaction = transactionDao.addTransaction(transaction);
+		
+//    	transaction = transactionDao.getTransaction(6);
+//    	transaction.setCategorie_transaction("cards");
+//    	transaction.setId_compte_emetteur(50);
+//    	transaction.setId_compte_recepteur(51);
+//    	transaction.setSomme((float) 1.111);
+//    	transaction.setDescription("!!!!!!!!!!!!I have a word!");
 ////    	
 //
-//    	compte = compteDao.updateCompte(compte);
+//    	transaction = transactionDao.updateTransaction(transaction);
 //
-//		List<Compte> list = new ArrayList<Compte>();
-//		list = compteDao.getListCompte();
+//		List<Transaction> list = new ArrayList<Transaction>();
+//		list = transactionDao.getListTransaction();
 //		for(int i=0;i<list.size();i++)
 //			print(list.get(i));
-//		compteDao.deleteCompte(compte);
-		print(compte);
+		transactionDao.deleteTransaction(transaction);
+//		print(transaction);
     	
 		
 	}
