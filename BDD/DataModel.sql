@@ -30,7 +30,7 @@ CREATE TABLE `Compte` (
     `etat` VARCHAR(15) NOT NULL,
     `solde` FLOAT NOT NULL,
     `date_create` DATE NOT NULL,
-    `date_delete` DATE NOT NULL,
+    `date_delete` DATE,
     PRIMARY KEY (`id_compte`)
 ) ENGINE=InnoDB;
 
