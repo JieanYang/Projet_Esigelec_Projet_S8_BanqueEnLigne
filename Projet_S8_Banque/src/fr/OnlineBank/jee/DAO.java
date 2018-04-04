@@ -36,8 +36,8 @@ public class DAO {
 	 * Setup connection parameters to the database
 	 */
 
+	private String url = "jdbc:mysql://localhost/projet_s8_banque?useSSL=false"; // add '?useSSL=false' to disable
 
-	private String url = "jdbc:mysql://localhost/banque?useSSL=false"; // add '?useSSL=false' to disable
 																					// Warning message
 	private String username = "root";
 	private String password = "";
