@@ -44,21 +44,27 @@ public class Recuptransac extends HttpServlet {
 		
 		int emetteur=Integer.parseInt(request.getParameter("emetteur"));
 		int beneficiaire=Integer.parseInt(request.getParameter("beneficiaire"));
-		int somme=Integer.parseInt(request.getParameter("somme"));
+		int somme=Integer.parseInt(request.getParameter("montant"));
 		
 		Compte compteemetteur = compte.getCompte(emetteur);
 		float solde = compteemetteur.getSolde();
 		solde= solde-somme;
+		if (solde>0) 
+		{
 		compteemetteur.setSolde(solde);
-		CompteDao.updateCompte(compteemetteur); //demande a etre en static
+		compte.updateCompte(compteemetteur); //demande a etre en static
 		
 		Compte comptebenef = compte.getCompte(beneficiaire);
 		float solde2= comptebenef.getSolde();
-		solde2= solde+somme;
+		solde2= solde2+somme;
 		comptebenef.setSolde(solde2);
-		CompteDao.updateCompte(comptebenef);
+		compte.updateCompte(comptebenef);
+		}
 		
-		compte= CompteaDao.getcompte(); //a quoi ca sert ?
+		else
+		{
+			//ecrire un message d'erreur en pop up
+		}
 		
 	}
 }
