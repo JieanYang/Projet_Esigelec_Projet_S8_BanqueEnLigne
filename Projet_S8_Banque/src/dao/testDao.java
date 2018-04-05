@@ -9,21 +9,24 @@ import java.util.List;
 
 import javax.swing.*;
 
-import Class.Transaction;
-import dao.TransactionDao;
+import Class.User;
+import dao.UserDao;
 
 public class testDao {
 	
-	public static void print(Transaction transaction) {
+	public static void print(User user) {
 		System.out.println();
-		System.out.println(transaction.getId_transaction());
-		System.out.println(transaction.getCategorie_transaction());
-		System.out.println(transaction.getId_compte_emetteur());
-		System.out.println(transaction.getId_compte_recepteur());
-		System.out.println(transaction.getDate_transaction());
-		System.out.println(transaction.getDate_create());
-		System.out.println(transaction.getSomme());
-		System.out.println(transaction.getDescription());
+		System.out.println(user.getId_user());
+		System.out.println(user.getCategorie_user());
+		System.out.println(user.getNom());
+		System.out.println(user.getPrenom());
+		System.out.println(user.getEmail());
+		System.out.println(user.getAdresse());
+		System.out.println(user.getTelephone());
+		System.out.println(user.getVille());
+		System.out.println(user.getPays());
+		System.out.println(user.getPassword());
+		System.out.println(user.getDateNaissance());
 	}
 	
 	public static void main(String[] args) {
@@ -43,38 +46,42 @@ public class testDao {
 //		Timestamp sqldate = new Timestamp(utildate.getTime());
 //		System.out.println(sqldate);
 //		
-//		Timestamp stamp = new Timestamp(System.currentTimeMillis());
-//		Date date = new Date(stamp.getTime());
-//		System.out.println(date);
-		
-		
-		
-		Date utildate = new Date();         
-    	Timestamp sqldate = new Timestamp(utildate.getTime()); 
 
 		
-    	TransactionDao transactionDao = new TransactionDao();
-    	Transaction transaction = new Transaction();
-		transaction = new Transaction(7, "Cash", 47, 48, sqldate,null,(float) 34.4, "nothing is good");
-
-//		transaction = transactionDao.addTransaction(transaction);
 		
-//    	transaction = transactionDao.getTransaction(6);
-//    	transaction.setCategorie_transaction("cards");
-//    	transaction.setId_compte_emetteur(50);
-//    	transaction.setId_compte_recepteur(51);
-//    	transaction.setSomme((float) 1.111);
-//    	transaction.setDescription("!!!!!!!!!!!!I have a word!");
-////    	
+		
+//		Date utildate = new Date();         
+//    	Timestamp sqldate = new Timestamp(utildate.getTime()); 
+		
+		Timestamp stamp = new Timestamp(System.currentTimeMillis());
+		java.sql.Date date = new java.sql.Date(stamp.getTime());
+		System.out.println(date);
+
+		
+    	UserDao userDao = new UserDao();
+    	User user = new User();
+		user = new User(1, "client", "nom", "prenom", "d@com","adress","93784956", "rouen", "France", "password", date);
+
+//		user = userDao.addUser(user);
+		
+//    	user = userDao.getUser(1);
+//    	user.setCategorie_user("conseiller");
+//    	user.setNom("nom22222");
+//    	user.setPrenom("prenom2222");
+//    	user.setEmail("I don't have emailaaaa");
+//    	user.setAdresse("my home is in the city");
+//    	user.setTelephone("000000000000001111111111111111");
+//    	user.setVille("underground");
+//    	user.setPays("China");
+//    	user.setPassword("password222222222222222222");
+//    	user = userDao.updateUser(user);
 //
-//    	transaction = transactionDao.updateTransaction(transaction);
-//
-//		List<Transaction> list = new ArrayList<Transaction>();
-//		list = transactionDao.getListTransaction();
+//		List<User> list = new ArrayList<User>();
+//		list = userDao.getListUser();
 //		for(int i=0;i<list.size();i++)
 //			print(list.get(i));
-		transactionDao.deleteTransaction(transaction);
-//		print(transaction);
+		userDao.deleteUser(user);
+//		print(user);
     	
 		
 	}
