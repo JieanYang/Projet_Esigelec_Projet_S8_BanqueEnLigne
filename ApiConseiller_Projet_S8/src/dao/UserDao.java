@@ -17,27 +17,29 @@ public class UserDao {
 	private static ResultSet resultSet = null;
 
 	/**
-	 * Check the 'user_categorie' and the credentials when he try to connect
+	 * Used for Login/Login Check the 'user_categorie' and the credentials when he
+	 * try to connect
+	 * 
 	 * @param email
 	 * @param password
 	 * @return
 	 */
 	public static boolean getCredentials(String email, String password) {
-			sql = "SELECT * FROM user WHERE (categorie_user = 'conseiller') and (email = ?) and (password = ?)";
-			try {
-				preparedStatement = ConnectionBDD.setConnection().prepareStatement(sql);
-				preparedStatement.setString(1, email);
-				preparedStatement.setString(2, password);
-				resultSet = preparedStatement.executeQuery();
-				if (resultSet.next()) {
-					return true;
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} finally {
-				// https://stackoverflow.com/questions/65035/does-finally-always-execute-in-java
-				ConnectionBDD.closeConnection();
+		sql = "SELECT * FROM user WHERE (categorie_user = 'conseiller') and (email = ?) and (password = ?)";
+		try {
+			preparedStatement = ConnectionBDD.setConnection().prepareStatement(sql);
+			preparedStatement.setString(1, email);
+			preparedStatement.setString(2, password);
+			resultSet = preparedStatement.executeQuery();
+			if (resultSet.next()) {
+				return true;
 			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			// https://stackoverflow.com/questions/65035/does-finally-always-execute-in-java
+			ConnectionBDD.closeConnection();
+		}
 		return false;
 	}
 

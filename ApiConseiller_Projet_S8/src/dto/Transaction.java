@@ -1,6 +1,9 @@
 package dto;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.*;
+
+import dao.ConnectionBDD;
 
 /**
  * 
@@ -25,6 +28,7 @@ public class Transaction {
 		this.somme = somme;
 		this.description = description;
 	}
+    
 
 	public int getId_transaction() {
 		return id_transaction;
