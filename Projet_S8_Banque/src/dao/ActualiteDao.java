@@ -45,7 +45,10 @@ public class ActualiteDao {
     /**
      * @return
      */
-    
+    public List<Actualite> getListActualite() {
+        // TODO implement here
+        return null;
+    }
 
     /**
      * @param actualite 

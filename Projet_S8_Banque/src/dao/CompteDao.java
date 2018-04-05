@@ -25,7 +25,7 @@ public class CompteDao {
     /**
      * Parameter for connection with the database, URL, LOGIN and PASSWORD are constant
      */
-    final static String URL = "jdbc:mysql://localhost/projet_s8?useSLL=false"; // disable SSL
+    final static String URL = "jdbc:mysql://localhost/projet_s8_banque?useSLL=false"; // disable SSL
     final static String username = "root";
     final static String password ="";
     
@@ -301,7 +301,7 @@ public class CompteDao {
 		accesBDD.connection();
 		// write the code here DONT FORGET TO DISCONNECT AFTER CREATING THE ACCOUNT
 		try {
-			String sql = "INSERT INTO user (`nom`, `prenon`, `email`, `adresse`, `telephone`, `dateNaissance`, `ville`, `pays`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO user (`nom`, `prenom`, `email`, `adresse`, `telephone`, `dateNaissance`, `ville`, `pays`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, nom);
 			preparedStatement.setString(2, prenom);

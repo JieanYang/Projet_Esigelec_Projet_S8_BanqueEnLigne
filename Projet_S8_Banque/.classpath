@@ -10,10 +10,11 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
 		<attributes>
+			<attribute name="module" value="true"/>
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/9201709/Desktop/projet_s8_banque/Projet_S8_Banque/WebContent/WEB-INF/lib/activation.jar"/>
-	<classpathentry kind="lib" path="C:/Users/9201709/Desktop/projet_s8_banque/Projet_S8_Banque/WebContent/WEB-INF/lib/javax.mail-1.4.4.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/activation.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javax.mail-1.4.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
