@@ -24,7 +24,7 @@ public class MessageDao {
 	/**
 	 * Parameter for connection with the database, URL, LOGIN and PASSWORD are constant
 	 */
-	final static String URL = "jdbc:mysql://localhost/projet_s8_banque?useSLL=false"; // disable SSL
+	final static String URL = "jdbc:mysql://localhost/projet_s8?useSLL=false"; // disable SSL
 	final static String username = "root";
 	final static String password ="";
 	
@@ -91,7 +91,7 @@ public class MessageDao {
     	this.connection();
         
     	try {
-        	String sql ="INSERT INTO Message(nom, prenom, numphone, email, problem, reponse, date) "
+        	String sql ="INSERT INTO Message(nom, prenon, numphone, email, problem, reponse, date) "
         			+ "VALUES (?, ?, ?, ?, ?, ?, ?)";
         	ps = connection.prepareStatement(sql);
         	ps.setString(1, message.getNom());
