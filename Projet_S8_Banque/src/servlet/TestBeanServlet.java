@@ -43,7 +43,7 @@ public class TestBeanServlet extends HttpServlet {
 		rd = getServletContext().getRequestDispatcher("/testPageBean2.jsp");
 		rd.forward(request, response);
 		
-		String s = "here";
+		String s = "get";
 		response.getWriter().write(s);
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
@@ -52,8 +52,16 @@ public class TestBeanServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String s = "post";
+		response.getWriter().write(s);
+		
 		// TODO Auto-generated method stub
-		doGet(request, response);
+//		doGet(request, response);
+	}
+	
+	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		String s = "delete";
+		response.getWriter().write(s);
 	}
 
 }

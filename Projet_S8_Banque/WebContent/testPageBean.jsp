@@ -13,6 +13,16 @@
 		get
 	</button>
 </form>
+<form action="TestBeanServlet" method="POST">
+	<button type="submit">
+		post
+	</button>
+</form>
+<form action="TestBeanServlet" method="GET" onsubmit="doDelete()";>
+	<button type="submit" value="delete">
+		delete
+	</button>
+</form>
 
 </body>
 </html>
