@@ -72,13 +72,7 @@ public class ClientServlet_consulter_solde_histoire extends HttpServlet {
 		 		// add transactions of id_compte dans list_transaction for return
 			 	list_transaction.add(listTansaction_Onecompte.get(j));
 		 	}
-		 }
-		 
-		 // handle list of transaction
-		 // wipe off the repeated element
-		
-		 
-		 
+		 }		 
 		
 		
 		
@@ -87,7 +81,6 @@ public class ClientServlet_consulter_solde_histoire extends HttpServlet {
 		 session.setAttribute("CompteInfo", list_compte);
 		 session.setAttribute("TransactionInfo", list_transaction);
 		 
-		 response.getWriter().write("6");
 
 		 // go to a page specific
 		 RequestDispatcher rd;
