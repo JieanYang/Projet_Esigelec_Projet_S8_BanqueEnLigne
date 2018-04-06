@@ -58,18 +58,25 @@ public class ClientServlet_consulter_solde_histoire extends HttpServlet {
 		
 		// fill the list of compte and transaction
 		 list_compte = compteDao.getListCompteById_lient(id_client);
+		 List<Transaction> listTansaction_Onecompte = new ArrayList<Transaction>();
+		 int id_compte;
 		 for(int i=0; i<list_compte.size();i++) {
+			 
 			 // for each id_compte
-			 int id_compte = list_compte.get(i).getId_compte();
+			 id_compte = list_compte.get(i).getId_compte();
 			
-		 	List<Transaction> listTansaction_Onecompte = transactionDao.getListTransactionById_compte(id_compte);
-			
+		 	listTansaction_Onecompte = transactionDao.getListTransactionById_compte(id_compte);
+		 	
+		 	
 		 	for(int j=0; j<listTansaction_Onecompte.size(); j++) {
-		 		
 		 		// add transactions of id_compte dans list_transaction for return
-		 		list_transaction.add(listTansaction_Onecompte.get(j));
+			 	list_transaction.add(listTansaction_Onecompte.get(j));
 		 	}
 		 }
+		 
+		 // handle list of transaction
+		 // wipe off the repeated element
+		
 		 
 		 
 		

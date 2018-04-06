@@ -9,6 +9,14 @@
 	
 	List<Transaction> transactionList = new ArrayList<Transaction>(); 
 	transactionList = (List<Transaction>) session.getAttribute("TransactionInfo");
+	
+
+	int id_compte_choice;
+	id_compte_choice = compteList.get(0).getId_compte();
+	
+	List<Integer> list_transactionId_existence = new ArrayList<Integer>();
+
+	
 %>
 
 
@@ -21,17 +29,6 @@
 </head>
 <body>
 <%@include file="head.html" %>
-
-<div class="container row">
-	<%
-	if (compteList != null ){
-		out.println("<br>"+compteList);
-	} 
-	if (transactionList != null ){
-		out.println("<br>"+transactionList);
-	}
-	%>
-</div>
 
 <%!
 public String fillSolde(String categorie, List<Compte> compteList) {
@@ -47,7 +44,6 @@ public String fillSolde(String categorie, List<Compte> compteList) {
 			retour = "None";
 		}
 	}
-	System.out.println(retour);
 	return retour;
 }
 %>
@@ -100,7 +96,7 @@ public String fillSolde(String categorie, List<Compte> compteList) {
 	</div>
 	
 
-	<h2 style="background-color: #117D8D; color:white;">l'historique de transactions</h2>
+	<h2 style="background-color: #117D8D; color:white;">l'historique de transactions:<small><%out.println(" compte "+compteList.get(0).getCategorie_compte()); %><small></h2>
 	<div class="col-sm-12 row" style="margin-top:10px;">
 		<table class="table">
 			<thead class="thead" style="background-color: #5591BB; color:white;">
@@ -113,29 +109,22 @@ public String fillSolde(String categorie, List<Compte> compteList) {
 			<tbody>
 				<%
 					for(Transaction item: transactionList){
-						out.println("<tr>");
-						out.println("<td>"+item.getDate_transaction()+"</td>");
-						out.println("<td>"+item.getDescription()+"</td>");
-						out.println("<td>"+item.getSomme()+"</td>");
-						out.println("</tr>");
-						
+						if (item.getId_compte_emetteur() == id_compte_choice || item.getId_compte_recepteur() == id_compte_choice){
+							if(list_transactionId_existence.indexOf(item.getId_transaction()) == -1 ){
+								list_transactionId_existence.add(item.getId_transaction());
+								out.println("<tr>");
+								out.println("<td>"+item.getDate_transaction()+"</td>");
+								out.println("<td>"+item.getDescription()+"</td>");
+								if( id_compte_choice == item.getId_compte_emetteur()){
+									out.println("<td>"+"-"+item.getSomme()+"</td>");
+								}else{
+									out.println("<td>"+"+"+item.getSomme()+"</td>");
+								}
+								out.println("</tr>");
+							}
+						}
 					}
 				%>
-				<!-- <tr>
-					<td>date</td>
-					<td>description</td>
-					<td>Somme</td>
-				</tr>
-				<tr>
-					<td>date</td>
-					<td>description</td>
-					<td>Somme</td>
-				</tr>
-				<tr>
-					<td>date</td>
-					<td>description</td>
-					<td>Somme</td>
-				</tr> -->
 			</tbody>
 		</table>
 	</div>

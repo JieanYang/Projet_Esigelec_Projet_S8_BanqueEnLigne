@@ -31,7 +31,7 @@
 	</button>
 </form>
 <form action="ClientServlet_consulter_solde_histoire" method="GET">
-	<input name="method" value="DELETE" style="display:none;">
+	<input name="method" value="GET" style="display:none;">
 	
 	<input name="id_client" value=3>
 	<button type="submit">

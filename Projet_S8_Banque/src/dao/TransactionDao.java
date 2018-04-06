@@ -315,7 +315,7 @@ public class TransactionDao {
         this.connection();
         
         try {
-            String sql ="SELECT * FROM Transaction WHERE id_compte_emetteur=? OR id_compte_recepteur=?";
+            String sql ="SELECT * FROM Transaction WHERE id_compte_emetteur=? OR id_compte_recepteur=? ORDER BY date_transaction DESC";
             ps = connection.prepareStatement(sql);
             ps.setInt(1, id_compte);
             ps.setInt(2, id_compte);
