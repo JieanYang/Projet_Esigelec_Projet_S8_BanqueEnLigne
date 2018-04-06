@@ -9,17 +9,24 @@
 <body>
 
 <form action="TestBeanServlet" method="GET">
+	<input name="method" value="GET" style="display:none;">
+
+
 	<button type="submit">
 		get
 	</button>
 </form>
 <form action="TestBeanServlet" method="POST">
+	<input name="method" value="POST" style="display:none;">
+	
 	<button type="submit">
 		post
 	</button>
 </form>
-<form action="TestBeanServlet" method="GET" onsubmit="doDelete()";>
-	<button type="submit" value="delete">
+<form action="TestBeanServlet" method="POST">
+	<input name="method" value="DELETE" style="display:none;">
+
+	<button type="submit">
 		delete
 	</button>
 </form>

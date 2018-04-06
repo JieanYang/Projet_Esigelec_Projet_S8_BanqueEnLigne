@@ -34,17 +34,19 @@ public class TestBeanServlet extends HttpServlet {
 		response.setContentType("text/html;charset=big5");
 		response.setCharacterEncoding("big5");
 		// Create a bean for saving information and we use session
-		MessageBean messageBean = new MessageBean(0, "two", "Monsieur", "2222222222", "2@gmail.com", "I don't want to be bad, so?", null, null);
+		MessageBean messageBean1 = new MessageBean(1, "one", "Monsieur", "1111111111", "1@gmail.com", "I don't want to be good, so?", null, null);
+		MessageBean messageBean2 = new MessageBean(0, "two", "Monsieur", "2222222222", "2@gmail.com", "I don't want to be bad, so?", null, null);
+		MessageBean[] messageBeanList = {messageBean1, messageBean2};		
 		HttpSession session = request.getSession();
-		session.setAttribute("MessageBeanInfo", messageBean);
+		session.setAttribute("MessageBeanInfo", messageBeanList);
 		
 		// go to a page specific
 		RequestDispatcher rd;
 		rd = getServletContext().getRequestDispatcher("/testPageBean2.jsp");
 		rd.forward(request, response);
 		
-		String s = "get";
-		response.getWriter().write(s);
+//		String s = "get";
+//		response.getWriter().write(s);
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -52,16 +54,43 @@ public class TestBeanServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String s = "post";
-		response.getWriter().write(s);
+		String s = request.getParameter("method");
+		if (s.equals("DELETE")) {
+			doDelete(request, response);
+		}else if (s.equals("POST")) {
+			int[] list1 = {1, 2};
+			System.out.println(list1[0]);
+			System.out.println(list1[1]);
+
+			int[] list2 = {};
+			System.out.println(list2);
+//			System.out.println(list2[0]);
+
+			list2 = list1;
+			System.out.println(list2[0]);
+			System.out.println(list2[1]);
+			
+			response.getWriter().write(s);
+		}
+//		String[] s = {"post"};
+//		response.getWriter().write(s);
 		
 		// TODO Auto-generated method stub
 //		doGet(request, response);
 	}
 	
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		String s = "delete";
-		response.getWriter().write(s);
+		// session
+		HttpSession session = request.getSession();
+		session.removeAttribute("MessageBeanInfo");
+		
+		// go to a page specific
+		RequestDispatcher rd;
+		rd = getServletContext().getRequestDispatcher("/testPageBean2.jsp");
+		rd.forward(request, response);
+				
+//		String s = "delete";
+//		response.getWriter().write(s);
 	}
 
 }
