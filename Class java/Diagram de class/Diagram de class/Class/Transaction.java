@@ -36,7 +36,12 @@ public class Transaction {
     /**
      * 
      */
-    private Date date;
+    private Timestamp date_transaction;
+
+    /**
+     * 
+     */
+    private Timestamp date_create;
 
     /**
      * 

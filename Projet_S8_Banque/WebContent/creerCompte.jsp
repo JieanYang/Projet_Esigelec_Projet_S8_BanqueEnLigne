@@ -74,7 +74,8 @@
 	  </div>
 	  <div class="form-group">
 	    <label for="inputAddress2">Adresse mail</label>
-	    <input type="text" class="form-control" name="email" id="inputAddress2" placeholder="sebastien@esigelec.fr" required>
+	    <input type="text" class="form-control" name="email" id="inputAddress2" placeholder="sebastien@esigelec.fr"  required />
+	    
 	  </div>
 	  <div class="form-row">
 	    <div class="form-group col-md-6">
@@ -90,7 +91,15 @@
 	      </select>
 	    </div>
 	    
+	    <div class="form-group">
+                            <label  for="fichier">Ajouter Fichier : (de Type PDF)</label>
+                            <input class="form-control col-sm-8" type="hidden" name="MAX_FILE_SIZE" value="30720" />
+                            <input class="form-control col-sm-8 " id="fichier" type="file" name="fichier" />
+                            
+        </div>
+	    
 	  </div>
+	  
 	  <div class="form-group">
 	    <div class="form-check">
 	      <input class="form-check-input" type="checkbox" id="gridCheck">
@@ -99,6 +108,7 @@
 	      </label>
 	    </div>
 	  </div>
+	  
 	  <button type="submit" class="btn btn-primary">Envoyer</button>
 </form>
 

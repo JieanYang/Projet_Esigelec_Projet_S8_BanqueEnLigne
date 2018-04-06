@@ -12,7 +12,7 @@ CREATE TABLE `User` (
     `id_user` INTEGER NOT NULL AUTO_INCREMENT,
     `categorie_user` VARCHAR(15) NOT NULL,
     `nom` VARCHAR(15) NOT NULL,
-    `prenon` VARCHAR(15) NOT NULL,
+    `prenom` VARCHAR(15) NOT NULL,
     `email` VARCHAR(30) NOT NULL UNIQUE,
     `adresse` VARCHAR(50),
     `telephone` VARCHAR(30),
@@ -30,7 +30,7 @@ CREATE TABLE `Compte` (
     `etat` VARCHAR(15) NOT NULL,
     `solde` FLOAT NOT NULL,
     `date_create` DATE NOT NULL,
-    `date_delete` DATE NOT NULL,
+    `date_delete` DATE,
     PRIMARY KEY (`id_compte`)
 ) ENGINE=InnoDB;
 
@@ -39,7 +39,8 @@ CREATE TABLE `Transaction` (
     `categorie_transaction` VARCHAR(15) NOT NULL,
     `id_compte_emetteur` INTEGER,
     `id_compte_recepteur` INTEGER,
-    `date` DATE NOT NULL,
+    `date_transaction` DATETIME NOT NULL,
+    `date_create` DATETIME NOT NULL,
     `somme` FLOAT NOT NULL,
     `description` TEXT NOT NULL,
     PRIMARY KEY (`id_transaction`)

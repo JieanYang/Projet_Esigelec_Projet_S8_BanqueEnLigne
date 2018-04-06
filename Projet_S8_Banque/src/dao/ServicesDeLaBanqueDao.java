@@ -1,34 +1,34 @@
-package Dao;
+package dao;
 
 import java.util.*;
 
-import Class.Compte;
+import Class.ServicesDeLaBanque;
 
 /**
  * 
  */
-public class CompteDao {
+public class ServicesDeLaBanqueDao {
 
     /**
      * Default constructor
      */
-    public CompteDao() {
+    public ServicesDeLaBanqueDao() {
     }
 
     /**
-     * @param compte 
+     * @param service 
      * @return
      */
-    public Compte addCompte(Compte compte) {
+    public ServicesDeLaBanque addServiceDeLaBanque(ServicesDeLaBanque service) {
         // TODO implement here
         return null;
     }
 
     /**
-     * @param compte 
+     * @param service 
      * @return
      */
-    public Compte updateCompte(Compte compte) {
+    public ServicesDeLaBanque updateServiceDeLaBanque(ServicesDeLaBanque service) {
         // TODO implement here
         return null;
     }
@@ -37,7 +37,7 @@ public class CompteDao {
      * @param id 
      * @return
      */
-    public Compte getCompte(int id) {
+    public ServicesDeLaBanque getServiceDeLaBanque(int id) {
         // TODO implement here
         return null;
     }
@@ -45,16 +45,16 @@ public class CompteDao {
     /**
      * @return
      */
-    public List<Compte> getListCompte() {
+    public List<ServicesDeLaBanque> getListServiceDeLaBanque() {
         // TODO implement here
         return null;
     }
 
     /**
-     * @param compte 
+     * @param service 
      * @return
      */
-    public int deleteCompte(Compte compte) {
+    public int deleteServiceDeLaBanque(ServicesDeLaBanque service) {
         // TODO implement here
         return 0;
     }

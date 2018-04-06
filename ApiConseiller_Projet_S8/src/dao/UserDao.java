@@ -17,6 +17,13 @@ public class UserDao {
 	private static ResultSet resultSet = null;
 
 	/**
+	 * Default constructor
+	 */
+	public UserDao() {
+
+	}
+
+	/**
 	 * Used for Login/Login Check the 'user_categorie' and the credentials when he
 	 * try to connect
 	 * 
@@ -44,9 +51,28 @@ public class UserDao {
 	}
 
 	/**
-	 * Default constructor
+	 * @param int
+	 *            -> id
+	 * @return User object that contain the current user info
 	 */
-	public UserDao() {
+	public User getCurrentUser(String email) {
+		User user = new User();
+		sql = "SELECT * FROM User WHERE email = ?";
+		try {
+			preparedStatement = ConnectionBDD.setConnection().prepareStatement(sql);
+			preparedStatement.setString(1, email);
+			resultSet = preparedStatement.executeQuery();
+			if (resultSet.next()) {
+				// user.setId_user(resultSet.getInt("id_user"));
+				user.setNom(resultSet.getString("nom"));
+				user.setPrenom(resultSet.getString("prenom"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			ConnectionBDD.closeConnection();
+		}
+		return user;
 	}
 
 	/**
@@ -68,20 +94,36 @@ public class UserDao {
 	}
 
 	/**
-	 * @param id
 	 * @return
 	 */
-	public User getUser(int id) {
-		// TODO implement here
-		return null;
-	}
+	public Vector<User> getListUser() {
+		Vector<User> listUser = new Vector<User>();
+		sql = "SELECT * FROM `user` ORDER BY `user`.`nom` ASC";
+		try {
+			preparedStatement = ConnectionBDD.setConnection().prepareStatement(sql);
+			resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				User user = new User();
+				user.setId_user(resultSet.getInt("id_user"));
+				// user.setCategorie_user(resultSet.getString("categorie_user"));
+				user.setNom(resultSet.getString("nom"));
+				user.setPrenom(resultSet.getString("prenom"));
+				user.setEmail(resultSet.getString("email"));
+				user.setAdresse(resultSet.getString("adresse"));
+				user.setTelephone(resultSet.getString("telephone"));
+				user.setVille(resultSet.getString("ville"));
+				user.setPays(resultSet.getString("pays"));
+				user.setDateNaissance(resultSet.getDate("dateNaissance"));
 
-	/**
-	 * @return
-	 */
-	public List<User> getListUser() {
-		// TODO implement here
-		return null;
+				listUser.add(user);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			ConnectionBDD.closeConnection();
+		}
+		return listUser; // return a list Message
 	}
 
 	/**

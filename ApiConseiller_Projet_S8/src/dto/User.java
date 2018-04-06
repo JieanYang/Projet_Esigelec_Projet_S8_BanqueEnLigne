@@ -12,14 +12,19 @@ public class User {
     private String prenom;
     private String email;
     private String adresse;
-    private int telephone;
+    private String telephone;
     private String ville;
     private String pays;
     private String password;
     private Date dateNaissance;
+    
+    // default consrtructor
+    public User() {
+    	
+    }
 
     public User(int id_user, String categorie_user, String nom, String prenom, String email, String adresse,
-			int telephone, String ville, String pays, String password, Date dateNaissance) {
+			String telephone, String ville, String pays, String password, Date dateNaissance) {
 		this.id_user = id_user;
 		this.categorie_user = categorie_user;
 		this.nom = nom;
@@ -133,7 +138,7 @@ public class User {
 	 * get the user's phone number
 	 * @return the user's phone number
 	 */
-	public int getTelephone() {
+	public String getTelephone() {
 		return telephone;
 	}
 
@@ -141,7 +146,7 @@ public class User {
 	 * change the user's phone number
 	 * @param new user's phone number
 	 */
-	public void setTelephone(int telephone) {
+	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
 

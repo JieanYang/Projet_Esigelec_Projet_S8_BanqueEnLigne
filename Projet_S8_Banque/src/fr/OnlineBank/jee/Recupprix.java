@@ -7,13 +7,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.CoursDeLaBourseDao;
+
 /**
  * Servlet implementation class recupprix
  */
 @WebServlet("/Recupprix")
 public class Recupprix extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	DAO objectdao = new DAO();
+	CoursDeLaBourseDao objectdao = new CoursDeLaBourseDao();
     /**
      * Default constructor. 
      */

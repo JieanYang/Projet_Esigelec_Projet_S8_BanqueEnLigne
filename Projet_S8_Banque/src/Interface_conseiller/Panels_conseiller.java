@@ -8,7 +8,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import Class.Message;
-import Dao.MessageDao;
+import dao.MessageDao;
 
 public class Panels_conseiller {
 	protected Fenetre fenetre;
@@ -89,6 +89,8 @@ public class Panels_conseiller {
 		this.p_listOfMessage.setLayout(layout);
 		GridBagConstraints layoutConstraints = new GridBagConstraints();
 		
+
+
 		// Components
 		this.listComponent = new JList(this.vector);
 		this.listComponent.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -264,6 +266,13 @@ class MousePolice_p_listOfMessage extends Panels_conseiller implements MouseList
 
 	public MousePolice_p_listOfMessage(Fenetre fenetre) {
 		super(fenetre);
+
+		MessageDao messageDao = new MessageDao();
+		super.listOfMessage = messageDao.getListMessage();
+		// update list of messages
+		super.vector.clear();
+		super.vector = super.updateVector(super.vector);
+		super.listComponent.setListData(super.vector);
 	}
 
 	public String getText(String source) {

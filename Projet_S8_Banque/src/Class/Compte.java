@@ -5,6 +5,24 @@ import java.util.*;
  * 
  */
 public class Compte {
+	
+	
+	/**
+     * Default constructor
+     */
+    public Compte(int id_compte, int id_user, String categorie_compte, String etat, float solde, Date date_create, Date date_delete) {
+    	this.id_compte = id_compte;
+    	this.id_user = id_user;
+    	this.categorie_compte = categorie_compte;
+    	this.etat = etat;
+    	this.solde = solde;
+    	this.date_create = date_create;
+    	this.date_delete = date_delete;
+    }
+    
+    public Compte() {
+		
+	}
 
     public int getId_compte() {
 		return id_compte;
@@ -62,11 +80,6 @@ public class Compte {
 		this.date_delete = date_delete;
 	}
 
-	/**
-     * Default constructor
-     */
-    public Compte() {
-    }
 
     /**
      * 
