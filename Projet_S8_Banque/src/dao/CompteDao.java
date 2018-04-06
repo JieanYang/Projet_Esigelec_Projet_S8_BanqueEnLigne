@@ -301,7 +301,7 @@ public class CompteDao {
 		accesBDD.connection();
 		// write the code here DONT FORGET TO DISCONNECT AFTER CREATING THE ACCOUNT
 		try {
-			String sql = "INSERT INTO user (`nom`, `prenom`, `email`, `adresse`, `telephone`, `date`, `ville`, `pays`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO user (`nom`, `prenom`, `email`, `adresse`, `telephone`, `dateNaissance`, `ville`, `pays`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, nom);
 			preparedStatement.setString(2, prenom);

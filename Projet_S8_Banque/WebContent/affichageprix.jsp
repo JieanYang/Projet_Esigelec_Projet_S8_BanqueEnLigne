@@ -1,33 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css_script/styles_index.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
 
-<html>
-
-    <head>
-<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <title>Cours de la Bourse</title>
-
-
-    </head>
+<title>Cours de la bourse</title>
+</head>
 
     <body>
     
+    <%@ include file="head.html" %>
     
-   <div class="p-3 mb-2 bg-secondary text-white"> Affichage du cours de la bourse</div>
+   <div class="p-3 mb-2 bg-secondary text-white"> <center>Affichage du cours de la bourse</center></div>
     
 
-
-<div class="progress">
-  <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-  <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-  <div class="progress-bar bg-info" role="progressbar" style="width: 40%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
 <div class=jumbotron>
  <div class=container>
 

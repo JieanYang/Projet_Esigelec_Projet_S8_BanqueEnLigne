@@ -8,11 +8,20 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
+>>>>>>> 9e84aa5def9aef8e6299bffe6e83d7453fcac1f1
 		<attributes>
+			<attribute name="module" value="true"/>
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
+=======
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/activation.jar"/>
+>>>>>>> 9e84aa5def9aef8e6299bffe6e83d7453fcac1f1
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javax.mail-1.4.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

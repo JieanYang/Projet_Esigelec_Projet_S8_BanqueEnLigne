@@ -1,7 +1,8 @@
 package fr.OnlineBank.jee;
 
 import java.io.IOException;
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,22 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Class.Compte;
-import dao.CompteDao;
-import dao.TransactionDao;
+import Class.Message;
+import dao.MessageDao;
 
 /**
- * Servlet implementation class Recuptransac
+ * Servlet implementation class MessageClient
  */
-@WebServlet("/Recuptransac")
-public class Recuptransac extends HttpServlet {
+@WebServlet("/MessageClient")
+public class MessageClient extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	CompteDao compte = new CompteDao();
+       MessageDao monDao = new MessageDao();
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Recuptransac() {
+    public MessageClient() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,30 +40,22 @@ public class Recuptransac extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		String nom = request.getParameter("nom");
+		String prenom = request.getParameter("prenom");
+		String email= request.getParameter("email");
+		String numphone = request.getParameter("telephone");
+		String adresse = request.getParameter("adresse");
+		String problem = request.getParameter("zoneTexte");
+		int id =1 ;
+		String reponse = request.getParameter("");
+		Date utildate = new Date();         
+    	Timestamp sqldate = new Timestamp(utildate.getTime());  
+    	
 		
-		int emetteur=Integer.parseInt(request.getParameter("emetteur"));
-		int beneficiaire=Integer.parseInt(request.getParameter("beneficiaire"));
-		int somme=Integer.parseInt(request.getParameter("montant"));
-		
-		Compte compteemetteur = compte.getCompte(emetteur);
-		float solde = compteemetteur.getSolde();
-		solde= solde-somme;
-		if (solde>0) 
-		{
-		compteemetteur.setSolde(solde);
-		compte.updateCompte(compteemetteur); //demande a etre en static
-		
-		Compte comptebenef = compte.getCompte(beneficiaire);
-		float solde2= comptebenef.getSolde();
-		solde2= solde2+somme;
-		comptebenef.setSolde(solde2);
-		compte.updateCompte(comptebenef);
-		}
-		
-		else
-		{
-			//ecrire un message d'erreur en pop up
-		}
+		Message message = new Message(id,nom,prenom,numphone,email,problem,reponse,sqldate);
+		monDao.addMessage(message);
 		
 	}
+
 }

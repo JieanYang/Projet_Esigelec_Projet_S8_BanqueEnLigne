@@ -283,7 +283,6 @@ class MousePolice_p_listOfMessage extends Panels_conseiller implements MouseList
 		return retour;
 	}
 	
-	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		String text = this.getText(arg0.getSource().toString());
 		// System.out.println(text);
@@ -310,25 +309,21 @@ class MousePolice_p_listOfMessage extends Panels_conseiller implements MouseList
 		}
 	}
 
-	@Override
 	public void mouseEntered(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	public void mouseExited(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	public void mouseReleased(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		
@@ -354,7 +349,6 @@ class MousePolice_p_responseOfMessage extends Panels_conseiller implements Mouse
 		return retour;
 	}
 	
-	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		String text = this.getText(arg0.getSource().toString());
 		// System.out.println(text);
@@ -370,25 +364,21 @@ class MousePolice_p_responseOfMessage extends Panels_conseiller implements Mouse
 		}
 	}
 
-	@Override
 	public void mouseEntered(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	public void mouseExited(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	public void mouseReleased(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		

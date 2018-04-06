@@ -35,7 +35,7 @@
 <br/>
      
 
-  <form>
+  <form action="MessageClient" method="post">
 	  <div class="form-row">
 	    <div class="form-group col-md-6">
 	      <label for="inputName4">Nom </label>
@@ -49,6 +49,10 @@
 	    
 	  </div>
 	  
+	  <div class="form-group">
+	    <label for="inputAddress">Telephone</label>
+	    <input type="text" class="form-control" name="telephone" id="inputAddress" placeholder="0769458855" required>
+	  </div>
 	  
 	  <div class="form-group">
 	    <label for="inputAddress">Adresse</label>
