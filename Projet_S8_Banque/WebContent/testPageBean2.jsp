@@ -1,11 +1,11 @@
-<%@page import="bean.MessageBean"%>
+<%@page import="Class.Message"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
 
 <%	
-	MessageBean[] messageBeanList = {}; 
-	messageBeanList = (MessageBean[]) session.getAttribute("MessageBeanInfo");
+	Message[] messageList = {}; 
+	messageList = (Message[]) session.getAttribute("MessageBeanInfo");
 %>
 
 
@@ -32,9 +32,17 @@
 	</div>
 	<div>
 			<%-- <%=session.getAttribute("MessageBeanInfo")%> --%>
-			<%=messageBeanList[0].getNom() %>
-			<%=messageBeanList[1].getNom() %>
-			<%=messageBeanList.length %>
+			<%for(int i=0; i<messageList.length;i++) {%>
+			<%out.println("<br>"); %>
+			<%=messageList[i].getId_message()%>
+			<%=messageList[i].getNom()%>
+			<%=messageList[i].getPrenom()%>
+			<%=messageList[i].getNumphone()%>
+			<%=messageList[i].getEmail()%>
+			<%=messageList[i].getProblem()%>
+			<%=messageList[i].getReponse()%>
+			<%=messageList[i].getDate()%>
+			<%}%>
 			
 			
 			<%  

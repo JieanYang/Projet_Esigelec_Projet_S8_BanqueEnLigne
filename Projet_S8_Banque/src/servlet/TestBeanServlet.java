@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.MessageBean;
+import Class.Message;
 
 /**
  * Servlet implementation class TestBeanServlet
@@ -34,9 +34,9 @@ public class TestBeanServlet extends HttpServlet {
 		response.setContentType("text/html;charset=big5");
 		response.setCharacterEncoding("big5");
 		// Create a bean for saving information and we use session
-		MessageBean messageBean1 = new MessageBean(1, "one", "Monsieur", "1111111111", "1@gmail.com", "I don't want to be good, so?", null, null);
-		MessageBean messageBean2 = new MessageBean(0, "two", "Monsieur", "2222222222", "2@gmail.com", "I don't want to be bad, so?", null, null);
-		MessageBean[] messageBeanList = {messageBean1, messageBean2};		
+		Message messageBean1 = new Message(1, "one", "Monsieur", "1111111111", "1@gmail.com", "I don't want to be good, so?", null, null);
+		Message messageBean2 = new Message(0, "two", "Monsieur", "2222222222", "2@gmail.com", "I don't want to be bad, so?", null, null);
+		Message[] messageBeanList = {messageBean1, messageBean2};		
 		HttpSession session = request.getSession();
 		session.setAttribute("MessageBeanInfo", messageBeanList);
 		
