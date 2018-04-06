@@ -304,5 +304,45 @@ public class TransactionDao {
     	
         return retour; // return 1 -> success or return 0 -> fail
     }
+    
+    
+    /**
+     * @param int -> id_compte
+     * @return List<Transaction> -> retour
+     */
+    public List<Transaction> getListTransactionById_compte(int id_compte) {
+        List<Transaction> retour = new ArrayList<Transaction>();
+        this.connection();
+        
+        try {
+            String sql ="SELECT * FROM Transaction WHERE id_compte_emetteur=? OR id_compte_recepteur=?";
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, id_compte);
+            ps.setInt(2, id_compte);
+            
+            /**
+             * We take out all the compte in the BDD
+             * 
+             */
+            rs = ps.executeQuery();
+            // passe a la premiere (et unique) ligne retournee
+            while(rs.next()) {
+                /*
+                 * We create a new instance of Transaction and 
+                 * then use method List.add() to add into the retour
+                 */
+                retour.add(new Transaction(rs.getInt("id_transaction"), rs.getString("categorie_transaction"), rs.getInt("id_compte_emetteur"),
+                        rs.getInt("id_compte_recepteur"), rs.getTimestamp("date_transaction"), rs.getTimestamp("date_create"),
+                        rs.getFloat("somme"), rs.getString("description")));
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            this.disconnection();
+        }
+        
+        return retour; // return a list Transaction
+    }
 
 }

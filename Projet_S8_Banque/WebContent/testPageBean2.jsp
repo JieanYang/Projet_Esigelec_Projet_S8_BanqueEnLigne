@@ -32,17 +32,21 @@
 	</div>
 	<div>
 			<%-- <%=session.getAttribute("MessageBeanInfo")%> --%>
-			<%for(int i=0; i<messageList.length;i++) {%>
-			<%out.println("<br>"); %>
-			<%=messageList[i].getId_message()%>
-			<%=messageList[i].getNom()%>
-			<%=messageList[i].getPrenom()%>
-			<%=messageList[i].getNumphone()%>
-			<%=messageList[i].getEmail()%>
-			<%=messageList[i].getProblem()%>
-			<%=messageList[i].getReponse()%>
-			<%=messageList[i].getDate()%>
-			<%}%>
+			<%
+			if (messageList != null){
+				for(int i=0; i<messageList.length;i++) {
+					out.println("<br>"); 
+					out.println(messageList[i].getId_message());
+					out.println(messageList[i].getNom());
+					out.println(messageList[i].getPrenom());
+					out.println(messageList[i].getNumphone());
+					out.println(messageList[i].getEmail());
+					out.println(messageList[i].getProblem());
+					out.println(messageList[i].getReponse());
+					out.println(messageList[i].getDate());
+				}
+			}
+			%>
 			
 			
 			<%  

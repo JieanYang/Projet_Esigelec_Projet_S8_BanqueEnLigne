@@ -30,6 +30,14 @@
 		delete
 	</button>
 </form>
+<form action="ClientServlet_consulter_solde_histoire" method="GET">
+	<input name="method" value="DELETE" style="display:none;">
+	
+	<input name="id_client" value=3>
+	<button type="submit">
+		get client solde and histoire
+	</button>
+</form>
 
 </body>
 </html>
