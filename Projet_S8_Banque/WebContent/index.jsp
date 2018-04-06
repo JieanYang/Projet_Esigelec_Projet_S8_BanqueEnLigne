@@ -19,112 +19,14 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet" href="css_script/form.css">
 
+<a href="/login.jsp"> <input type="button" value="Espace Client"> </a> 
+
 <title>Accueil</title>
 </head>
 <body class="container backC">
 
 	<!-- head.html -->
 	<%@ include file="head.html" %>
-
-
-
-	<!--login form-->
-	
-	<div id="id01" class="modal">
-		
-		
-		<!-- *********************************************************************************************************** -->
-		<!--  <div class="container">
-		<div class="row">
-		<div class="col-md-4 col-md-offset-4">
-		<div class="form-body">
-		    <ul class="nav nav-tabs final-login">
-		        <li class="active"><a data-toggle="tab" href="#sectionA">Sign In</a></li>
-		        <li><a data-toggle="tab" href="#sectionB">Join us!</a></li>
-		    </ul>
-		    <div class="tab-content">
-		        <div id="sectionA" class="tab-pane fade in active">
-			        <div class="innter-form">
-			            <form class="sa-innate-form" method="post">
-				            <label>Email Address</label>
-				            <input type="text" name="username">
-				            <label>Password</label>
-				            <input type="password" name="password">
-				            <button type="submit">Sign In</button>
-				            <a href="">Forgot Password?</a>
-			            </form>
-			         </div>
-		            <div class="social-login">
-		            <p>- - - - - - - - - - - - - Sign In With - - - - - - - - - - - - - </p>
-		    		<ul>
-		            <li><a href=""><i class="fa fa-facebook"></i> Facebook</a></li>
-		            <li><a href=""><i class="fa fa-google-plus"></i> Google+</a></li>
-		            <li><a href=""><i class="fa fa-twitter"></i> Twitter</a></li>
-		            </ul>
-		            </div>
-		            <div class="clearfix"></div>
-		        </div>
-		        <div id="sectionB" class="tab-pane fade">
-					<div class="innter-form">
-		            <form class="sa-innate-form" method="post">
-		            <label>Name</label>
-		            <input type="text" name="username">
-		            <label>Email Address</label>
-		            <input type="text" name="username">
-		            <label>Password</label>
-		            <input type="password" name="password">
-		            <button type="submit">Join now</button>
-		            <p>By clicking Join now, you agree to hifriends's User Agreement, Privacy Policy, and Cookie Policy.</p>
-		            </form>
-		            </div>
-		            <div class="social-login">
-		            <p>- - - - - - - - - - - - - Register With - - - - - - - - - - - - - </p>
-					<ul>
-		            <li><a href=""><i class="fa fa-facebook"></i> Facebook</a></li>
-		            <li><a href=""><i class="fa fa-google-plus"></i> Google+</a></li>
-		            <li><a href=""><i class="fa fa-twitter"></i> Twitter</a></li>
-		            </ul>
-		            </div>
-		        </div>
-		    </div>
-		    </div>
-		    </div>
-		    </div>
-		    </div>
-				
-		
-		
-		
-		
-		<!--  <form class="modal-content animate" action="Login" method="post">
-			<div class="imgcontainer">
-				<span onclick="document.getElementById('id01').style.display='none'"
-					class="close" title="Close Modal">&times;</span>
-				<!--<img src="img_avatar2.png" alt="Avatar" class="avatar">-->
-			<!--  </div>
-
-			<div class="container">
-				<label for="username"><b>Identifiant/Email</b></label> <input
-					type="text" placeholder="Entrez votre Identifiant ou Email"
-					name="username" required> <label for="psw"><b>Mot
-						de passe</b></label> <input type="password"
-					placeholder="Entrez votre Mot de passe" name="password" required>
-
-				<button type="submit">Connexion</button>
-				<!--<label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>-->
-			<!-- </div>
-
-			<div class="container" style="background-color: #f1f1f1">
-				<button type="button"
-					onclick="document.getElementById('id01').style.display='none'"
-					class="cancelbtn">Annuler</button>
-				<!--<span class="psw">Forgot <a href="#">password?</a></span>-->
-			<!-- </div>
-		</form>-->
-	</div>
-
 
 	<div class="row justify-content-around espace">
 		<div class="card" style="width: 19rem;">

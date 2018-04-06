@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.sql.Date;
 /**
  * This class allows to manage interactions between the database
  * 
@@ -36,8 +36,8 @@ public class DAO {
 	 * Setup connection parameters to the database
 	 */
 
-	private String url = "jdbc:mysql://localhost/projet_s8_banque?useSSL=false"; // add '?useSSL=false' to disable
 
+	private String url = "jdbc:mysql://localhost/projet_s8_banque?useSSL=false"; // add '?useSSL=false' to disable
 																					// Warning message
 	private String username = "root";
 	private String password = "";
@@ -110,7 +110,7 @@ public class DAO {
 	public boolean addUser(String firstname, String lastname, String email, String password) {
 		this.connection();
 		try {
-			String sql = "INSERT INTO user (`nom`, `prenom` ,`email`, `password`) VALUES (?, ?, ?, ?)";
+			String sql = "INSERT INTO user (`categorie_user`, `nom`, `prenom` ,`email`, `password`) VALUES ('Client' ,?, ?, ?, ?)";
 			
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			
@@ -186,4 +186,33 @@ public class DAO {
 		}
 	}
 	
-}
+
+/**
+ * Faire un virement
+ */
+public boolean virement(String type, int emetteur, int beneficiaire, Date date_transaction, Date date_create, float montant, String message) {
+	this.connection();
+	try {
+		String sql = "INSERT INTO transaction (`categorie_transaction`, `id_compte_emetteur` ,`id_compte_recepteur`, `date_transaction`, `date_create`,  `somme`,  `description`) VALUES ( ?, ?, ?, ?, ?, ?, ?)";
+		
+		PreparedStatement preparedStatement = connection.prepareStatement(sql);
+		
+		preparedStatement.setString(1, type);
+		preparedStatement.setInt(2, emetteur);
+	    preparedStatement.setInt(3, beneficiaire);
+		preparedStatement.setDate(4, date_transaction);
+		preparedStatement.setDate(5, date_create);
+		preparedStatement.setFloat(6, montant);
+		preparedStatement.setString(7, message);
+		
+		//System.out.println("requete "+sql);
+		preparedStatement.executeUpdate();
+		this.disconnection();
+		return true;
+	} catch (SQLException e1) {
+		e1.printStackTrace();
+	}
+	return false;
+}}
+
+

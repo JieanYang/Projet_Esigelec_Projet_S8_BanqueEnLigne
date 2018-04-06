@@ -21,9 +21,9 @@
  </div>
      <br/>
 <br/>
-     
-
-  <form action="Recuptransac" method="post">
+   <div class="form-bottom">  
+<form role="form" action="virement_servlet" method="post" class="registration-form">
+  
   
   	
   	    <div class="form-group ">
@@ -48,8 +48,13 @@
 	    </div>
 	    
 	    <div class="form-group col-md-6">
-	      <label for="inputName4">date : </label>
-	      <input type="date" class="form-control" name="date" id="inputdate">
+	      <label for="inputName4">date_transaction : </label>
+	      <input type="date" class="form-control" name="date_transaction" id="inputdate">
+	    </div>
+	    
+	    <div class="form-group col-md-6">
+	      <label for="inputName4">date_create : </label>
+	      <input type="date" class="form-control" name="date_create" id="inputdate">
 	    </div>
 	    
 	  </div>
@@ -68,6 +73,7 @@
 </form>
 
 
+</div>
 </div>
 </body>
 </html>
