@@ -25,10 +25,24 @@
 
  </div>
  
+	session.Attribute("id_emmetteur");
+
+ 	int transactionList = new ArrayList<Transaction>(); 
+	ID = (INTEGER) session.getAttribute("id_user");
 
   <form action="modification" method="post">
   
-  	
+  
+  if (id =!null){
+  out.systeme{
+  <div class="form-row" style display non>
+	    <div class="form-group col-md-6">
+	      <label for="inputName4">Nom </label>
+	      <input values="+ id +" name="id">
+	    </div>
+  } 		
+}
+
 	  <div class="form-row">
 	    <div class="form-group col-md-6">
 	      <label for="inputName4">Nom </label>

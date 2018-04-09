@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Class.Compte;
 import Class.User;
@@ -42,12 +43,11 @@ public class modification extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session=request.getSession();
+		//int id_emmetteur=Integer.parseInt(request.getParameter("id"));//il faut recup id_emetteur avec la session
+		int id_client=(Integer) session.getAttribute("id_client");//permet de recup id_emmetteur
 		
-		int emetteur=Integer.parseInt(request.getParameter("emetteur"));//il faut recup id_emetteur avec la session
-		
-		
-		
-		String nom=request.getParameter("nom");//et toute les infos
+		String nom=request.getParameter("nom");
 		String prenom=request.getParameter("prenom");
 		String email=request.getParameter("email");
 		String adresse=request.getParameter("adresse");
@@ -69,7 +69,7 @@ public class modification extends HttpServlet {
 		User user =new User();
 		UserDao dao = new UserDao();
 		
-		user =dao.getUser(emetteur);
+		user =dao.getUser(id_client);
 		
 		user.setAdresse(adresse);
 		user.setDateNaissance(dateNaissance);
