@@ -34,17 +34,6 @@
 		</div>
 
 		<div class="card" style="width: 15rem;">
-			<img class="card-img-top" src="Image/compteCourant.jpg"
-				alt="Card image cap">
-			<div class="card-body">
-				<h5 class="card-title">Creer un compte user</h5>
-				<p class="card-text">Un texte ici ?</p>
-				<a href="login.jsp" class="btn btn-primary">creer un compte</a>
-			</div>
-		</div>
-
-
-		<div class="card" style="width: 15rem;">
 			<img class="card-img-top" src="Image/virement.jpg"
 				alt="Card image cap">
 			<div class="card-body">

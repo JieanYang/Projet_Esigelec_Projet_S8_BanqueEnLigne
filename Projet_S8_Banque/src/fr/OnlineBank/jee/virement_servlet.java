@@ -7,6 +7,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import Class.Compte;
+import dao.CompteDao;
+
 import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -46,6 +50,35 @@ public class virement_servlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// récupérer les différents paramètres entrés dans le formulaire
+		
+		// ma partie (alexis)
+		CompteDao compte = new CompteDao();
+		
+		int emet=Integer.parseInt(request.getParameter("emetteur"));
+		int benef=Integer.parseInt(request.getParameter("beneficiaire"));
+		int somme=Integer.parseInt(request.getParameter("montant"));
+		
+		Compte compteemetteur = compte.getCompte(emet);
+		float solde = compteemetteur.getSolde();
+		solde= solde-somme;
+		if (solde>0) 
+		{
+		compteemetteur.setSolde(solde);
+		compte.updateCompte(compteemetteur); //demande a etre en static
+		
+		Compte comptebenef = compte.getCompte(benef);
+		float solde2= comptebenef.getSolde();
+		solde2= solde2+somme;
+		comptebenef.setSolde(solde2);
+		compte.updateCompte(comptebenef);
+		}
+		
+		else
+		{
+			//ecrire un message d'erreur en pop up
+		}
+		///
+		
 		
 		
 		
