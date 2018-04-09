@@ -8,10 +8,11 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    
+	<!-- Bootstrap 4.0  -->
+		<%@include file="Resources/Resources_bootstrap_4.0.html" %>
+		
+	<!-- CSS for Head.html -->
+	<link rel="stylesheet" href="Resources/styles_index.css">    
 
 
     </head>
@@ -19,13 +20,7 @@
     <body>
     
     
-     <div class="p-3 mb-2 bg-secondary text-white"> PAGE DE CONTACT</div>
-     
-     <div class="progress">
-		  <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-		  <div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-		  <div class="progress-bar bg-info" role="progressbar" style="width: 40%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-	</div>
+     <%@ include file="Templates/Head.html" %>
 
 <div class=jumbotron>
  <div class=container>

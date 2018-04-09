@@ -1,16 +1,16 @@
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css_script/styles_index.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
+<!-- Bootstrap 4.0  -->
+<%@include file="Resources/Resources_bootstrap_4.0.html" %>
+
+<!-- CSS for Head.html -->
+<link rel="stylesheet" href="Resources/styles_index.css">
+
 
 <title>Cours de la bourse</title>
 </head>
 
     <body>
     
-    <%@ include file="head.html" %>
+    <%@ include file="Templates/Head.html" %>
     
    <div class="p-3 mb-2 bg-secondary text-white"> <center>Affichage du cours de la bourse</center></div>
     

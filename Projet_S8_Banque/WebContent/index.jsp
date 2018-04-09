@@ -8,25 +8,19 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css_script/styles_index.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link rel="stylesheet" href="css_script/form.css">
+<!-- Bootstrap 4.0  -->
+<%@include file="Resources/Resources_bootstrap_4.0.html" %>
+		
+<!-- CSS for Head.html -->
+<link rel="stylesheet" href="Resources/styles_index.css">
 
-<a href="/login.jsp"> <input type="button" value="Espace Client"> </a> 
 
 <title>Accueil</title>
 </head>
 <body class="container backC">
 
 	<!-- head.html -->
-	<%@ include file="head.html" %>
+	<%@ include file="/Templates/Head.html" %>
 
 	<div class="row justify-content-around espace">
 		<div class="card" style="width: 19rem;">
@@ -82,6 +76,6 @@
 	</footer>
 	<!--/.Footer-->
 
-	<script src="css_script/scripts_index.js"></script>
+	<script src="/Resources/scripts_index.js"></script>
 </body>
 </html>
