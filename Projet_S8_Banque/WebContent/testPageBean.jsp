@@ -39,5 +39,21 @@
 	</button>
 </form>
 
+<form action="AuthentificationServlet" method="GET">
+	<input name="method" value="login" style="display:none;">
+	
+	<input name="id_user" value=3>
+	<button type="submit">
+		login
+	</button>
+</form>
+<form action="AuthentificationServlet" method="GET">
+	<input name="method" value="logout" style="display:none;">
+
+	<button type="submit">
+		logout
+	</button>
+</form>
+
 </body>
 </html>
