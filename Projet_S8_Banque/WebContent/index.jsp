@@ -131,9 +131,9 @@
 			<img class="card-img-top" src="Image/livretA.jpg"
 				alt="Card image cap">
 			<div class="card-body">
-				<h5 class="card-title">Ouvrir un Compte Livret A</h5>
+				<h5 class="card-title">Ouvrir un Compte</h5>
 				<p class="card-text">Un texte ici ?</p>
-				<a href="#" class="btn btn-primary">Ouvrir un compte</a>
+				<a href="creerCompte.jsp" class="btn btn-primary">Ouvrir un compte</a>
 			</div>
 		</div>
 
@@ -141,9 +141,9 @@
 			<img class="card-img-top" src="Image/compteCourant.jpg"
 				alt="Card image cap">
 			<div class="card-body">
-				<h5 class="card-title">Ouvrir un compte courant</h5>
+				<h5 class="card-title">Creer un compte user</h5>
 				<p class="card-text">Un texte ici ?</p>
-				<a href="#" class="btn btn-primary">Ouvrir un compte</a>
+				<a href="login.jsp" class="btn btn-primary">creer un compte</a>
 			</div>
 		</div>
 
@@ -152,9 +152,9 @@
 			<img class="card-img-top" src="Image/compteTitre.jpg"
 				alt="Card image cap">
 			<div class="card-body">
-				<h5 class="card-title">Ouvrir un compte titre</h5>
+				<h5 class="card-title">Faire un virement</h5>
 				<p class="card-text">Un texte ici ?</p>
-				<a href="#" class="btn btn-primary">Ouvrir un compte</a>
+				<a href="VirementBancaire.jsp" class="btn btn-primary">Virement</a>
 			</div>
 		</div>
 	</div>

@@ -62,9 +62,8 @@
 	    <label for="inputAddress">Message</label>
 	    <input type="text" class="form-control" name="message" id="inputmessages" placeholder="virement pour le loyer" required>
 	  </div>
-
-
-	  <button type="submit" class="btn btn-primary">Envoyer</button>
+		
+	  <button type="submit" class="btn btn-primary" >Envoyer</button>
 </form>
 
 
