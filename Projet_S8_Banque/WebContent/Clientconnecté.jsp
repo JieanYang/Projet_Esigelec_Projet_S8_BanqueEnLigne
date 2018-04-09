@@ -23,7 +23,7 @@
 	<%@ include file="/Templates/Head.html" %>
 
 	<div class="row justify-content-around espace">
-		<div class="card" style="width: 19rem;">
+		<div class="card" style="width: 15rem;">
 			<img class="card-img-top" src="Image/livretA.jpg"
 				alt="Card image cap">
 			<div class="card-body">
@@ -33,7 +33,7 @@
 			</div>
 		</div>
 
-		<div class="card" style="width: 19rem;">
+		<div class="card" style="width: 15rem;">
 			<img class="card-img-top" src="Image/compteCourant.jpg"
 				alt="Card image cap">
 			<div class="card-body">
@@ -44,15 +44,27 @@
 		</div>
 
 
-		<div class="card" style="width: 19rem;">
-			<img class="card-img-top" src="Image/compteTitre.jpg"
+		<div class="card" style="width: 15rem;">
+			<img class="card-img-top" src="Image/virement.jpg"
 				alt="Card image cap">
 			<div class="card-body">
-				<h5 class="card-title">Regarder le cours de la bourse</h5>
+				<h5 class="card-title">Faire un virement</h5>
 				<p class="card-text">Un texte ici ?</p>
-				<a href="affichageprix.jsp" class="btn btn-primary">bourse</a>
+				<a href="VirementBancaire.jsp" class="btn btn-primary">Virement</a>
 			</div>
 		</div>
+		
+		
+		<div class="card" style="width: 15rem;">
+			<img class="card-img-top" src="Image/modification.jpg"
+				alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title">Faire une modification</h5>
+				<p class="card-text">Un texte ici ?</p>
+				<a href="Modification.jsp" class="btn btn-primary">Modifier</a>
+			</div>
+		</div>
+		
 	</div>
 
 	<!-- <div class="col-container contourNews">

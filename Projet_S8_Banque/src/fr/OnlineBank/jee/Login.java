@@ -48,7 +48,7 @@ public class Login extends HttpServlet {
 					.write("<!DOCTYPE html>\r\n" + "<html>\r\n" + "	<head>\r\n" + "		<title>Page Title</title>\r\n"
 							+ "	</head>\r\n" + "	<body>\r\n" + "		<h1>You are logged in</h1>\r\n" + "	</body>\r\n"
 							+ "</html>");
-			// response.sendRedirect("HelloWorldMultiLanguage.jsp");
+			 //response.sendRedirect("Clientconnecté.jsp");
 		} else {
 			response.getWriter()
 					.write("<!DOCTYPE html>\r\n" + "<html>\r\n" + "	<head>\r\n" + "		<title>Page Title</title>\r\n"
