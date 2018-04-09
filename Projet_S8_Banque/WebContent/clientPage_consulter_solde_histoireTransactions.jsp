@@ -4,6 +4,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 
+<!-- login_verify, if it's not user, redirect to index.jsp -->
+<%@include file="/Templates/login_verify.jsp" %>
 
 
 <%	
@@ -12,8 +14,7 @@
 	
 	List<Transaction> transactionList = new ArrayList<Transaction>(); 
 	transactionList = (List<Transaction>) session.getAttribute("TransactionInfo");
-	
-	
+
 
 	int id_compte_courrant = -1;
 	int id_compte_epargne = -1;
@@ -50,7 +51,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@include file="/Templates/Head.html" %>
+<%@include file="/Templates/Head.jsp" %>
 
 <%!
 public String fillSolde(String categorie, List<Compte> compteList) {
@@ -147,7 +148,7 @@ public String fillSolde(String categorie, List<Compte> compteList) {
 					<tbody>	
 						<%
 							List<Integer> list_existence_courrant = new ArrayList<Integer>();
-							System.out.println("courrant"+id_compte_courrant);
+							// System.out.println("courrant"+id_compte_courrant);
 							for(Transaction item: transactionList){
 								if( id_compte_courrant == item.getId_compte_emetteur() || id_compte_courrant == item.getId_compte_recepteur() ){
 									if(list_existence_courrant.indexOf(item.getId_transaction()) == -1 ){
@@ -180,7 +181,7 @@ public String fillSolde(String categorie, List<Compte> compteList) {
 						<tbody>	
 							<%
 								List<Integer> list_existence_epargne = new ArrayList<Integer>();
-								System.out.println("epargne"+id_compte_epargne);
+								// System.out.println("epargne"+id_compte_epargne);
 								for(Transaction item: transactionList){
 									if( id_compte_epargne == item.getId_compte_emetteur() || id_compte_epargne == item.getId_compte_recepteur() ){
 										if(list_existence_epargne.indexOf(item.getId_transaction()) == -1 ){
@@ -213,7 +214,7 @@ public String fillSolde(String categorie, List<Compte> compteList) {
 						<tbody>	
 							<%
 								List<Integer> list_existence_titre = new ArrayList<Integer>();
-								System.out.println("epargne"+id_compte_titre);
+								// System.out.println("epargne"+id_compte_titre);
 								for(Transaction item: transactionList){
 									if( id_compte_titre == item.getId_compte_emetteur() || id_compte_titre == item.getId_compte_recepteur() ){
 										if(list_existence_titre.indexOf(item.getId_transaction()) == -1 ){

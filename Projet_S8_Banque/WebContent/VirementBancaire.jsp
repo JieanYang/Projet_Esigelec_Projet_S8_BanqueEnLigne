@@ -1,5 +1,10 @@
+
+
+<!-- login_verify, if it's not user, redirect to index.jsp -->
+<%@include file="/Templates/login_verify.jsp" %>
+
 <!-- Bootstrap 4.0  -->
-		<%@include file="Resources/Resources_bootstrap_4.0.html" %>
+<%@include file="Resources/Resources_bootstrap_4.0.html" %>
 		
 <!-- CSS for Head.html -->
 <link rel="stylesheet" href="Resources/styles_index.css">
@@ -8,7 +13,7 @@
 </head>
 <body class="container backC">
 	<!-- head.html -->
-   	<%@ include file="Templates/Head.html" %>
+   	<%@ include file="Templates/Head.jsp" %>
 
 
      <div class="p-3 mb-2 bg-secondary text-white"> VIREMENT BANCAIRE</div>

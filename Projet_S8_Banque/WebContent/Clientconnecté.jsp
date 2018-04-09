@@ -1,5 +1,10 @@
 <%@ page pageEncoding="UTF-8" %>
 
+
+<!-- login_verify, if it's not user, redirect to index.jsp -->
+<%@include file="/Templates/login_verify.jsp" %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +25,7 @@
 <body class="container backC">
 
 	<!-- head.html -->
-	<%@ include file="/Templates/Head.html" %>
+	<%@ include file="/Templates/Head.jsp" %>
 
 	<div class="row justify-content-around espace">
 		<div class="card" style="width: 15rem;">

@@ -21,7 +21,7 @@
 
     <body>
     
-   		<%@ include file="Templates/Head.html" %>
+   		<%@ include file="Templates/Head.jsp" %>
 
         <!-- Top content -->
         <div class="top-content">

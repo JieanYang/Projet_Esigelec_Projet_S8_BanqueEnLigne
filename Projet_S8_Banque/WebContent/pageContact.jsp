@@ -20,7 +20,7 @@
     <body>
     
     
-     <%@ include file="Templates/Head.html" %>
+     <%@ include file="Templates/Head.jsp" %>
 
 <div class=jumbotron>
  <div class=container>

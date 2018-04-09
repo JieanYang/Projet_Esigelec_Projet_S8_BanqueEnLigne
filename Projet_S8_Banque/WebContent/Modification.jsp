@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+<!-- login_verify, if it's not user, redirect to index.jsp -->
+<%@include file="/Templates/login_verify.jsp" %>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,7 +20,7 @@
 </head>
 <body>
     
-    <%@ include file="Templates/Head.html" %>
+    <%@ include file="Templates/Head.jsp" %>
     
      <div class="p-3 mb-2 bg-secondary text-white"> MODIFICATION DES INFORMATIONS</div>
 

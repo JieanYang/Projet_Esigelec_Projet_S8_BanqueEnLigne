@@ -20,7 +20,7 @@
 <body class="container backC">
 
 	<!-- head.html -->
-	<%@ include file="/Templates/Head.html" %>
+	<%@ include file="/Templates/Head.jsp" %>
 
 	<div class="row justify-content-around espace">
 		<div class="card" style="width: 19rem;">

@@ -10,7 +10,7 @@
 
     <body>
     
-    <%@ include file="Templates/Head.html" %>
+    <%@ include file="Templates/Head.jsp" %>
     
    <div class="p-3 mb-2 bg-secondary text-white"> <center>Affichage du cours de la bourse</center></div>
     
