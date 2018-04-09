@@ -297,6 +297,44 @@ public class CompteDao {
         return retour; // return 1 -> success or return 0 -> fail
     }
     
+    /**
+     * @param int -> id_client 
+     * @return List<Compte> -> retour
+     */
+    public List<Compte> getListCompteById_lient(int id_client){
+    	List<Compte> retour = new ArrayList<Compte>();
+        this.connection();
+        
+        try {
+            String sql ="SELECT * FROM Compte WHERE id_user =?";
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, id_client);
+            
+            /**
+             * We take out all the compte in the BDD
+             * 
+             */
+            rs = ps.executeQuery();
+            // passe a la premiere (et unique) ligne retournee
+            while(rs.next()) {
+                /*
+                 * We create a new instance of Compte and 
+                 * then use method List.add() to add into the retour
+                 */
+                retour.add(new Compte(rs.getInt("id_compte"), rs.getInt("id_user"), rs.getString("categorie_compte"),
+                        rs.getString("etat"), rs.getFloat("solde"), rs.getDate("date_create"),
+                        rs.getDate("date_delete")));
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            this.disconnection();
+        }
+        
+        return retour; // return a list Compte by id_client
+    }
+    
     public boolean creerCompteBancaire(String nom, String prenom,int telephone, String email ,String adresse, String date, String ville ,String pays) {
 		accesBDD.connection();
 		// write the code here DONT FORGET TO DISCONNECT AFTER CREATING THE ACCOUNT
