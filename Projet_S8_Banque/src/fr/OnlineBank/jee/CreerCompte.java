@@ -49,13 +49,14 @@ public class CreerCompte extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		int min = 0001, max =9999 ;
+		int min =1000, max =9999 ;
 		int nombreAleatoire = min + (int)(Math.random() * ((max - min) + 1));
 		String code = ""+nombreAleatoire;
 		String nom = request.getParameter("nom");
 		String prenom = request.getParameter("prenom");
 		String email= request.getParameter("email");
-		String date_transaction= request.getParameter("date");
+		String date1= request.getParameter("date");
+		String categorie_user ="client";
 		int telephone = 0;
 		try {
 			telephone = Integer.parseInt(request.getParameter("telephone"));
@@ -68,30 +69,15 @@ public class CreerCompte extends HttpServlet {
 		String ville = request.getParameter("ville");
 		
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		Date date_transaction2 = null;
-		java.sql.Date sDate = null;
-		try {
-			date_transaction2 = (Date) sdf.parse(date_transaction);// convertir date_transaction(string) en (date) qui respecte le format prédéfinie
-			 sDate = convertUtilToSql(date_transaction2);// recupere dans une nouvelle variable "sDate" la valeur convertie qui pourra etre insérer dans la base de données
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		
 		
 		monEmail.envoie_mail(email, code);
 		
-		monDAO.creerCompteBancaire(nom, prenom, telephone, email, adresse, sDate, ville, pays,code);
+		monDAO.creerCompteBancaire(nom, prenom, telephone, email, adresse, date1, ville, pays,code,categorie_user);
 	}
 	
 	
-	private static java.sql.Date convertUtilToSql(java.util.Date uDate) {// Fonction qui permet de convertir la date en une version insérable dans la BDD
-		
-        java.sql.Date sDate = new java.sql.Date(uDate.getTime());
-
-        return sDate;//objet convertie
-
-    }
+	
 
 }

@@ -34,7 +34,8 @@ public class VerificationMail extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+	
 	}
 
 	/**
@@ -43,14 +44,23 @@ public class VerificationMail extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String code = request.getParameter("code");
+		String email="ndiayesouley@live.fr";
+		String code_generee= monDAO.recupererCode(email);
+		String resultat =null ;
+		String validation = null ;
+	
 		
-		HttpSession session = request.getSession();
-
-        session.setAttribute("code2", code);
-       
-        
-        this.getServletContext().getRequestDispatcher("/WebContent/pageVerification.jsp").forward(request, response);
 		
+		if(code.equals(code_generee)==true) {
+			resultat="Votre adresse mail est validé !!!";
+			validation= "true" ;
+		}else {
+			resultat="Votre code de verification n'est pas le Bon !!! ";
+		}
+		 request.setAttribute("resultat", resultat);
+		 request.setAttribute("validation", validation);
+		
+		request.getRequestDispatcher("pageVerification.jsp").forward(request, response);
 		
 	}
 

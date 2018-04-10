@@ -59,7 +59,7 @@
 	  </div>
 	  <div class="form-group">
 	    <label for="inputAddress">Date de Naissance : </label>
-	    <input type="date" class="form-control" name="date" id="inputdate" placeholder="10/10/1990" required>
+	    <input type="text" class="form-control" name="date" id="inputdate" placeholder="10/10/1990" required>
 	  </div>
 	  
 	  <div class="form-group">

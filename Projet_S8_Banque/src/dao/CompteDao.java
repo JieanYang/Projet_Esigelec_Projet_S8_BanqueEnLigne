@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.Date;
 
 import Class.Compte;
+import Class.User;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -335,28 +336,64 @@ public class CompteDao {
         return retour; // return a list Compte by id_client
     }
     
-    public boolean creerCompteBancaire(String nom, String prenom,int telephone, String email ,String adresse, Date date, String ville ,String pays,String code) {
-		accesBDD.connection();
+    public boolean creerCompteBancaire(String nom, String prenom,int telephone, String email ,String adresse, String date, String ville ,String pays,String code, String categorie) {
+		this.connection();
+    	accesBDD.connection();
 		// write the code here DONT FORGET TO DISCONNECT AFTER CREATING THE ACCOUNT
 		try {
-			String sql = "INSERT INTO user (`nom`, `prenom`, `email`, `adresse`, `telephone`, `dateNaissance`, `ville`, `pays`,`code`) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(1, nom);
-			preparedStatement.setString(2, prenom);
-			preparedStatement.setString(3, email);
-			preparedStatement.setString(4, adresse);
-			preparedStatement.setInt(5, telephone);
-			preparedStatement.setDate(6,(java.sql.Date) date);
-			preparedStatement.setString(7, ville);
-			preparedStatement.setString(8, pays);
-			preparedStatement.setString(9, code);
+			String sql = "INSERT INTO user (`nom`, `prenom`, `email`, `adresse`, `telephone`, `dateNaissance`, `ville`, `pays`,`code`,`categorie_user`) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?,?)";
+			ps = connection.prepareStatement(sql);
+			ps.setString(1, nom);
+			ps.setString(2, prenom);
+			ps.setString(3, email);
+			ps.setString(4, adresse);
+			ps.setInt(5, telephone);
+			ps.setString(6, date);
+			ps.setString(7, ville);
+			ps.setString(8, pays);
+			ps.setString(9, code);
+			ps.setString(10, categorie);
 			
-			preparedStatement.executeUpdate();
-				accesBDD.disconnection();
-			return true;
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
+			ps.executeUpdate();
+		 		} catch (Exception e) {
+	            e.printStackTrace();
+	        }finally {
+	            this.disconnection();
+	        }
 		return false;
 	}
+    
+    
+    public String recupererCode(String email) {
+    	String retour = null;
+        this.connection();
+        
+        try {
+            String sql ="SELECT code FROM User WHERE email = ?";
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, email);
+            
+            /**
+             * on execute la requete
+             * rs contient un pointeur situe juste avant la premiere ligne retournee
+             * 
+             */
+            rs = ps.executeQuery();
+            // passe a la premiere (et unique) ligne retournee
+            if (rs.next()) {
+                retour = rs.getString("code");
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            this.disconnection();
+        }
+        
+        return retour;
+    }
+    
+    
+    
+    
 }

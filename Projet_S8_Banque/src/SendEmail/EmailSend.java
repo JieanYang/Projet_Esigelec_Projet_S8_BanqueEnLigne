@@ -23,7 +23,7 @@ public class EmailSend {
             String to = email_user;
             String from = "ndiayesouley44@gmail.com";
             String subject = "Confirmation Email";
-            String messageText = "Number : "+code+ ",<p>This is confirmation number for your expertprogramming account. Please insert this number to activate your account.<p/>";
+            String messageText = "Number : "+code+ ",This is confirmation number for your expertprogramming account. Please insert this number to activate your account.";
             boolean sessionDebug = false;
 
             Properties props = System.getProperties();

@@ -19,10 +19,8 @@
 
  <body>
  
- 	 <c:if test="${ sessionScope.code == sessionScope.code2 }">
-        <p>Votre adresse email est validé !</p>
-    </c:if>
-       
+ 	<p> ${resultat}</p>
+      
  	
 	    <form action="VerificationMail" method="post">
 			<div class="form-group col-md-4">
@@ -33,6 +31,10 @@
 		  
 		 	</div>
 		 </form>
+		 
+		 <c:if test="${validation}" var="variable">
+		   <p><img src="/Image/validation.jpg"></p>
+		</c:if>
 	 
 	 
 </body>
