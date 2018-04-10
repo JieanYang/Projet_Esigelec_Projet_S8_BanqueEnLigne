@@ -1,4 +1,5 @@
-<%@page import="Class.Transaction, Class.Compte, java.util.List, java.util.ArrayList"%>
+<%@page import="Class.Transaction, Class.Compte, java.util.List, java.util.ArrayList, java.util.Map, java.util.HashMap,
+dao.CompteDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -9,31 +10,21 @@
 
 
 <%	
-	List<Compte> compteList = new ArrayList<Compte>(); 
-	compteList = (List<Compte>) session.getAttribute("CompteInfo");
+
+
+	Map compteIdList = new HashMap(); 
+	compteIdList = (Map) session.getAttribute("CompteInfo");
+	int id_compte_courrant = Integer.valueOf((String)compteIdList.get("courant"));
+	int id_compte_epargne = Integer.valueOf((String)compteIdList.get("epargne"));
+	int id_compte_titre = Integer.valueOf((String)compteIdList.get("titre"));
 	
-	List<Transaction> transactionList = new ArrayList<Transaction>(); 
-	transactionList = (List<Transaction>) session.getAttribute("TransactionInfo");
+	Map transactionList = new HashMap(); 
+	transactionList = (Map) session.getAttribute("TransactionInfo");	
+/* 	List<Transaction> transactionList = new ArrayList<Transaction>(); 
+	transactionList = (List<Transaction>) session.getAttribute("TransactionInfo"); */
 
 
-	int id_compte_courrant = -1;
-	int id_compte_epargne = -1;
-	int id_compte_titre = -1;
-	for(Compte item: compteList){
-		if(item.getCategorie_compte().equals("courrant")){
-			id_compte_courrant = item.getId_compte();
-			// System.out.println(id_compte_courrant);
-		}
-		if(item.getCategorie_compte().equals("epargne")){
-			id_compte_epargne = item.getId_compte();
-			// System.out.println(id_compte_epargne);
-		}
-		if(item.getCategorie_compte().equals("titre")){
-			id_compte_titre = item.getId_compte();
-			// System.out.println(id_compte_titre);
-		}
-		
-	}
+
 	
 
 	
@@ -54,19 +45,13 @@
 <%@include file="/Templates/Head.jsp" %>
 
 <%!
-public String fillSolde(String categorie, List<Compte> compteList) {
+public String fillSolde(int id_compte) {
+	CompteDao compteDao = new CompteDao();
 	String retour = new String();
-	for(Compte item: compteList){
-		// System.out.println(item.getCategorie_compte());
-		if((item.getCategorie_compte().equals(categorie))){
-			retour = String.valueOf(item.getSolde());
-			// System.out.println(retour);
-		}
-		
-		if(retour == null){
-			retour = "None";
-		}
-	}
+	
+	retour = "None";
+	retour = String.valueOf(compteDao.getCompte(id_compte).getSolde());
+
 	return retour;
 }
 %>
@@ -82,7 +67,7 @@ public String fillSolde(String categorie, List<Compte> compteList) {
 					</h6>
 					<h5>Solde:<sapn>
 					<% 
-						out.println(fillSolde("courrant", compteList));
+						out.println(fillSolde(id_compte_courrant));
 					%>
 					</sapn></h5>
 				</div>
@@ -96,7 +81,7 @@ public String fillSolde(String categorie, List<Compte> compteList) {
 					</h6>
 					<h5>Solde:<span>
 					<% 
-						out.println(fillSolde("epargne", compteList));
+						out.println(fillSolde(id_compte_epargne));
 					%>
 					</span></h5>
 				</div>
@@ -110,7 +95,7 @@ public String fillSolde(String categorie, List<Compte> compteList) {
 					</h6>
 					<h5>Solde:<span>
 					<% 
-						out.println(fillSolde("titre", compteList));
+						out.println(fillSolde(id_compte_titre));
 					%>
 					</span></h5>
 				</div>
@@ -147,12 +132,8 @@ public String fillSolde(String categorie, List<Compte> compteList) {
 					</thead>
 					<tbody>	
 						<%
-							List<Integer> list_existence_courrant = new ArrayList<Integer>();
 							// System.out.println("courrant"+id_compte_courrant);
-							for(Transaction item: transactionList){
-								if( id_compte_courrant == item.getId_compte_emetteur() || id_compte_courrant == item.getId_compte_recepteur() ){
-									if(list_existence_courrant.indexOf(item.getId_transaction()) == -1 ){
-										list_existence_courrant.add(item.getId_transaction());
+							for(Transaction item: (List<Transaction>)transactionList.get("courant")){
 										out.println("<tr>");
 										out.println("<td>"+item.getDate_transaction()+"</td>");
 										out.println("<td>"+item.getDescription()+"</td>");
@@ -162,8 +143,6 @@ public String fillSolde(String categorie, List<Compte> compteList) {
 											out.println("<td>"+"+"+item.getSomme()+"</td>");
 										}
 										out.println("</tr>");
-									}
-								}
 							}
 						%>
 					</tbody>
@@ -180,12 +159,8 @@ public String fillSolde(String categorie, List<Compte> compteList) {
 						</thead>
 						<tbody>	
 							<%
-								List<Integer> list_existence_epargne = new ArrayList<Integer>();
 								// System.out.println("epargne"+id_compte_epargne);
-								for(Transaction item: transactionList){
-									if( id_compte_epargne == item.getId_compte_emetteur() || id_compte_epargne == item.getId_compte_recepteur() ){
-										if(list_existence_epargne.indexOf(item.getId_transaction()) == -1 ){
-											list_existence_epargne.add(item.getId_transaction());
+								for(Transaction item: (List<Transaction>)transactionList.get("epargne")){
 											out.println("<tr>");
 											out.println("<td>"+item.getDate_transaction()+"</td>");
 											out.println("<td>"+item.getDescription()+"</td>");
@@ -195,8 +170,6 @@ public String fillSolde(String categorie, List<Compte> compteList) {
 												out.println("<td>"+"+"+item.getSomme()+"</td>");
 											}
 											out.println("</tr>");
-										}
-									}
 								}
 							%>
 						</tbody>
@@ -213,12 +186,8 @@ public String fillSolde(String categorie, List<Compte> compteList) {
 						</thead>
 						<tbody>	
 							<%
-								List<Integer> list_existence_titre = new ArrayList<Integer>();
 								// System.out.println("epargne"+id_compte_titre);
-								for(Transaction item: transactionList){
-									if( id_compte_titre == item.getId_compte_emetteur() || id_compte_titre == item.getId_compte_recepteur() ){
-										if(list_existence_titre.indexOf(item.getId_transaction()) == -1 ){
-											list_existence_titre.add(item.getId_transaction());
+								for(Transaction item: (List<Transaction>)transactionList.get("titre")){
 											out.println("<tr>");
 											out.println("<td>"+item.getDate_transaction()+"</td>");
 											out.println("<td>"+item.getDescription()+"</td>");
@@ -228,8 +197,6 @@ public String fillSolde(String categorie, List<Compte> compteList) {
 												out.println("<td>"+"+"+item.getSomme()+"</td>");
 											}
 											out.println("</tr>");
-										}
-									}
 								}
 							%>
 						</tbody>
