@@ -335,20 +335,21 @@ public class CompteDao {
         return retour; // return a list Compte by id_client
     }
     
-    public boolean creerCompteBancaire(String nom, String prenom,int telephone, String email ,String adresse, String date, String ville ,String pays) {
+    public boolean creerCompteBancaire(String nom, String prenom,int telephone, String email ,String adresse, Date date, String ville ,String pays,String code) {
 		accesBDD.connection();
 		// write the code here DONT FORGET TO DISCONNECT AFTER CREATING THE ACCOUNT
 		try {
-			String sql = "INSERT INTO user (`nom`, `prenom`, `email`, `adresse`, `telephone`, `dateNaissance`, `ville`, `pays`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO user (`nom`, `prenom`, `email`, `adresse`, `telephone`, `dateNaissance`, `ville`, `pays`,`code`) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, nom);
 			preparedStatement.setString(2, prenom);
 			preparedStatement.setString(3, email);
 			preparedStatement.setString(4, adresse);
 			preparedStatement.setInt(5, telephone);
-			preparedStatement.setString(6, date);
+			preparedStatement.setDate(6,(java.sql.Date) date);
 			preparedStatement.setString(7, ville);
 			preparedStatement.setString(8, pays);
+			preparedStatement.setString(9, code);
 			
 			preparedStatement.executeUpdate();
 				accesBDD.disconnection();

@@ -100,7 +100,7 @@ public class MessageDao {
         	ps.setString(4, message.getEmail());
         	ps.setString(5, message.getProblem());
         	ps.setString(6, message.getReponse());
-        	Date utildate = new Date();         
+        	Date utildate = new Date();     
         	Timestamp sqldate = new Timestamp(utildate.getTime());   
         	ps.setTimestamp(7, sqldate);  
         	/*java.util.Date utilDate1 = new java.util.Date();

@@ -15,7 +15,7 @@ import javax.mail.*;
 import javax.mail.internet.*;
 public class EmailSend {
 
-    public void envoie_mail (String email_user){
+    public void envoie_mail (String email_user, String code){
         try{
             String host ="smtp.gmail.com" ;
             String user = "ndiayesouley44@gmail.com";
@@ -23,7 +23,7 @@ public class EmailSend {
             String to = email_user;
             String from = "ndiayesouley44@gmail.com";
             String subject = "Confirmation Email";
-            String messageText = "Number : 9548  ,This is confirmation number for your expertprogramming account. Please insert this number to activate your account.";
+            String messageText = "Number : "+code+ ",<p>This is confirmation number for your expertprogramming account. Please insert this number to activate your account.<p/>";
             boolean sessionDebug = false;
 
             Properties props = System.getProperties();

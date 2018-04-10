@@ -5,28 +5,28 @@
 <html>
 
     <head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Bootstrap 4.0  -->
-<%@include file="Resources/Resources_bootstrap_4.0.html" %>
-
-<!-- CSS for Head.html -->
-<link rel="stylesheet" href="Resources/styles_index.css">
+		<!-- Bootstrap 4.0  -->
+		<%@include file="Resources/Resources_bootstrap_4.0.html" %>
+		
+		<!-- CSS for Head.html -->
+		<link rel="stylesheet" href="Resources/styles_index.css">
 
     </head>
 
     <body>
     
     
-<%@include file="Templates/Head.jsp" %>
-
-<div class=jumbotron>
- <div class=container>
-
- </div>
-     <br/>
-<br/>
+			<%@include file="Templates/Head.jsp" %>
+			
+			<div class=jumbotron>
+			 <div class=container>
+			
+			 </div>
+			     <br/>
+			<br/>
      
 
   <form action="CreerCompte" method="post">
@@ -59,7 +59,7 @@
 	  </div>
 	  <div class="form-group">
 	    <label for="inputAddress">Date de Naissance : </label>
-	    <input type="text" class="form-control" name="date" id="inputdate" placeholder="10/10/1990" required>
+	    <input type="date" class="form-control" name="date" id="inputdate" placeholder="10/10/1990" required>
 	  </div>
 	  
 	  <div class="form-group">
@@ -94,16 +94,8 @@
 	    
 	  </div>
 	  
-	  <div class="form-group">
-	    <div class="form-check">
-	      <input class="form-check-input" type="checkbox" id="gridCheck">
-	      <label class="form-check-label" for="gridCheck">
-	        Se souvenir de moi
-	      </label>
-	    </div>
-	  </div>
-	  
 	  <button type="submit" class="btn btn-primary">Envoyer</button>
+	  <a href="pageVerification.jsp" >verifier votre mail</a>
 </form>
 
 
