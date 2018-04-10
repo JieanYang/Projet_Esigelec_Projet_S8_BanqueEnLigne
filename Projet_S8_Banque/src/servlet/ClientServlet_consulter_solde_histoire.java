@@ -1,5 +1,6 @@
 package servlet;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,6 +14,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.HorizontalAlignment;
 
 import Class.Compte;
 import Class.Transaction;
@@ -39,8 +47,7 @@ public class ClientServlet_consulter_solde_histoire extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=big5");
-		response.setCharacterEncoding("big5");
-		
+		response.setCharacterEncoding("big5");		
 		
 		// receive id_client
 		int id_client = Integer.valueOf(request.getParameter("id_client"));
@@ -138,26 +145,131 @@ public class ClientServlet_consulter_solde_histoire extends HttpServlet {
 		listTransaction_compteMap.put("courant", listTransaction_compteCourant);
 		listTransaction_compteMap.put("epargne", listTransaction_compteEpargne);
 		listTransaction_compteMap.put("titre", listTransaction_compteTitre);
-
-		
 		
 		
 		// Session
 		 HttpSession session = request.getSession();
 		 session.setAttribute("CompteInfo", listId_compteMap);
 		 session.setAttribute("TransactionInfo", listTransaction_compteMap);
-		 
-		 
 
-		 // go to a page specific
-		 RequestDispatcher rd;
-		 rd = getServletContext().getRequestDispatcher("/clientPage_consulter_solde_histoireTransactions.jsp");
-		 rd.forward(request, response);
 		
-		
+		if(request.getParameter("method").equals("extractCSV")) {
+			// If we want to extractCSV, we will pass the data to the methode extractCSV
+			this.extractCSV(request, response, listTransaction_compteMap);
+		}else if(request.getParameter("method").equals("GET")) {
+			 // go to a page specific
+			 RequestDispatcher rd;
+			 rd = getServletContext().getRequestDispatcher("/clientPage_consulter_solde_histoireTransactions.jsp");
+			 rd.forward(request, response);	
+		}
 
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	
+	
+	// Generate a file CSV which contains the data of Transaction
+	private void extractCSV(HttpServletRequest request, HttpServletResponse response, Map<String, List<Transaction>> listTransaction_compteMap) throws ServletException, IOException {
+		
+		
+		// Create workbook
+		HSSFWorkbook wb = new HSSFWorkbook();
+		
+		// Create sheet
+		HSSFSheet sheet = wb.createSheet("listTransaction");
+		/*HSSFSheet sheet_epargne = wb.createSheet("listTransaction_epargne");
+		HSSFSheet sheet_titre = wb.createSheet("listTransaction_titre");*/
+		
+		// Index of line
+		int i = 0;
+		
+		// Create first row
+		HSSFRow row = sheet.createRow(i);
+		HSSFCellStyle style = wb.createCellStyle();
+		style.setAlignment(HorizontalAlignment.valueOf("CENTER"));
+		
+		// Create first cell in a row
+		HSSFCell cell = row.createCell(0);
+		cell.setCellValue("Compte courrant");
+		cell.setCellStyle(style);
+		i++;
+		
+		
+		// Create first cell in a row
+		row = sheet.createRow(i);
+		cell = row.createCell(0);
+		cell.setCellValue("transaction_categorie");
+		cell.setCellStyle(style);
+		
+		cell = row.createCell(1);
+		cell.setCellValue("date");
+		cell.setCellStyle(style);
+		
+		cell = row.createCell(2);
+		cell.setCellValue("description");
+		cell.setCellStyle(style);
+		
+		cell = row.createCell(3);
+		cell.setCellValue("somme");
+		cell.setCellStyle(style);
+		
+		i++;
+		
+		
+		for(Transaction item: listTransaction_compteMap.get("courant")) {
+			row = sheet.createRow(i);
+			row.createCell(0).setCellValue(item.getCategorie_transaction());
+			row.createCell(1).setCellValue(item.getDate_transaction());
+			row.createCell(2).setCellValue(item.getDescription());
+			row.createCell(3).setCellValue(item.getSomme());
+			i++;
+		}
+		
+		row = sheet.createRow(i);
+		cell = row.createCell(0);
+		cell.setCellValue("Compte epargne");
+		cell.setCellStyle(style);
+		i++;
+		
+		for(Transaction item: listTransaction_compteMap.get("epargne")) {
+			row = sheet.createRow(i);
+			row.createCell(0).setCellValue(item.getCategorie_transaction());
+			row.createCell(1).setCellValue(item.getDate_transaction());
+			row.createCell(2).setCellValue(item.getDescription());
+			row.createCell(3).setCellValue(item.getSomme());
+			i++;
+		}
+		
+		row = sheet.createRow(i);
+		cell = row.createCell(0);
+		cell.setCellValue("Compte titre");
+		cell.setCellStyle(style);
+		i++;
+		
+		for(Transaction item: listTransaction_compteMap.get("titre")) {
+			row = sheet.createRow(i);
+			row.createCell(0).setCellValue(item.getCategorie_transaction());
+			row.createCell(1).setCellValue(item.getDate_transaction());
+			row.createCell(2).setCellValue(item.getDescription());
+			row.createCell(3).setCellValue(item.getSomme());
+			i++;
+		}
+		
+		try {
+			FileOutputStream fout = new FileOutputStream("C:\\Users\\yja85\\Desktop\\GitHub\\projet_s8_banque/dataTransaction.xls");
+			wb.write(fout);
+			fout.close();
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("Success to export transactions");
+		
+		// go to a page specific
+		 RequestDispatcher rd;
+		 rd = getServletContext().getRequestDispatcher("/clientPage_consulter_solde_histoireTransactions.jsp");
+		 rd.forward(request, response);
 	}
 
 	/**

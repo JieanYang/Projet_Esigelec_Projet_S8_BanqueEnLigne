@@ -16,6 +16,7 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/activation.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javax.mail-1.4.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/9201709/Downloads/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/poi-3.17.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
