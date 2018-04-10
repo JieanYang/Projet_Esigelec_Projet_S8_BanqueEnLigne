@@ -29,7 +29,7 @@
 			<br/>
      
 
-  <form action="CreerCompte" method="post">
+  <form action="CreerCompte" method="post" enctype="multipart/form-data" >
   
   	
   	    <div class="form-group ">
@@ -95,7 +95,7 @@
 	  </div>
 	  
 	  <button type="submit" class="btn btn-primary">Envoyer</button>
-	  <a href="pageVerification.jsp" >verifier votre mail</a>
+	  
 </form>
 
 

@@ -24,7 +24,7 @@
  	
 	    <form action="VerificationMail" method="post">
 			<div class="form-group col-md-4">
-		      <label for="inputState">Veuillez Entrez votre code de verification :</label>
+		      <label for="inputState">Veuillez Entrez votre code de verification envoyé par mail :</label>
 		      <input id="inputState" name="code" class="form-control">
 		        
 		        <button type="submit" class="btn btn-primary">Envoyer</button>

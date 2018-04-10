@@ -8,6 +8,16 @@
         <servlet-class>fr.OnlineBank.jee</servlet-class>
     </servlet>
     
+    <servlet>
+        <servlet-name>CreerCompte</servlet-name>
+        <servlet-class>fr.OnlineBank.jee</servlet-class>
+        <multipart-config>
+            <location>C:\\Users\\9201709\\Desktop\\projet_s8_banque\\Projet_S8_Banque</location> <!-- A adapter chez vous -->
+            <max-file-size>10485760</max-file-size> <!-- 10 Mo -->
+            <max-request-size>52428800</max-request-size> <!-- 5 x 10 Mo -->
+            <file-size-threshold>1048576</file-size-threshold> <!-- 1 Mo -->
+        </multipart-config>
+    </servlet>
 
     <jsp-config>
         <jsp-property-group>
