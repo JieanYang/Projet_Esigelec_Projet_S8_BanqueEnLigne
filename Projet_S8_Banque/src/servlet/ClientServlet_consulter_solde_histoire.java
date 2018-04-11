@@ -33,6 +33,9 @@ import dao.TransactionDao;
 @WebServlet("/ClientServlet_consulter_solde_histoire")
 public class ClientServlet_consulter_solde_histoire extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	
+	
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -67,7 +70,7 @@ public class ClientServlet_consulter_solde_histoire extends HttpServlet {
 		// list of compte, fill list
 		list_compte = compteDao.getListCompteById_lient(id_client);
 		 
-		Map<String, String> listId_compteMap = new HashMap();
+		Map<String, String> listId_compteMap = new HashMap<String, String>();
 		for(Compte item: list_compte){
 			if(item.getCategorie_compte().equals("courant")){
 				listId_compteMap.put("courant", String.valueOf(item.getId_compte()));
@@ -141,7 +144,7 @@ public class ClientServlet_consulter_solde_histoire extends HttpServlet {
 		}
 		
 		
-		Map<String, List<Transaction>> listTransaction_compteMap = new HashMap();
+		Map<String, List<Transaction>> listTransaction_compteMap = new HashMap<String, List<Transaction>>();
 		listTransaction_compteMap.put("courant", listTransaction_compteCourant);
 		listTransaction_compteMap.put("epargne", listTransaction_compteEpargne);
 		listTransaction_compteMap.put("titre", listTransaction_compteTitre);
@@ -155,22 +158,21 @@ public class ClientServlet_consulter_solde_histoire extends HttpServlet {
 		
 		if(request.getParameter("method").equals("extractCSV")) {
 			// If we want to extractCSV, we will pass the data to the methode extractCSV
-			this.extractCSV(request, response, listTransaction_compteMap);
-		}else if(request.getParameter("method").equals("GET")) {
-			 // go to a page specific
-			 RequestDispatcher rd;
-			 rd = getServletContext().getRequestDispatcher("/clientPage_consulter_solde_histoireTransactions.jsp");
-			 rd.forward(request, response);	
+			this.extractCSV(request, response, listTransaction_compteMap, listId_compteMap);
 		}
 
-		// TODO Auto-generated method stub
-		// response.getWriter().append("Served at: ").append(request.getContextPath());
+
+		 // go to a page specific
+		 RequestDispatcher rd;
+		 rd = getServletContext().getRequestDispatcher("/clientPage_consulter_solde_histoireTransactions.jsp");
+		 rd.forward(request, response);	
 	}
 
 	
 	
 	// Generate a file CSV which contains the data of Transaction
-	private void extractCSV(HttpServletRequest request, HttpServletResponse response, Map<String, List<Transaction>> listTransaction_compteMap) throws ServletException, IOException {
+	private void extractCSV(HttpServletRequest request, HttpServletResponse response,
+			Map<String, List<Transaction>> listTransaction_compteMap, Map<String, String> listId_compteMap) throws ServletException, IOException {
 		
 		
 		// Create workbook
@@ -218,11 +220,18 @@ public class ClientServlet_consulter_solde_histoire extends HttpServlet {
 		
 		
 		for(Transaction item: listTransaction_compteMap.get("courant")) {
+			int id_compte = Integer.valueOf(listId_compteMap.get("courant"));
+			
 			row = sheet.createRow(i);
 			row.createCell(0).setCellValue(item.getCategorie_transaction());
-			row.createCell(1).setCellValue(item.getDate_transaction());
+			row.createCell(1).setCellValue(item.getDate_transaction().toString().split(" ")[0]);
 			row.createCell(2).setCellValue(item.getDescription());
-			row.createCell(3).setCellValue(item.getSomme());
+			
+			if (item.getId_compte_emetteur() == id_compte)
+				row.createCell(3).setCellValue("-"+item.getSomme());
+			else if(item.getId_compte_recepteur() == id_compte)
+				row.createCell(3).setCellValue("+"+item.getSomme());
+			
 			i++;
 		}
 		
@@ -233,11 +242,18 @@ public class ClientServlet_consulter_solde_histoire extends HttpServlet {
 		i++;
 		
 		for(Transaction item: listTransaction_compteMap.get("epargne")) {
+			int id_compte = Integer.valueOf(listId_compteMap.get("epargne"));
+			
 			row = sheet.createRow(i);
 			row.createCell(0).setCellValue(item.getCategorie_transaction());
-			row.createCell(1).setCellValue(item.getDate_transaction());
+			row.createCell(1).setCellValue(item.getDate_transaction().toString().split(" ")[0]);
 			row.createCell(2).setCellValue(item.getDescription());
-			row.createCell(3).setCellValue(item.getSomme());
+			
+			if (item.getId_compte_emetteur() == id_compte)
+				row.createCell(3).setCellValue("-"+item.getSomme());
+			else if(item.getId_compte_recepteur() == id_compte)
+				row.createCell(3).setCellValue("+"+item.getSomme());
+			
 			i++;
 		}
 		
@@ -248,11 +264,18 @@ public class ClientServlet_consulter_solde_histoire extends HttpServlet {
 		i++;
 		
 		for(Transaction item: listTransaction_compteMap.get("titre")) {
+			int id_compte = Integer.valueOf(listId_compteMap.get("titre"));
+			
 			row = sheet.createRow(i);
 			row.createCell(0).setCellValue(item.getCategorie_transaction());
-			row.createCell(1).setCellValue(item.getDate_transaction());
+			row.createCell(1).setCellValue(item.getDate_transaction().toString().split(" ")[0]);
 			row.createCell(2).setCellValue(item.getDescription());
-			row.createCell(3).setCellValue(item.getSomme());
+
+			if (item.getId_compte_emetteur() == id_compte)
+				row.createCell(3).setCellValue("-"+item.getSomme());
+			else if(item.getId_compte_recepteur() == id_compte)
+				row.createCell(3).setCellValue("+"+item.getSomme());
+			
 			i++;
 		}
 		
@@ -260,16 +283,12 @@ public class ClientServlet_consulter_solde_histoire extends HttpServlet {
 			FileOutputStream fout = new FileOutputStream("C:\\Users\\yja85\\Desktop\\GitHub\\projet_s8_banque/dataTransaction.xls");
 			wb.write(fout);
 			fout.close();
+			wb.close();
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
 		
 		System.out.println("Success to export transactions");
-		
-		// go to a page specific
-		 RequestDispatcher rd;
-		 rd = getServletContext().getRequestDispatcher("/clientPage_consulter_solde_histoireTransactions.jsp");
-		 rd.forward(request, response);
 	}
 
 	/**
