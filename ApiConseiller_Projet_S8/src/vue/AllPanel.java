@@ -53,9 +53,6 @@ public class AllPanel {
 	
 	// Conseiller
 	private User conseiller = new User();
-//	protected List<User> listOfClient;
-//	protected static Vector<String> vector = new Vector<String>();
-//	protected static JList listComponent;
 
 	/**
 	 * Create the panel.
@@ -151,7 +148,7 @@ public class AllPanel {
 		listeClientPanel.setLayout(null);
 		
 		Vector<User> userList = cListeClient.getListClient();
-		DefaultListModel<String> dlm = new DefaultListModel();
+		DefaultListModel<String> dlm = new DefaultListModel<String>();
 		for(User aUser : userList) {
 			dlm.addElement(aUser.getId_user()+" "+aUser.getNom()+" "+aUser.getPrenom()+" "+aUser.getEmail()+" "+aUser.getTelephone());
 		}

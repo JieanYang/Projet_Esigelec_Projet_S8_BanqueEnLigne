@@ -19,11 +19,9 @@ public class ControleurListeClient {
 		
 		for(int i = 0; i<unformattedList.size() ; i++) {
 			User user = new User();
-			
-			
+	
 			formattedList.add(user);
-		}
-		
+		}	
 		return formattedList;	
 	}
 }
