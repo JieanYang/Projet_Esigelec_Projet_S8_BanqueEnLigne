@@ -64,14 +64,14 @@ if ((String)session.getAttribute("login")=="login"){
 				class="close" title="Close Modal">&times;</span>
 				
 				  <!-- Modal Content -->
-				  <form class="modal-content animate" action="/action_page.php">
+				  <form class="modal-content animate" action="Login" method="post">
 				    
 				    <div class="container">
 				      <label for="uname"><b>Adresse mail :</b></label>
-				      <input type="text" placeholder="Enter your mail" name="uname" required>
+				      <input type="text" placeholder="Enter your mail" name="email" required>
 				
 				      <label for="psw"><b>Password</b></label>
-				      <input type="password" placeholder="Enter Password" name="psw" required>
+				      <input type="password" placeholder="Enter Password" name="password" required>
 				
 				      <button type="submit">Login</button>
 				      <label>
@@ -103,18 +103,8 @@ if ((String)session.getAttribute("login")=="login"){
 			user_login = userDao.getUser(Integer.valueOf(id_user));
 		%>
 			<!-- Espace client --> 
-			<a class="btn active" name="name of client" 
-<<<<<<< HEAD
-			style="width: auto;" href="Clientconnecte.jsp">
 			
-			</a>
-=======
-				style="width: auto; display: inline;" href="Clientconnecté.jsp">
-				<%
-				out.println("Hello!"+user_login.getPrenom()+' '+user_login.getNom());
-				%>
-				</a>
->>>>>>> 8bab0e9963b600779096e1fa9aab743e297fa672
+
 			<!-- Button log out -->
 			<form action="AuthentificationServlet" method="GET" style="display: inline;">	
 				<input name="method" value="logout" style="display:none;">

@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.UserDao;
+
 /**
  * Servlet implementation class Login
  */
@@ -14,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	DAO aDAO = new DAO();
+	UserDao aDAO = new UserDao();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -40,20 +42,18 @@ public class Login extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String username = request.getParameter("username");
+		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 
-		if (aDAO.login(username, password)) {
-			response.getWriter()
-					.write("<!DOCTYPE html>\r\n" + "<html>\r\n" + "	<head>\r\n" + "		<title>Page Title</title>\r\n"
-							+ "	</head>\r\n" + "	<body>\r\n" + "		<h1>You are logged in</h1>\r\n" + "	</body>\r\n"
-							+ "</html>");
-			 //response.sendRedirect("Clientconnecté.jsp");
-		} else {
-			response.getWriter()
-					.write("<!DOCTYPE html>\r\n" + "<html>\r\n" + "	<head>\r\n" + "		<title>Page Title</title>\r\n"
-							+ "	</head>\r\n" + "	<body>\r\n" + "		<h1>FORBIDDEN</h1>\r\n" + "	</body>\r\n"
-							+ "</html>");
+		boolean connexion = aDAO.getCredentials(email, password);
+		
+		if(connexion== true) {
+			
+			request.getRequestDispatcher("pageContact.jsp").forward(request, response);
+		}else {
+			String message ="Votre email ou password est erroné !";
+			request.getRequestDispatcher("pageCompteVerifie.jsp").forward(request, response);
 		}
+		
 	}
 }

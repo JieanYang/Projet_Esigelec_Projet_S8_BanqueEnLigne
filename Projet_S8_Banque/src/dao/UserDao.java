@@ -28,9 +28,9 @@ public class UserDao {
     /**
      * Tools for connection and operation with the BDD
      */
-    private Connection connection;
-    private PreparedStatement ps;
-    private ResultSet rs;
+    private  Connection connection;
+    private  PreparedStatement ps;
+    private  ResultSet rs;
     
 
     /**
@@ -230,7 +230,28 @@ public class UserDao {
         
         return retour;
     }
+    public boolean getCredentials(String email, String password) {
+		this.connection();
+    	
 
+		String sql = "SELECT * FROM user WHERE (categorie_user = 'client') and (email = ?) and (password = ?)";
+		try {
+			ps = connection.prepareStatement(sql);
+			ps.setString(1, email);
+			ps.setString(2, password);
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			// https://stackoverflow.com/questions/65035/does-finally-always-execute-in-java
+			this.disconnection();
+		}
+		return false;
+	}
+    
     /**
      * @param void
      * @return List<User> -> retour
@@ -296,5 +317,8 @@ public class UserDao {
         
         return retour; // return 1 -> success or return 0 -> fail
     }
+    
+    
+    
 
 }
