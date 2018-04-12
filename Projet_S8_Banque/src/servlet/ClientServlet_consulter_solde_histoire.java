@@ -1,5 +1,6 @@
 package servlet;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -317,7 +318,9 @@ public class ClientServlet_consulter_solde_histoire extends HttpServlet {
           
         in.close();  
         out.close(); 
-		
+        
+        File file = new File(path);
+        file.delete();
 		
 		
 		System.out.println("Success to export transactions");
