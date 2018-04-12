@@ -77,10 +77,10 @@ public class CreerCompte extends HttpServlet {
 		String pays = request.getParameter("pays");
 		String ville = request.getParameter("ville");
 		// On récupère le champ du fichier
-        Part part = request.getPart("fichier");
+       // Part part = request.getPart("fichier");
             
         // On vérifie qu'on a bien reçu un fichier
-        String nomFichier = getNomFichier(part);
+      //  String nomFichier = getNomFichier(part);
 		
 		
 		
@@ -91,17 +91,7 @@ public class CreerCompte extends HttpServlet {
 		
 		request.getRequestDispatcher("pageVerification.jsp").forward(request, response);
 		
-		if (nomFichier != null && !nomFichier.isEmpty()) {
-            String nomChamp = part.getName();
-            // Corrige un bug du fonctionnement d'Internet Explorer
-             nomFichier = nomFichier.substring(nomFichier.lastIndexOf('/') + 1)
-                    .substring(nomFichier.lastIndexOf('\\') + 1);
-
-            // On écrit définitivement le fichier sur le disque
-            ecrireFichier(part, nomFichier, CHEMIN_FICHIERS);
-
-            request.setAttribute(nomChamp, nomFichier);
-        }
+		
 		
 		
 		

@@ -1,35 +1,30 @@
+
 <%@ page pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
-
 <html>
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <head>
-		<meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-		<!-- Bootstrap 4.0  -->
-		<%@include file="Resources/Resources_bootstrap_4.0.html" %>
+<!-- Bootstrap 4.0  -->
+<%@include file="Resources/Resources_bootstrap_4.0.html" %>
 		
-		<!-- CSS for Head.html -->
-		<link rel="stylesheet" href="Resources/styles_index.css">
+<!-- CSS for Head.html -->
+<link rel="stylesheet" href="Resources/styles_index.css">
 
-    </head>
 
-    <body>
-    
-    
-			<%@include file="Templates/Head.jsp" %>
-			
-			<div class=jumbotron>
-			 <div class=container>
-			
-			 </div>
-			     <br/>
-			<br/>
-     
+<title>Accueil</title>
+</head>
+<body class="container backC">
 
-  <form action="CreerCompte" method="post" enctype="multipart/form-data" >
+	<!-- head.html -->
+	<%@ include file="/Templates/Head.jsp" %>
+
+	
+	<form action="CreerCompte" method="post" >
   
   	
   	    <div class="form-group ">
@@ -43,17 +38,17 @@
 	  <div class="form-row">
 	    <div class="form-group col-md-6">
 	      <label for="inputName4">Nom </label>
-	      <input type="text" class="form-control" name="nom" id="inputName4" placeholder="Serais" required>
+	      <input type="text" class="form-control" name="nom" id="inputName4"  required>
 	    </div>
 	    
 	    <div class="form-group col-md-6">
 	      <label for="inputName4">Prénom </label>
-	      <input type="text" class="form-control" name="prenom" id="inputName4" placeholder="Sebastien" required>
+	      <input type="text" class="form-control" name="prenom" id="inputName4"  required>
 	    </div>
 	    
 	    <div class="form-group col-md-6">
-	      <label for="inputName4">Tel : </label>
-	      <input type="text" class="form-control" name="telephone" id="inputName4" placeholder="0769458855" required>
+	      <label for="inputName4">Telephone : </label>
+	      <input type="text" class="form-control" name="telephone" id="inputName4"  required>
 	    </div>
 	    
 	  </div>
@@ -64,11 +59,11 @@
 	  
 	  <div class="form-group">
 	    <label for="inputAddress">Adresse</label>
-	    <input type="text" class="form-control" name="adresse" id="inputAddress" placeholder="1 rue jean mermoz" required>
+	    <input type="text" class="form-control" name="adresse" id="inputAddress"  required>
 	  </div>
 	  <div class="form-group">
 	    <label for="inputAddress2">Adresse mail</label>
-	    <input type="text" class="form-control" name="email" id="inputAddress2" placeholder="sebastien@esigelec.fr"  required />
+	    <input type="email" class="form-control" name="email" id="inputAddress2"  required />
 	    
 	  </div>
 	  <div class="form-row">
@@ -97,9 +92,10 @@
 	  <button type="submit" class="btn btn-primary">Envoyer</button>
 	  
 </form>
+	
 
+	
 
-</div>
-    </body>
-
+	<script src="/Resources/scripts_index.js"></script>
+</body>
 </html>
