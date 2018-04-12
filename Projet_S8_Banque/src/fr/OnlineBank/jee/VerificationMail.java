@@ -52,15 +52,16 @@ public class VerificationMail extends HttpServlet {
 		
 		
 		if(code.equals(code_generee)==true) {
-			resultat="Votre adresse mail est validé !!!";
-			validation= "true" ;
+			request.getRequestDispatcher("pageCompteVerifie.jsp").forward(request, response);
+			
 		}else {
 			resultat="Votre code de verification n'est pas le Bon !!! ";
+			request.setAttribute("resultat", resultat);
+			 request.setAttribute("validation", validation);
+			
+			request.getRequestDispatcher("pageVerification.jsp").forward(request, response);
 		}
-		 request.setAttribute("resultat", resultat);
-		 request.setAttribute("validation", validation);
-		
-		request.getRequestDispatcher("pageVerification.jsp").forward(request, response);
+		 
 		
 	}
 

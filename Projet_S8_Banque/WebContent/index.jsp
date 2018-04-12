@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="Resources/styles_index.css">
 
 
+
 <title>Accueil</title>
 </head>
 <body class="container backC">
@@ -27,8 +28,9 @@
 			<img class="card-img-top" src="Image/livretA.jpg"
 				alt="Card image cap">
 			<div class="card-body">
-				<h5 class="card-title">Ouvrir un Compte</h5>
-				<p class="card-text">Un texte ici ?</p>
+				<h5 class="card-title">80 euros offert à l'ouverture de compte</h5>
+				<p class="card-text">0 euros Pour vos cartes Visa Classic et Premier 
+										et pas seulement la 1ère année</p>
 				<a href="creerCompte.jsp" class="btn btn-primary">Ouvrir un compte</a>
 			</div>
 		</div>
@@ -37,9 +39,9 @@
 			<img class="card-img-top" src="Image/compteCourant.jpg"
 				alt="Card image cap">
 			<div class="card-body">
-				<h5 class="card-title">Creer un compte user</h5>
-				<p class="card-text">Un texte ici ?</p>
-				<a href="login.jsp" class="btn btn-primary">creer un compte</a>
+				<h5 class="card-title">Creer un compte Client</h5>
+				<p class="card-text">Devenez Client de OnlineBank et accedez à tous nos outils et notre plateforme de Trading</p>
+				<a href="login.jsp" class="btn btn-primary">Devenir Client</a>
 			</div>
 		</div>
 
@@ -49,24 +51,13 @@
 				alt="Card image cap">
 			<div class="card-body">
 				<h5 class="card-title">Regarder le cours de la bourse</h5>
-				<p class="card-text">Un texte ici ?</p>
+				<p class="card-text">Vous etes interessé par la bourse , inscrivez vous et commencez à trader en réel sans frais</p>
 				<a href="affichageprix.jsp" class="btn btn-primary">bourse</a>
 			</div>
 		</div>
 	</div>
 
-	<!-- <div class="col-container contourNews">
-		<div class="col bordure">
-			<h4>Colonne</h4>
-			
-		</div>
-
-		<div class="col bordure">
-			<h4>Colonne</h4>
-			<p>Some other text..</p>
-			<p>Some other text..</p>
-		</div>
-	</div> -->
+	
 
 	<!--Footer-->
 	<footer class="footer">

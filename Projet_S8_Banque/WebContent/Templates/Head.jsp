@@ -53,11 +53,50 @@ if ((String)session.getAttribute("login")=="login"){
 		<a href="#default" class="logo">OnlineBank</a>
 		<div class="header-right">
 		<% if(id_user == null) { %>
-			<a class="btn active" name="espaceClient" 
-			style="width: auto;" href="login.jsp">Espace Client</a>
+			<button class="btn active" name="espaceClient" onclick="document.getElementById('id01').style.display='block'">Espace Client</button>
+			<!--<a class="btn active" name="espaceClient" style="width: auto;" href="login.jsp">Espace Client</a>-->
 			<!--<a class="active" href="#home">Home</a>
                 <a href="#contact">Contact</a>
                 <a href="#about">About</a>-->
+            <!-- The Modal -->
+				<div id="id01" class="modal">
+				  <span onclick="document.getElementById('id01').style.display='none'" 
+				class="close" title="Close Modal">&times;</span>
+				
+				  <!-- Modal Content -->
+				  <form class="modal-content animate" action="/action_page.php">
+				    
+				    <div class="container">
+				      <label for="uname"><b>Adresse mail :</b></label>
+				      <input type="text" placeholder="Enter your mail" name="uname" required>
+				
+				      <label for="psw"><b>Password</b></label>
+				      <input type="password" placeholder="Enter Password" name="psw" required>
+				
+				      <button type="submit">Login</button>
+				      <label>
+				        <input type="checkbox" checked="checked" name="remember"> Remember me
+				      </label>
+				    </div>
+				
+				    <div class="container" style="background-color:#f1f1f1">
+				      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+				      <span class="psw">Forgot <a href="#">password?</a></span>
+				    </div>
+				  </form>
+				</div>
+				
+				<script>
+					// Get the modal
+					var modal = document.getElementById('id01');
+					
+					// When the user clicks anywhere outside of the modal, close it
+					window.onclick = function(event) {
+					    if (event.target == modal) {
+					        modal.style.display = "none";
+					    }
+					}
+				</script>
 		<%} else if(id_user != null) {
 			User user_login = new User();
 			UserDao userDao = new UserDao();
@@ -65,11 +104,17 @@ if ((String)session.getAttribute("login")=="login"){
 		%>
 			<!-- Espace client --> 
 			<a class="btn active" name="name of client" 
+<<<<<<< HEAD
+			style="width: auto;" href="Clientconnecte.jsp">
+			
+			</a>
+=======
 				style="width: auto; display: inline;" href="Clientconnecté.jsp">
 				<%
 				out.println("Hello!"+user_login.getPrenom()+' '+user_login.getNom());
 				%>
 				</a>
+>>>>>>> 8bab0e9963b600779096e1fa9aab743e297fa672
 			<!-- Button log out -->
 			<form action="AuthentificationServlet" method="GET" style="display: inline;">	
 				<input name="method" value="logout" style="display:none;">
