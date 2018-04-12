@@ -59,6 +59,23 @@
 			</div>
 		</div>
 		
+		<div class="card" style="width: 15rem;">
+			<img class="card-img-top" src="Image/histoire of transaction.jpg"
+				alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title">Solde et l'histoire des transactions</h5>
+				<p class="card-text"></p>
+				<form action="ClientServlet_consulter_solde_histoire" method="GET">
+					<input name="method" value="GET" style="display:none;">
+					
+					<input name="id_client" value=<%=session.getAttribute("id_user") %> style="display:none;">
+					<button type="submit" class="btn btn-primary">
+						Consulter
+					</button>
+				</form>
+			</div>
+		</div>
+		
 	</div>
 
 	<!-- <div class="col-container contourNews">
