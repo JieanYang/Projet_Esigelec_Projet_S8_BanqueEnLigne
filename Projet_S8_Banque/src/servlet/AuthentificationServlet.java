@@ -61,7 +61,7 @@ public class AuthentificationServlet extends HttpServlet {
 
 		
 		RequestDispatcher rd;
-		rd = getServletContext().getRequestDispatcher("/Clientconnect¨¦.jsp");
+		rd = getServletContext().getRequestDispatcher("/Clientconnecte.jsp");
 		rd.forward(request, response);
 	}
 	

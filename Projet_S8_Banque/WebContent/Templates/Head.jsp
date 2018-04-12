@@ -104,17 +104,12 @@ if ((String)session.getAttribute("login")=="login"){
 		%>
 			<!-- Espace client --> 
 			<a class="btn active" name="name of client" 
-<<<<<<< HEAD
-			style="width: auto;" href="Clientconnecte.jsp">
-			
-			</a>
-=======
-				style="width: auto; display: inline;" href="Clientconnecté.jsp">
+				style="width: auto; display: inline;" href="Clientconnecte.jsp">
 				<%
 				out.println("Hello!"+user_login.getPrenom()+' '+user_login.getNom());
 				%>
 				</a>
->>>>>>> 8bab0e9963b600779096e1fa9aab743e297fa672
+
 			<!-- Button log out -->
 			<form action="AuthentificationServlet" method="GET" style="display: inline;">	
 				<input name="method" value="logout" style="display:none;">
