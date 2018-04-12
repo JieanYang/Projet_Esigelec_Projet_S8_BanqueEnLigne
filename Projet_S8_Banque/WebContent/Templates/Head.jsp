@@ -25,6 +25,29 @@ if ((String)session.getAttribute("login")=="login"){
 			href="affichageprix.jsp">Bourse</a> <a href="javascript:void(0);" class="icon"
 			onclick="myFunction()">&#9776;</a>
 	</div>
+	
+	<style type="text/css">
+		/* button {display:none;} */
+		
+		
+		#button_logOut {
+			border-radius: 4px;
+			background-color: #046380;
+			color: #f2f2f2;
+			/* display: inline; */
+			width: auto;
+			margin: 0;
+			padding: 12px;
+			
+		}
+		
+		#button_logOut:hover {
+			color: black;
+			background-color: white;
+			text-decoration: none;
+		}
+	</style>
+	
 	<!-- header -->
 	<div class="header">
 		<a href="#default" class="logo">OnlineBank</a>
@@ -81,13 +104,21 @@ if ((String)session.getAttribute("login")=="login"){
 		%>
 			<!-- Espace client --> 
 			<a class="btn active" name="name of client" 
+<<<<<<< HEAD
 			style="width: auto;" href="Clientconnecte.jsp">
 			
 			</a>
+=======
+				style="width: auto; display: inline;" href="Clientconnecté.jsp">
+				<%
+				out.println("Hello!"+user_login.getPrenom()+' '+user_login.getNom());
+				%>
+				</a>
+>>>>>>> 8bab0e9963b600779096e1fa9aab743e297fa672
 			<!-- Button log out -->
-			<form action="AuthentificationServlet" method="GET">	
+			<form action="AuthentificationServlet" method="GET" style="display: inline;">	
 				<input name="method" value="logout" style="display:none;">
-				<button type="submit">
+				<button id="button_logOut" class="active" type="submit">
 					Log out
 				</button>
 			</form>
