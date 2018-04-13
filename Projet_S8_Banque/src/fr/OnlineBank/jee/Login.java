@@ -1,15 +1,15 @@
 package fr.OnlineBank.jee;
 
 import java.io.IOException;
-<<<<<<< HEAD
+
 
 import javax.servlet.RequestDispatcher;
-=======
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
->>>>>>> 65bf272e7421a6fe0c981507a3750a45504675c1
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -67,17 +67,16 @@ public class Login extends HttpServlet {
 		
 		
 		if(connexion== true) {
-<<<<<<< HEAD
+
 			this.logIn(request, response);
+
+			updateLog.editFile("Utilisateur: "+ email+" connecte le: "+dateFormat.format(date)+" /Ip client : "+clientIP+" /ServerIP : "+serverIP);
 			request.getRequestDispatcher("Clientconnecte.jsp").forward(request, response);
-=======
-			updateLog.editFile("Utilisateur: "+ email+" connecté le: "+dateFormat.format(date)+" /Ip client : "+clientIP+" /ServerIP : "+serverIP);
-			request.getRequestDispatcher("pageContact.jsp").forward(request, response);
->>>>>>> 65bf272e7421a6fe0c981507a3750a45504675c1
+
 		}else {
 			updateLog.editFile("Echec de connection de l'utilisateur "+email+" le: "+dateFormat.format(date)+" /Ip client : "+clientIP+" /ServerIP : "+serverIP);
-			String message ="Votre email ou password est erroné !";
-			request.getRequestDispatcher("pageCompteVerifie.jsp").forward(request, response);
+			String message ="Votre email ou password est erronï¿½ !";
+			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 		
 	}
