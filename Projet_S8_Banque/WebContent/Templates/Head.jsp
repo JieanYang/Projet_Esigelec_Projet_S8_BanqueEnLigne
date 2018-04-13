@@ -22,7 +22,7 @@ if ((String)session.getAttribute("login")=="login"){
 <!-- top navigation -->
 	<div class="topnav" id="myTopnav">
 		<a href="index.jsp" class="active">Accueil</a> <a href="#news">News</a> <a
-			href="affichageprix.jsp">Bourse</a> <a href="javascript:void(0);" class="icon"
+			href="ServletCoursDeLaBourse">Bourse</a> <a href="javascript:void(0);" class="icon"
 			onclick="myFunction()">&#9776;</a>
 	</div>
 	
@@ -102,6 +102,17 @@ if ((String)session.getAttribute("login")=="login"){
 			UserDao userDao = new UserDao();
 			user_login = userDao.getUser(Integer.valueOf(id_user));
 		%>
+<<<<<<< HEAD
+=======
+			<!-- Espace client --> 
+			<a class="btn active" name="name of client" 
+				style="width: auto; display: inline;" href="Clientconnecte.jsp">
+				<%
+				out.println("Hello!"+user_login.getPrenom()+' '+user_login.getNom());
+				%>
+				</a>
+
+>>>>>>> 65bf272e7421a6fe0c981507a3750a45504675c1
 
 			<!-- Button log out -->
 			<form action="AuthentificationServlet" method="GET" style="display: inline;">	

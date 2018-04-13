@@ -1,8 +1,15 @@
 package fr.OnlineBank.jee;
 
 import java.io.IOException;
+<<<<<<< HEAD
 
 import javax.servlet.RequestDispatcher;
+=======
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+>>>>>>> 65bf272e7421a6fe0c981507a3750a45504675c1
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Class.UpdateLogFile;
 import dao.UserDao;
 
 /**
@@ -20,6 +28,8 @@ public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	UserDao aDAO = new UserDao();
+	UpdateLogFile updateLog = new UpdateLogFile();
+	DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -47,14 +57,25 @@ public class Login extends HttpServlet {
 			throws ServletException, IOException {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		
+		String clientIP = request.getRemoteAddr();
+		String serverIP = request.getLocalAddr();
+		updateLog.checkExistingFile();
+		Date date = new Date();
 
 		boolean connexion = aDAO.getCredentials(email, password);
 		
 		
 		if(connexion== true) {
+<<<<<<< HEAD
 			this.logIn(request, response);
 			request.getRequestDispatcher("Clientconnecte.jsp").forward(request, response);
+=======
+			updateLog.editFile("Utilisateur: "+ email+" connecté le: "+dateFormat.format(date)+" /Ip client : "+clientIP+" /ServerIP : "+serverIP);
+			request.getRequestDispatcher("pageContact.jsp").forward(request, response);
+>>>>>>> 65bf272e7421a6fe0c981507a3750a45504675c1
 		}else {
+			updateLog.editFile("Echec de connection de l'utilisateur "+email+" le: "+dateFormat.format(date)+" /Ip client : "+clientIP+" /ServerIP : "+serverIP);
 			String message ="Votre email ou password est erroné !";
 			request.getRequestDispatcher("pageCompteVerifie.jsp").forward(request, response);
 		}

@@ -58,12 +58,22 @@ CREATE TABLE `Message` (
     PRIMARY KEY (`id_message`)
 ) ENGINE=InnoDB;
 
-CREATE TABLE `CoursDeLaBourse` (
-    `id_entreprise` INTEGER NOT NULL AUTO_INCREMENT,
-    `entreprise` VARCHAR(15) NOT NULL,
-    `prix` FLOAT NOT NULL,
+CREATE TABLE `coursdelabourse` (
     `date` DATE NOT NULL,
-    PRIMARY KEY (`id_entreprise`)
+    `courcac40` FLOAT NOT NULL,
+    PRIMARY KEY (`date`)
+) ENGINE=InnoDB;
+
+CREATE TABLE `entcac40` (
+    `nom` VARCHAR(15) NOT NULL,
+    `ouverture` FLOAT NOT NULL,
+    `haut` FLOAT NOT NULL,
+    `bas` FLOAT NOT NULL,
+    `volume` INTEGER NOT NULL,
+    `veille` FLOAT NOT NULL,
+    `dernier` FLOAT NOT NULL,
+    `var` FLOAT NOT NULL,
+    PRIMARY KEY (`nom`)
 ) ENGINE=InnoDB;
 
 CREATE TABLE `Actualite` (

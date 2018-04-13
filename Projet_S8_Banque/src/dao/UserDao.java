@@ -31,7 +31,6 @@ public class UserDao {
     private  Connection connection;
     private  PreparedStatement ps;
     private  ResultSet rs;
-    
 
     /**
      * Default constructor
