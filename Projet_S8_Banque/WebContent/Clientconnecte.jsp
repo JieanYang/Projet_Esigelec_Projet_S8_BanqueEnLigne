@@ -68,7 +68,7 @@
 				<form action="ClientServlet_consulter_solde_histoire" method="GET">
 					<input name="method" value="GET" style="display:none;">
 					
-					<input name="id_client" value=<%=session.getAttribute("id_user") %> style="display:none;">
+					<input name="id_user" value="<%=session.getAttribute("id_user") %>" style="display:none;">
 					<button type="submit" class="btn btn-primary">
 						Consulter
 					</button>

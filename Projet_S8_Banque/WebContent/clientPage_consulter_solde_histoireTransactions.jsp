@@ -10,8 +10,6 @@ dao.CompteDao"%>
 
 
 <%	
-
-
 	Map compteIdList = new HashMap(); 
 	compteIdList = (Map) session.getAttribute("CompteInfo");
 	int id_compte_courrant = Integer.valueOf((String)compteIdList.get("courant"));
@@ -121,7 +119,7 @@ public String fillSolde(int id_compte) {
 					<form action="ClientServlet_consulter_solde_histoire" method="GET">
 						<input name="method" value="extractCSV" style="display:none;">
 						
-						<input name="id_client" value=<%=session.getAttribute("id_user") %> style="display:none;">
+						<input name="id_user" value=<%=session.getAttribute("id_user") %> style="display:none;">
 						<button type="submit" style="width: 30px; height: 30px; margin-left:10px; padding-right:0; background: url(Image/extractCSV.png); background-size:30px 30px; background-repeat:no-repeat;">
 						<!-- 	<img src="Image/extractCSV.png" alt="Download CSV" style="width: 30px; height: 30px;"> -->
 						</button>

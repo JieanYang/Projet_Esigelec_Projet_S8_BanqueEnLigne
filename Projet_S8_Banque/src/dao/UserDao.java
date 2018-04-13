@@ -263,8 +263,8 @@ public class UserDao {
 			ps.setString(2, password);
 			rs = ps.executeQuery();
 			if (rs.next()) {
-				rs.getInt("id_user");
-				return retour;
+				return rs.getInt("id_user");
+				
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

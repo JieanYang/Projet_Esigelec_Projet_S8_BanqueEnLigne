@@ -69,7 +69,6 @@ public class Login extends HttpServlet {
 		if(connexion== true) {
 
 			this.logIn(request, response);
-
 			updateLog.editFile("Utilisateur: "+ email+" connecte le: "+dateFormat.format(date)+" /Ip client : "+clientIP+" /ServerIP : "+serverIP);
 			request.getRequestDispatcher("Clientconnecte.jsp").forward(request, response);
 
@@ -91,9 +90,8 @@ public class Login extends HttpServlet {
 		// Session
 		HttpSession session = request.getSession();
 		session.setAttribute("login", "login");
+		System.out.println("id_user  "+id_user);
 		session.setAttribute("id_user", id_user);
-
-		
 		
 	}
 	

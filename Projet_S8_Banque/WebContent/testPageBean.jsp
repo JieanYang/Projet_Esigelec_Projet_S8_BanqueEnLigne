@@ -33,7 +33,7 @@
 <form action="ClientServlet_consulter_solde_histoire" method="GET">
 	<input name="method" value="GET" style="display:none;">
 	
-	<input name="id_client" value=3>
+	<input name="id_user" value=3>
 	<button type="submit">
 		get client solde and histoire
 	</button>
@@ -42,7 +42,7 @@
 <form action="ClientServlet_consulter_solde_histoire" method="GET">
 	<input name="method" value="extractCSV" style="display:none;">
 	
-	<input name="id_client" value=3>
+	<input name="id_user" value=3>
 	<button type="submit">
 		extract CSV
 	</button>
