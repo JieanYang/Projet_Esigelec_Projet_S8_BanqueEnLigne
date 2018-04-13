@@ -103,16 +103,13 @@ if ((String)session.getAttribute("login")=="login"){
 			user_login = userDao.getUser(Integer.valueOf(id_user));
 		%>
 			<!-- Espace client --> 
-<<<<<<< HEAD
-			
-=======
 			<a class="btn active" name="name of client" 
 				style="width: auto; display: inline;" href="Clientconnecte.jsp">
 				<%
 				out.println("Hello!"+user_login.getPrenom()+' '+user_login.getNom());
 				%>
 				</a>
->>>>>>> 56c09cb37378ea405c70ce5872b33b2406415b5a
+
 
 			<!-- Button log out -->
 			<form action="AuthentificationServlet" method="GET" style="display: inline;">	
