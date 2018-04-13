@@ -158,6 +158,8 @@ public class virement_servlet extends HttpServlet {
 		
 		
 		vDAO.virement( type, emetteur, beneficiaire, sDate, sDate_create, montant, message);// fait reference à la méthode virement qui se trouve dans ma DAO
+		
+		response.sendRedirect("Clientconnecte.jsp");
 	}
 	
 	
