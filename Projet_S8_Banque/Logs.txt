@@ -1,0 +1,9 @@
+-Echec de connection de l'utilisateur abdoul@mail.com le: 2018-04-13 11:21:38 /Ip client : 0:0:0:0:0:0:0:1 /ServerIP : 0:0:0:0:0:0:0:1
+
+-Utilisateur: abdoul@mail.com connecté le: 2018-04-13 10:57:27 /Ip client : 0:0:0:0:0:0:0:1 /ServerIP : 0:0:0:0:0:0:0:1
+
+-Echec de connection de l'utilisateur sdv le: 2018-04-13 10:51:25 /Ip client : 0:0:0:0:0:0:0:1 /ServerIP : 0:0:0:0:0:0:0:1
+
+-Echec de connection de l'utilisateur user@mail.com le: 2018-04-13 10:50:29 /Ip client : 0:0:0:0:0:0:0:1 /ServerIP : 0:0:0:0:0:0:0:1
+
+-Echec de connection de l'utilisateur user@mail.com le: 2018-04-13 10:49:56 /Ip client : 0:0:0:0:0:0:0:1 /ServerIP : 0:0:0:0:0:0:0:1

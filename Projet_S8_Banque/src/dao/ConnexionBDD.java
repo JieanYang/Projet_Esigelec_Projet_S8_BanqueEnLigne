@@ -29,16 +29,16 @@ public class ConnexionBDD {
 	/**
 	 * Setup connection parameters to the database
 	 */
-	private String url = "jdbc:mysql://localhost/projet_s8_banque?useSSL=false"; // add '?useSSL=false' to disable
+	private static String url = "jdbc:mysql://localhost/projet_s8_banque?useSSL=false"; // add '?useSSL=false' to disable
 																					// Warning message
-	private String username = "root";
-	private String password = "";
-	private Connection connection;
+	private static String username = "root";
+	private static String password = "";
+	private static Connection connection;
 
 	/**
 	 * Connecting to database
 	 */
-	public Connection connection() {
+	public static Connection connection() {
 		try {
 			connection = DriverManager.getConnection(url, username, password);
 		} catch (SQLException e) {
@@ -50,7 +50,7 @@ public class ConnexionBDD {
 	/**
 	 * Closing connection
 	 */
-	public void disconnection() {
+	public static void disconnection() {
 		try {
 			connection.close();
 		} catch (SQLException e) {
