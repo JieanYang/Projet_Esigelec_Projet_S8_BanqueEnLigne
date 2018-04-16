@@ -17,56 +17,46 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css_script/styles_index.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
+<!-- Bootstrap 4.0  -->
+<%@include file="Resources/Resources_bootstrap_4.0.html"%>
+<!-- CSS for Head.html -->
+ <link rel="stylesheet" href="Resources/Head.css">
+ 
 </head>
 <body>
 
-<body class="container backC">
+<body>
+
 	<!-- head.html -->
-	
+	<%@ include file="Templates/Head.jsp"%>
 
+	<div class="container">
+		<div class=jumbotron>
+			<h1 style="text-align:center;"><a href="index.jsp" >ACTUALITES</a></h1>
+		</div>
 
-     
-     
+		<div class="row">
+			 <h2>Retrouver les actualites de votre banque</h2>
+		</div>
 
-<div class=jumbotron>
- <div class=container>
-
- </div>
-     <br/>
-<br/>
-
-<div class="container" >
-<h1 style="text-align:center;"><a href="index.jsp" >ACTUALITES</a></h1>
-  <br>
-  <br>
-  <h2>Retrouver les actualites de votre banque</h2>
-  
-  <br>
-  <br>
-  
-  						<table border="2">
-							<tbody>
-								<tr><th>DATE</th><th>TITLE</th><th>TEXT</th></tr><!-- entete du tableau -->
-								<c:forEach items="${liste}" var="emp"><!-- boucle for en jstl et on envoi la variable  -->
-									<tr>
-										<!--chaque code insee est un lien cliquable qui redirige vers la servlet compareServlet-->
-										<td><c:out value="${emp.getDate()}"></c:out></td><!-- recupere les attribus de l'objet actu individuellement(emp) pour l'inserer dans le tableau -->
-										<td><c:out value="${emp.getTitle()}"></c:out></td>
-										<td><c:out value="${emp.getText()}"></c:out></td>
-										
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
-  
-  
-</div>
+		<div class="row">
+			 <table border="2">
+				<tbody>
+					<tr><th>DATE</th><th>TITLE</th><th>TEXT</th></tr><!-- entete du tableau -->
+					<c:forEach items="${liste}" var="emp"><!-- boucle for en jstl et on envoi la variable  -->
+						<tr>
+							<!--chaque code insee est un lien cliquable qui redirige vers la servlet compareServlet-->
+							<td><c:out value="${emp.getDate()}"></c:out></td><!-- recupere les attribus de l'objet actu individuellement(emp) pour l'inserer dans le tableau -->
+							<td><c:out value="${emp.getTitle()}"></c:out></td>
+							<td><c:out value="${emp.getText()}"></c:out></td>
+							
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		 </div>
+	</div>
+  						
 
 </body>
 </html>

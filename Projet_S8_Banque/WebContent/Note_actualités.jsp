@@ -7,49 +7,44 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css_script/styles_index.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
+<!-- Bootstrap 4.0  -->
+<%@include file="Resources/Resources_bootstrap_4.0.html"%>
+<!-- CSS file -->
+<link rel="stylesheet" href="Resources/style_manager.css">
 	
 	
 </head>
 
-<body class="container backC">
+<body>
 	<!-- head.html -->
 	 <%@ include file="Templates/Manager.html" %> 
 
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12"> 
+				<form role="form" action="Actualites_servlet" method="post" class="registration-form">
 
+				  <div class="form-group col-md-6">
+					      <label for="inputName4"> Date : </label>
+					      <input type="date" class="form-control" name="date" id="inputdate">
+				   </div>
+					    
+				   <div class="form-group">
+					    <label for="inputTitle">Titre</label>
+					    <input type="text" class="form-control" name="title" id="inputtitle" placeholder="Veuillez noté le titre de votre actualité" required>
+					  </div>
+
+				  <div class="form-group">
+				    <label for="exampleFormControlTextarea1">Actualités</label>
+				    <textarea  type="text" class="form-control" name="text" id="exampleFormControlTextarea1" rows="4"></textarea>
+				  </div>
+				   <button type="submit" class="btn btn-primary">Envoyer</button>
+				</form>
+			</div>
+		</div>
+	</div>
      
-     
 
-<div class=jumbotron>
- <div class=container>
-
- </div>
-     <br/>
-<br/>
-   <div class="form-bottom">  
-<form role="form" action="Actualites_servlet" method="post" class="registration-form">
-
-  <div class="form-group col-md-6">
-	      <label for="inputName4"> Date : </label>
-	      <input type="date" class="form-control" name="date" id="inputdate">
-   </div>
-	    
-   <div class="form-group">
-	    <label for="inputTitle">Titre</label>
-	    <input type="text" class="form-control" name="title" id="inputtitle" placeholder="Veuillez noté le titre de votre actualité" required>
-	  </div>
-
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Actualités</label>
-    <textarea  type="text" class="form-control" name="text" id="exampleFormControlTextarea1" rows="4"></textarea>
-  </div>
-   <button type="submit" class="btn btn-primary">Envoyer</button>
-</form>
 
 
 

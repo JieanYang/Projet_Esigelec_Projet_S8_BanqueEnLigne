@@ -9,18 +9,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Bootstrap 4.0  -->
-		<%@include file="Resources/Resources_bootstrap_4.0.html" %>
-		
+	<%@include file="Resources/Resources_bootstrap_4.0.html"%>
 	<!-- CSS for Head.html -->
-	<link rel="stylesheet" href="Resources/styles_index.css">    
+	 <link rel="stylesheet" href="Resources/Head.css">   
 
 
     </head>
 
     <body>
     
-    
-     <%@ include file="Templates/Head.jsp" %>
+	    <!-- head.html -->
+		<%@ include file="Templates/Head.jsp"%>
 
 <div class=jumbotron>
  <div class=container>

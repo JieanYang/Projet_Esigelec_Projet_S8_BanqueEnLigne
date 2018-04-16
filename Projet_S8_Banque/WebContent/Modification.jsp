@@ -10,17 +10,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Modification</title>
 
-		
-
-<!-- Bootstrap 4.0  -->
-		<%@include file="Resources/Resources_bootstrap_4.0.html" %>
-		
-		<!-- CSS for Head.html -->
-		<link rel="stylesheet" href="Resources/styles_index.css">
+	<!-- Bootstrap 4.0  -->
+	<%@include file="Resources/Resources_bootstrap_4.0.html"%>
+	<!-- CSS for Head.html -->
+	 <link rel="stylesheet" href="Resources/Head.css">
+	 
 </head>
 <body>
-    
-    <%@ include file="Templates/Head.jsp" %>
+    <!-- head.html -->
+	<%@ include file="Templates/Head.jsp"%>
     
      <div class="p-3 mb-2 bg-secondary text-white"> MODIFICATION DES INFORMATIONS</div>
 

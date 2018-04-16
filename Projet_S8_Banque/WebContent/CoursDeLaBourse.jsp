@@ -8,25 +8,19 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css_script/styles_index.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
-<link
-	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
-<script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link rel="stylesheet" href="css_script/form.css">
-<link rel="stylesheet" href="Resources/styles_index.css">
 
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<!-- Bootstrap 4.0  -->
+<%@include file="Resources/Resources_bootstrap_4.0.html"%>
+<!-- CSS for Head.html -->
+ <link rel="stylesheet" href="Resources/Head.css">
+ 
+<!-- jquery -->
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- ??? -->
+<link rel="stylesheet" href="css_script/form.css">
+<!-- Chart -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+	
 <title>Cours de la bourse</title>
 </head>
 <body>

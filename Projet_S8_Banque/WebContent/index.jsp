@@ -10,10 +10,8 @@
 
 <!-- Bootstrap 4.0  -->
 <%@include file="Resources/Resources_bootstrap_4.0.html"%>
-
 <!-- CSS for Head.html -->
-
- <link rel="stylesheet" href="Resources/Head.css">
+<link rel="stylesheet" href="Resources/Head.css">
 
 
 <title>Accueil</title>
