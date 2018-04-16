@@ -43,7 +43,11 @@ public class Actualite {
      */
     public Actualite() {
     }
-
+    public Actualite(Date date, String title, String text) {
+    	this.date = date;
+    	this.title =title;
+    	this.text = text;
+    }
     /**
      * 
      */

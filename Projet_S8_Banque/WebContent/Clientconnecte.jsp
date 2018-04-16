@@ -1,9 +1,6 @@
 <%@ page pageEncoding="UTF-8" %>
 
 
-<!-- login_verify, if it's not user, redirect to index.jsp -->
-<%@include file="/Templates/login_verify.jsp" %>
-
 
 <!DOCTYPE html>
 <html>

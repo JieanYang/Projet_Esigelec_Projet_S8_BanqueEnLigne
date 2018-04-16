@@ -251,6 +251,30 @@ public class UserDao {
 		return false;
 	}
     
+    
+    public int getIdUser(String email, String password) {
+		this.connection();
+    	int retour = 0;
+
+		String sql = "SELECT id_user FROM user WHERE (categorie_user = 'client') and (email = ?) and (password = ?)";
+		try {
+			ps = connection.prepareStatement(sql);
+			ps.setString(1, email);
+			ps.setString(2, password);
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				retour =rs.getInt("id_user");
+				return retour;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			// https://stackoverflow.com/questions/65035/does-finally-always-execute-in-java
+			this.disconnection();
+		}
+		return retour ;
+	}
+    
     /**
      * @param void
      * @return List<User> -> retour

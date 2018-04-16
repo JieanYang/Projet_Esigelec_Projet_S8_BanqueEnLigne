@@ -26,26 +26,21 @@
 
 <div class=jumbotron>
  <div class=container>
-
- </div>
  
-	session.Attribute("id_emmetteur");
-
- 	int transactionList = new ArrayList<Transaction>(); 
-	ID = (INTEGER) session.getAttribute("id_user");
-
+  </div>
+ 
+ 
   <form action="modification" method="post">
   
   
-  if (id =!null){
-  out.systeme{
-  <div class="form-row" style display non>
+  
+  <div class="form-row" >
 	    <div class="form-group col-md-6">
-	      <label for="inputName4">Nom </label>
-	      <input values="+ id +" name="id">
+	      <label for="inputName4">ID</label>
+	      <input value="<%out.println((String)session.getAttribute("id_user")); %>" name="id" disabled >
 	    </div>
-  } 		
-}
+	   </div>
+
 
 	  <div class="form-row">
 	    <div class="form-group col-md-6">
@@ -60,7 +55,7 @@
 	    
 	    <div class="form-group col-md-6">
 	      <label for="inputName4">Mot de passe </label>
-	      <input type="password" class="form-control" name="MDP" id="inputName4" placeholder="XXXX" required>
+	      <input type="password" class="form-control" name="password" id="inputName4" placeholder="XXXX" required>
 	    </div>
 	    
 	    <div class="form-group col-md-6">
@@ -68,10 +63,6 @@
 	      <input type="text" class="form-control" name="telephone" id="inputName4" placeholder="076945XXXX" required>
 	    </div>
 	    
-	  </div>
-	  <div class="form-group">
-	    <label for="inputAddress">Date de Naissance : </label>
-	    <input type="text" class="form-control" name="date" id="inputdate" placeholder="10/10/1990" required>
 	  </div>
 	  
 	  <div class="form-group">

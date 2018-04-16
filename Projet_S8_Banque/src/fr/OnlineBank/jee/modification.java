@@ -16,9 +16,13 @@ import Class.Compte;
 import Class.User;
 import dao.UserDao;
 
+
+
 /**
  * Servlet implementation class modification
  */
+
+
 @WebServlet("/modification")
 public class modification extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -43,10 +47,9 @@ public class modification extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session=request.getSession();
-		//int id_emmetteur=Integer.parseInt(request.getParameter("id"));//il faut recup id_emetteur avec la session
-		int id_client=(Integer) session.getAttribute("id_client");//permet de recup id_emmetteur
 		
+		
+		int id=Integer.parseInt(request.getParameter("id"));
 		String nom=request.getParameter("nom");
 		String prenom=request.getParameter("prenom");
 		String email=request.getParameter("email");
@@ -55,24 +58,13 @@ public class modification extends HttpServlet {
 		String ville=request.getParameter("ville");
 		String pays=request.getParameter("pays");
 		String password=request.getParameter("password");
-		String dateN=request.getParameter("ville");
-		
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy hh:mi:ss");
-		Date dateNaissance = null;
-		try {
-			dateNaissance = (Date) sdf.parse(dateN);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 		User user =new User();
 		UserDao dao = new UserDao();
 		
-		user =dao.getUser(id_client);
+		user =dao.getUser(id);
 		
 		user.setAdresse(adresse);
-		user.setDateNaissance(dateNaissance);
 		user.setEmail(email);
 		user.setNom(nom);
 		user.setPrenom(prenom);
@@ -82,6 +74,9 @@ public class modification extends HttpServlet {
 		user.setVille(ville);
 		
 		dao.updateUser(user); //demande a etre en static
+		
+		
+		response.sendRedirect("Clientconnecte.jsp");
 	}
 
 }
