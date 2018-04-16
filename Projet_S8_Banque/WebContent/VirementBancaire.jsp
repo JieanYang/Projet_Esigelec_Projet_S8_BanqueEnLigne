@@ -25,8 +25,13 @@
  </div>
      <br/>
 <br/>
+<form role="form" action="BordereauServlet" method="post" class="registration-form">
+<button type="submit" class="btn btn-primary" >Faire un virement par cheque</button>
+<br>
+</form>
+
    <div class="form-bottom">  
-<form role="form" action="virement_servlet" method="post" class="registration-form">
+<form role="form" action="BoredereauCheque" method="post" class="registration-form">
   
   
   	
