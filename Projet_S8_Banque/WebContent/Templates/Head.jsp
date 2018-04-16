@@ -102,6 +102,7 @@ if ((String)session.getAttribute("login")=="login"){
 			UserDao userDao = new UserDao();
 			user_login = userDao.getUser(Integer.valueOf(id_user));
 		%>
+
 			<!-- Espace client --> 
 			<a class="btn active" name="name of client" 
 				style="width: auto; display: inline;" href="Clientconnecte.jsp">

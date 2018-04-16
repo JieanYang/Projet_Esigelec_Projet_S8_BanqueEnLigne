@@ -133,12 +133,10 @@ public class virement_servlet extends HttpServlet {
 		}
 
 		float montant = Float.parseFloat(request.getParameter("montant"));
-
-		String message = request.getParameter("message");
-
-		vDAO.virement(type, emetteur, beneficiaire, sDate, sDate_create, montant, message);// fait reference à la
-																							// méthode virement qui se
-																							// trouve dans ma DAO
+		
+		String message= request.getParameter("message");
+		
+		vDAO.virement( type, emetteur, beneficiaire, sDate, sDate_create, montant, message);// fait reference à la méthode virement qui se trouve dans ma DAO
 
 		response.sendRedirect("Clientconnecte.jsp");
 	}

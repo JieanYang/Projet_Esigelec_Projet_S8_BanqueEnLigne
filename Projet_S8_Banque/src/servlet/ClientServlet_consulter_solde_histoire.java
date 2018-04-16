@@ -57,7 +57,7 @@ public class ClientServlet_consulter_solde_histoire extends HttpServlet {
 		response.setCharacterEncoding("big5");		
 		
 		// receive id_client
-		int id_client = Integer.valueOf(request.getParameter("id_client"));
+		int id_client = Integer.valueOf(request.getParameter("id_user"));
 
 		
 		// list Compte et transaction
