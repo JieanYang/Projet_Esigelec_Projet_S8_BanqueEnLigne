@@ -6,8 +6,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Fenetre extends JFrame{
+	private String titre_fenetre;
 	private JPanel p;
-	
+	private int id_client;
+	private int id_compte;
+
 	public Fenetre() {
 		this.init();
 		this.setSize(600,600);
@@ -27,6 +30,31 @@ public class Fenetre extends JFrame{
 		// this.revalidate();
 		this.validate();
 		this.repaint();
+	}
+	
+	public String getTitre_fenetre() {
+		return titre_fenetre;
+	}
+
+	public int getId_client() {
+		return id_client;
+	}
+
+	public int getId_compte() {
+		return id_compte;
+	}
+
+	public void setTitre_fenetre(String titre_fenetre) {
+		this.titre_fenetre = titre_fenetre;
+		this.setTitle(this.titre_fenetre);
+	}
+
+	public void setId_client(int id_client) {
+		this.id_client = id_client;
+	}
+
+	public void setId_compte(int id_compte) {
+		this.id_compte = id_compte;
 	}
 	
 
