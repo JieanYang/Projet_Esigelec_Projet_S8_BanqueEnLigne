@@ -12,15 +12,16 @@
 <!-- Bootstrap 4.0  -->
 <%@include file="Resources/Resources_bootstrap_4.0.html"%>
 <!-- CSS for Head.html -->
- <link rel="stylesheet" href="Resources/Head.css">
- 
+<link rel="stylesheet" href="Resources/Head.css">
+
 <!-- jquery -->
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!-- ??? -->
 <link rel="stylesheet" href="css_script/form.css">
 <!-- Chart -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-	
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
 <title>Cours de la bourse</title>
 </head>
 <body>
@@ -36,6 +37,7 @@
 		ArrayList<String> stringDateList = (ArrayList<String>) request.getAttribute("stringDateList");
 		ArrayList<Integer> listeCour = (ArrayList<Integer>) request.getAttribute("listeCour");
 	%>
+
 	<script>
 		var myChart = document.getElementById('myChart').getContext('2d');
 
@@ -44,13 +46,14 @@
 		var courDeLaBourse = new Chart(myChart, {
 			type : 'line', // bar, horizontalBar, pri, line, doughnut, radar, polarArea
 			data : {
-				labels :
-	<%=stringDateList%>
+				labels :<%-- <%=stringDateList%> --%>
+				[<%for (int i = 0; i < stringDateList.size(); i++) {%>
+					<%="'" + stringDateList.get(i) + "',"%>
+				<%}%>]
 		,
 				datasets : [ {
 					label : 'Dernier cour',
-					data :
-	<%=listeCour%>
+					data :<%=listeCour%>
 		,
 					backgroundColor : '#5eb5ef',
 					borderColor : '#5eb5ef',

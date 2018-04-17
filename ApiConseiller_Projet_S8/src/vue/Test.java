@@ -7,5 +7,4 @@ public class Test {
 		AllPanel allPanel = new AllPanel(mFrame);
 		mFrame.setPanel(allPanel.loginPanel());
 	}
-
 }
