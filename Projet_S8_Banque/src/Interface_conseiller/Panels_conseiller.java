@@ -49,8 +49,12 @@ public class Panels_conseiller {
 		String prenom = message.getPrenom();
 		String problem = message.getPrenom();
 		String date = message.getDate().toString();
-		retour = id+"    "+nom+"    "+prenom+"    "+prenom+"    "+
-		problem+"    "+date;
+		if(message.getReponse() == null || message.getReponse().equals(" ") || message.getReponse().equals("")) {
+			retour = id + "    " + nom + "    " + prenom + "    " + prenom + "    " + problem + "    " + date + "    non lu";
+		}else {
+			retour = id + "    " + nom + "    " + prenom + "    " + prenom + "    " + problem + "    " + date;
+		}
+			
 		return retour;
 	}
 	// Constraints
@@ -230,6 +234,7 @@ public class Panels_conseiller {
 		this.setConstraints(3,2,1,1,0,0,10,layoutConstraints);
 		layout.setConstraints(label_email,layoutConstraints);
 		this.setConstraints(0,3,1,1,0,0,10,layoutConstraints);
+		layoutConstraints.anchor = GridBagConstraints.NORTH;
 		layout.setConstraints(label_problem,layoutConstraints);
 		this.setConstraints(0,4,1,1,0,0,10,layoutConstraints);
 		layout.setConstraints(label_response,layoutConstraints);

@@ -125,7 +125,13 @@ public class PanelConseiller_transactionsUnCompte extends JPanel {
 				case 2: data[i][j] = String.valueOf(this.list_transactionsOneCompte.get(i).getId_compte_emetteur());break;
 				case 3: data[i][j] = String.valueOf(this.list_transactionsOneCompte.get(i).getId_compte_recepteur());break;
 				case 4: data[i][j] = this.list_transactionsOneCompte.get(i).getDate_transaction().toString();break;
-				case 5: data[i][j] = String.valueOf(this.list_transactionsOneCompte.get(i).getSomme());break;
+				case 5: 
+					if (this.list_transactionsOneCompte.get(i).getId_compte_recepteur() == this.fenetre.getId_compte()) {
+						data[i][j] = "+" + String.valueOf(this.list_transactionsOneCompte.get(i).getSomme());
+					}else {
+						data[i][j] = "-" + String.valueOf(this.list_transactionsOneCompte.get(i).getSomme());
+					}
+					break;
 				case 6: data[i][j] = this.list_transactionsOneCompte.get(i).getDescription();break;
 				}
 		}
