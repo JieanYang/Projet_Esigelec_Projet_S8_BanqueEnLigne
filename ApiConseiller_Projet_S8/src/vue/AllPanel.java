@@ -3,7 +3,11 @@ package vue;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
+
 import javax.swing.JTextArea;
+
+import javax.swing.JTable;
+
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -28,7 +32,9 @@ import javax.swing.JTextPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingConstants;
 import javax.swing.border.TitledBorder;
+import javax.swing.table.DefaultTableModel;
 
+import controller.ControleurInfoClient;
 import controller.ControleurListeClient;
 import controller.ControleurLogin;
 import controller.ControleurMenu;
@@ -37,14 +43,18 @@ import dto.Offres;
 import dto.User;
 
 public class AllPanel {
-	
+
 	// the controlers
 	ControleurLogin cLogin = new ControleurLogin();
 	ControleurMenu cMenu = new ControleurMenu();
 	ControleurListeClient cListeClient = new ControleurListeClient();
+
 	
 	//DAO's
 	OffresDAO offreDAO = new OffresDAO();
+
+	ControleurInfoClient cInfoClient = new ControleurInfoClient();
+
 
 	// the main frame
 	protected MainFrame mainFrame;
@@ -57,7 +67,7 @@ public class AllPanel {
 	protected JPanel informationsClientPanel = new JPanel();
 	protected JPanel informationsCompteClientPanel = new JPanel();
 	protected JPanel transactionPanel = new JPanel();
-	
+
 	// Conseiller
 	private User conseiller = new User();
 	
@@ -104,10 +114,12 @@ public class AllPanel {
 		btnConnecxion.setBounds(216, 392, 170, 32);
 		btnConnecxion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 //				if (cLogin.checkCredentials(tFieldEmail.getText(), new String(tFieldPassword.getPassword()))) {// appel la fonction checkCredentials pour vérifier le User dans la BDD
 					conseiller = cMenu.getConseillerInfo(tFieldEmail.getText());//Si le User existe, recupère les informations correspondantes en fonction de l'email utilisé
 					mainFrame.setPanel(menuPanel());//appelle directement la méthode menuPanel()
 //				}
+
 			}
 		});
 		this.loginPanel.add(btnConnecxion);//Ajoute le bouton au panel
@@ -124,7 +136,9 @@ public class AllPanel {
 		lblConnecteSous.setBounds(74, 67, 100, 16);
 		menuPanel.add(lblConnecteSous);
 
+
 		JLabel lblNomConseiller = new JLabel(conseiller.getNom()+" "+conseiller.getPrenom());//Recupère le nom et le prénom de via l'objet Conseiller
+
 		lblNomConseiller.setBounds(186, 67, 225, 16);
 		menuPanel.add(lblNomConseiller);
 
@@ -240,25 +254,27 @@ public class AllPanel {
 		mainFrame.setTitle("Liste des Clients");
 
 		listeClientPanel.setLayout(null);
-		
+
 		Vector<User> userList = cListeClient.getListClient();
-		DefaultListModel<String> dlm = new DefaultListModel<String>();
-		for(User aUser : userList) {
-			dlm.addElement(aUser.getId_user()+" "+aUser.getNom()+" "+aUser.getPrenom()+" "+aUser.getEmail()+" "+aUser.getTelephone());
+
+		String title[] = { "ID", "Nom", "Prenom", "Email", "NumTel" };
+		Object[][] data = {};
+ 
+		DefaultTableModel model = new DefaultTableModel(data, title);
+		JTable table = new JTable(model); 
+		for (User aUser : userList) {
+			model.addRow(new Object[]{aUser.getId_user(), aUser.getNom(), aUser.getPrenom(), aUser.getEmail(), aUser.getTelephone()});
 		}
-		
-		JList<String> list = new JList<String>(dlm);
-		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		list.setBorder(BorderFactory.createTitledBorder("Liste des clients"));
-		JScrollPane scrollPane = new JScrollPane(list);
+
+		JScrollPane scrollPane = new JScrollPane(table);
 		listeClientPanel.add(scrollPane);
-		list.setBounds(71, 76, 457, 415);
-		listeClientPanel.add(list);
+		scrollPane.setBounds(71, 76, 457, 415);
 
 		JButton btnAfficherLesInformations = new JButton("Afficher les informations");
 		btnAfficherLesInformations.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				mainFrame.setPanel(informationsClient());
+				System.out.println(userList.get(table.getSelectedRow()).getId_user());
+				mainFrame.setPanel(informationsClient(userList.get(table.getSelectedRow()).getId_user()));
 			}
 		});
 		btnAfficherLesInformations.setBounds(180, 504, 205, 25);
@@ -294,12 +310,13 @@ public class AllPanel {
 		return listeClientPanel;
 	}
 
-	public JPanel informationsClient() {
+	public JPanel informationsClient(int clientID) {
 
 		mainFrame.setTitle("Informations Client");
-
-		// must make the client data dynamic !!!!!!!!
-		// infoClients.getDataClient(1);
+		
+		User client = new User();
+		client = cInfoClient.getDataClient(clientID);
+		System.out.println(client.getNom());
 
 		informationsClientPanel.setBorder(
 				new TitledBorder(null, "Informations client", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -309,7 +326,7 @@ public class AllPanel {
 		lblPrenom.setBounds(204, 83, 56, 16);
 		informationsClientPanel.add(lblPrenom);
 
-		JLabel lblClientPrenom = new JLabel("Abdoul");
+		JLabel lblClientPrenom = new JLabel(client.getPrenom());
 		lblClientPrenom.setBounds(291, 83, 213, 16);
 		informationsClientPanel.add(lblClientPrenom);
 
@@ -318,7 +335,7 @@ public class AllPanel {
 		lblNom.setBounds(204, 127, 56, 16);
 		informationsClientPanel.add(lblNom);
 
-		JLabel lblClientNom = new JLabel("Mohamed");
+		JLabel lblClientNom = new JLabel(client.getNom());
 		lblClientNom.setBounds(291, 127, 213, 16);
 		informationsClientPanel.add(lblClientNom);
 
@@ -326,7 +343,7 @@ public class AllPanel {
 		lblDateDeNaissance.setBounds(106, 164, 154, 16);
 		informationsClientPanel.add(lblDateDeNaissance);
 
-		JLabel lblDateNaissanceClient = new JLabel("09/09/09");
+		JLabel lblDateNaissanceClient = new JLabel(client.getDateNaissance().toString());
 		lblDateNaissanceClient.setBounds(291, 164, 213, 16);
 		informationsClientPanel.add(lblDateNaissanceClient);
 
@@ -334,7 +351,7 @@ public class AllPanel {
 		lblNewLabel.setBounds(204, 206, 56, 16);
 		informationsClientPanel.add(lblNewLabel);
 
-		JLabel lblEmailClient = new JLabel("abdoul@mail.com");
+		JLabel lblEmailClient = new JLabel(client.getEmail());
 		lblEmailClient.setBounds(291, 206, 213, 16);
 		informationsClientPanel.add(lblEmailClient);
 
@@ -342,7 +359,7 @@ public class AllPanel {
 		lblTelephone.setBounds(150, 249, 110, 16);
 		informationsClientPanel.add(lblTelephone);
 
-		JLabel lblNumTelClient = new JLabel("0909090909");
+		JLabel lblNumTelClient = new JLabel(client.getTelephone());
 		lblNumTelClient.setBounds(291, 249, 213, 16);
 		informationsClientPanel.add(lblNumTelClient);
 
@@ -350,7 +367,7 @@ public class AllPanel {
 		lblAdresse.setBounds(204, 294, 56, 16);
 		informationsClientPanel.add(lblAdresse);
 
-		JLabel lblAdresseClient = new JLabel("154 boefoezkjfl kzqnjae");
+		JLabel lblAdresseClient = new JLabel(client.getAdresse());
 		lblAdresseClient.setBounds(291, 294, 213, 16);
 		informationsClientPanel.add(lblAdresseClient);
 
@@ -358,7 +375,7 @@ public class AllPanel {
 		lblVille.setBounds(204, 340, 56, 16);
 		informationsClientPanel.add(lblVille);
 
-		JLabel lblVilleClient = new JLabel("76100 Rouen");
+		JLabel lblVilleClient = new JLabel(client.getVille());
 		lblVilleClient.setBounds(291, 340, 213, 16);
 		informationsClientPanel.add(lblVilleClient);
 
@@ -366,7 +383,7 @@ public class AllPanel {
 		lblPays.setBounds(204, 384, 56, 16);
 		informationsClientPanel.add(lblPays);
 
-		JLabel lblPaysClient = new JLabel("France");
+		JLabel lblPaysClient = new JLabel(client.getPays());
 		lblPaysClient.setBounds(291, 384, 56, 16);
 		informationsClientPanel.add(lblPaysClient);
 
@@ -441,7 +458,7 @@ public class AllPanel {
 		btnInformationsClient.setBounds(309, 486, 148, 25);
 		btnInformationsClient.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				mainFrame.setPanel(informationsClient());
+//				mainFrame.setPanel(informationsClient());
 			}
 		});
 		informationsCompteClientPanel.add(btnInformationsClient);
@@ -466,21 +483,21 @@ public class AllPanel {
 				.setBorder(new TitledBorder(null, "Virement", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		transactionPanel.setLayout(null);
 
-		JLabel lblCompteDbiter = new JLabel("Compte à débiter");
-		lblCompteDbiter.setBounds(38, 93, 99, 16);
-		transactionPanel.add(lblCompteDbiter);
+		JLabel lblCompteCrditer = new JLabel("Compte à créditer");
+		lblCompteCrditer.setBounds(38, 93, 99, 16);
+		transactionPanel.add(lblCompteCrditer);
 
-		JComboBox cBoxCompteDebiteur = new JComboBox();
-		cBoxCompteDebiteur.setBounds(162, 90, 344, 22);
-		transactionPanel.add(cBoxCompteDebiteur);
+		JComboBox cBoxCompteCrediteur = new JComboBox();
+		cBoxCompteCrediteur.setBounds(162, 90, 344, 22);
+		transactionPanel.add(cBoxCompteCrediteur);
 
 		JLabel lblAvoirDisponible = new JLabel("Avoir disponible : 18 8867 €");
 		lblAvoirDisponible.setBounds(401, 125, 160, 16);
 		transactionPanel.add(lblAvoirDisponible);
 
-		JLabel lblCompteCrditer = new JLabel("Compte à créditer");
-		lblCompteCrditer.setBounds(38, 166, 103, 16);
-		transactionPanel.add(lblCompteCrditer);
+		JLabel lblCompteDbiter = new JLabel("Compte à débiter");
+		lblCompteDbiter.setBounds(38, 166, 103, 16);
+		transactionPanel.add(lblCompteDbiter);
 
 		JTextField tFieldCompteCrediter = new JTextField();
 		tFieldCompteCrediter.setBounds(252, 163, 254, 22);

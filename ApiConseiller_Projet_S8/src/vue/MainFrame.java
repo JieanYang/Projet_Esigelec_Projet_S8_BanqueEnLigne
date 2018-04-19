@@ -15,7 +15,7 @@ public class MainFrame extends JFrame{
 	private static final long serialVersionUID = 1L;
 
 	// all in one Panel
-	private JPanel allPanel = new JPanel();
+	private JPanel panel;
 
 	public MainFrame() {
 		this.setSize(600, 600);
@@ -25,8 +25,8 @@ public class MainFrame extends JFrame{
 	}
 	
 	public void setPanel(JPanel panels) {
-		this.allPanel = panels;
-		this.setContentPane(this.allPanel);
+		this.panel = panels;
+		this.setContentPane(this.panel);
 		this.validate();
 		this.repaint();
 	}

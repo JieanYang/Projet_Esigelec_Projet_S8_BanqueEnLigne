@@ -364,14 +364,14 @@ public class CompteDao {
 	}
     
     
-    public String recupererCode(String email) {
-    	String retour = null;
+    public boolean recupererCode(String code) {
+    	boolean retour = false;
         this.connection();
         
         try {
-            String sql ="SELECT code FROM User WHERE email = ?";
+            String sql ="SELECT code FROM User WHERE code = ?";
             ps = connection.prepareStatement(sql);
-            ps.setString(1, email);
+            ps.setString(1, code);
             
             /**
              * on execute la requete
@@ -381,7 +381,8 @@ public class CompteDao {
             rs = ps.executeQuery();
             // passe a la premiere (et unique) ligne retournee
             if (rs.next()) {
-                retour = rs.getString("code");
+                retour = true;
+                return retour ;
             }
             
         } catch (Exception e) {
@@ -390,7 +391,7 @@ public class CompteDao {
             this.disconnection();
         }
         
-        return retour;
+        return false;
     }
     
     

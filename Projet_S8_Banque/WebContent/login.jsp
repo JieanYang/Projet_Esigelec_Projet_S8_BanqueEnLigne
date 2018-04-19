@@ -1,5 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+<%
+/* if user has logined, we will go to the page Clientconnecte */
+if (session.getAttribute("login") == "login" && session.getAttribute("id_user") != null ){
+	// redirect
+	response.setStatus(response.SC_MOVED_TEMPORARILY);
+	response.setHeader("Location", "/Projet_S8_Banque/Clientconnecte.jsp");
+}
+
+%>
+    
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,17 +23,16 @@
         <title>Bootstrap Login &amp; Register Templates</title>        
         
         <!-- Bootstrap 4.0  -->
-		<%@include file="Resources/Resources_bootstrap_4.0.html" %>
-		
+		<%@include file="Resources/Resources_bootstrap_4.0.html"%>
 		<!-- CSS for Head.html -->
-		<link rel="stylesheet" href="Resources/styles_index.css">
+		 <link rel="stylesheet" href="Resources/Head.css">
 
 
     </head>
 
     <body>
-    
-   		<%@ include file="Templates/Head.jsp" %>
+		<!-- head.html -->
+		<%@ include file="Templates/Head.jsp"%>
 
         <!-- Top content -->
         <div class="top-content">

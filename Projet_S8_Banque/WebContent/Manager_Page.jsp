@@ -17,36 +17,26 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css_script/styles_index.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
+<!-- Bootstrap 4.0  -->
+<%@include file="Resources/Resources_bootstrap_4.0.html"%>
+<!-- Css file -->
+<link rel="stylesheet" href="Resources/style_manager.css">
 	
 	<a href="Note_actualités.jsp"> <input type="button" value="Ajouter une actualité"> </a> 
 </head>
-<body>
 
-<body class="container backC">
+<body>
 	<!-- head.html -->
 	<%@ include file="Templates/Manager.html" %>
 
-
+    <div class="container">
+        <div class="row jumbotron">
+            <h2>Bienvenue sur votre page</h2>
+        </div>
+    </div>
      
-     
 
-<div class=jumbotron>
- <div class=container>
-
- </div>
-     <br/>
-<br/>
-
-<div class="container" >
-
-  <h2>Bienvenue sur votre page</h2>
-  
-  <br>
-  <br>
  <!--  <a href="Note_actualités.jsp"> <input type="button" value="Ajouter une actualité"> </a>  -->
+
+</body>
+</html>

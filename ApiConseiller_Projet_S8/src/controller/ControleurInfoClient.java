@@ -2,14 +2,15 @@ package controller;
 
 import java.util.ArrayList;
 
+import dao.UserDao;
+import dto.User;
+
 public class ControleurInfoClient {
 	
-	public ArrayList<String> clientDatas = new ArrayList<String>();
+	public UserDao userDAO = new UserDao();
 	
-	public ArrayList<String> getDataClient(int id_user) {
-		
-		
-		return clientDatas;
+	public User getDataClient(int clientID) {	
+		return userDAO.getClientInfo(clientID);
 	}
 
 }

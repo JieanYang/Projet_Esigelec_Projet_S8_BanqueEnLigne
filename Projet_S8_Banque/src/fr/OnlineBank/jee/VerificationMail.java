@@ -44,14 +44,14 @@ public class VerificationMail extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String code = request.getParameter("code");
-		String email="ndiayesouley@live.fr";
-		String code_generee= monDAO.recupererCode(email);
+		
+		boolean reponse= monDAO.recupererCode(code);
 		String resultat =null ;
 		String validation = null ;
 	
 		
 		
-		if(code.equals(code_generee)==true) {
+		if(reponse==true) {
 			request.getRequestDispatcher("pageCompteVerifie.jsp").forward(request, response);
 			
 		}else {
