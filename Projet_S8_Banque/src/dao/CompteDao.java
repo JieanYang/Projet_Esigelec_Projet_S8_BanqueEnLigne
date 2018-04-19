@@ -395,6 +395,57 @@ public class CompteDao {
     }
     
     
+    public float soldeEpargne(int id_user) {
+    	float retour = 0;
+        this.connection();
+        
+        try {
+            String sql ="SELECT solde FROM compte WHERE id_compte=2 AND id_user = ?";
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, id_user);
+            
+            /**
+             * on execute la requete
+             * rs contient un pointeur situe juste avant la premiere ligne retournee
+             * 
+             */
+            rs = ps.executeQuery();
+            // passe a la premiere (et unique) ligne retournee
+            if (rs.next()) {
+                retour = rs.getFloat("solde");
+                return retour ;
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            this.disconnection();
+        }
+        
+        return 0;
+    }
+    
+    public boolean modifierSolde(float solde) {
+		this.connection();
+    	accesBDD.connection();
+		// write the code here DONT FORGET TO DISCONNECT AFTER CREATING THE ACCOUNT
+		try {
+			String sql = "UPDATE compte SET solde=? WHERE id_compte=2 ";
+			ps = connection.prepareStatement(sql);
+			ps.setFloat(1, solde);
+		
+			
+			ps.executeUpdate();
+		 		} catch (Exception e) {
+	            e.printStackTrace();
+	        }finally {
+	            this.disconnection();
+	        }
+		return false;
+	}
+    
+    
+    
     
     
 }

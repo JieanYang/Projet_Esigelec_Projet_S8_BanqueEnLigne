@@ -1,5 +1,5 @@
 package servlet;
-
+import java.util.TimerTask;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -7,9 +7,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Timer;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,6 +29,7 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 
 import Class.Compte;
+import Class.MyTask;
 import Class.Transaction;
 import dao.CompteDao;
 import dao.TransactionDao;
@@ -38,9 +41,7 @@ import dao.TransactionDao;
 public class ClientServlet_consulter_solde_histoire extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	
-	
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -164,12 +165,18 @@ public class ClientServlet_consulter_solde_histoire extends HttpServlet {
 			// If we want to extractCSV, we will pass the data to the methode extractCSV
 			this.extractCSV(request, response, listTransaction_compteMap, listId_compteMap);
 		}
+		
+		Timer t = new Timer();
+	     MyTask mTask = new MyTask(compteDao.soldeEpargne(id_client));
+	     // This task is scheduled to run every 10 seconds
 
-
+	     t.scheduleAtFixedRate(mTask, 0, 60000);
+		
 		 // go to a page specific
 		 RequestDispatcher rd;
 		 rd = getServletContext().getRequestDispatcher("/clientPage_consulter_solde_histoireTransactions.jsp");
 		 rd.forward(request, response);	
+
 	}
 
 	
