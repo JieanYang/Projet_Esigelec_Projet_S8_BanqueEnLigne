@@ -79,15 +79,6 @@ public class UserDao {
 	 * @param user
 	 * @return
 	 */
-	public User addUser(User user) {
-		// TODO implement here
-		return null;
-	}
-
-	/**
-	 * @param user
-	 * @return
-	 */
 	public User updateUser(User user) {
 		// TODO implement here
 		return null;
@@ -98,14 +89,13 @@ public class UserDao {
 	 */
 	public Vector<User> getListUser() {
 		Vector<User> listUser = new Vector<User>();
-		sql = "SELECT * FROM `user` ORDER BY `user`.`nom` ASC";
+		sql = "SELECT * FROM `user` WHERE categorie_user = 'client' ORDER BY `user`.`nom` ASC";
 		try {
 			preparedStatement = ConnectionBDD.setConnection().prepareStatement(sql);
 			resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				User user = new User();
 				user.setId_user(resultSet.getInt("id_user"));
-				// user.setCategorie_user(resultSet.getString("categorie_user"));
 				user.setNom(resultSet.getString("nom"));
 				user.setPrenom(resultSet.getString("prenom"));
 				user.setEmail(resultSet.getString("email"));
@@ -126,13 +116,30 @@ public class UserDao {
 		return listUser; // return a list Message
 	}
 
-	/**
-	 * @param user
-	 * @return
-	 */
-	public int deleteUser(User user) {
-		// TODO implement here
-		return 0;
+	public User getClientInfo(int clientID) {
+		User user = new User();
+		sql = "SELECT * FROM `user` WHERE id_user = ? ";
+		try {
+			preparedStatement = ConnectionBDD.setConnection().prepareStatement(sql);
+			preparedStatement.setInt(1, clientID);
+			resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+			user.setId_user(resultSet.getInt("id_user"));
+			user.setNom(resultSet.getString("nom"));
+			user.setPrenom(resultSet.getString("prenom"));
+			user.setEmail(resultSet.getString("email"));
+			user.setAdresse(resultSet.getString("adresse"));
+			user.setTelephone(resultSet.getString("telephone"));
+			user.setVille(resultSet.getString("ville"));
+			user.setPays(resultSet.getString("pays"));
+			user.setDateNaissance(resultSet.getDate("dateNaissance"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			ConnectionBDD.closeConnection();
+		}
+		return user;
 	}
 
 }

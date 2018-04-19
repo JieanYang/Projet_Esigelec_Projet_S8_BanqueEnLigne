@@ -4,7 +4,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import dto.Compte;
@@ -73,64 +75,150 @@ public class TransactionDao {
 		return listAccount;
 	}
 
-    /**
-     * maybe make this method boolean ? or make it so that it return 1 if the table modification is done ?
-     * 
-     * @param idCompteDebite
-     * @param idCompteCredite
-     * @param somme
-     * @param description
-     */
-    public void addTransaction(int idCompteDebite, int idCompteCredite, float somme, String description) {
-    	// put the sql statement here
-        sql = "Put the sql statement here";
-		try {
-			preparedStatement = connectionAccess.setConnection().prepareStatement(sql);
-			// add sql parameter here
-			preparedStatement.setInt(1, idCompteDebite);
-			ResultSet resultSet = preparedStatement.executeQuery();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}finally {
-			connectionAccess.closeConnection();
-		}
-    }
+	public Transaction addTransaction(Transaction transaction) {
+        Transaction retour = null;
+        int success = 0;
+        String sql ="INSERT INTO Transaction(categorie_transaction, id_compte_emetteur, id_compte_recepteur, date_transaction, date_create, somme, description)"
+                + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+        try {
+            preparedStatement = ConnectionBDD.setConnection().prepareStatement(sql);
+            preparedStatement.setString(1, "xxxx");
+            preparedStatement.setInt(2, transaction.getId_compte_emetteur());
+            preparedStatement.setInt(3, transaction.getId_compte_recepteur());
+            
+            preparedStatement.setTimestamp(4, transaction.getDate_transaction());
+            // date_create is created automatically
+            Date utildate = new Date();         
+        	Timestamp sqldate = new Timestamp(utildate.getTime());  
+            preparedStatement.setTimestamp(5, sqldate);
+            
+            preparedStatement.setFloat(6, transaction.getSomme());
+            preparedStatement.setString(7, transaction.getDescription());
+            
+            /*
+             * Execute the sql to add a new transaction
+             * If everything work, return int 1
+             */
+            success = preparedStatement.executeUpdate();
+            
+            /**
+             * After success to add Transaction
+             * we will find the Transaction we added by categorie_transaction='xxxx', 
+             * id_compte_emetteur and id_compte_recepteur
+             * 
+             */
+            if (success == 1) {
+                
+                sql = "SELECT id_transaction FROM Transaction WHERE categorie_transaction='xxxx' AND id_compte_emetteur=? AND id_compte_recepteur=?";
+                preparedStatement = ConnectionBDD.setConnection().prepareStatement(sql);
+                preparedStatement.setInt(1, transaction.getId_compte_emetteur());
+                preparedStatement.setInt(2, transaction.getId_compte_recepteur());
+                
+                resultSet = preparedStatement.executeQuery();
 
-    /**
-     * this method will allow someone to cancel a transaction ?
-     * 
-     * @param transaction 
-     * @return
+                if(resultSet.next()) {
+                    int id_transaction = resultSet.getInt("id_transaction");
+                    retour = this.getTransaction(id_transaction);
+                    // retour avec categorie_transaction = 'xxxx', reset categorie_transaction
+                    retour.setCategorie_transaction(transaction.getCategorie_transaction());
+                    retour = this.updateTransaction(retour);
+                }
+            }else if (success == 0) {
+                retour = null;
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+        	ConnectionBDD.closeConnection();
+        }
+        
+        return retour; // return an instance of Class Transaction
+    }
+	
+	/**
+     * @param Class Transaction -> transaction 
+     * @return Class Transaction -> retour
      */
     public Transaction updateTransaction(Transaction transaction) {
-        // TODO implement here
-        return null;
+        Transaction retour = null;
+        int success = 0;
+        String sql ="UPDATE Transaction SET categorie_transaction=?, id_compte_emetteur=?, id_compte_recepteur=?," +
+    			" date_transaction=?, date_create=?, somme=?, description=? WHERE id_transaction=?";
+        try {
+        	preparedStatement = ConnectionBDD.setConnection().prepareStatement(sql);
+            preparedStatement.setString(1, transaction.getCategorie_transaction());
+            
+            preparedStatement.setInt(2, transaction.getId_compte_emetteur());
+            preparedStatement.setInt(3, transaction.getId_compte_recepteur());
+            
+            preparedStatement.setTimestamp(4, transaction.getDate_transaction());
+            preparedStatement.setTimestamp(5, transaction.getDate_create());
+            
+            preparedStatement.setFloat(6, transaction.getSomme());
+            preparedStatement.setString(7, transaction.getDescription());
+            
+            preparedStatement.setInt(8, transaction.getId_transaction());
+            
+            /*
+             * Execute the sql to add a new transaction
+             * If everything work, return int 1
+             */
+            success = preparedStatement.executeUpdate(); // if everything good work, retourn integer 1
+            
+            /**
+             * After success to update Transaction
+             * we will find the Transaction we updated by the field id_transaction
+             * Because the field id_transaction is unique in the BDD
+             * we use the method .getTransaction(int id) to find the transaction in BDD
+             * 
+             */
+            if (success == 1 ) {
+                retour = this.getTransaction(transaction.getId_transaction());
+            } else if(success == 0) {
+                retour = null;
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+        	ConnectionBDD.closeConnection();
+        }
+        
+        return retour; // return an instance of Class Transaction
     }
-
+    
     /**
-     * @param id 
-     * @return
+     * @param int -> id
+     * @return Class Transaction -> retour
      */
     public Transaction getTransaction(int id) {
-        // TODO implement here
-        return null;
-    }
-
-    /**
-     * @return
-     */
-    public List<Transaction> getListTransaction() {
-        // TODO implement here
-        return null;
-    }
-
-    /**
-     * @param transaction 
-     * @return
-     */
-    public int deleteTransaction(Transaction transaction) {
-        // TODO implement here
-        return 0;
+    	Transaction retour = null;
+    	String sql ="SELECT * FROM Transaction WHERE id_transaction = ?";
+        
+        try {
+            preparedStatement = ConnectionBDD.setConnection().prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            
+            /**
+             * on execute la requete
+             * resultSet contient un pointeur situe juste avant la premiere ligne retournee
+             * 
+             */
+            resultSet = preparedStatement.executeQuery();
+            // passe a la premiere (et unique) ligne retournee
+            if (resultSet.next()) {
+                retour = new Transaction(resultSet.getInt("id_transaction"), resultSet.getString("categorie_transaction"), resultSet.getInt("id_compte_emetteur"),
+                        resultSet.getInt("id_compte_recepteur"), resultSet.getTimestamp("date_transaction"), resultSet.getTimestamp("date_create"),
+                        resultSet.getFloat("somme"), resultSet.getString("description"));
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+        	ConnectionBDD.closeConnection();
+        }
+        return retour;
     }
 
 }
