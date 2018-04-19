@@ -93,6 +93,14 @@ CREATE TABLE `ServicesDeLaBanque` (
     PRIMARY KEY (`id_service`)
 ) ENGINE=InnoDB;
 
+CREATE TABLE `actions` (
+  `id_user` int(11) NOT NULL,
+  `entreprise` varchar(30) NOT NULL,
+  `prixachat` int(11) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB;
+
+
 ALTER TABLE `Compte` ADD FOREIGN KEY (`id_user`) REFERENCES `User`(`id_user`);
 ALTER TABLE `Transaction` ADD FOREIGN KEY (`id_compte_emetteur`) REFERENCES `Compte`(`id_compte`);
 ALTER TABLE `Transaction` ADD FOREIGN KEY (`id_compte_recepteur`) REFERENCES `Compte`(`id_compte`);
