@@ -330,6 +330,30 @@
 											"width": 218.6689453125,
 											"height": 13,
 											"autoResize": false
+										},
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAFi3jCL0FijNZ0=",
+											"_parent": {
+												"$ref": "AAAAAAFiZ+3nh0y9TQU="
+											},
+											"model": {
+												"$ref": "AAAAAAFi3jCLUligMpM="
+											},
+											"visible": true,
+											"enabled": true,
+											"lineColor": "#000000",
+											"fillColor": "#ffffff",
+											"fontColor": "#000000",
+											"font": "Arial;13;0",
+											"showShadow": true,
+											"containerChangeable": false,
+											"containerExtending": false,
+											"left": 29,
+											"top": 233,
+											"width": 218.6689453125,
+											"height": 13,
+											"autoResize": false
 										}
 									],
 									"visible": true,
@@ -344,7 +368,7 @@
 									"left": 24,
 									"top": 63,
 									"width": 228.6689453125,
-									"height": 173,
+									"height": 188,
 									"autoResize": false
 								}
 							],
@@ -360,7 +384,7 @@
 							"left": 24,
 							"top": 40,
 							"width": 228.6689453125,
-							"height": 196,
+							"height": 211,
 							"autoResize": false,
 							"nameLabel": {
 								"$ref": "AAAAAAFiZ+3nh0y89mg="
@@ -1691,7 +1715,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 157,
-									"top": 266,
+									"top": 274,
 									"width": 12.2890625,
 									"height": 13,
 									"autoResize": false,
@@ -1722,7 +1746,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 161,
-									"top": 254,
+									"top": 269,
 									"width": 7.22998046875,
 									"height": 13,
 									"autoResize": false,
@@ -1787,7 +1811,7 @@
 								"$ref": "AAAAAAFiZ+3nh0y7VLM="
 							},
 							"lineStyle": 2,
-							"points": "149:235;149:312",
+							"points": "149:250;149:312",
 							"nameLabel": {
 								"$ref": "AAAAAAFiaAScm06eukU="
 							},
@@ -2398,11 +2422,25 @@
 								"$ref": "AAAAAAFiZ+3nh0y5sNc="
 							},
 							"name": "dateNaissance",
-							"type": "DATE",
-							"length": 0,
+							"type": "VARCHAR",
+							"length": "15",
 							"primaryKey": false,
 							"foreignKey": false,
 							"nullable": true,
+							"unique": false
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAFi3jCLUligMpM=",
+							"_parent": {
+								"$ref": "AAAAAAFiZ+3nh0y5sNc="
+							},
+							"name": "code",
+							"type": "INTEGER",
+							"length": 0,
+							"primaryKey": false,
+							"foreignKey": false,
+							"nullable": false,
 							"unique": false
 						}
 					]
@@ -2985,7 +3023,7 @@
 							"length": 0,
 							"primaryKey": false,
 							"foreignKey": false,
-							"nullable": false,
+							"nullable": true,
 							"unique": false
 						},
 						{

@@ -20,6 +20,7 @@ CREATE TABLE `User` (
     `pays` VARCHAR(15),
     `password` VARCHAR(30) NOT NULL,
     `dateNaissance` VARCHAR(15),
+    `code` INTEGER NOT NULL,
     PRIMARY KEY (`id_user`)
 ) ENGINE=InnoDB;
 
