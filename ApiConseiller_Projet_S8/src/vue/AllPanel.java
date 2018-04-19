@@ -3,7 +3,11 @@ package vue;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
+
+import javax.swing.JTextArea;
+
 import javax.swing.JTable;
+
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -34,6 +38,8 @@ import controller.ControleurInfoClient;
 import controller.ControleurListeClient;
 import controller.ControleurLogin;
 import controller.ControleurMenu;
+import dao.OffresDAO;
+import dto.Offres;
 import dto.User;
 
 public class AllPanel {
@@ -42,13 +48,20 @@ public class AllPanel {
 	ControleurLogin cLogin = new ControleurLogin();
 	ControleurMenu cMenu = new ControleurMenu();
 	ControleurListeClient cListeClient = new ControleurListeClient();
+
+	
+	//DAO's
+	OffresDAO offreDAO = new OffresDAO();
+
 	ControleurInfoClient cInfoClient = new ControleurInfoClient();
+
 
 	// the main frame
 	protected MainFrame mainFrame;
 
 	// the panels
 	protected JPanel loginPanel = new JPanel();
+	protected JPanel offrePanel = new JPanel();
 	protected JPanel menuPanel = new JPanel();
 	protected JPanel listeClientPanel = new JPanel();
 	protected JPanel informationsClientPanel = new JPanel();
@@ -57,6 +70,9 @@ public class AllPanel {
 
 	// Conseiller
 	private User conseiller = new User();
+	
+	//Offre
+	private Offres offre = new Offres();
 
 	/**
 	 * Create the panel.
@@ -98,16 +114,17 @@ public class AllPanel {
 		btnConnecxion.setBounds(216, 392, 170, 32);
 		btnConnecxion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// if (cLogin.checkCredentials(tFieldEmail.getText(), new
-				// String(tFieldPassword.getPassword()))) {
-				// conseiller = cMenu.getConseillerInfo(tFieldEmail.getText());
-				mainFrame.setPanel(menuPanel());
-				// }
+
+//				if (cLogin.checkCredentials(tFieldEmail.getText(), new String(tFieldPassword.getPassword()))) {// appel la fonction checkCredentials pour vérifier le User dans la BDD
+					conseiller = cMenu.getConseillerInfo(tFieldEmail.getText());//Si le User existe, recupère les informations correspondantes en fonction de l'email utilisé
+					mainFrame.setPanel(menuPanel());//appelle directement la méthode menuPanel()
+//				}
+
 			}
 		});
-		this.loginPanel.add(btnConnecxion);
+		this.loginPanel.add(btnConnecxion);//Ajoute le bouton au panel
 
-		return this.loginPanel;
+		return this.loginPanel; //Return
 	}
 
 	public JPanel menuPanel() {
@@ -119,7 +136,9 @@ public class AllPanel {
 		lblConnecteSous.setBounds(74, 67, 100, 16);
 		menuPanel.add(lblConnecteSous);
 
-		JLabel lblNomConseiller = new JLabel(conseiller.getNom() + " " + conseiller.getPrenom());
+
+		JLabel lblNomConseiller = new JLabel(conseiller.getNom()+" "+conseiller.getPrenom());//Recupère le nom et le prénom de via l'objet Conseiller
+
 		lblNomConseiller.setBounds(186, 67, 225, 16);
 		menuPanel.add(lblNomConseiller);
 
@@ -133,7 +152,8 @@ public class AllPanel {
 		});
 		menuPanel.add(btnAfficherListeClient);
 
-		JButton btnAfficherMessage = new JButton("Voir les messages clients");
+		
+		JButton btnAfficherMessage = new JButton("Voir les messages client");
 		btnAfficherMessage.setBounds(177, 235, 246, 25);
 		// btnAfficherMessage.addActionListener(new ActionListener() {
 		//
@@ -142,10 +162,93 @@ public class AllPanel {
 		// }
 		// });
 		menuPanel.add(btnAfficherMessage);
+		
+		
+		
+		/************************************************************************/
+		
+		
+		/*
+		 * BUTTON AJOUTER OFFRES
+		 */
+		
+		JButton btnAjouterOffre = new JButton("Ajouter les offres");
+		btnAjouterOffre.setBounds(177, 300, 246, 25);
+		btnAjouterOffre.addActionListener(new ActionListener() {
 
-		return menuPanel;
+			public void actionPerformed(ActionEvent e) {
+				
+				mainFrame.setPanel(offrePanel());// redirige sur offre panel
+			}
+		});
+		menuPanel.add(btnAjouterOffre);// ajouter le bouton créer au menu
+
+		return menuPanel;// return l'ensemble du menu
+	}
+	
+	
+	
+	/*
+	 * OFFRES
+	 */
+	public JPanel offrePanel() {
+
+		mainFrame.setTitle("Offres");
+
+		this.offrePanel.setLayout(null);
+
+		JLabel lbltitre = new JLabel("Titre :");// ecrit le label titre
+		lbltitre.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lbltitre.setBounds(185, 172, 116, 32);
+		offrePanel.add(lbltitre);
+
+		JTextField tFieldtitre = new JTextField();// ZONE DE TEXT
+		tFieldtitre.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		tFieldtitre.setBounds(185, 217, 270, 32);
+		offrePanel.add(tFieldtitre);
+		tFieldtitre.setColumns(10);
+
+		JLabel lbldesc = new JLabel("Description :");
+		lbldesc.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lbldesc.setBounds(185, 281, 170, 32);
+		offrePanel.add(lbldesc);
+
+		JTextArea tFielddesc = new JTextArea(2, 10);
+		tFielddesc.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		tFielddesc.setBounds(185, 326, 232, 32);
+		offrePanel.add(tFielddesc);
+		tFielddesc.setColumns(10);
+
+		JButton btnAjouter = new JButton("Ajouter");
+		btnAjouter.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnAjouter.setBounds(216, 392, 170, 32);
+		btnAjouter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (offreDAO.addOffre(tFieldtitre.getText(), tFielddesc.getText())) {// appel la fonction addoffres pour ajouter les offres dans la BDD, envoi V si ajouter et F si c'est pas le cas
+					//offre = cMenu.getConseillerInfo(tFieldEmail.getText());//Si le User existe, recupère les informations correspondantes en fonction de l'email utilisé
+					mainFrame.setPanel(loginPanel());//appelle directement la méthode loginPanel() après qu'on ai ajouter dans la BDD
+				}
+			}
+		});
+		this.offrePanel.add(btnAjouter);//Ajoute le bouton au panel
+
+		return this.offrePanel; //Return
 	}
 
+	
+	
+	
+
+	
+	/****************************************************************/
+	
+	
+	
+	
+	
+	
+	
+	
 	public JPanel listeClientPanel() {
 
 		mainFrame.setTitle("Liste des Clients");
