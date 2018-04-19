@@ -36,8 +36,8 @@ public class MainControleur {
 			mFrame.setPanel(loginPanel);
 	}
 	
-	public static void menuPanel(String email) {
-		menuPanel = new Menu(email);
+	public static void menuPanel() {
+		menuPanel = new Menu();
 			mFrame.setPanel(menuPanel);
 	}
 	

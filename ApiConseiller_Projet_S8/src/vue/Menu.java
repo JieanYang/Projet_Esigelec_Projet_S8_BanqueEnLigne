@@ -7,21 +7,20 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import controller.ControleurMenu;
 import controller.MainControleur;
-import dto.User;
 
 public class Menu extends JPanel {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected static MainFrame mainFrame;
-	
-	// controler
-	ControleurMenu cMenu = new ControleurMenu();
 
 	/**
 	 * Create the panel.
 	 */
-	public Menu(String email) {
+	public Menu() {
 
 		this.setSize(600, 600);
 		this.setLayout(null);

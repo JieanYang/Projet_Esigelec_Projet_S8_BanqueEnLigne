@@ -214,7 +214,6 @@ class MousePolice_PanelConseiller_comptesClient extends PanelConseiller_comptesC
 	}
 	
 	
-	
 	@SuppressWarnings("static-access")
 	public void mouseClicked(MouseEvent arg0) {
 		String text = this.getText(arg0.getSource().toString());

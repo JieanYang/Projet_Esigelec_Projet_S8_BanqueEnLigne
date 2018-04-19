@@ -86,9 +86,13 @@ public class Virement extends JPanel {
 		JButton btnValider = new JButton("Valider");
 		btnValider.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				cVirement.addTransac(Integer.parseInt(tFieldCompteDebiter.getText()), listCompte.get(cBoxCompteCrediteur.getSelectedIndex()).getId_compte(), Integer.parseInt(tFieldMotant.getText()), message.getText());
-				JOptionPane.showMessageDialog(frame,"Virement effectué");
-				MainControleur.menuPanel(MainControleur.conseiller.getEmail());
+				if(cVirement.checkInput(tFieldCompteDebiter.getText(), tFieldMotant.getText())) {
+					cVirement.addTransac(Integer.parseInt(tFieldCompteDebiter.getText()), listCompte.get(cBoxCompteCrediteur.getSelectedIndex()).getId_compte(), Float.parseFloat(tFieldMotant.getText()), message.getText());
+					JOptionPane.showMessageDialog(frame,"Virement effectué");
+					MainControleur.menuPanel();
+				}else {
+					JOptionPane.showMessageDialog(frame,cVirement.getMessage());
+				}
 			}
 		});
 		btnValider.setBounds(317, 478, 139, 25);

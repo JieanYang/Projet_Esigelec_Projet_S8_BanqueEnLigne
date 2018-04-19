@@ -91,7 +91,6 @@ public class TransactionDao {
             Date utildate = new Date();         
         	Timestamp sqldate = new Timestamp(utildate.getTime());  
             preparedStatement.setTimestamp(5, sqldate);
-            
             preparedStatement.setFloat(6, transaction.getSomme());
             preparedStatement.setString(7, transaction.getDescription());
             

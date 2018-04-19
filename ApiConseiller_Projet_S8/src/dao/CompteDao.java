@@ -99,21 +99,11 @@ public class CompteDao {
         Compte retour = null;
         int success = 0;
         
+        String sql ="UPDATE `compte` SET `solde` = ? WHERE `compte`.`id_compte` = ?";
         try {
-            String sql ="UPDATE Compte SET id_user=?, categorie_compte=?, etat=?, solde=?, date_create=?, date_delete=? WHERE id_compte=?";
             preparedStatement = ConnectionBDD.setConnection().prepareStatement(sql);
-            preparedStatement.setInt(1, compte.getId_user());
-            preparedStatement.setString(2, compte.getCategorie_compte());
-            preparedStatement.setString(3, compte.getEtat());
-            preparedStatement.setFloat(4, compte.getSolde());
-            preparedStatement.setDate(5, (java.sql.Date) compte.getDate_create());
-            preparedStatement.setDate(6, (java.sql.Date) compte.getDate_delete());
-            preparedStatement.setInt(7, compte.getId_compte());
-            
-            /*
-             * Execute the sql to add a new compte
-             * If everything work, return int 1
-             */
+            preparedStatement.setFloat(1, compte.getSolde());
+            preparedStatement.setInt(2, compte.getId_compte());
             success = preparedStatement.executeUpdate(); // if everything good work, retourn integer 1
             
             /**
@@ -145,16 +135,10 @@ public class CompteDao {
     public Compte getCompte(int id) {
         Compte retour = null;
         
+        String sql ="SELECT * FROM Compte WHERE id_compte = ?";
         try {
-            String sql ="SELECT * FROM Compte WHERE id_compte = ?";
             preparedStatement = ConnectionBDD.setConnection().prepareStatement(sql);
             preparedStatement.setInt(1, id);
-            
-            /**
-             * on execute la requete
-             * resultSet contient un pointeur situe juste avant la premiere ligne retournee
-             * 
-             */
             resultSet = preparedStatement.executeQuery();
             // passe a la premiere (et unique) ligne retournee
             if (resultSet.next()) {

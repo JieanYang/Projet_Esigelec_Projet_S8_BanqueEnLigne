@@ -35,8 +35,11 @@ public class PanelConseiller_responseOfMessage extends JPanel {
 	PanelConseiller_responseOfMessage() {}
 	PanelConseiller_responseOfMessage(Fenetre fenetre) {
 		PanelConseiller_responseOfMessage.fenetre = fenetre;
+		// data acces
 		this.id_message = PanelConseiller_responseOfMessage.fenetre.getId_message();
+		// control
 		this.initiate_data();
+		// vue
 		this.initiate_PanelConseiller_responseOfMessage();
 	}
 	private void initiate_PanelConseiller_responseOfMessage() {
@@ -239,12 +242,14 @@ class MousePolice_PanelConseiller_responseOfMessage extends PanelConseiller_resp
 		String text = this.getText(arg0.getSource().toString());
 		// System.out.println(text);
 		if (text.equals("response")) {
+			// update message table in the database
 			System.out.println("response_responseOfMessage");
 			super.message.setReponse(super.textField_response.getText());
 			MessageDao messageDao = new MessageDao();
 			messageDao.updateMessage(super.message);
 			
 		}else if (text.equals("return")) {
+			// return to the message view
 			super.fenetre.setPanel(new PanelConseiller_listOfMessage(super.fenetre));
 		}
 	}

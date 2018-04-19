@@ -13,7 +13,6 @@
 <!-- CSS for Head.html -->
 <link rel="stylesheet" href="Resources/Head.css">
 
-
 <title>Accueil</title>
 </head>
 <body>

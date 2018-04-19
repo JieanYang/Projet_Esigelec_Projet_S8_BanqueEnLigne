@@ -6,26 +6,25 @@ import java.util.*;
  */
 public class Compte {
 	
-    private int id_compte;
-    private int id_user;
-    private String categorie_compte;
-    private String etat;
-    private float solde;
-    private Date date_create;
-    private Date date_delete;
+	
+	/**
+     * Default constructor
+     */
+    public Compte(int id_compte, int id_user, String categorie_compte, String etat, float solde, Date date_create, Date date_delete) {
+    	this.id_compte = id_compte;
+    	this.id_user = id_user;
+    	this.categorie_compte = categorie_compte;
+    	this.etat = etat;
+    	this.solde = solde;
+    	this.date_create = date_create;
+    	this.date_delete = date_delete;
+    }
     
-    public Compte(int id_compte, int id_user, String categorie_compte, String etat, float solde, Date date_create,
-			Date date_delete) {
-		this.id_compte = id_compte;
-		this.id_user = id_user;
-		this.categorie_compte = categorie_compte;
-		this.etat = etat;
-		this.solde = solde;
-		this.date_create = date_create;
-		this.date_delete = date_delete;
+    public Compte() {
+		
 	}
 
-	public int getId_compte() {
+    public int getId_compte() {
 		return id_compte;
 	}
 
@@ -80,5 +79,41 @@ public class Compte {
 	public void setDate_delete(Date date_delete) {
 		this.date_delete = date_delete;
 	}
+
+
+    /**
+     * 
+     */
+    private int id_compte;
+
+    /**
+     * 
+     */
+    private int id_user;
+
+    /**
+     * 
+     */
+    private String categorie_compte;
+
+    /**
+     * 
+     */
+    private String etat;
+
+    /**
+     * 
+     */
+    private float solde;
+
+    /**
+     * 
+     */
+    private Date date_create;
+
+    /**
+     * 
+     */
+    private Date date_delete;
 
 }
