@@ -10,6 +10,7 @@ public class Fenetre extends JFrame{
 	private JPanel p;
 	private int id_client;
 	private int id_compte;
+	private int id_message;
 
 	public Fenetre() {
 		this.init();
@@ -36,25 +37,33 @@ public class Fenetre extends JFrame{
 		return titre_fenetre;
 	}
 
-	public int getId_client() {
-		return id_client;
-	}
-
-	public int getId_compte() {
-		return id_compte;
-	}
-
 	public void setTitre_fenetre(String titre_fenetre) {
 		this.titre_fenetre = titre_fenetre;
 		this.setTitle(this.titre_fenetre);
 	}
 
+	public int getId_client() {
+		return id_client;
+	}
+	
 	public void setId_client(int id_client) {
 		this.id_client = id_client;
+	}
+	
+	public int getId_compte() {
+		return id_compte;
 	}
 
 	public void setId_compte(int id_compte) {
 		this.id_compte = id_compte;
+	}
+	
+	public int getId_message() {
+		return id_message;
+	}
+
+	public void setId_message(int id_message) {
+		this.id_message = id_message;
 	}
 	
 
