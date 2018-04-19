@@ -37,17 +37,9 @@ public class BordereauServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
-		String fileName = "bordereaucheque.pdf";
-		String path = getServletContext().getRealPath("/")+"Image/"+fileName;
+		String fileName = "bordereaucheque.jpg";
+		String path = getServletContext().getRealPath("/")+"Image\\"+fileName;
+		System.out.println(path);
 		
 		// Set MIME type of file 
 		response.setContentType(getServletContext().getMimeType(fileName)); 
@@ -75,8 +67,44 @@ public class BordereauServlet extends HttpServlet {
 		System.out.println("telechargement éffectué");
 		
 		response.sendRedirect("Clientconnecte.jsp");
-		
-		doGet(request, response);
 	}
+	
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		System.out.println("yhea");
+		String fileName = "bordereaucheque.jpg";
+		String path = getServletContext().getRealPath("/")+"Image\\"+fileName;
+		System.out.println(path);
+		
+		// Set MIME type of file 
+		response.setContentType(getServletContext().getMimeType(fileName)); 
+		// Set Content-Disposition  
+	    response.setHeader("Content-Disposition", "attachment;filename="+fileName);  
+	    // Read the target file, send the file to client by response
+	    // Gain the path of file
+	    String fullFileName = path;
+	    //System.out.println(fullFileName);  
+	    // Read the file
+	    InputStream in = new FileInputStream(fullFileName);  
+	    OutputStream out = response.getOutputStream();  
+	    
+	    
+	    // write file
+	    int b;  
+	    while((b=in.read())!= -1)  
+	    {  
+	        out.write(b);  
+	    }  
+	      
+	    in.close();  
+	    out.close();		
+		
+		System.out.println("telechargement éffectué");
+		
+
+}
 }
