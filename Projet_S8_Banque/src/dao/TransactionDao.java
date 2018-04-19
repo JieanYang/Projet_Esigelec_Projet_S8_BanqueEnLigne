@@ -344,5 +344,10 @@ public class TransactionDao {
         
         return retour; // return a list Transaction
     }
+    
+    public int getNumberTransactionById_compte(int id_compte) {
+    	List<Transaction> list_transactionOneCompte = this.getListTransactionById_compte(id_compte);
+    	return list_transactionOneCompte.size();
+    }
 
 }
