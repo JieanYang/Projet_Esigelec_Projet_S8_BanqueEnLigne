@@ -103,7 +103,7 @@ public class UserDao {
 				user.setTelephone(resultSet.getString("telephone"));
 				user.setVille(resultSet.getString("ville"));
 				user.setPays(resultSet.getString("pays"));
-				user.setDateNaissance(resultSet.getDate("dateNaissance"));
+				user.setStringNaissance(resultSet.getString("dateNaissance"));
 
 				listUser.add(user);
 			}
@@ -132,7 +132,7 @@ public class UserDao {
 			user.setTelephone(resultSet.getString("telephone"));
 			user.setVille(resultSet.getString("ville"));
 			user.setPays(resultSet.getString("pays"));
-			user.setDateNaissance(resultSet.getDate("dateNaissance"));
+			user.setStringNaissance(resultSet.getString("dateNaissance"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

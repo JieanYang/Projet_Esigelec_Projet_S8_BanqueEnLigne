@@ -10,6 +10,10 @@ public class Compte {
 	/**
      * Default constructor
      */
+	 public Compte() {
+			
+		}
+	
     public Compte(int id_compte, int id_user, String categorie_compte, String etat, float solde, Date date_create, Date date_delete) {
     	this.id_compte = id_compte;
     	this.id_user = id_user;
@@ -20,9 +24,7 @@ public class Compte {
     	this.date_delete = date_delete;
     }
     
-    public Compte() {
-		
-	}
+   
 
     public int getId_compte() {
 		return id_compte;

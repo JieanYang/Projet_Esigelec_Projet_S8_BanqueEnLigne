@@ -13,7 +13,7 @@ public class User {
     }
     
     public User(int id_user, String categorie_user, String nom, String prenom, String email, String adresse,
-			String telephone, String ville, String pays, String password, Date dateNaissance) {
+			String telephone, String ville, String pays, String password, String dateNaissance) {
 		super();
 		this.id_user = id_user;
 		this.categorie_user = categorie_user;
@@ -105,11 +105,11 @@ public class User {
 		this.password = password;
 	}
 
-	public Date getDateNaissance() {
+	public String getDateNaissance() {
 		return dateNaissance;
 	}
 
-	public void setDateNaissance(Date dateNaissance) {
+	public void setDateNaissance(String dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
     
@@ -166,6 +166,6 @@ public class User {
     /**
      * 
      */
-    private Date dateNaissance;
+    private String dateNaissance;
 
 }

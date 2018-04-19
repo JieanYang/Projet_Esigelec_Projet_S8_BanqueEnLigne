@@ -101,7 +101,8 @@ public class UserDao {
             ps.setString(7, user.getVille());
             ps.setString(8, user.getPays());
             ps.setString(9, user.getPassword());
-            ps.setDate(10, (java.sql.Date) user.getDateNaissance());
+            ps.setString(10, user.getDateNaissance());
+            // ps.setDate(10, (java.sql.Date) user.getDateNaissance());
             
             /*
              * Execute the sql to add a new user
@@ -163,7 +164,8 @@ public class UserDao {
         	ps.setString(9, user.getPassword());
 //        	Timestamp stamp = new Timestamp(System.currentTimeMillis());
 //    		java.sql.Date date = new java.sql.Date(stamp.getTime());
-        	ps.setDate(10, (java.sql.Date) user.getDateNaissance());
+        	ps.setString(10, user.getDateNaissance());
+        	// ps.setDate(10, (java.sql.Date) user.getDateNaissance());
         	ps.setInt(11, user.getId_user());
         	
         	/*
@@ -218,7 +220,7 @@ public class UserDao {
                 retour = new User(rs.getInt("id_user"), rs.getString("categorie_user"), rs.getString("nom"),
                 		rs.getString("prenom"), rs.getString("email"), rs.getString("adresse"), 
                         rs.getString("telephone"),  rs.getString("ville"), rs.getString("pays"), 
-                        rs.getString("password"), rs.getDate("dateNaissance"));
+                        rs.getString("password"), rs.getString("dateNaissance"));
             }
             
         } catch (Exception e) {
@@ -302,7 +304,7 @@ public class UserDao {
                 retour.add(new User(rs.getInt("id_user"), rs.getString("categorie_user"), rs.getString("nom"),
                         rs.getString("prenom"), rs.getString("email"), rs.getString("adresse"), 
                         rs.getString("telephone"),  rs.getString("ville"), rs.getString("pays"), 
-                        rs.getString("password"), rs.getDate("dateNaissance")));
+                        rs.getString("password"), rs.getString("dateNaissance")));
             }
             
         } catch (Exception e) {

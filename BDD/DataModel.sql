@@ -19,7 +19,7 @@ CREATE TABLE `User` (
     `ville` VARCHAR(15),
     `pays` VARCHAR(15),
     `password` VARCHAR(30) NOT NULL,
-    `dateNaissance` DATE,
+    `dateNaissance` VARCHAR(15),
     PRIMARY KEY (`id_user`)
 ) ENGINE=InnoDB;
 
@@ -87,7 +87,7 @@ CREATE TABLE `Actualite` (
 CREATE TABLE `ServicesDeLaBanque` (
     `id_service` INTEGER NOT NULL AUTO_INCREMENT,
     `nom_service` VARCHAR(15) NOT NULL,
-    `prix` FLOAT NOT NULL,
+    `prix` FLOAT,
     `description` TEXT NOT NULL,
     PRIMARY KEY (`id_service`)
 ) ENGINE=InnoDB;

@@ -60,7 +60,7 @@ public class testDao {
 		
     	UserDao userDao = new UserDao();
     	User user = new User();
-		user = new User(1, "client", "nom", "prenom", "d@com","adress","93784956", "rouen", "France", "password", date);
+		user = new User(1, "client", "nom", "prenom", "d@com","adress","93784956", "rouen", "France", "password", date.toString());
 
 //		user = userDao.addUser(user);
 		

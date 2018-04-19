@@ -10,11 +10,7 @@ public class Transaction {
 
     /**
      * Default constructor
-     */
-    public Transaction() {
-    }
-
-    
+     */    
     
     public Transaction(int id_transaction, String categorie_transaction, int id_compte_emetteur,
 			int id_compte_recepteur, Timestamp date_transaction, Timestamp date_create, float somme,
@@ -28,6 +24,12 @@ public class Transaction {
 		this.date_create = date_create;
 		this.somme = somme;
 		this.description = description;
+	}
+
+
+
+	public Transaction() {
+		// TODO Auto-generated constructor stub
 	}
 
 
