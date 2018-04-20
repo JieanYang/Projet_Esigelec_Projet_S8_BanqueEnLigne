@@ -162,12 +162,7 @@ public class AllPanel {
 		// }
 		// });
 		menuPanel.add(btnAfficherMessage);
-		
-		
-		
-		/************************************************************************/
-		
-		
+
 		/*
 		 * BUTTON AJOUTER OFFRES
 		 */
@@ -226,7 +221,7 @@ public class AllPanel {
 			public void actionPerformed(ActionEvent e) {
 				if (offreDAO.addOffre(tFieldtitre.getText(), tFielddesc.getText())) {// appel la fonction addoffres pour ajouter les offres dans la BDD, envoi V si ajouter et F si c'est pas le cas
 					//offre = cMenu.getConseillerInfo(tFieldEmail.getText());//Si le User existe, recupère les informations correspondantes en fonction de l'email utilisé
-					mainFrame.setPanel(loginPanel());//appelle directement la méthode loginPanel() après qu'on ai ajouter dans la BDD
+					mainFrame.setPanel(menuPanel());//appelle directement la méthode loginPanel() après qu'on ai ajouter dans la BDD
 				}
 			}
 		});
@@ -235,20 +230,6 @@ public class AllPanel {
 		return this.offrePanel; //Return
 	}
 
-	
-	
-	
-
-	
-	/****************************************************************/
-	
-	
-	
-	
-	
-	
-	
-	
 	public JPanel listeClientPanel() {
 
 		mainFrame.setTitle("Liste des Clients");
@@ -315,7 +296,7 @@ public class AllPanel {
 		mainFrame.setTitle("Informations Client");
 		
 		User client = new User();
-		client = cInfoClient.getDataClient(clientID);
+//		client = cInfoClient.getDataClient(clientID);
 		System.out.println(client.getNom());
 
 		informationsClientPanel.setBorder(

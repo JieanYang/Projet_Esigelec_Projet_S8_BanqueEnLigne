@@ -1,45 +1,66 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
- <!--la librairie jstl permet de faire l'affichage de variables Java dans les pages jsp -->
- 
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-  <!--  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
-  
-  <meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<title>Demo CSS Table Price Hosting Plan</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="shortcut icon" href=http://www.freshdesignweb.com/wp-content/themes/fv24/images/icon.ico />
+    <link rel="stylesheet" type="text/css" href="Resources/css3-table-price-hosting/styles.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="Resources/css3-table-price-hosting/demo.css" media="all" />
 
-<!-- Bootstrap 4.0  -->
-<%@include file="Resources/Resources_bootstrap_4.0.html"%>
-<!-- CSS for Head.html -->
- <link rel="stylesheet" href="Resources/Head.css">
- 
 </head>
 <body>
+<div class="container">
+			
+            <div class="freshdesignweb-top">
+                <a href="index.jsp" target="_blank">Home</a>
+                <span class="right">
+                   
+                </span>
+                <div class="clr"></div>
+            </div>
+			<header>
+				<h1><span>Les actualités</span></h1>
+				<h2>Retrouver ci dessous les actualités de votre banque</h2>
+            </header>       
+     <!-- start header here-->
+	<header>
+<!--  <div id="fdw-pricing-table">
+<c:forEach items="${liste}" var="emp"><!-- boucle for en jstl et on envoi la variable  
+    <div class="plan plan1 popular-plan">
+        <div class="header"><c:out value="${emp.getDate()}"></c:out></td></div>
+        
+        <div class="plan plan1 popular-plan">
+        <div class="header"><c:out value="${emp.getTitle()}"></c:out></td></div>
+        
 
-<body>
+  <div class="field">
+  <div class="control">
+    <textarea class="textarea is-large" type="text" rows="10" disabled><c:out value="${emp.getText()}"></c:out></textarea> <!--  recupere les attribus de l'objet offre individuellement(emp) pour l'inserer dans le tableau 
+  </div>
+</div>
+         
+         
+    </div>
+    </c:forEach>
+    
+</div>-->
+	
 
-	<!-- head.html -->
-	<%@ include file="Templates/Head.jsp"%>
-
-	<div class="container">
-		<div class=jumbotron>
-			<h1 style="text-align:center;"><a href="index.jsp" >ACTUALITES</a></h1>
-		</div>
-
-		<div class="row">
-			 <h2>Retrouver les actualites de votre banque</h2>
-		</div>
-
-		<div class="row">
+		
+		
+		
+		
+		
+		
+		
+		
+<div class="row">
 			 <table border="2">
 				<tbody>
 					<tr><th>DATE</th><th>TITLE</th><th>TEXT</th></tr><!-- entete du tableau -->

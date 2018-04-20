@@ -22,7 +22,7 @@ if ((String)session.getAttribute("login")=="login"){
 
 <!-- top navigation -->
 	<div class="topNav">
-		<a href="index.jsp" class="topNav button_nav active_button_nav">Accueil</a> <a class="topNav button_nav" href="#news">News</a> <a class="topNav button_nav"
+		<a href="index.jsp" class="topNav button_nav active_button_nav">Accueil</a> <a class="topNav button_nav" href="Actualites_servlet?param1=1">News</a> <a class="topNav button_nav" href="offres_servlet?param1=1">Offres</a>  <a class="topNav button_nav"
 			href="ServletCoursDeLaBourse">Bourse</a> <a href="javascript:void(0);" class="icon"
 			onclick="myFunction()">&#9776;</a>
 	</div>

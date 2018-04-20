@@ -23,80 +23,76 @@ import java.text.SimpleDateFormat;
 
 /**import Class.transaction;*/
 
-
 /**
  * Servlet implementation class Login
  */
 @WebServlet("/offres_servlet")
 public class offres_servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	 offres_DAO oDAO = new offres_DAO();
-	 
-	 
-	
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public offres_servlet() { 
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	offres_DAO oDAO = new offres_DAO();
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public offres_servlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		//param1 permet de faire le traitement dans la servlet avant d'aller sur la page actualites
-		String param= request.getParameter("param1");// recupere le "param1" passer dans l'href "index.jsp"
-		System.out.println("le code est "+param);
-		
-		if(new String(param).equals("1"))// si c'est verifier, si param 1=1
+		// param1 permet de faire le traitement dans la servlet avant d'aller sur la
+		// page actualites
+		String param = request.getParameter("param1");// recupere le "param1" passer dans l'href "index.jsp"
+		System.out.println("le code est " + param);
+
+		if (new String(param).equals("1"))// si c'est verifier, si param 1=1
 		{
-			ResultSet result = oDAO.getfourLastOffres();//on met dans l'objet result les 5 dernier actu grace √† la fonction get... cr√©e dans DAO
+			ResultSet result = oDAO.getfourLastOffres();// on met dans l'objet result les 5 dernier actu grace √† la
+														// fonction get... cr√©e dans DAO
 			Offres offre = null;// objet actu de type actualite
 			List<Offres> listOffres = new LinkedList<Offres>();// arraylist de type offres
-			int compteur =0;
-			
+			int compteur = 0;
+
 			try {
-				while(result.next())// on parcour le result 
+				while (result.next())// on parcour le result
 				{
-					
-					//pour chaque resultat trouvÈ on crÈe un objet offre( le resultat regroupe les 4 offres et l'objet offre repr√©sente dans l'ensemble des rÈsultats une offre qui a une date un title et un text
-					 offre= new Offres(result.getString("nom_service"), result.getString("description"));// m√©thode get de la class actualite.java
-					//on l'ajoute dans la liste de actualite "actu"
-					 listOffres.add(offre);
-					
-					 compteur++;// la liste s'incr√©mente
-					
-					
+
+					// pour chaque resultat trouvÈ on crÈe un objet offre( le resultat regroupe les
+					// 4 offres et l'objet offre repr√©sente dans l'ensemble des rÈsultats une offre
+					// qui a une date un title et un text
+					offre = new Offres(result.getString("nom_service"), result.getString("description"));// m√©thode get
+																											// de la
+																											// class
+																											// actualite.java
+					// on l'ajoute dans la liste de actualite "actu"
+					listOffres.add(offre);
+
+					compteur++;// la liste s'incr√©mente
+
 				}
-				//Si le compteur est positif c'est ‡ dire qu'on a trouvÈ des valeurs
-				if(compteur>0){
-					//on affiche le message 	
-					
-					request.setAttribute( "liste", listOffres );//On met "listActu" dans "list" et transferer la variable list dans la page
-					 //on redirige vers la jsp
-					 this.getServletContext().getRequestDispatcher( "/Offres.jsp" ).forward( request, response );
-					}
+				// Si le compteur est positif c'est ‡ dire qu'on a trouvÈ des valeurs
+				if (compteur > 0) {
+					// on affiche le message
+
+					request.setAttribute("liste", listOffres);// On met "listActu" dans "list" et transferer la variable
+																// list dans la page
+					// on redirige vers la jsp
+					this.getServletContext().getRequestDispatcher("/Offres.jsp").forward(request, response);
+				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-		}
-		
-		
-	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		// r√©cup√©rer les diff√©rents param√®tres entr√©s dans le formulaire
-		
-	}}
+		}
+
+	}
+}

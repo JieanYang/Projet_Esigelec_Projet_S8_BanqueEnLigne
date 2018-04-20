@@ -33,7 +33,7 @@ public class MainControleur {
 	public static User conseiller = new User();
 	
 	public MainControleur() {
-			mFrame.setPanel(loginPanel);
+			mFrame.setPanel(menuPanel);
 	}
 	
 	public static void menuPanel() {
