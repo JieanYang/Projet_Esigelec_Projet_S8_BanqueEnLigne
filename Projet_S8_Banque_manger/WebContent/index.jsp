@@ -13,16 +13,46 @@
 
 </head>
 <body>
-		
-	<% %>
 	
 	<!-- head.html -->
 	<%@ include file="Templates/Head.jsp"%>
 	
 	<div class="container">
 		<div class="row">
-				<h1>manager</h1>
+				<h1>manager login</h1>
 		</div>
+<!-- 
+		<div class="row">
+			Modal Content
+			  <form class="modal-content animate" action="login_manager" method="post">
+			    
+			    <div class="container">
+			      <label for="uname"><b>Adresse mail :</b></label>
+			      <input type="text" placeholder="Enter your mail" name="email" required>
+			
+			      <label for="psw"><b>Password</b></label>
+			      <input type="password" placeholder="Enter Password" name="password" required>
+			
+			      <button name="loginUser" type="submit">Login</button>
+
+			    </div>
+			
+			    <div class="container" style="background-color:#f1f1f1">
+			      <button name="loginCancel" type="button" class="cancelbtn">Cancel</button>
+			      <span class="psw">Forgot <a href="#">password?</a></span>
+			    </div>
+			  </form>
+		</div> -->
+		
+		<div class="row">
+			<form class="modal-content animate" action="login_manager" method="post">
+			    	<input type="text" placeholder="Enter your mail" name="email" value="manager" required>
+			    	<input type="password" placeholder="Enter Password" name="password" value="manager" required>
+			    
+			     	<button name="loginUser" type="submit">Login</button>
+			</form>
+		</div>
+		
 		<div class="row">
 			<form action="ManagerServlet_extractDataClients" method="GET">			
 				<button type="submit">

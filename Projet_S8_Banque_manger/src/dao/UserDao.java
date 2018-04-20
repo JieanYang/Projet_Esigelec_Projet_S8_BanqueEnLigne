@@ -28,9 +28,10 @@ public class UserDao {
     /**
      * Tools for connection and operation with the BDD
      */
-    private  Connection connection;
-    private  PreparedStatement ps;
-    private  ResultSet rs;
+    private Connection connection;
+    private PreparedStatement ps;
+    private ResultSet rs;
+    
 
     /**
      * Default constructor
@@ -102,7 +103,6 @@ public class UserDao {
             ps.setString(8, user.getPays());
             ps.setString(9, user.getPassword());
             ps.setString(10, user.getDateNaissance());
-            // ps.setDate(10, (java.sql.Date) user.getDateNaissance());
             
             /*
              * Execute the sql to add a new user
@@ -165,7 +165,6 @@ public class UserDao {
 //        	Timestamp stamp = new Timestamp(System.currentTimeMillis());
 //    		java.sql.Date date = new java.sql.Date(stamp.getTime());
         	ps.setString(10, user.getDateNaissance());
-        	// ps.setDate(10, (java.sql.Date) user.getDateNaissance());
         	ps.setInt(11, user.getId_user());
         	
         	/*
@@ -231,53 +230,7 @@ public class UserDao {
         
         return retour;
     }
-    public boolean getCredentials(String email, String password) {
-		this.connection();
-    	
 
-		String sql = "SELECT * FROM user WHERE (categorie_user = 'client') and (email = ?) and (password = ?)";
-		try {
-			ps = connection.prepareStatement(sql);
-			ps.setString(1, email);
-			ps.setString(2, password);
-			rs = ps.executeQuery();
-			if (rs.next()) {
-				return true;
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			// https://stackoverflow.com/questions/65035/does-finally-always-execute-in-java
-			this.disconnection();
-		}
-		return false;
-	}
-    
-    
-    public int getIdUser(String email, String password) {
-		this.connection();
-    	int retour = 0;
-
-		String sql = "SELECT id_user FROM user WHERE (categorie_user = 'client') and (email = ?) and (password = ?)";
-		try {
-			ps = connection.prepareStatement(sql);
-			ps.setString(1, email);
-			ps.setString(2, password);
-			rs = ps.executeQuery();
-			if (rs.next()) {
-
-				return rs.getInt("id_user");
-				
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			// https://stackoverflow.com/questions/65035/does-finally-always-execute-in-java
-			this.disconnection();
-		}
-		return retour ;
-	}
-    
     /**
      * @param void
      * @return List<User> -> retour
@@ -344,7 +297,64 @@ public class UserDao {
         return retour; // return 1 -> success or return 0 -> fail
     }
     
+    /*public static void main(String[] args) {
+    	UserDao userDao = new UserDao();
+    	int retour = userDao.getId_byAuthentification("manager", "manager");
+    	System.out.println(retour);
+    }*/
     
+    public int getId_byAuthentification(String email, String password) {
+    	int retour = -1;
+    	this.connection();
+    	
+    	try {
+            String sql ="SELECT id_user FROM User WHERE email=? AND password=?";
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, email);
+            ps.setString(2, password);
+            
+            rs = ps.executeQuery();
+            if(rs.next()) {
+            	retour = rs.getInt("id_user");                
+            }
+    		
+    	} catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            this.disconnection();
+        }
+    	
+		return retour;
+    }
     
+    public boolean getCredentials_manager(String email, String password) {
+    	boolean retour = false;
+    	int id_user = 0;
+    	this.connection();
+    	
+    	try {
+            String sql ="SELECT id_user FROM User WHERE email=? AND password=?";
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, email);
+            ps.setString(2, password);
+            
+            rs = ps.executeQuery();
+            if(rs.next()) {
+            	id_user = rs.getInt("id_user");               
+            }       
+            
+            String categorie = this.getUser(id_user).getCategorie_user();
+            if(categorie.equals("manager")) {
+            	retour = true;
+            }
+    		
+    	} catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            this.disconnection();
+        }
+    	
+		return retour;
+    }
 
 }

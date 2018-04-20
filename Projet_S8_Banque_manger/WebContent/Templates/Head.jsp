@@ -32,47 +32,7 @@ if ((String)session.getAttribute("login")=="login"){
 		<a href="index.jsp" class="logo">OnlineBank</a>
 		<div class="header-right">
 		<% if(id_user == null) { %>
-			<button class="btn active" name="espaceClient" onclick="document.getElementById('id01').style.display='block'">Espace Client</button>
 
-            <!-- The Modal -->
-			<div id="id01" class="modal">
-			  <span onclick="document.getElementById('id01').style.display='none'" 
-			class="close" title="Close Modal">&times;</span>
-			
-			  <!-- Modal Content -->
-			  <form class="modal-content animate" action="Login" method="post">
-			    
-			    <div class="container">
-			      <label for="uname"><b>Adresse mail :</b></label>
-			      <input type="text" placeholder="Enter your mail" name="email" required>
-			
-			      <label for="psw"><b>Password</b></label>
-			      <input type="password" placeholder="Enter Password" name="password" required>
-			
-			      <button name="loginUser" type="submit">Login</button>
-			      <label>
-			        <input type="checkbox" checked="checked" name="remember"> Remember me
-			      </label>
-			    </div>
-			
-			    <div class="container" style="background-color:#f1f1f1">
-			      <button name="loginCancel" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-			      <span class="psw">Forgot <a href="#">password?</a></span>
-			    </div>
-			  </form>
-			</div>
-				
-			<script>
-				// Get the modal
-				var modal = document.getElementById('id01');
-				
-				// When the user clicks anywhere outside of the modal, close it
-				window.onclick = function(event) {
-				    if (event.target == modal) {
-				        modal.style.display = "none";
-				    }
-				}
-			</script>
 			
 		<%} else if(id_user != null) {
 			User user_login = new User();
