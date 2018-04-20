@@ -16,7 +16,7 @@ public class User {
     private String ville;
     private String pays;
     private String password;
-    private Date dateNaissance;
+    private String StringNaissance;
     
     // default consrtructor
     public User() {
@@ -24,7 +24,7 @@ public class User {
     }
 
     public User(int id_user, String categorie_user, String nom, String prenom, String email, String adresse,
-			String telephone, String ville, String pays, String password, Date dateNaissance) {
+			String telephone, String ville, String pays, String password, String StringNaissance) {
 		this.id_user = id_user;
 		this.categorie_user = categorie_user;
 		this.nom = nom;
@@ -35,7 +35,7 @@ public class User {
 		this.ville = ville;
 		this.pays = pays;
 		this.password = password;
-		this.dateNaissance = dateNaissance;
+		this.StringNaissance = StringNaissance;
 	}
 
     /**
@@ -199,19 +199,19 @@ public class User {
 	}
 
 	/**
-	 * get the user's birth date
-	 * @return the user's birth date
+	 * get the user's birth String
+	 * @return the user's birth String
 	 */
-	public Date getDateNaissance() {
-		return dateNaissance;
+	public String getStringNaissance() {
+		return StringNaissance;
 	}
 
 	/**
 	 * I dont think we should be able to change the user birthday !!!!
-	 * @param dateNaissance
+	 * @param StringNaissance
 	 */
-	public void setDateNaissance(Date dateNaissance) {
-		this.dateNaissance = dateNaissance;
+	public void setStringNaissance(String StringNaissance) {
+		this.StringNaissance = StringNaissance;
 	}
 
 }

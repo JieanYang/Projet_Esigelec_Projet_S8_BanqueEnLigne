@@ -115,9 +115,9 @@ public class AllPanel {
 		btnConnecxion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-//				if (cLogin.checkCredentials(tFieldEmail.getText(), new String(tFieldPassword.getPassword()))) {// appel la fonction checkCredentials pour vÈrifier le User dans la BDD
-					conseiller = cMenu.getConseillerInfo(tFieldEmail.getText());//Si le User existe, recupËre les informations correspondantes en fonction de l'email utilisÈ
-					mainFrame.setPanel(menuPanel());//appelle directement la mÈthode menuPanel()
+//				if (cLogin.checkCredentials(tFieldEmail.getText(), new String(tFieldPassword.getPassword()))) {// appel la fonction checkCredentials pour vÈñûifier le User dans la BDD
+					conseiller = cMenu.getConseillerInfo(tFieldEmail.getText());//Si le User existe, recupÈë¢e les informations correspondantes en fonction de l'email utilisÔøΩ
+					mainFrame.setPanel(menuPanel());//appelle directement la mÈñ†hode menuPanel()
 //				}
 
 			}
@@ -132,12 +132,12 @@ public class AllPanel {
 
 		menuPanel.setLayout(null);
 
-		JLabel lblConnecteSous = new JLabel("ConnectÈ sous :");
+		JLabel lblConnecteSous = new JLabel("ConnectÔøΩ sous :");
 		lblConnecteSous.setBounds(74, 67, 100, 16);
 		menuPanel.add(lblConnecteSous);
 
 
-		JLabel lblNomConseiller = new JLabel(conseiller.getNom()+" "+conseiller.getPrenom());//RecupËre le nom et le prÈnom de via l'objet Conseiller
+		JLabel lblNomConseiller = new JLabel(conseiller.getNom()+" "+conseiller.getPrenom());//RecupÈë¢e le nom et le prÈñöom de via l'objet Conseiller
 
 		lblNomConseiller.setBounds(186, 67, 225, 16);
 		menuPanel.add(lblNomConseiller);
@@ -176,7 +176,7 @@ public class AllPanel {
 				mainFrame.setPanel(offrePanel());// redirige sur offre panel
 			}
 		});
-		menuPanel.add(btnAjouterOffre);// ajouter le bouton crÈer au menu
+		menuPanel.add(btnAjouterOffre);// ajouter le bouton crÈñër au menu
 
 		return menuPanel;// return l'ensemble du menu
 	}
@@ -324,7 +324,7 @@ public class AllPanel {
 		lblDateDeNaissance.setBounds(106, 164, 154, 16);
 		informationsClientPanel.add(lblDateDeNaissance);
 
-		JLabel lblDateNaissanceClient = new JLabel(client.getDateNaissance().toString());
+		JLabel lblDateNaissanceClient = new JLabel(client.getStringNaissance().toString());
 		lblDateNaissanceClient.setBounds(291, 164, 213, 16);
 		informationsClientPanel.add(lblDateNaissanceClient);
 
@@ -406,7 +406,7 @@ public class AllPanel {
 				TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		informationsCompteClientPanel.setLayout(null);
 
-		JLabel lblSlectionnezLeCompte = new JLabel("SÈlectionnez le compte");
+		JLabel lblSlectionnezLeCompte = new JLabel("SÈñòectionnez le compte");
 		lblSlectionnezLeCompte.setBounds(66, 56, 199, 16);
 		informationsCompteClientPanel.add(lblSlectionnezLeCompte);
 
@@ -458,13 +458,13 @@ public class AllPanel {
 
 	public JPanel transactionPanel() {
 
-		mainFrame.setTitle("RÈaliser une transaction");
+		mainFrame.setTitle("RÈñçliser une transaction");
 
 		transactionPanel
 				.setBorder(new TitledBorder(null, "Virement", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		transactionPanel.setLayout(null);
 
-		JLabel lblCompteCrditer = new JLabel("Compte ‡ crÈditer");
+		JLabel lblCompteCrditer = new JLabel("Compte ÔøΩ crÈñêiter");
 		lblCompteCrditer.setBounds(38, 93, 99, 16);
 		transactionPanel.add(lblCompteCrditer);
 
@@ -472,11 +472,11 @@ public class AllPanel {
 		cBoxCompteCrediteur.setBounds(162, 90, 344, 22);
 		transactionPanel.add(cBoxCompteCrediteur);
 
-		JLabel lblAvoirDisponible = new JLabel("Avoir disponible : 18 8867 Ä");
+		JLabel lblAvoirDisponible = new JLabel("Avoir disponible : 18 8867 ÔøΩ");
 		lblAvoirDisponible.setBounds(401, 125, 160, 16);
 		transactionPanel.add(lblAvoirDisponible);
 
-		JLabel lblCompteDbiter = new JLabel("Compte ‡ dÈbiter");
+		JLabel lblCompteDbiter = new JLabel("Compte ÔøΩ dÈñéiter");
 		lblCompteDbiter.setBounds(38, 166, 103, 16);
 		transactionPanel.add(lblCompteDbiter);
 
@@ -493,7 +493,7 @@ public class AllPanel {
 		transactionPanel.add(tFieldMotant);
 		tFieldMotant.setColumns(10);
 
-		JLabel euro = new JLabel("Ä");
+		JLabel euro = new JLabel("ÔøΩ");
 		euro.setBounds(509, 217, 27, 16);
 		transactionPanel.add(euro);
 

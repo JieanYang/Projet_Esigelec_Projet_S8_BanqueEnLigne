@@ -41,7 +41,7 @@ public class ControleurVirement {
 
 	public void addTransac(int compteEmeteur, int compteRecepteur, float somme, String description) {
 		
-		//get compte à créditer et ajouter la différence
+		//get compte ï¿½ cré–iter et ajouter la diffé–ence
 		Compte compteCrediter = new Compte();
 		Compte compteDebiter = new Compte();
 		compteCrediter = compteDAO.getCompte(compteRecepteur);
