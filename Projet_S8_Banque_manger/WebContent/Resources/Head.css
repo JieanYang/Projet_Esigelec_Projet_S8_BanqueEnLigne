@@ -1,0 +1,214 @@
+	/* top navigation */
+	/* Add a black background color to the top navigation */
+	.topNav {
+		background-color: #333;
+		overflow: hidden;
+	}
+
+	/* Style the links inside the navigation bar */
+	.topNav .button_nav {
+		float: left;
+		display: block;
+		color: #f2f2f2;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+	}
+	
+	/* Change the color of links on hover */
+	.topNav .button_nav:hover {
+		background-color: #f2f2f2;
+		color: black;
+	}
+
+	/* Add an active class to highlight the current page */
+	.active_button_nav {
+		background-color: #046380;
+		color: white;
+	}
+
+	/* position button right */
+	/* Hide the link that should open and close the topnav on small screens */
+	.topNav a.icon {
+		float: right;
+		display: none;
+	}
+	
+	.header {
+		overflow: hidden;
+		background-color: #046380;
+		padding: 20px 10px;
+		padding-bottom: 10px;
+	}
+	
+	.header .logo {
+		float: left;
+		color: #f2f2f2;
+		font-size: 25px;
+		font-weitht: bold;
+		text-align: center;
+		padding:12px;
+		text-decoration: none;
+		line-height: 25px;
+		border-radius: 4px;
+	}
+	
+	.header-right {
+		float: right;
+	}
+	
+	[name="espaceClient"] {
+		background-color: #046380;
+		width: auto;
+		display: inline;
+		float: left;
+		text-align: center;
+		padding: 12px;
+		font-size: 18px;
+		line-height: 25px;
+		border-radius: 4px;
+		color: #f2f2f2;
+		text-decoration: none;
+	}
+	
+	[name="espaceClient"]:hover {
+		opacity: 0.8;
+		color: black;
+		background-color: white;
+	}
+	
+	[name="nameOfClient"] {
+		width: auto;
+		display: inline;
+		float: left;
+		text-align: center;
+		padding: 12px;
+		font-size: 18px;
+		line-height: 25px;
+		border-radius: 4px;
+		color: #f2f2f2;
+		text-decoration: none;
+	}
+	
+	[name="nameOfClient"]:hover {
+		background-color: #ddd;
+		color: black;
+	}
+
+	[name="formLogOut"] {
+		display: inline;
+	}
+	
+	[name="buttonLogOut"] {
+		cursor: pointer;
+		border: 0;
+		border-radius: 4px;
+		background-color: #046380;
+		color: #f2f2f2;
+		display: inline;
+		width: auto;
+		padding: 12px;
+	}
+	
+	[name="buttonLogOut"]:hover {
+		color: black;
+		background-color: white;
+		text-decoration: none;
+		opacity: 0.8;
+	}
+	
+	/* Mask behind  */
+	.modal {
+	    display: none;
+	    position: fixed;
+	    z-index: 1;
+	    left: 0;
+	    top: 0;
+	    width: 100%;
+	    height: 100%;
+	    overflow: auto;
+	    background-color: rgba(0,0,0,0.4);
+	    padding-top: 100px;
+	    padding-right: 400px;
+	    padding-left: 400px;
+	}
+	/* Cross sign  */
+	.close {
+	    position: absolute;
+	    right: 25px;
+	    top: 0;
+	    color: #000;
+	    font-size: 35px;
+	    font-weight: bold;
+	}
+	/* Content in the model  */
+	/* .modal-content {
+	    background-color: #fefefe;
+	    margin: 5% auto 15% auto;
+	    border: 1px solid #888;
+	    width: 80%;
+	} */
+	/* Animate */
+	/* .animate {
+	    animation: animatezoom 0.6s;
+	} */
+	
+	.container {
+	    padding: 16px;
+	}
+	/* Label */
+	label {
+		display: inline-block;
+		margin-bottom: .5rem;
+	}
+	/* Input */
+	input[type=text], input[type=password] {
+	    width: 100%;
+	    padding: 12px 20px;
+	    margin: 8px 0;
+	    display: inline-block;
+	    border: 1px solid #ccc;
+	    box-sizing: border-box;
+	}
+	
+	button[name="loginUser"] {
+	    background-color: #4CAF50;
+	    color: white;
+	    padding: 14px 20px;
+	    margin: 8px 0;
+	    border: none;
+	    cursor: pointer;
+	    width: 100%;
+	}
+	
+	button[name="loginCancel"] {
+	    width: auto;
+	    color: white;
+	    margin: 8px 0;
+	    border: none;
+	    cursor: pointer;
+	    padding: 10px 18px;
+	    background-color: #f44336;
+	}
+	
+	span.psw {
+	    float: right;
+	    padding-top: 16px;
+	}
+	
+	/* span.psw a {
+	    float: left;
+	    color: #f2f2f2;
+	    text-align: center;
+	    padding: 12px;
+	    text-decoration: none;
+	    font-size: 18px;
+	    line-height: 25px;
+	    border-radius: 4px;
+	} */
+	
+	
+	
+	
+
