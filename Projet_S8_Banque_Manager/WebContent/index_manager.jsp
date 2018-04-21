@@ -12,11 +12,8 @@
 <link rel="stylesheet" href="Resources/Head.css">
 
 </head>
+<% System.out.println("page index_manager start"); %>
 
-<%
-	String hidelogin = (String)session.getAttribute("login");
-	//System.out.println(hidelogin);
-%>
 <body>
 	
 	<!-- head.html -->
@@ -24,13 +21,13 @@
 	
 	<div class="container">
 		<div class="row">
-				<h1>manager index <%=hidelogin %></h1>
+				<h1>manager index</h1>
 		</div>
 
 		<div class="row">
 			  <!-- Modal Content -->
 			  <form class="modal-content animate" action="login_manager" method="post"
-			   style="display:<% if(true){ out.println("block");}else if(hidelogin.equals("login")){out.println("none");} %>;">
+			   style="display:<% if(login_head==null){ out.println("block");}else if(login_head.equals("login")){out.println("none");} %>;">
 			    
 			    <div class="container">
 			      <label for="uname"><b>Adresse mail :</b></label>
@@ -70,6 +67,7 @@
 			color: #ddd;
 		}
 	</style>
+<% System.out.println("page index_manager finish"); %>
 
 </body>
 </html>

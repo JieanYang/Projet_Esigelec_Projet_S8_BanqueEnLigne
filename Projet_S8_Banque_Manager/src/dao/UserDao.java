@@ -344,6 +344,11 @@ public class UserDao {
         return retour; // return 1 -> success or return 0 -> fail
     }
 
+    	/*public static void main(String[] args) {
+    		UserDao userDao = new UserDao();
+    		System.out.println(userDao.getId_byAuthentification("manager", "manager"));
+    	}*/
+    
 	    public int getId_byAuthentification(String email, String password) {
     	int retour = -1;
     	this.connection();
@@ -356,7 +361,7 @@ public class UserDao {
             
             rs = ps.executeQuery();
             if(rs.next()) {
-            	retour = rs.getInt("id_user");                
+            	retour = rs.getInt("id_user");   
             }
     		
     	} catch (Exception e) {

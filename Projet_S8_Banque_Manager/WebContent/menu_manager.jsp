@@ -13,6 +13,8 @@
 
 </head>
 
+<%@ include file="Templates/login_verify.jsp" %>
+<% System.out.println("page menu_manager start"); %>
 <body>
 	
 	<!-- head.html -->
@@ -57,6 +59,7 @@
 			color: #ddd;
 		}
 	</style>
+<% System.out.println("page menu_manager finish"); %>
 
 </body>
 </html>

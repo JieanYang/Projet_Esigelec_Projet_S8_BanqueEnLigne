@@ -14,18 +14,17 @@
 <!-- chart -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
+<%@ include file="Templates/login_verify.jsp" %>
+
+
 </head>
+<% System.out.println("page extractDataAllClients start"); %>
+
+
 <% 
 	List<Integer> list_idUsers = new ArrayList<Integer>();
 	list_idUsers = (List<Integer>)session.getAttribute("list_idUsers");
-	int lenght = list_idUsers.size();
-	/*Map<Integer, Integer[]> list_idUser_idComptes = (Map<Integer, Integer[]>)session.getAttribute("list_idUser_idComptes");
-	System.out.println(list_idUser_idComptes);
-	Map<Integer, Integer[]> list_idCompte_idTransactions = (Map<Integer, Integer[]>)session.getAttribute("list_idCompte_idTransactions");
-	int in = (Integer)session.getAttribute("c");
-	for(int i = 0; i < lenght; i++){
-				out.println("  "+list_idUsers.get(i)); */
-				
+	int lenght = list_idUsers.size();				
 %>
 <body>
 	<!-- head.html -->
@@ -78,7 +77,7 @@
 				<div class="row">
 					<label class="col-3"> id of client:</label>
 					<label class="col-3" id="id_user_label">3</label>
-					<input type="text" id="id_user_input" name="id_user_input" value=3 class="col-3" style="display: block;"></input>
+					<input type="text" id="id_user_input" name="id_user_input" value=3 class="col-3" style="display: none;"></input>
 				</div>
 				<div class="row">
 					<Button type="submit" class="btn btn-outline-success">Select</Button>
@@ -131,6 +130,7 @@
 			color: #ddd;
 		}
 	</style>
+<% System.out.println("page extractDataAllClients finish"); %>
 
 </body>
 </html>

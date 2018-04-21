@@ -5,22 +5,11 @@
 
 <!-- Head will change depend the identification of user -->
 <%
-/* System.out.println("before"+session.getAttribute("id_user")+" test"+ session.getAttribute("test"));
-if (session.getAttribute("test")==null){
-session.setAttribute("id_user", "3");
-}
-System.out.println("after"+session.getAttribute("id_user"));
- */
-int id_user = -1;
-String login = null;
-/* login = (String)session.getAttribute("login");
- *///System.out.println(login==("login")); -> false
-/* System.out.println(login.equals("login"));
- *//* if (login.equals("login")){
-	id_user = (Integer)session.getAttribute("id_user");
-	System.out.println("id_user");
-	//System.out.println(id_user);
-} */
+
+System.out.println("head start");
+String login_head = null;
+login_head = (String)session.getAttribute("login");
+
 %>
 
 
@@ -35,22 +24,21 @@ String login = null;
 	<div class="header">
 		<a href="index_manager.jsp" class="logo">OnlineBank</a>
 		<div class="header-right">
-		<%-- <% if(login.equals(null)) { %>
+		<% if(login_head == null) { %>
 
 			
-		<%} else if(login.equals("login")) {
+		<%} else if(login_head.equals("login")) {
 			User user_login = new User();
 			UserDao userDao = new UserDao();
-			user_login = userDao.getUser(Integer.valueOf(id_user));
+			//user_login = userDao.getUser(Integer.valueOf(id_user_string_head));
 		%>
 
-			<!-- Espace client --> 
+			<%-- <!-- Espace client --> 
 			<a class="btn active" name="nameOfClient" href="menu_manager.jsp">
 				<%
 				out.println("Hello! Manager "+user_login.getPrenom()+' '+user_login.getNom());
 				%>
-				</a> --%>
-
+				</a>  --%>
 
 			<!-- Button log out -->
 			<form name="formLogOut" action="login_manager" method="GET">	
@@ -60,6 +48,7 @@ String login = null;
 				</button>
 			</form>
 			
-	<%-- 	<%} %> --%>
+	 	<%} 
+	 	System.out.println("head finish");%>
 		</div>
 	</div>

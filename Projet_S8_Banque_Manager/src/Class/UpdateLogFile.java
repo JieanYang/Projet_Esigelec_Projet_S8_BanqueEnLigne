@@ -8,10 +8,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class UpdateLogFile {
+	
+	private String path;
 
 	public void checkExistingFile() {
 		
-		File file = new File("C:\\Users\\Abdoul Mohamed\\Desktop\\Repo_S8Banque\\Projet_S8_Banque\\Logs.txt");
+		File file = new File("Logs.txt");
+		this.path = file.getAbsolutePath();
 		if (!(file.exists())) {
 			try {
 				file.createNewFile();
@@ -25,7 +28,7 @@ public class UpdateLogFile {
 	public void editFile(String newEntry) {
 		String oldLogs = "";
 		try {
-			File file = new File("C:\\Users\\Abdoul Mohamed\\Desktop\\Repo_S8Banque\\Projet_S8_Banque\\Logs.txt");
+			File file = new File(this.path);
 
 			FileReader fr = new FileReader(file);
 			BufferedReader br = new BufferedReader(fr);

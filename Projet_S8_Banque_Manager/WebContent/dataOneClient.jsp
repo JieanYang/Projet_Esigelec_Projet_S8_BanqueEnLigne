@@ -14,6 +14,10 @@
 <!-- chart -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
+<%@ include file="Templates/login_verify.jsp" %>
+
+<% System.out.println("page dataOneClient start"); %>
+
 </head>
 <% 
 	Map<String, Float> list_grapheData = (Map<String, Float>)session.getAttribute("list_grapheData");		
@@ -93,6 +97,7 @@
 			color: #ddd;
 		}
 	</style>
+<% System.out.println("page dataOneClient finish"); %>
 
 </body>
 </html>

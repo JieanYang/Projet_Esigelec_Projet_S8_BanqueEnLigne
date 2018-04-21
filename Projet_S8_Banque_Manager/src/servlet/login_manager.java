@@ -40,6 +40,8 @@ public class login_manager extends HttpServlet {
 		session.setAttribute("login", null);
 		//System.out.println("logon -> null");
 		session.setAttribute("id_user", -1);
+		System.out.println("login_manager.java log out -> id_user:-1");
+
 		
 		
 		request.getRequestDispatcher("index_manager.jsp").forward(request, response);
@@ -71,17 +73,18 @@ public class login_manager extends HttpServlet {
 			// Session
 			session.setAttribute("login", "login");
 			session.setAttribute("id_user", id_user);
-			
+			System.out.println("login_manager.java login success -> id_user:"+id_user);
 			updateLog.editFile("Utilisateur: "+ email+" connecte le: "+dateFormat.format(date)+" /Ip client : "+clientIP+" /ServerIP : "+serverIP);
 			request.getRequestDispatcher("menu_manager.jsp").forward(request, response);
 			// response.getWriter().write("success -> id_User:" +id_user+"<br>login->"+email);
 		} else {
 			// Session
-			/*session.setAttribute("login", null);
-			session.setAttribute("id_user", -1);*/
-			
+			session.setAttribute("login", null);
+			session.setAttribute("id_user", -1);
+			System.out.println("login_manager.java login faild -> id_user:-1");
+
 			updateLog.editFile("Echec de connection de l'utilisateur "+email+" le: "+dateFormat.format(date)+" /Ip client : "+clientIP+" /ServerIP : "+serverIP);
-			String message ="Votre email ou password est erron� !";
+			String message ="Votre email ou password est erron锟� !";
 			response.getWriter().write("Faild->id_User:" +id_user+"\nlogin->"+email);
 		}
 		
