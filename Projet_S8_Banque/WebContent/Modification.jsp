@@ -95,4 +95,7 @@
 
 </div>
     </body>
+    
+    <!-- footer.html -->
+	<%@ include file="Templates/Footer.html"%>
 </html>

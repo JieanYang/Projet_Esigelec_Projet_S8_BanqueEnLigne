@@ -61,6 +61,9 @@
         </div>
     </div>
 
+	<!-- footer.html -->
+	<%@ include file="Templates/Footer.html"%>
+
 </body>
 
 </html>

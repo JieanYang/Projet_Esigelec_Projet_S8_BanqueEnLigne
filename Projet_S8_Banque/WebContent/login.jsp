@@ -96,19 +96,8 @@ if (session.getAttribute("login") == "login" && session.getAttribute("id_user") 
             
         </div>
 
-        <!-- Footer -->
-        <footer>
-        	<div class="container">
-        		<div class="row">
-        			
-        			<div class="col-sm-8 col-sm-offset-2">
-        				<div class="footer-border"></div>
-        				
-        			</div>
-        			
-        		</div>
-        	</div>
-        </footer>
+        <!-- footer.html -->
+		<%@ include file="Templates/Footer.html"%>
 
         <!-- Javascript -->
         <script src="assets/js/jquery-1.11.1.min.js"></script>

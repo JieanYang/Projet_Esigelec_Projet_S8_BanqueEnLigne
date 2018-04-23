@@ -99,30 +99,12 @@
 	</div>
 
 
-	<!--Footer-->
-	<footer class="footer">
-		<div class="container">
-			<span class="colorr">Place sticky footer content here.</span>
-		</div>
-	</footer>
-	<!--/.Footer-->
+	<div style="padding:75.5px;"></div>
+	
 
-	<style type="text/css">
-		.footer {
-			/*position: fixed;*/
-			left: 0;
-			bottom: 0;
-			width: 100%;
-			background-color: #333;
-			color: white;
-			text-align: center;
-		}
-		
-		.colorr{
-			color: #ddd;
-		}
-	</style>
+	<!-- footer.html -->
+	<%@ include file="Templates/Footer.html"%>
 
-	<script src="/Resources/scripts_index.js"></script>
+	<!-- <script src="/Resources/scripts_index.js"></script> -->
 </body>
 </html>
