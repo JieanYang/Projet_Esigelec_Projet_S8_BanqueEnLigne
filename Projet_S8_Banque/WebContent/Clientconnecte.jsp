@@ -31,9 +31,9 @@
 					<img class="card-img-top" src="Image/livretA.jpg"
 						alt="Card image cap">
 					<div class="card-body">
-						<h5 class="card-title">Ouvrir un Compte</h5>
+						<h5 class="card-title">Ouvrir un Compte par user compte</h5>
 						<p class="card-text">Un texte ici ?</p>
-						<a href="creerCompte.jsp" class="btn btn-primary">Ouvrir un compte</a>
+						<a href="creerCompteByUser.jsp" class="btn btn-primary">Ouvrir mon compte</a>
 					</div>
 				</div>
 			</div>
