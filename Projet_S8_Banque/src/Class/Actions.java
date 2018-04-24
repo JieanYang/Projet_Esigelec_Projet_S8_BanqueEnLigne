@@ -5,6 +5,18 @@ import java.sql.Timestamp;
 
 public class Actions {
 	
+	public Actions() {
+		
+	}
+	
+	 public Actions(int id_user, String entreprise , int prixachat,Date date , int nombre ) {
+			this.id_user = id_user;
+			this.entreprise = entreprise;
+			this.prixachat = prixachat;
+			this.date = date;
+			this.nombre = nombre;
+		}
+	 
 	private int id_user;
 	private String entreprise;
 	private float prixachat;
