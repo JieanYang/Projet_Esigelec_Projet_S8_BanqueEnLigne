@@ -13,70 +13,75 @@
     <link rel="stylesheet" type="text/css" href="Resources/css3-table-price-hosting/styles.css" media="all" />
     <link rel="stylesheet" type="text/css" href="Resources/css3-table-price-hosting/demo.css" media="all" />
 
+
+	<!-- Bootstrap 4.0  -->
+	<%@include file="Resources/Resources_bootstrap_4.0.html"%>
+	<!-- CSS for Head.html -->
+	<link rel="stylesheet" href="Resources/Head.css">
 </head>
 <body>
+
+<!-- head.html of projet -->
+<%@ include file="Templates/Head.jsp"%>
+
+<!-- container -->
 <div class="container">
-			
-            <div class="freshdesignweb-top">
-                <a href="index.jsp" target="_blank">Home</a>
-                <span class="right">
-                   
-                </span>
-                <div class="clr"></div>
-            </div>
-			<header>
-				<h1><span>Les actualités</span></h1>
-				<h2>Retrouver ci dessous les actualités de votre banque</h2>
-            </header>       
-     <!-- start header here-->
+		
+    <!-- old head
+    <div class="freshdesignweb-top">
+        <a href="index.jsp" target="_blank">Home</a>
+        <span class="right">
+           
+        </span>
+        <div class="clr"></div>
+    </div> -->
+    <!--  fist row after head -->
 	<header>
-<!--  <div id="fdw-pricing-table">
-<c:forEach items="${liste}" var="emp"><!-- boucle for en jstl et on envoi la variable  
-    <div class="plan plan1 popular-plan">
-        <div class="header"><c:out value="${emp.getDate()}"></c:out></td></div>
-        
-        <div class="plan plan1 popular-plan">
-        <div class="header"><c:out value="${emp.getTitle()}"></c:out></td></div>
-        
+		<h1><span>Les actualités</span></h1>
+		<h2>Retrouver ci dessous les actualités de votre banque</h2>     
+	</header>
+		
+	<!-- <div id="fdw-pricing-table">
+		<c:forEach items="${liste}" var="emp">boucle for en jstl et on envoi la variable  
+			<div class="plan plan1 popular-plan">
+				<div class="header"><c:out value="${emp.getDate()}"></c:out></td></div>
+			</div>
 
-  <div class="field">
-  <div class="control">
-    <textarea class="textarea is-large" type="text" rows="10" disabled><c:out value="${emp.getText()}"></c:out></textarea> <!--  recupere les attribus de l'objet offre individuellement(emp) pour l'inserer dans le tableau 
-  </div>
+			<div class="plan plan1 popular-plan">
+				<div class="header"><c:out value="${emp.getTitle()}"></c:out></td></div>
+			</div>
+
+
+			<div class="field">
+				<div class="control">
+				<textarea class="textarea is-large" type="text" rows="10" disabled><c:out value="${emp.getText()}"></c:out></textarea>   recupere les attribus de l'objet offre individuellement(emp) pour l'inserer dans le tableau 
+				</div>
+			</div>
+	    </c:forEach>
+	</div>  -->
+
+
+	<div class="row">
+		 <table border="2">
+			<tbody>
+				<tr><th>DATE</th><th>TITLE</th><th>TEXT</th></tr><!-- entete du tableau -->
+				<c:forEach items="${liste}" var="emp"><!-- boucle for en jstl et on envoi la variable  -->
+					<tr>
+						<!--chaque code insee est un lien cliquable qui redirige vers la servlet compareServlet-->
+						<td><c:out value="${emp.getDate()}"></c:out></td><!-- recupere les attribus de l'objet actu individuellement(emp) pour l'inserer dans le tableau -->
+						<td><c:out value="${emp.getTitle()}"></c:out></td>
+						<td><c:out value="${emp.getText()}"></c:out></td>
+						
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	 </div>
 </div>
-         
-         
-    </div>
-    </c:forEach>
-    
-</div>-->
 	
-
-		
-		
-		
-		
-		
-		
-		
-		
-<div class="row">
-			 <table border="2">
-				<tbody>
-					<tr><th>DATE</th><th>TITLE</th><th>TEXT</th></tr><!-- entete du tableau -->
-					<c:forEach items="${liste}" var="emp"><!-- boucle for en jstl et on envoi la variable  -->
-						<tr>
-							<!--chaque code insee est un lien cliquable qui redirige vers la servlet compareServlet-->
-							<td><c:out value="${emp.getDate()}"></c:out></td><!-- recupere les attribus de l'objet actu individuellement(emp) pour l'inserer dans le tableau -->
-							<td><c:out value="${emp.getTitle()}"></c:out></td>
-							<td><c:out value="${emp.getText()}"></c:out></td>
-							
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-		 </div>
-	</div>
+	
+<!-- footer.html -->
+<%@ include file="Templates/Footer.html"%>
   						
 
 </body>
