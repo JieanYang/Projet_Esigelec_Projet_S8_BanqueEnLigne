@@ -56,6 +56,7 @@
 		</div>
 
 	</div>
+	 <form action="AjoutAction">
 	
                     <div class="container">
 		<div class="row justify-content-center">
@@ -90,7 +91,7 @@
 						<td><%=listEnt.get(i).getDernier()%></td>
 						<td><%=listEnt.get(i).getVar()%></td>
 						<td><label for="inputName4"></label>
-					      <input type="text" class="form-control" name="nb"+i id="inputName4"></td>
+					      <input type="text" class="form-control" name="<%=listEnt.get(i).getNom()%>" id="inputName4"></td>
 					</tr>
 					<%
 						}
@@ -100,7 +101,7 @@
 		</div>
 
 	</div>
-	 <form action="AjoutAction" method="post">
+	
 	<div class="form-group ">
 					      <label for="inputState">Type :</label>
 					      <select name="type" id="inputState" class="form-control">
@@ -122,9 +123,6 @@
     
         <!-- footer.html -->
     <%@ include file="Templates/Footer.html"%>
-
-	<!-- footer.html -->
-	<%@ include file="Templates/Footer.html"%>
 
 </body>
 

@@ -1,13 +1,17 @@
 package fr.OnlineBank.jee;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Class.Entreprise;
 import Class.User;
+import dao.EntrepriseDAO;
 import dao.UserDao;
 
 /**
@@ -38,7 +42,8 @@ public class Achat_servlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		EntrepriseDAO entDAO = new EntrepriseDAO();
+		ArrayList<Entreprise> listEnt = entDAO.getEnt();
 		for (int i = 0; i < listEnt.size(); i++)while(i< listEnt.size() ) {
 			
 		}

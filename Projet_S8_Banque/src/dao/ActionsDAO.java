@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import Class.Actions;
@@ -38,28 +39,30 @@ public class ActionsDAO {
 		return actList;
 	}
 	
-	public boolean ajout(int id_user, String entreprise, float prixachat, Date date, int nombre){
+	public void ajout(int id_user, String entreprise, float prixachat, Date sqlDate, int nombre){
 		ConnexionBDD accesBDD = new ConnexionBDD();
 		accesBDD.connection();
 		try {
-			String sql = "INSERT INTO actions (`id_user`, `entreprise` ,`prixachat`, `date`, 'nombre') VALUES ( ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO actions (id_user, entreprise ,prixachat, date, nombre) VALUES ( ?, ?, ?, ?, ?)";
 			
-			PreparedStatement preparedStatement = accesBDD.prepareStatement(sql);
+			PreparedStatement preparedStatement = ConnexionBDD.connection().prepareStatement(sql);
 			
 			preparedStatement.setInt(1, id_user);
 			preparedStatement.setString(2, entreprise);
 		    preparedStatement.setFloat(3, prixachat);
-			preparedStatement.setDate(4, date);
+			preparedStatement.setDate(4, sqlDate);
 			preparedStatement.setInt(5, nombre);
 			
-			//System.out.println("requete "+sql);
+			System.out.println("yes "+preparedStatement);
 			preparedStatement.executeUpdate();
-			accesBDD.disconnection();
-			return true;
-		} catch (SQLException e1) {
-			e1.printStackTrace();
+			} 
+			catch (SQLException e1) {
+				e1.printStackTrace();
+				System.out.println("non"+sql);
+			}
+		finally {
+			ConnexionBDD.disconnection();
 		}
-		return false;
 	}
 
 	
