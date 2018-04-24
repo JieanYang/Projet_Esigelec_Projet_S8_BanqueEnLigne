@@ -90,7 +90,8 @@
 		</form>
 	</div>
 	
+	<!-- footer.html -->
+	<%@ include file="Templates/Footer.html"%>
 
-	<script src="/Resources/scripts_index.js"></script>
-</body>
+<!-- 	<script src="/Resources/scripts_index.js"></script>--></body>
 </html>

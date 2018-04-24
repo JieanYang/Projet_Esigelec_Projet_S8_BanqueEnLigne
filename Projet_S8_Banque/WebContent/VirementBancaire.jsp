@@ -32,13 +32,13 @@
 
 		<div class="row">
 			<div class="col-sm-12">
-			     <form role="form" action="BoredereauCheque" method="post" class="registration-form">
+			     <form role="form" action="virement_servlet" method="post" class="registration-form">
 				  	    <div class="form-group ">
 					      <label for="inputState">Je veux faire un virement :</label>
 					      <select name="type" id="inputState" class="form-control">
-					        <option selected>type de virement</option>
-					        <option>Mensuel</option>
-					        <option>Occasionel</option>
+					        <!-- <option selected>type de virement</option> -->
+					        <option selected value="mensuel">Mensuel</option>
+					        <option value="occasionel">Occasionel</option>
 					      </select>
 					    </div>
 					    <br>
@@ -46,12 +46,12 @@
 					  <div class="form-row">
 					    <div class="form-group col-md-6">
 					      <label for="inputName4">Numero compte émétteur :</label>
-					      <input type="text" class="form-control" name="emetteur" id="inputName4" placeholder="XXXX XXXX XXXXXXXXXXX XX" required>
+					      <input type="text" class="form-control" name="emetteur" id="inputName4" placeholder="XXXX XXXX XXXXXXXXXXX XX">
 					    </div>
 					    
 					    <div class="form-group col-md-6">
 					      <label for="inputName4">Numero compte bénéficiaire :</label>
-					      <input type="text" class="form-control" name="beneficiaire" id="inputName4" placeholder="XXXX XXXX XXXXXXXXXXX XX" required>
+					      <input type="text" class="form-control" name="beneficiaire" id="inputName4" placeholder="XXXX XXXX XXXXXXXXXXX XX">
 					    </div>
 					    
 					    <div class="form-group col-md-6">
@@ -59,10 +59,10 @@
 					      <input type="date" class="form-control" name="date_transaction" id="inputdate">
 					    </div>
 					    
-					    <div class="form-group col-md-6">
+					    <!-- <div class="form-group col-md-6">
 					      <label for="inputName4">date_create : </label>
 					      <input type="date" class="form-control" name="date_create" id="inputdate">
-					    </div>
+					    </div> -->
 					    
 					  </div>
 					  <div class="form-group">
@@ -81,14 +81,8 @@
 			</div>
 		</div>
 	</div>
-
-
-
-
-
-
-
-
-
+	
+	<!-- footer.html -->
+	<%@ include file="Templates/Footer.html"%>
 </body>
 </html>

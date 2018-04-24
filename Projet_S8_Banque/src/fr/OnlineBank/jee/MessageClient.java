@@ -56,6 +56,9 @@ public class MessageClient extends HttpServlet {
 		Message message = new Message(id,nom,prenom,numphone,email,problem,reponse,sqldate);
 		monDao.addMessage(message);
 		
+		
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+		
 	}
 
 }

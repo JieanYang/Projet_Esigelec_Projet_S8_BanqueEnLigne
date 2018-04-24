@@ -40,7 +40,8 @@
 		   <p><img src="/Image/validation.jpg"></p>
 		</c:if>
 	 
-	 
+	 <!-- footer.html -->
+	<%@ include file="Templates/Footer.html"%>
 </body>
 
 </html>

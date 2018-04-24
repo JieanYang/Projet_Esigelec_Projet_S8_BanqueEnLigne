@@ -10,14 +10,14 @@
 <!-- Bootstrap 4.0  -->
 <%@include file="Resources/Resources_bootstrap_4.0.html"%>
 <!-- CSS file -->
-<link rel="stylesheet" href="Resources/style_manager.css">
+<link rel="stylesheet" href="Resources/Head.css">
 	
 	
 </head>
 
 <body>
 	<!-- head.html -->
-	 <%@ include file="Templates/Manager.html" %> 
+	 <%@ include file="Templates/Head.jsp" %> 
 
 	<div class="container">
 		<div class="row">
@@ -44,7 +44,8 @@
 		</div>
 	</div>
      
-
+	<!-- footer.html -->
+	 <%@ include file="Templates/Footer.html" %> 
 
 
 

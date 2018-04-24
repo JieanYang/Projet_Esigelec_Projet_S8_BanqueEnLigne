@@ -20,21 +20,21 @@
 <!-- Bootstrap 4.0  -->
 <%@include file="Resources/Resources_bootstrap_4.0.html"%>
 <!-- Css file -->
-<link rel="stylesheet" href="Resources/style_manager.css">
+<link rel="stylesheet" href="Resources/Head.css">
 	
 	<a href="Note_actualités.jsp"> <input type="button" value="Ajouter une actualité"> </a> 
 </head>
 
 <body>
 	<!-- head.html -->
-	<%@ include file="Templates/Manager.html" %>
+	<%@ include file="Templates/Head.jsp" %>
 
     <div class="container">
         <div class="row jumbotron">
             <h2>Bienvenue sur votre page</h2>
         </div>
     </div>
-     
+     <!-- nothing used for instant -->
 
  <!--  <a href="Note_actualités.jsp"> <input type="button" value="Ajouter une actualité"> </a>  -->
 
