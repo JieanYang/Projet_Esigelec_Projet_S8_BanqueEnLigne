@@ -232,6 +232,36 @@ public class CompteDao {
         }
         return retour;
     }
+    
+    public Compte getCompteCourant(int id) {
+    	Compte retour = null;
+        accesBDD.connection();
+        
+        try {
+            String sql ="SELECT id_compte FROM compte WHERE categorie_compte='courant'AND id_user =?";
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, id);
+            
+            /**
+             * on execute la requete
+             * rs contient un pointeur situe juste avant la premiere ligne retournee
+             * 
+             */
+            rs = ps.executeQuery();
+            // passe a la premiere (et unique) ligne retournee
+            if (rs.next()) {
+                retour = new Compte(rs.getInt("id_compte"), rs.getInt("id_user"), rs.getString("categorie_compte"),
+                        rs.getString("etat"), rs.getFloat("solde"), rs.getDate("date_create"),
+                        rs.getDate("date_delete"));
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            accesBDD.disconnection();
+        }
+        return retour;
+    }
 
     /**
      * @param void
