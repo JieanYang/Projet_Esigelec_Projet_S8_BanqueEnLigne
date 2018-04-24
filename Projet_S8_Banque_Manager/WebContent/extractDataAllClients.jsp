@@ -72,15 +72,38 @@
 			</table>
 		</div>
 		
+		
+		
 		<div class="row">
 			<form action="ManagerServlet_dataOneClient" mehtod="GET" class="col-12">
+				
+				<div class="row">
+					
+					<input type="text" id="id_user_input" name="id_user_input" value=3 class="col-3" style="display: none;"></input>
+				</div>
+				
+				
+				<div class="row" style="margin-top: 10px;margin-bottom: 20px;">
+					<div class="input-group col-6">
+					  <div class="input-group-prepend">
+					    <span class="input-group-text" style="background-color: #8e5ea2; color: white;">date started</span>
+					  </div>
+					  <input type="date" id="date_periode_start" name="date_periode_start" class="form-control col-4">
+					</div>
+					
+					<div class="input-group col-6">
+					  <div class="input-group-prepend">
+					    <span class="input-group-text" style="background-color: #8e5ea2; color: white;">date finished</span>
+					  </div>
+					  <input  type="date" id="date_periode_finish" name="date_periode_finish" class="form-control col-4">
+					</div>
+				</div>
+				
 				<div class="row">
 					<label class="col-3"> id of client:</label>
 					<label class="col-3" id="id_user_label">3</label>
-					<input type="text" id="id_user_input" name="id_user_input" value=3 class="col-3" style="display: none;"></input>
-				</div>
-				<div class="row">
-					<Button type="submit" class="btn btn-outline-success">Select</Button>
+					<Button type="submit" class="btn btn-success col-1">Select</Button>
+					
 				</div>
 			</form>
 		</div>

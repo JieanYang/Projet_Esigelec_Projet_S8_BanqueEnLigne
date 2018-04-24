@@ -23,6 +23,9 @@
 	Map<String, Float> list_grapheData = (Map<String, Float>)session.getAttribute("list_grapheData");		
 	float id_float = list_grapheData.get("id_client");
 	int id_int = (int)id_float;
+	
+	String date_start = (String)session.getAttribute("date_start_oneClient");
+	String date_finish = (String)session.getAttribute("date_finish_oneClient");
 %>
 <body>
 	<!-- head.html -->
@@ -30,7 +33,10 @@
 	
 	<div class="container">
 		<div class="row">
-			<h3>id of client:   <%=id_int %></h3>
+			<h5>id of client:   <%=id_int %></h5>
+		</div>
+		<div class="row">
+			<h5>Periode:  <%=date_start %>    ~    <%=date_finish %></h5>
 		</div>
 		<div class="row">
 			<canvas id="bar-chart-grouped"></canvas>

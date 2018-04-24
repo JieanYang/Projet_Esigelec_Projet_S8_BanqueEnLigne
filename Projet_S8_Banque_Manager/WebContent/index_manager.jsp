@@ -23,6 +23,10 @@
 		<div class="row">
 				<h1>manager index</h1>
 		</div>
+		
+		<div class="row" style="display: <%if(login_head==null){ out.println("none");}else if(login_head.equals("login")){out.println("block");} %>;">
+		  	<a href="menu_manager.jsp" class="btn btn-success">menu</a>
+		</div>
 
 		<div class="row">
 			  <!-- Modal Content -->
@@ -41,6 +45,8 @@
 			    </div>
 
 			  </form>
+			  
+			  
 		</div>
 	</div>
 	
