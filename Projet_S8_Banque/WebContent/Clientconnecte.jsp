@@ -81,6 +81,26 @@
 				</div>
 			</div>
 			
+			<div class="col">
+				<div class="card">
+					<img class="card-img-top" src="Image/achat actions.png"
+						alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Achat ou vente d'actions</h5>
+						<p class="card-text"></p>
+						<form action="ServletAchatAction" method="GET">
+							<input name="method" value="GET" style="display:none;">
+							
+							<input name="id_user" value="<%=session.getAttribute("id_user") %>" style="display:none;">
+							<button type="submit" class="btn btn-primary">
+								Consulter
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			
+			
 		</div>
 
 		<!-- <div class="col-container contourNews">
@@ -99,30 +119,14 @@
 	</div>
 
 
-	<!--Footer-->
-	<footer class="footer">
-		<div class="container">
-			<span class="colorr">Place sticky footer content here.</span>
-		</div>
-	</footer>
-	<!--/.Footer-->
+    <div style="padding:75.5px;"></div>
+    
 
-	<style type="text/css">
-		.footer {
-			/*position: fixed;*/
-			left: 0;
-			bottom: 0;
-			width: 100%;
-			background-color: #333;
-			color: white;
-			text-align: center;
-		}
-		
-		.colorr{
-			color: #ddd;
-		}
-	</style>
+    <!-- footer.html -->
+    <%@ include file="Templates/Footer.html"%>
 
-	<script src="/Resources/scripts_index.js"></script>
+
+    <!-- <script src="/Resources/scripts_index.js"></script> -->
+
 </body>
 </html>

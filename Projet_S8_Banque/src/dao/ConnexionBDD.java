@@ -58,6 +58,11 @@ public class ConnexionBDD {
 		}
 	}
 
+	public PreparedStatement prepareStatement(String sql) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	
 	

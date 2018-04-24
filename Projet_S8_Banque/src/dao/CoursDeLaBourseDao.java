@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.*;
 
 import Class.CoursDeLaBourse;
+import Class.User;
 
 /**
  * 
@@ -74,8 +75,23 @@ public class CoursDeLaBourseDao {
      * @return
      */
     public List<CoursDeLaBourse> getListCoursDeLaBourse() {
-        // TODO implement here
-        return null;
+    	accesBDD.connection();
+    	List<CoursDeLaBourse> Cours = new ArrayList<CoursDeLaBourse>();
+        
+        try {
+            String sql ="SELECT prix, entreprise FROM coursdelabourse";
+            PreparedStatement ps = accesBDD.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                //Cours.add(new ListeCours(rs.getInt("prix"),rs.getString("entreprise")));
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            accesBDD.disconnection();
+        }
+        return Cours;
     }
 
     /**

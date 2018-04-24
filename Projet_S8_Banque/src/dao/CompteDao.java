@@ -425,6 +425,37 @@ public class CompteDao {
         return 0;
     }
     
+    public float soldeCourant(int id_user) {
+    	float retour = 0;
+        this.connection();
+        
+        try {
+            String sql ="SELECT solde FROM compte WHERE categorie_compte='courant' AND id_user = ?";
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, id_user);
+            
+            /**
+             * on execute la requete
+             * rs contient un pointeur situe juste avant la premiere ligne retournee
+             * 
+             */
+            rs = ps.executeQuery();
+            // passe a la premiere (et unique) ligne retournee
+            if (rs.next()) {
+                retour = rs.getFloat("solde");
+                return retour ;
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            this.disconnection();
+        }
+        
+        return 0;
+    }
+    
+    
     public boolean modifierSolde(float solde) {
 		this.connection();
     	accesBDD.connection();
