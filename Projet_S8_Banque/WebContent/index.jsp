@@ -51,19 +51,6 @@
 
 			<div class="col">
 				<div class="card">
-					<img class="card-img-top" src="Image/compteTitre.jpg"
-						alt="Card image cap">
-					<div class="card-body">
-						<h5 class="card-title">Regarder le cours de la bourse</h5>
-						<p class="card-text">Vous etes interessé par la bourse ,
-							inscrivez vous et commencez à trader en réel sans frais</p>
-						<a href="affichageprix.jsp" class="btn btn-primary">bourse</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col">
-				<div class="card">
 					<img class="card-img-top" src="Image/contact.png"
 						alt="Card image contact message">
 					<div class="card-body">
