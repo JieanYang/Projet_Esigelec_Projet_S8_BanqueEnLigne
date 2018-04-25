@@ -75,7 +75,7 @@ public class AjoutAction extends HttpServlet {
 		if(somme<solde) {
 		solde=solde-somme;
 		System.out.println(solde);
-		Compte compteemetteur = compte.getCompte(1);//utilisé compteCourant pour recup le id_compte (mais ca marche pas)
+		Compte compteemetteur = compte.getCompte(1);//utilise compteCourant pour recup le id_compte (mais ca marche pas)
 		System.out.println(compteemetteur);
 		compteemetteur.setSolde(solde);
 		compte.updateCompte(compteemetteur);
@@ -131,7 +131,7 @@ public class AjoutAction extends HttpServlet {
 				gain=(int) (nombreaction*listEnt.get(i).getDernier());
 				diff=nombreaction-nombre;
 			}
-			Compte compteemetteur = compte.getCompte(1);//utilisé compteCourant pour recup le id_compte (mais ca marche pas)
+			Compte compteemetteur = compte.getCompte(1);//utilise compteCourant pour recup le id_compte (mais ca marche pas)
 			solde=solde+gain;
 			compteemetteur.setSolde(solde);
 			compte.updateCompte(compteemetteur);

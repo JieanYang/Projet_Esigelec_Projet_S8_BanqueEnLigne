@@ -74,7 +74,7 @@ public class Login extends HttpServlet {
 
 		}else {
 			updateLog.editFile("Echec de connection de l'utilisateur "+email+" le: "+dateFormat.format(date)+" /Ip client : "+clientIP+" /ServerIP : "+serverIP);
-			String message ="Votre email ou password est erron� !";
+			String message ="Votre email ou password est errone !";
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 		

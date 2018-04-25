@@ -56,7 +56,7 @@ public class virement_servlet extends HttpServlet {
 			throws ServletException, IOException {
 		
 		
-		// r閏up閞er les diff閞ents param鑤res entr閟 dans le formulaire
+		// recupeer les diffeents parametres entre dans le formulaire
 		// ma partie (alexis)
 		
 		// parameters from form in the page
@@ -79,7 +79,7 @@ public class virement_servlet extends HttpServlet {
 		
 		//handle the data transaction
 		//date_transaction = request.getParameter("date_transaction");// declarer une variable date_transaction et
-		// la recuper� en string par d閒aut
+		// la recupere en string par debut
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");// definition du format que je souhaite pour la date
 		// surround below line with try catch block as below code throws checked
 		// exception
@@ -189,8 +189,8 @@ public class virement_servlet extends HttpServlet {
 		int beneficiaire = 0;// initialisation
 		try {
 			beneficiaire = Integer.parseInt(request.getParameter("beneficiaire"));// convertir la variable qui est au
-																					// d閜art en string en Int et la
-																					// r閏uper�
+																					// deart en string en Int et la
+																					// recupere
 		} catch (NumberFormatException e) {// en cas d'erreur r閟oudre
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -221,7 +221,7 @@ public class virement_servlet extends HttpServlet {
 		
 		String message= request.getParameter("message");
 		
-		vDAO.virement( type, emetteur, beneficiaire, sDate, sDate_create, montant, message);*/// fait reference � la m閠hode virement qui se trouve dans ma DAO
+		vDAO.virement( type, emetteur, beneficiaire, sDate, sDate_create, montant, message);*/// fait reference a la mehode virement qui se trouve dans ma DAO
 
 		
 	}
