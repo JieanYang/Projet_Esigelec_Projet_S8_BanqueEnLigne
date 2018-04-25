@@ -23,6 +23,7 @@ import dao.TransactionDao;
 
 /**
  * Servlet implementation class ManagerServlet_dataOneClient
+ * Generate data for the situation of one client
  */
 @WebServlet("/ManagerServlet_dataOneClient")
 public class ManagerServlet_dataOneClient extends HttpServlet {

@@ -15,7 +15,7 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
 /**
- * 
+ * Manages the table User in the database
  */
 public class UserDao {
     /**

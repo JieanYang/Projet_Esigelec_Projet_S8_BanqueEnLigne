@@ -6,7 +6,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-
+/**
+ * Records the login and logout actions with manager
+ * @author yja85
+ *
+ */
 public class UpdateLogFile {
 	
 	private String path;

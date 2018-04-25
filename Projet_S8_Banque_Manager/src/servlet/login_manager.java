@@ -16,7 +16,7 @@ import Class.UpdateLogFile;
 import dao.UserDao;
 
 /**
- * Servlet implementation class login_manager
+ * Servlet implementation class login_manager, control the action login and logout
  */
 @WebServlet("/login_manager")
 public class login_manager extends HttpServlet {

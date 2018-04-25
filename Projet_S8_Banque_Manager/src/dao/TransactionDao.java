@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat;
 
 
 /**
- * 
+ * Manages the table Transaction in the database 
  */
 public class TransactionDao {
 

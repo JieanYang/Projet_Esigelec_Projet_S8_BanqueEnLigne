@@ -4,7 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
+/**
+ * manages the connection with the datebase
+ * @author yja85
+ *
+ */
 public class ConnexionBDD {
 
 	/**

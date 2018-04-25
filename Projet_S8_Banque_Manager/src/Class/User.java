@@ -2,7 +2,7 @@ package Class;
 import java.util.*;
 
 /**
- * 
+ * Class container with the information of User
  */
 public class User {
 
