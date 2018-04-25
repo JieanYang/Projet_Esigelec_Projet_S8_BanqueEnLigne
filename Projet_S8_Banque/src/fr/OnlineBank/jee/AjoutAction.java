@@ -104,7 +104,6 @@ public class AjoutAction extends HttpServlet {
 		java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 		System.out.println(id_user+entreprise+prixachat+sqlDate+nombre);
 		dao.ajout(id_user,entreprise,prixachat, sqlDate,nombre);//insetion dans la BDD des actions qu'il possede
-		somme=-somme;
 		Transaction transaction = new Transaction(0, "actions", id_compte, 999, new Timestamp(new Date().getTime()), null, somme, "achat d'actions");	
 		TransactionDao transactionDao = new TransactionDao();
 		transactionDao.addTransaction(transaction);	
@@ -158,7 +157,7 @@ public class AjoutAction extends HttpServlet {
 			Actions action = dao.getAction(id_user, listEnt.get(i).getNom());
 			action.setnombre(diff);
 			dao.updatenombre(action);
-			Transaction transaction = new Transaction(0, "actions", 999, id_compte, new Timestamp(new Date().getTime()), null, gain, "achat d'actions");	
+			Transaction transaction = new Transaction(0, "actions", 999, id_compte, new Timestamp(new Date().getTime()), null, gain, "vente d'actions");	
 			TransactionDao transactionDao = new TransactionDao();
 			transactionDao.addTransaction(transaction);	
 		}
