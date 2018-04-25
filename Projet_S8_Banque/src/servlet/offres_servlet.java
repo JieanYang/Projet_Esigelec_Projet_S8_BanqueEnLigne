@@ -65,10 +65,10 @@ public class offres_servlet extends HttpServlet {
 				while (result.next())// on parcour le result
 				{
 
-					// pour chaque resultat trouvé on crée un objet offre( le resultat regroupe les
-					// 4 offres et l'objet offre reprÃ©sente dans l'ensemble des résultats une offre
+					// pour chaque resultat qu'on trouve on creer un objet offre( le resultat regroupe les
+					// 4 offres et l'objet offre represente dans l'ensemble des résultats une offre
 					// qui a une date un title et un text
-					offre = new Offres(result.getString("nom_service"), result.getString("description"));// mÃ©thode get
+					offre = new Offres(result.getString("nom_service"), result.getString("description"));// methode get
 																											// de la
 																											// class
 																											// actualite.java
@@ -78,7 +78,7 @@ public class offres_servlet extends HttpServlet {
 					compteur++;// la liste s'incrÃ©mente
 
 				}
-				// Si le compteur est positif c'est à dire qu'on a trouvé des valeurs
+				// Si le compteur est positif c'est a dire qu'on a trouve des valeurs
 				if (compteur > 0) {
 					// on affiche le message
 

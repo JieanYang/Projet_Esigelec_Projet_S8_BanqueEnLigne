@@ -54,7 +54,7 @@ public class Actualites_servlet extends HttpServlet {
 		
 		if(new String(param).equals("1"))// si c'est verifier, si param 1=1
 		{
-			ResultSet result = bDAO.getFiveLastActualites();//on met dans l'objet result les 5 dernier actu grace à la fonction get... crée dans DAO
+			ResultSet result = bDAO.getFiveLastActualites();//on met dans l'objet result les 5 dernier actu grace a la fonction get... cree dans DAO
 			Actualite actu = null;// objet actu de type actualite
 			List<Actualite> listActu = new LinkedList<Actualite>();// arraylist de type actualite
 			int compteur =0;
@@ -63,16 +63,16 @@ public class Actualites_servlet extends HttpServlet {
 				while(result.next())// on parcour le result 
 				{
 					
-					//pour chaque resultat trouv� on cr�e un objet Actualite( le resultat regroupe les 5 actus et l'objet actu représente dans l'ensemble des r�sultats une actualit� qui a une date un title et un text
-					 actu= new Actualite(result.getDate("Date"), result.getString("Title"), result.getString("Text"));// méthode get de la class actualite.java
+					//pour chaque resultat trouve on creer un objet Actualite( le resultat regroupe les 5 actus et l'objet actu represente dans l'ensemble des reultats une actualite qui a une date un title et un text
+					 actu= new Actualite(result.getDate("Date"), result.getString("Title"), result.getString("Text"));// methode get de la class actualite.java
 					//on l'ajoute dans la liste de actualite "actu"
 					 listActu.add(actu);
 					
-					 compteur++;// la liste s'incrémente
+					 compteur++;// la liste d'incremente
 					
 					
 				}
-				//Si le compteur est positif c'est � dire qu'on a trouv� des valeurs
+				//Si le compteur est positif c'est a dire qu'on a trouve des valeurs
 				if(compteur>0){
 					//on affiche le message 	
 					
@@ -95,7 +95,7 @@ public class Actualites_servlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		// récupérer les différents paramètres entrés dans le formulaire
+		// r茅cup茅rer les diff茅rents param猫tres entr茅s dans le formulaire
 		
 		
 		
@@ -117,14 +117,14 @@ public class Actualites_servlet extends HttpServlet {
 		
 		String text= request.getParameter("text");
 
-		bDAO.actualites ( date3, title, text);// fait reference à la méthode actualites qui se trouve dans ma DAO
+		bDAO.actualites ( date3, title, text);// fait reference a la methode actualites qui se trouve dans ma DAO
 		
 		response.sendRedirect("Manager_Page.jsp");
 	}
 	
 	
 	
-	private static java.sql.Date convertUtilToSql(java.util.Date uDate) {// Fonction qui permet de convertir la date en une version insérable dans la BDD
+	private static java.sql.Date convertUtilToSql(java.util.Date uDate) {// Fonction qui permet de convertir la date en une version ins茅rable dans la BDD
 		
 		        java.sql.Date Date3 = new java.sql.Date(uDate.getTime());
 		
