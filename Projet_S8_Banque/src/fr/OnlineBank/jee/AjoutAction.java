@@ -77,15 +77,11 @@ public class AjoutAction extends HttpServlet {
 			
 		}
 		
-		System.out.println(somme+""+solde+""+id_user);
+		System.out.println(solde);
 		
 		if(somme<solde) {
 		solde=solde-somme;
-		System.out.println(solde);
-
 		Compte compteemetteur = compte.getCompteCourant(id_user);//utilise compteCourant pour recup le id_compte (mais ca marche pas)
-
-		System.out.println(compteemetteur);
 		id_compte=compteemetteur.getId_compte();
 		compteemetteur.setSolde(solde);
 		compte.updateCompte(compteemetteur);
@@ -104,12 +100,12 @@ public class AjoutAction extends HttpServlet {
 		java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 		System.out.println(id_user+entreprise+prixachat+sqlDate+nombre);
 		dao.ajout(id_user,entreprise,prixachat, sqlDate,nombre);//insetion dans la BDD des actions qu'il possede
-		Transaction transaction = new Transaction(0, "actions", id_compte, 999, new Timestamp(new Date().getTime()), null, somme, "achat d'actions");	
-		TransactionDao transactionDao = new TransactionDao();
-		transactionDao.addTransaction(transaction);	
 		}
 		
 		}
+		Transaction transaction = new Transaction(0, "actions", id_compte, 999, new Timestamp(new Date().getTime()), null, somme, "achat d'actions");	
+		TransactionDao transactionDao = new TransactionDao();
+		transactionDao.addTransaction(transaction);	
 		}
 		else {
 			System.out.println("erreur");
@@ -128,7 +124,7 @@ public class AjoutAction extends HttpServlet {
 		int gain=0;
 		int nombreaction=0;
 		int diff=0;
-		int id_compte;
+		int id_compte = 0;
 		ActionsDAO dao = new ActionsDAO();
 		for (int i = 0; i < listEnt.size(); i++){
 			if(request.getParameter(listEnt.get(i).getNom())!="") {
