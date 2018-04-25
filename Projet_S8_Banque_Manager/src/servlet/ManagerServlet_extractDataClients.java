@@ -23,6 +23,7 @@ import dao.UserDao;
 
 /**
  * Servlet implementation class ManagerServlet_extractDataClients
+ * Generate data for relation among id_user, id_compte and id_transaction
  */
 @WebServlet("/ManagerServlet_extractDataClients")
 public class ManagerServlet_extractDataClients extends HttpServlet {
