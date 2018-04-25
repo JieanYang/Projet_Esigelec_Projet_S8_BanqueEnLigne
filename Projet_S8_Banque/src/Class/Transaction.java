@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 import java.util.*;
 
 /**
+ * Class container with information of Transaction
  * 
  */
 public class Transaction {

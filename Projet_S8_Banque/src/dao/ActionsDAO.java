@@ -11,6 +11,12 @@ import Class.Actions;
 import Class.Compte;
 import Class.User;
 
+/**
+ * Class ActionsDao manages the table Action in the database
+ * @author JieanYang
+ *
+ */
+
 public class ActionsDAO {
 
 	private String sql;

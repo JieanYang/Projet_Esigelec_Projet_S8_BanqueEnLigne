@@ -7,6 +7,12 @@ import java.util.ArrayList;
 
 import Class.Entreprise;
 
+/**
+ * Class EntrepriseDao manages the table EntrCac40 in the database
+ * @author yja85
+ *
+ */
+
 public class EntrepriseDAO {
 
 	private String sql;

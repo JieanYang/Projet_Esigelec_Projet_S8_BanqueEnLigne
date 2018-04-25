@@ -6,7 +6,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-
+/**
+ * This's for noting the login and logout action of user
+ */
 public class UpdateLogFile {
 
 	private String path;

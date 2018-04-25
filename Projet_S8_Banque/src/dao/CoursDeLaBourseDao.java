@@ -10,6 +10,7 @@ import Class.CoursDeLaBourse;
 import Class.User;
 
 /**
+ * Class CoursDeLaBourseDao manages the table CoursDeLaBourse in the database
  * 
  */
 public class CoursDeLaBourseDao {

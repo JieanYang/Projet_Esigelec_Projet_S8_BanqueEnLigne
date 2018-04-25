@@ -2,7 +2,11 @@ package Class;
 
 import java.sql.Date;
 import java.sql.Timestamp;
-
+/**
+ * Class container with information of Action
+ * @author yja85
+ *
+ */
 public class Actions {
 	
 	public Actions() {

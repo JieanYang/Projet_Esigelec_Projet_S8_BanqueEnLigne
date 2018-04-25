@@ -16,6 +16,7 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
 /**
+ * Class CompteDao manages the table Compte in the database
  * 
  */
 public class CompteDao {
