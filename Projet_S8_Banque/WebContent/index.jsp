@@ -64,11 +64,11 @@
 
 			<div class="col">
 				<div class="card">
-					<img class="card-img-top" src=""
+					<img class="card-img-top" src="Image/contact.png"
 						alt="Card image contact message">
 					<div class="card-body">
-						<h5 class="card-title">Contact us</h5>
-						<p class="card-text">texttttttttttttttttttttttttttttttttt</p>
+						<h5 class="card-title">Nous Contacter</h5>
+						<p class="card-text">Envoyer un mail à votre conseiller</p>
 						<a href="pageContact.jsp" class="btn btn-primary">Message</a>
 					</div>
 				</div>
