@@ -25,7 +25,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 			     <form role="form" action="BordereauServlet" method="post" class="registration-form">
-					<button type="submit" class="btn btn-primary" >Faire un virement par cheque</button>
+					<button type="submit" class="btn btn-primary" >Reuperer le Bordereau de Cheque</button>
 				</form>
 			</div>
 		</div>
