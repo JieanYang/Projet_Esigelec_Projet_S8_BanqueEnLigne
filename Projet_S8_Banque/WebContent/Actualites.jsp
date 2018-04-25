@@ -61,7 +61,7 @@
 	</div>  -->
 
 
-	<div class="row">
+	<div class="row" style="margin-left: auto; margin-right: auto; width: 80%; padding-left: 15%;">
 		 <table border="2">
 			<tbody>
 				<tr><th>DATE</th><th>TITLE</th><th>TEXT</th></tr><!-- entete du tableau -->
