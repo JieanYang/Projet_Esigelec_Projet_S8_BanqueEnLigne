@@ -30,7 +30,8 @@ public class CreerCompte extends HttpServlet {
 	
 	CompteDao monDAO= new CompteDao();
 	EmailSend monEmail = new EmailSend();
-	  // A changer
+	 public static final int TAILLE_TAMPON = 10240;
+	 public static final String CHEMIN_FICHIERS = "C:\\Users\\9201709\\Desktop\\projet_s8_banque\\Projet_S8_Banque"; // A changer
 	
 //	  SimpleDateFormat sdfrmt = new SimpleDateFormat("dd-MM-yyyy");
 //	     sdfrmt.setLenient(false);
@@ -57,50 +58,48 @@ public class CreerCompte extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	
-		// Generer un code aleatoire entre 1000 et 9999
 		int min =1000, max =9999 ;
 		int nombreAleatoire = min + (int)(Math.random() * ((max - min) + 1));
 		String code = ""+nombreAleatoire;
-		
-		// recuperer le nom
 		String nom = request.getParameter("nom");
-		// recuperer le prenom
 		String prenom = request.getParameter("prenom");
-		// recuperer le email
 		String email= request.getParameter("email");
-		// recuperer la date
+		String psw= request.getParameter("password");
 		String date1= request.getParameter("date");
-		// recuperer le mot de passe
-		String password = request.getParameter("password");
-		// definir comme client la categorie_user
 		String categorie_user ="client";
 		int telephone = 0;
 		try {
-			// recuperer le numero de Telephone
 			telephone = Integer.parseInt(request.getParameter("telephone"));
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		// reuperer l'adresse
 		String adresse = request.getParameter("adresse");
-		// reuperer le pays
 		String pays = request.getParameter("pays");
-		// reuperer la ville
 		String ville = request.getParameter("ville");
-	
-		// envoies du code par mail
+		// On récupère le champ du fichier
+       // Part part = request.getPart("fichier");
+            
+        // On vérifie qu'on a bien reçu un fichier
+      //  String nomFichier = getNomFichier(part);
+		
+		
+		
+		
 		monEmail.envoie_mail(email, code);
 		
-		// on insere dans la BDD toutes les informations recuperées
-		monDAO.creerCompteBancaire(password,nom, prenom, telephone, email, adresse, date1, ville, pays,code,categorie_user);
+		monDAO.creerCompteBancaire(psw,nom, prenom, telephone, email, adresse, date1, ville, pays,code,categorie_user);
 		
-		// on va a la page de Verification
 		request.getRequestDispatcher("pageVerification.jsp").forward(request, response);
 		
-
+		
+		
+		
+		
+		
 	}
+	
+	
 	
 	
 	

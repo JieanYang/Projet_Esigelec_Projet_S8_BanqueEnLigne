@@ -23,7 +23,7 @@
 	<%@ include file="/Templates/Head.jsp" %>
 
 	<div class="container">
-		<form action="CreerCompte" method="post"  enctype="multipart/form-data" >
+		<form action="CreerCompte" method="post" >
 	  	    <div class="form-group ">
 		      <label for="inputState">Je veux ouvrir :</label>
 		      <select name="compte" id="inputState" class="form-control">
@@ -65,10 +65,11 @@
 		  </div>
 		  
 		  <div class="form-group">
-		    <label for="inputAddress2">Password :</label>
+		    <label for="inputAddress2">Password</label>
 		    <input type="password" class="form-control" name="password" id="inputAddress2"  required />
 		    
 		  </div>
+		  
 		  <div class="form-row">
 		    <div class="form-group col-md-6">
 		      <label for="inputCity">Ville</label>
@@ -96,7 +97,8 @@
 		</form>
 	</div>
 	
+	<!-- footer.html -->
+	<%@ include file="Templates/Footer.html"%>
 
-	<script src="/Resources/scripts_index.js"></script>
-</body>
+<!-- 	<script src="/Resources/scripts_index.js"></script>--></body>
 </html>

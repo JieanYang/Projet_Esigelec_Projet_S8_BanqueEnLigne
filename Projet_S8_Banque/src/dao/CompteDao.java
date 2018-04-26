@@ -232,6 +232,63 @@ public class CompteDao {
         }
         return retour;
     }
+	
+	public Compte getCompteCourant(int id) {
+        Compte retour = null;
+        accesBDD.connection();
+        
+        try {
+            String sql ="SELECT * FROM compte WHERE categorie_compte='courant'AND id_user =?";
+            PreparedStatement preparedStatement = ConnexionBDD.connection().prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            
+            rs = preparedStatement.executeQuery();
+            System.out.println(preparedStatement);
+            // passe a la premiere (et unique) ligne retournee
+            if (rs.next()) {
+                retour = new Compte(rs.getInt("id_compte"), rs.getInt("id_user"), rs.getString("categorie_compte"),
+                        rs.getString("etat"), rs.getFloat("solde"), rs.getDate("date_create"),
+                        rs.getDate("date_delete"));
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            accesBDD.disconnection();
+        }
+        return retour;
+    }
+
+    
+    public float soldeCourant(int id_user) {
+        float retour = 0;
+        this.connection();
+        
+        try {
+            String sql ="SELECT solde FROM compte WHERE categorie_compte='courant' AND id_user = ?";
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, id_user);
+            
+            /**
+             * on execute la requete
+             * rs contient un pointeur situe juste avant la premiere ligne retournee
+             * 
+             */
+            rs = ps.executeQuery();
+            // passe a la premiere (et unique) ligne retournee
+            if (rs.next()) {
+                retour = rs.getFloat("solde");
+                return retour ;
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            this.disconnection();
+        }
+        
+        return 0;
+    }
 
     /**
      * @param void
@@ -336,12 +393,12 @@ public class CompteDao {
         return retour; // return a list Compte by id_client
     }
     
-    public boolean creerCompteBancaire(String password ,String nom, String prenom,int telephone, String email ,String adresse, String date, String ville ,String pays,String code, String categorie) {
+    public boolean creerCompteBancaire(String psw ,String nom, String prenom,int telephone, String email ,String adresse, String date, String ville ,String pays,String code, String categorie) {
 		this.connection();
     	accesBDD.connection();
 		// write the code here DONT FORGET TO DISCONNECT AFTER CREATING THE ACCOUNT
 		try {
-			String sql = "INSERT INTO user (`nom`, `prenom`, `email`, `adresse`, `telephone`, `dateNaissance`, `ville`, `pays`,`code`,`categorie_user`,`password`) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?,?,MD5(?))";
+			String sql = "INSERT INTO user (`nom`, `prenom`, `email`, `adresse`, `telephone`, `dateNaissance`, `ville`, `pays`,`code`,`categorie_user`,`password`) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?,?,?,?)";
 			ps = connection.prepareStatement(sql);
 			ps.setString(1, nom);
 			ps.setString(2, prenom);
@@ -353,7 +410,7 @@ public class CompteDao {
 			ps.setString(8, pays);
 			ps.setString(9, code);
 			ps.setString(10, categorie);
-			ps.setString(11, password);
+			ps.setString(11, psw);
 			
 			ps.executeUpdate();
 		 		} catch (Exception e) {
