@@ -232,8 +232,10 @@ public class CompteDao {
         }
         return retour;
     }
-	
-	public Compte getCompteCourant(int id) {
+
+    
+    
+    public Compte getCompteCourant(int id) {
         Compte retour = null;
         accesBDD.connection();
         
@@ -289,6 +291,7 @@ public class CompteDao {
         
         return 0;
     }
+
 
     /**
      * @param void

@@ -108,6 +108,7 @@
 					        <option selected>type de transaction</option>
 					        <option>Achat</option>
 					        <option>Vente</option>
+					        
 					      </select>
 					    </div>
 	<br>

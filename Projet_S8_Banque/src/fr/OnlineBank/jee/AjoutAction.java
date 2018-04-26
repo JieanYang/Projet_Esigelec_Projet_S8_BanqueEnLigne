@@ -56,6 +56,7 @@ public class AjoutAction extends HttpServlet {
 
 		if (type.equals("Achat")) {
 			float solde = compte.soldeCourant(id_user);
+			System.out.println(solde);
 			EntrepriseDAO entDAO = new EntrepriseDAO();
 			ArrayList<Entreprise> listEnt = entDAO.getEnt();
 			float somme = 0;
@@ -68,6 +69,7 @@ public class AjoutAction extends HttpServlet {
 					nombre = Integer.parseInt(request.getParameter(listEnt.get(i).getNom()));
 				} else {
 					nombre = 0;
+					
 				}
 				if (nombre != 0) {
 					somme = somme + nombre * listEnt.get(i).getDernier();// calcul du cout total
