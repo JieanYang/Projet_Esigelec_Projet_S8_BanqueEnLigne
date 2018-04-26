@@ -32,7 +32,14 @@
 	
 	<div class="container">
 		<div class="row">
-			<h3>All Clients</h3>
+			<div class="col-6">
+				<h3>All Clients</h3>
+			</div>
+			<div class="col-6">
+				<form action="total_depot" mehtod="GET" class="col-12">
+					<Button type="submit" class="btn btn-outline-success">Les depot de banque</Button>
+				</form>
+			</div>
 		</div>
 		
 		<div class="row">

@@ -94,10 +94,11 @@ CREATE TABLE `ServicesDeLaBanque` (
 ) ENGINE=InnoDB;
 
 CREATE TABLE `actions` (
-  `id_user` int(11) NOT NULL,
+  `id_user` Integer(11) NOT NULL,
   `entreprise` varchar(30) NOT NULL,
-  `prixachat` int(11) NOT NULL,
-  `date` date NOT NULL
+  `prixachat` Integer(11) NOT NULL,
+  `date` date NOT NULL,
+  `nombre` Integer
 ) ENGINE=InnoDB;
 
 
