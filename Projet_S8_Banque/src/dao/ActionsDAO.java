@@ -21,6 +21,7 @@ public class ActionsDAO {
 
 	private String sql;
 	private PreparedStatement preparedStatemact;
+	
 
 	public ArrayList<Actions> getact(String id_user) {
 		ArrayList<Actions> actList = new ArrayList<Actions>();

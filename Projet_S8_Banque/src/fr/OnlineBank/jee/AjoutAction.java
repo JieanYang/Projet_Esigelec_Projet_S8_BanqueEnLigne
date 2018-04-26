@@ -68,6 +68,7 @@ public class AjoutAction extends HttpServlet {
 					nombre = Integer.parseInt(request.getParameter(listEnt.get(i).getNom()));
 				} else {
 					nombre = 0;
+					
 				}
 				if (nombre != 0) {
 					somme = somme + nombre * listEnt.get(i).getDernier();// calcul du cout total
