@@ -33,7 +33,6 @@ public class UpdateLogFile {
 		    while ((line = br.readLine()) != null) {
 		    	oldLogs= oldLogs+"\n"+line;
 		    }
-			
 			FileWriter fw = new FileWriter(file);
 			BufferedWriter bw = new BufferedWriter(fw);
 			bw.write("-"+newEntry+"\n"+oldLogs);

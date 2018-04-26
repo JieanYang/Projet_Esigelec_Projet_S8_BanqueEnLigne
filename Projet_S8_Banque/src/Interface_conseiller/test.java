@@ -10,7 +10,7 @@ public class test {
 			f.setId_compte(3);
 			f.setTitre_fenetre("Frame");
 			PanelConseiller_transactionsUnCompte p = new PanelConseiller_transactionsUnCompte(f);
-			
+//			
 			f.setPanel(p);
 		}
 }

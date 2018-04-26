@@ -37,7 +37,9 @@ public class PanelConseiller_transactionsUnCompte extends JPanel {
 	PanelConseiller_transactionsUnCompte() {}
 	PanelConseiller_transactionsUnCompte(Fenetre fenetre){
 		this.fenetre = fenetre;
+		// data acces
 		this.initiate_Data(fenetre.getId_compte());
+		// vue
 		this.initiate_panel_transactinsUnCompte();
 	}
 	private void initiate_panel_transactinsUnCompte() {
@@ -102,8 +104,6 @@ public class PanelConseiller_transactionsUnCompte extends JPanel {
 		layoutConstraints.weightx = weightx;
 		layoutConstraints.weighty = weighty;
 		layoutConstraints.insets = new Insets(insets, insets, insets, insets); // margin
-		// layoutConstraints.ipadx = ipadx; Padding
-		// layoutConstraints.ipady = ipady; Padding
 	}
 	
 
