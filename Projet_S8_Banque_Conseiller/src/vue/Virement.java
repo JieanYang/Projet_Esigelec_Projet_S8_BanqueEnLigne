@@ -56,7 +56,7 @@ public class Virement extends JPanel {
 		cBoxCompteCrediteur.setBounds(192, 90, 344, 22);
 		this.add(cBoxCompteCrediteur);
 
-		JLabel lblCompteDbiter = new JLabel("Numéro de chèque");
+		JLabel lblCompteDbiter = new JLabel("Numéro de compte emetteur");
 		lblCompteDbiter.setBounds(38, 166, 133, 16);
 		this.add(lblCompteDbiter);
 

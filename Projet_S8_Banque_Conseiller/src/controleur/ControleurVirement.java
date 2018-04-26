@@ -51,7 +51,7 @@ public class ControleurVirement {
 
 		// get compte à créditer et ajouter la difference
 		String compteC = SocketClient.startClient("getcompte" + "/" + compteRecepteur);
-		String compteD = SocketClient.startClient("getcompte" + "/" + 4321);
+		String compteD = SocketClient.startClient("getcompte" + "/" + 999);
 
 		Compte compteCrediter = new Compte();
 		String[] compte1 = compteC.split("/");
@@ -76,7 +76,7 @@ public class ControleurVirement {
 		SocketClient.startClient("updatecomptecrediter" + "/" + compteRecepteur + "/" + compteCrediter.getSolde());
 		compteDebiter.setSolde(compteDebiter.getSolde() - somme);
 		System.out.println("nouveau solde compte debite : " + compteDebiter.getSolde());
-		SocketClient.startClient("updatecomptedebiter" + "/" + 4321 + "/" + compteDebiter.getSolde());
+		SocketClient.startClient("updatecomptedebiter" + "/" + 999 + "/" + compteDebiter.getSolde());
 
 		SocketClient.startClient("transaction" + "/" + compteDebiter.getId_compte() + "/"
 				+ compteCrediter.getId_compte() + "/" + somme + "/" + description + "/" + "cheque");
