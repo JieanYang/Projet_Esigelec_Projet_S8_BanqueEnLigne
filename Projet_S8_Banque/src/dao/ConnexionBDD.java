@@ -5,6 +5,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * Class ConnexionBDD manages the connection with database
+ * @author yja85
+ *
+ */
+
 public class ConnexionBDD {
 
 	/**
@@ -56,6 +62,11 @@ public class ConnexionBDD {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public PreparedStatement prepareStatement(String sql) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

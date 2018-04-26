@@ -13,42 +13,66 @@
     <link rel="stylesheet" type="text/css" href="Resources/css3-table-price-hosting/styles.css" media="all" />
     <link rel="stylesheet" type="text/css" href="Resources/css3-table-price-hosting/demo.css" media="all" />
 
+<!-- Bootstrap 4.0  -->
+<%@include file="Resources/Resources_bootstrap_4.0.html"%>
+<!-- CSS for Head.html -->
+<link rel="stylesheet" href="Resources/Head.css">
+
 </head>
 <body>
-<div class="container">
-			
-            <div class="freshdesignweb-top">
-                <a href="index.jsp" target="_blank">Home</a>
-                <span class="right">
-                   
-                </span>
-                <div class="clr"></div>
-            </div>
-			<header>
-				<h1><span>Nos Offres</span></h1>
-				<h2>Retrouver ci dessous les offres de votre banque</h2>
-            </header>       
-     <!-- start header here-->
-	<header>
-<div id="fdw-pricing-table">
-<c:forEach items="${liste}" var="emp"><!-- boucle for en jstl et on envoi la variable  -->
-    <div class="plan plan1 popular-plan">
-        <div class="header"><c:out value="${emp.getNom_service()}"></c:out></td></div>
-        
 
-  <div class="field">
-  <div class="control">
-    <textarea class="textarea is-large" type="text" rows="10" disabled><c:out value="${emp.getDescription()}"></c:out></textarea> <!--  recupere les attribus de l'objet offre individuellement(emp) pour l'inserer dans le tableau -->
-  </div>
+<!-- head.html -->
+<%@ include file="Templates/Head.jsp"%>
+
+
+<div class="container">	
+   <!--  <div class="freshdesignweb-top">
+       <a href="index.jsp" target="_blank">Home</a>
+       <span class="right">
+   
+       </span>
+       <div class="clr"></div>
+   </div> -->
+
+    <header>
+        <h1><span>Nos Offres</span></h1>
+        <h2>Retrouver ci dessous les offres de votre banque</h2>
+    </header>       
+
+    <!-- start header here-->
+    <header>
+        <div id="fdw-pricing-table">
+            <c:forEach items="${liste}" var="emp"><!-- boucle for en jstl et on envoi la variable  -->
+               
+                <div class="plan plan1 popular-plan" style>
+                    <div class="header">
+                        <c:out value="${emp.getNom_service()}"></c:out></td>
+                    </div>
+
+
+                    <div class="field">
+
+                        <div class="control">
+                            <textarea class="textarea is-large" type="text" rows="10" disabled><c:out value="${emp.getDescription()}"></c:out></textarea> <!--  recupere les attribus de l'objet offre individuellement(emp) pour l'inserer dans le tableau -->
+                        </div>
+                    </div>
+                </div>
+
+            </c:forEach>
+        </div>
+    </header>
+
 </div>
-         
-         
-    </div>
-    </c:forEach>
+
     
-</div>
-	</header>
-    
-</div>
+<style type="text/css">
+    #fdw-pricing-table .plan {
+        width: 215px;
+    }
+</style>
+
+
+	<!-- footer.html -->
+	<%@ include file="Templates/Footer.html"%>
 </body>
 </html>

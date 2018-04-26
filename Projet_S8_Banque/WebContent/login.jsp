@@ -68,19 +68,19 @@ if (session.getAttribute("login") == "login" && session.getAttribute("id_user") 
 				                    	
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-first-name">Firstname</label>
-				                        	<input type="text" name="firstname" placeholder="Firstname..." class="form-first-name form-control" id="form-first-name">
+				                        	<input type="text" name="firstname" placeholder="Firstname..." class="form-first-name form-control" id="form-first-name" required>
 				                        </div>
 				                         <div class="form-group">
 				                        	<label class="sr-only" for="form-last-name">Lastname</label>
-				                        	<input type="text" name="lastname" placeholder="Lastname..." class="form-last-name form-control" id="form-last-name">
+				                        	<input type="text" name="lastname" placeholder="Lastname..." class="form-last-name form-control" id="form-last-name" required>
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-email">Email</label>
-				                        	<input type="text" name="email" placeholder="Email..." class="form-email form-control" id="form-email">
+				                        	<input type="text" name="email" placeholder="Email..." class="form-email form-control" id="form-email" required>
 				                        </div>
 				                       <div class="form-group">
 				                        	<label class="sr-only" for="form-password">Password</label>
-				                        	<input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password">
+				                        	<input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password" required>
 				                        </div>
 				                       
 				                        <button type="submit" class="btn">Envoyer</button>
@@ -96,19 +96,8 @@ if (session.getAttribute("login") == "login" && session.getAttribute("id_user") 
             
         </div>
 
-        <!-- Footer -->
-        <footer>
-        	<div class="container">
-        		<div class="row">
-        			
-        			<div class="col-sm-8 col-sm-offset-2">
-        				<div class="footer-border"></div>
-        				
-        			</div>
-        			
-        		</div>
-        	</div>
-        </footer>
+        <!-- footer.html -->
+		<%@ include file="Templates/Footer.html"%>
 
         <!-- Javascript -->
         <script src="assets/js/jquery-1.11.1.min.js"></script>

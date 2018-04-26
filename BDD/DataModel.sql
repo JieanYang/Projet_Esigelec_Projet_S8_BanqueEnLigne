@@ -20,7 +20,7 @@ CREATE TABLE `User` (
     `pays` VARCHAR(15),
     `password` VARCHAR(30) NOT NULL,
     `dateNaissance` VARCHAR(15),
-    `code` INTEGER NOT NULL,
+    `code` INTEGER,
     PRIMARY KEY (`id_user`)
 ) ENGINE=InnoDB;
 
@@ -66,7 +66,7 @@ CREATE TABLE `coursdelabourse` (
 ) ENGINE=InnoDB;
 
 CREATE TABLE `entcac40` (
-    `nom` VARCHAR(15) NOT NULL,
+    `nom` VARCHAR(30) NOT NULL,
     `ouverture` FLOAT NOT NULL,
     `haut` FLOAT NOT NULL,
     `bas` FLOAT NOT NULL,

@@ -64,7 +64,7 @@ public class BordereauServlet extends HttpServlet {
 	    in.close();  
 	    out.close();		
 		
-		System.out.println("telechargement éffectué");
+		System.out.println("telechargement effectuer");
 		
 		response.sendRedirect("Clientconnecte.jsp");
 	}
@@ -103,7 +103,7 @@ public class BordereauServlet extends HttpServlet {
 	    in.close();  
 	    out.close();		
 		
-		System.out.println("telechargement éffectué");
+		System.out.println("telechargement effectuer");
 		
 
 }

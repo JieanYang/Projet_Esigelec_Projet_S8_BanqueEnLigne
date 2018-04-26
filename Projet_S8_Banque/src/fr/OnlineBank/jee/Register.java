@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Class.User;
+import dao.UserDao;
 
 
 /**
@@ -48,7 +49,26 @@ public class Register extends HttpServlet {
 		String Password= request.getParameter("password");
 		
 		
-		aDAO.addUser(Firstname, Lastname, email, Password);
+		// aDAO.addUser(Firstname, Lastname, email, Password);
+		
+		UserDao userDao = new UserDao();
+		User user = new User();
+		user.setNom(Firstname);
+		user.setPrenom(Lastname);
+		user.setEmail(email);
+		user.setPassword(Password);
+		user.setCategorie_user("client");
+		
+		User user_verify = new User();
+		user_verify = null;
+		user_verify = userDao.addUser(user);
+		
+		if(user_verify != null) {
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		} else {
+			response.getWriter().write("Faild inscription ->\nuser nom:" +Firstname+"\nemail->"+email);
+		}
+		
 	}
 
 }

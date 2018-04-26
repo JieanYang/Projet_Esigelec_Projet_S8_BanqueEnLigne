@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 import java.util.*;
 
 /**
+ * Class container with information of Transaction
  * 
  */
 public class Transaction {
@@ -11,25 +12,28 @@ public class Transaction {
     /**
      * Default constructor
      */
+     
+     public Transaction(int id_transaction, String categorie_transaction, int id_compte_emetteur,
+		int id_compte_recepteur, Timestamp date_transaction, Timestamp date_create, float somme,
+		String description) {
+	super();
+	this.id_transaction = id_transaction;
+	this.categorie_transaction = categorie_transaction;
+	this.id_compte_emetteur = id_compte_emetteur;
+	this.id_compte_recepteur = id_compte_recepteur;
+	this.date_transaction = date_transaction;
+	this.date_create = date_create;
+	this.somme = somme;
+	this.description = description;
+}
+
+     
     public Transaction() {
     }
 
     
     
-    public Transaction(int id_transaction, String categorie_transaction, int id_compte_emetteur,
-			int id_compte_recepteur, Timestamp date_transaction, Timestamp date_create, float somme,
-			String description) {
-		super();
-		this.id_transaction = id_transaction;
-		this.categorie_transaction = categorie_transaction;
-		this.id_compte_emetteur = id_compte_emetteur;
-		this.id_compte_recepteur = id_compte_recepteur;
-		this.date_transaction = date_transaction;
-		this.date_create = date_create;
-		this.somme = somme;
-		this.description = description;
-	}
-
+  
 
 
 	public int getId_transaction() {

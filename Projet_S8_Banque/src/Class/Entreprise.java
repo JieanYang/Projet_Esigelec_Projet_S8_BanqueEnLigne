@@ -1,5 +1,10 @@
 package Class;
 
+/**
+ * Class Entreprise with information of Entreprise
+ * @author yja85
+ *
+ */
 public class Entreprise {
 	
 	private String nom;

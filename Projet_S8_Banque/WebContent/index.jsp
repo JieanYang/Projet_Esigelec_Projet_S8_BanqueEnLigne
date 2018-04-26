@@ -50,47 +50,29 @@
 			</div>
 
 			<div class="col">
-			<div class="card">
-				<img class="card-img-top" src="Image/compteTitre.jpg"
-					alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">Regarder le cours de la bourse</h5>
-					<p class="card-text">Vous etes interessé par la bourse ,
-						inscrivez vous et commencez à trader en réel sans frais</p>
-					<a href="affichageprix.jsp" class="btn btn-primary">bourse</a>
+				<div class="card">
+					<img class="card-img-top" src="Image/contact.png"
+						alt="Card image contact message">
+					<div class="card-body">
+						<h5 class="card-title">Nous Contacter</h5>
+						<p class="card-text">Envoyer un mail à votre conseiller</p>
+						<a href="pageContact.jsp" class="btn btn-primary">Message</a>
+					</div>
 				</div>
 			</div>
-			</div>
 		</div>
+
+
 
 	</div>
 	
+	<div style="padding:62px;"></div>
+	
+	<!-- footer.html -->
+	<%@ include file="Templates/Footer.html"%>
 
+	
 
-	<!--Footer-->
-	<footer class="footer">
-		<div class="container">
-			<span class="colorr">Place sticky footer content here.</span>
-		</div>
-	</footer>
-	<!--/.Footer-->
-
-	<style type="text/css">
-		.footer {
-			/*position: fixed;*/
-			left: 0;
-			bottom: 0;
-			width: 100%;
-			background-color: #333;
-			color: white;
-			text-align: center;
-		}
-		
-		.colorr{
-			color: #ddd;
-		}
-	</style>
-
-	<script src="/Resources/scripts_index.js"></script>
+	<!-- <script src="/Resources/scripts_index.js"></script> -->
 </body>
 </html>

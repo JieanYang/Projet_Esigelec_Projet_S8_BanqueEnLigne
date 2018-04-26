@@ -3,7 +3,7 @@ package Class;
 import java.util.*;
 
 /**
- * 
+ * Class container with the information of CoursDeLaBourse
  */
 public class CoursDeLaBourse {
 

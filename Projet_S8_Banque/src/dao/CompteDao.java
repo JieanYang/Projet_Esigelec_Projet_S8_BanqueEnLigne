@@ -336,12 +336,12 @@ public class CompteDao {
         return retour; // return a list Compte by id_client
     }
     
-    public boolean creerCompteBancaire(String nom, String prenom,int telephone, String email ,String adresse, String date, String ville ,String pays,String code, String categorie) {
+    public boolean creerCompteBancaire(String password ,String nom, String prenom,int telephone, String email ,String adresse, String date, String ville ,String pays,String code, String categorie) {
 		this.connection();
     	accesBDD.connection();
 		// write the code here DONT FORGET TO DISCONNECT AFTER CREATING THE ACCOUNT
 		try {
-			String sql = "INSERT INTO user (`nom`, `prenom`, `email`, `adresse`, `telephone`, `dateNaissance`, `ville`, `pays`,`code`,`categorie_user`) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?,?)";
+			String sql = "INSERT INTO user (`nom`, `prenom`, `email`, `adresse`, `telephone`, `dateNaissance`, `ville`, `pays`,`code`,`categorie_user`,`password`) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?,?,MD5(?))";
 			ps = connection.prepareStatement(sql);
 			ps.setString(1, nom);
 			ps.setString(2, prenom);
@@ -353,6 +353,7 @@ public class CompteDao {
 			ps.setString(8, pays);
 			ps.setString(9, code);
 			ps.setString(10, categorie);
+			ps.setString(11, password);
 			
 			ps.executeUpdate();
 		 		} catch (Exception e) {

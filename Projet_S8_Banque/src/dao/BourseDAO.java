@@ -7,6 +7,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Class BourseDao manages the table Bourse in the database
+ * @author yja85
+ *
+ */
 public class BourseDAO {
 	
 	private String sql;

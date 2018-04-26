@@ -15,7 +15,7 @@ import java.sql.Timestamp;
 import Class.Message;
 
 /**
- * 
+ * Class MessageDao manages the table Message in the database
  */
 public class MessageDao {
 

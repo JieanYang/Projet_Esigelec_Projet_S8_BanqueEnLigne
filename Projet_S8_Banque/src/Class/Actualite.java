@@ -2,7 +2,7 @@ package Class;
 import java.util.*;
 
 /**
- * 
+ * Class container with information of Actualite
  */
 public class Actualite {
 
