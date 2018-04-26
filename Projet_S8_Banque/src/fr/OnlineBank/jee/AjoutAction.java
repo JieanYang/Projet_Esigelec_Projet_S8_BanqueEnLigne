@@ -56,6 +56,7 @@ public class AjoutAction extends HttpServlet {
 
 		if (type.equals("Achat")) {
 			float solde = compte.soldeCourant(id_user);
+			System.out.println(solde);
 			EntrepriseDAO entDAO = new EntrepriseDAO();
 			ArrayList<Entreprise> listEnt = entDAO.getEnt();
 			float somme = 0;

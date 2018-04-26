@@ -232,6 +232,68 @@ public class CompteDao {
         }
         return retour;
     }
+    
+    
+    public Compte getCompteCourant(int id) {
+        Compte retour = null;
+        accesBDD.connection();
+        
+        try {
+            String sql ="SELECT * FROM compte WHERE categorie_compte='courant'AND id_user =?";
+            PreparedStatement preparedStatement = ConnexionBDD.connection().prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            
+            rs = preparedStatement.executeQuery();
+            System.out.println(preparedStatement);
+            // passe a la premiere (et unique) ligne retournee
+            if (rs.next()) {
+                retour = new Compte(rs.getInt("id_compte"), rs.getInt("id_user"), rs.getString("categorie_compte"),
+                        rs.getString("etat"), rs.getFloat("solde"), rs.getDate("date_create"),
+                        rs.getDate("date_delete"));
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            accesBDD.disconnection();
+        }
+        return retour;
+    }
+
+    
+    public float soldeCourant(int id_user) {
+        float retour = 0;
+        this.connection();
+        
+        try {
+            String sql ="SELECT solde FROM compte WHERE categorie_compte='courant' AND id_user = ?";
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, id_user);
+            
+            /**
+             * on execute la requete
+             * rs contient un pointeur situe juste avant la premiere ligne retournee
+             * 
+             */
+            rs = ps.executeQuery();
+            // passe a la premiere (et unique) ligne retournee
+            if (rs.next()) {
+                retour = rs.getFloat("solde");
+                return retour ;
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            this.disconnection();
+        }
+        
+        return 0;
+    }
+    
+    
+
+    
 
     /**
      * @param void
