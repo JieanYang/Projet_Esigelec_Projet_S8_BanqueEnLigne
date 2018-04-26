@@ -54,6 +54,18 @@ public String fillSolde(int id_compte) {
 }
 %>
 
+<%!
+public String takeId_compte(int id_compte) {
+	CompteDao compteDao = new CompteDao();
+	String retour = new String();
+	
+	retour = "None";
+	retour = String.valueOf(compteDao.getCompte(id_compte).getId_compte());
+
+	return retour;
+}
+%>
+
 <div id="clientPage_conslter_solde_histoireTransaction" class="container">
 	<h2 style="background-color: #117D8D; color:white;">Compte</h2>
 	<div class="row">
@@ -61,7 +73,10 @@ public String fillSolde(int id_compte) {
 			<div class="card">
 				<div class="card-body">
 					<h6 class="card-title">
-						Compte courrant
+						Compte courrant <span>
+						<%
+							out.println("<br>Numero compte: " + takeId_compte(id_compte_courrant));
+						%></span>
 					</h6>
 					<h5>Solde:<sapn>
 					<% 
@@ -75,7 +90,10 @@ public String fillSolde(int id_compte) {
 			<div class="card">
 				<div class="card-body">
 					<h6 class="card-title">
-						Compte epargne
+						Compte epargne <span>
+						<%
+							out.println("<br>Numero compte: " + takeId_compte(id_compte_epargne));
+						%></span>
 					</h6>
 					<h5>Solde:<span>
 					<% 
@@ -89,7 +107,10 @@ public String fillSolde(int id_compte) {
 			<div class="card">
 				<div class="card-body">
 					<h6 class="card-title">
-						Compte titre
+						Compte titre <span>
+						<%
+							out.println("<br>Numero compte: " + takeId_compte(id_compte_titre));
+						%></span>
 					</h6>
 					<h5>Solde:<span>
 					<% 
