@@ -13,7 +13,7 @@
 <!-- CSS for Head.html -->
 <link rel="stylesheet" href="Resources/Head.css">
 
-<title>Accueil</title>
+<title>index client</title>
 </head>
 <body>
 
